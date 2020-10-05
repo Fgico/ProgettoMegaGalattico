@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://TileSet/tileset.png" type="Texture" id=1]
+
+[node name="TileSet" type="Node"]
+
+[node name="Grass" type="Sprite" parent="."]
+position = Vector2( 363.77, 290.861 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 103, 1, 16, 16 )
+
+[node name="Sand" type="Sprite" parent="."]
+position = Vector2( 382.164, 291.277 )
+texture = ExtResource( 1 )
+offset = Vector2( 1.26468, -0.415833 )
+region_enabled = true
+region_rect = Rect2( 1, 1, 16, 16 )
+
+[node name="Flower" type="Sprite" parent="."]
+position = Vector2( 401.347, 291.277 )
+texture = ExtResource( 1 )
+offset = Vector2( 1.26468, -0.415833 )
+region_enabled = true
+region_rect = Rect2( 120, 35, 16, 16 )
+
+[node name="Rock" type="Sprite" parent="."]
+position = Vector2( 362.664, 310.143 )
+texture = ExtResource( 1 )
+offset = Vector2( 1.26468, -0.415833 )
+region_enabled = true
+region_rect = Rect2( 120, 273, 16, 16 )
+
+[node name="Fratta" type="Sprite" parent="."]
+position = Vector2( 382.164, 310.618 )
+texture = ExtResource( 1 )
+offset = Vector2( 1.26468, -0.415833 )
+region_enabled = true
+region_rect = Rect2( 120, 205, 16, 16 )
+
+[node name="Tree" type="Sprite" parent="."]
+position = Vector2( 401.686, 310.801 )
+texture = ExtResource( 1 )
+offset = Vector2( 1.26468, -0.415833 )
+region_enabled = true
+region_rect = Rect2( 137, 1, 16, 16 )
+
+[node name="Cartello" type="Sprite" parent="."]
+position = Vector2( 421.322, 291.435 )
+texture = ExtResource( 1 )
+offset = Vector2( 1.26468, -0.415833 )
+region_enabled = true
+region_rect = Rect2( 392, 52, 16, 16 )
