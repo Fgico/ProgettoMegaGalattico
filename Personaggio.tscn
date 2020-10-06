@@ -1,16 +1,41 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Personaggio.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+var dir = Vector2(0,0)
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+func _physics_process(delta):
+	dir = Vector2(0,0)
+	tasti()
+	move_and_slide(dir)
+	
+	
+func tasti():
+	if(Input.is_action_pressed(\"ui_right\")):
+		dir = Vector2(50,0)
+"
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 34, 34 )
 
 [node name="Personaggio" type="KinematicBody2D"]
-script = ExtResource( 1 )
+script = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
