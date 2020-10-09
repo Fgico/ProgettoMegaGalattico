@@ -1,7 +1,6 @@
 *.import
 *.blend1
 
-.vscode
 
 # Godot-specific ignores
 .import/
