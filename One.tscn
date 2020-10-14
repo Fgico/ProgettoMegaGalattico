@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Palla2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Palla2.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 15, 1, 15 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 30, 2, 30 )
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="CubeMesh" id=4]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="FLOOR" type="StaticBody" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="FLOOR"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="FLOOR"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03251, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="BOX" type="RigidBody" parent="."]
+transform = Transform( 0.902698, -0.430275, 0, 0.430275, 0.902698, 0, 0, 0, 1, -0.0227518, 8.03345, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="BOX"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="BOX"]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="Palla2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.912246, 0 )
+script = ExtResource( 2 )
+
+[node name="cameraPalla" type="Spatial" parent="Palla2"]
+transform = Transform( 1, 0, 0, 0, 0.955309, 0.295608, 0, -0.295608, 0.955309, 0, 3.14698, 6.56269 )
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.08123, 15.1723 )
+target = NodePath("../Palla2/cameraPalla")
+speed = 3.0
+enabled = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.249417, -0.615519, 0.747615, 0, 0.772013, 0.635607, -0.968396, 0.158531, -0.192553, 3.95675, 7.08865, -0.568305 )
+shadow_enabled = true
