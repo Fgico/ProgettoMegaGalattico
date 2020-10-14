@@ -16,7 +16,6 @@ _global_script_class_icons={
 [application]
 
 config/name="Rogue"
-run/main_scene="res://Spatial.tscn"
 
 [display]
 
@@ -66,6 +65,7 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 quality/directional_shadow/size.mobile=1024
 quality/shadow_atlas/size.mobile=1024

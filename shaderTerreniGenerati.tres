@@ -17,19 +17,11 @@ vec3 interpColore(vec4 a, vec4 b, float h){
 
 void vertex(){
 	lati = vec3(sabbia.r, sabbia.g, sabbia.b);
-<<<<<<< HEAD
-	if(VERTEX.y>-1.0){
-		lati = interpColore(sabbia,erba, clamp((VERTEX.y-5.0)/3.0,0.0,1.0));
-	}
-	if(abs(BINORMAL.y)<0.8 || abs(TANGENT.y) <0.8){
-		lati = interpColore(vec4(lati.r,lati.g,lati.b,1.0), roccia, clamp((abs(BINORMAL.y)+0.6)/1.2,0.0,1.0));
-=======
-	if(VERTEX.y>0.0){
+	if(VERTEX.y>0.5){
 		lati = interpColore(sabbia,erba, clamp((VERTEX.y-1.0)/3.0,0.0,1.0));
 	}
 	if(BINORMAL.y< 1.0){
 		lati = interpColore(vec4(lati.r,lati.g,lati.b,1.0), roccia, clamp((abs(BINORMAL.y)+0.1),0.0,1.0));
->>>>>>> f7fe45cdc4420c76273aa3959571382f226f0f8f
 	}
 	
 }
@@ -41,12 +33,6 @@ void fragment(){
 
 [resource]
 shader = SubResource( 1 )
-<<<<<<< HEAD
-shader_param/sabbia = Color( 0.298039, 0.596078, 0.152941, 1 )
-shader_param/erba = Color( 0.447059, 0.458824, 0.447059, 1 )
-shader_param/roccia = Color( 0.341176, 0.294118, 0, 1 )
-=======
-shader_param/sabbia = Color( 0.929412, 0.968627, 0.568627, 1 )
-shader_param/erba = Color( 0.282353, 0.607843, 0.258824, 1 )
+shader_param/sabbia = Color( 0.584314, 0.764706, 0.384314, 1 )
+shader_param/erba = Color( 1, 1, 1, 1 )
 shader_param/roccia = Color( 0.305882, 0.145098, 0.0313726, 1 )
->>>>>>> f7fe45cdc4420c76273aa3959571382f226f0f8f
