@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/player/playermesh.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/player/player.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/player/circle.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/player/Label.gd" type="Script" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.0842224
+height = 0.344829
+
+[node name="player" type="KinematicBody"]
+script = ExtResource( 2 )
+speed = 10
+
+[node name="mesh" parent="." instance=ExtResource( 1 )]
+transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.0136916, 0 )
+shape = SubResource( 1 )
+
+[node name="target" type="Position3D" parent="."]
+
+[node name="Camera" type="Camera" parent="target"]
+transform = Transform( -1, 0, 3.25841e-07, 6.35239e-08, 0.980812, 0.194953, -3.19589e-07, 0.194953, -0.980812, 0, 0.522156, -1.20548 )
+far = 300.0
+
+[node name="su" type="TouchScreenButton" parent="target/Camera"]
+position = Vector2( 111.124, 309.8 )
+scale = Vector2( 0.301579, 0.306568 )
+normal = ExtResource( 3 )
+action = "su"
+
+[node name="salta" type="TouchScreenButton" parent="target/Camera"]
+position = Vector2( 930.073, 340.038 )
+scale = Vector2( 0.301579, 0.306568 )
+normal = ExtResource( 3 )
+action = "jump"
+
+[node name="giu" type="TouchScreenButton" parent="target/Camera"]
+position = Vector2( 114.491, 468.067 )
+scale = Vector2( 0.301579, 0.306568 )
+normal = ExtResource( 3 )
+action = "giu"
+
+[node name="sinistra" type="TouchScreenButton" parent="target/Camera"]
+position = Vector2( 35.9188, 390.617 )
+scale = Vector2( 0.301579, 0.306568 )
+normal = ExtResource( 3 )
+action = "sinistra"
+
+[node name="destra" type="TouchScreenButton" parent="target/Camera"]
+position = Vector2( 187.451, 382.76 )
+scale = Vector2( 0.301579, 0.306568 )
+normal = ExtResource( 3 )
+action = "destra"
+
+[node name="Label" type="Label" parent="target/Camera"]
+margin_left = 36.0242
+margin_top = 34.3245
+margin_right = 76.0242
+margin_bottom = 48.3245
+rect_scale = Vector2( 4.01612, 4.629 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

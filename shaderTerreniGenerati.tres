@@ -1,0 +1,38 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform vec4 sabbia :hint_color =vec4(0.90,0.93,0.62,1.0);
+uniform vec4 erba :hint_color =vec4(0.56,1.0,0.53,1.0);
+uniform vec4 roccia :hint_color = vec4( 0.2,0.2,0.2, 1.0);
+varying flat vec3 lati;
+
+vec3 interpColore(vec4 a, vec4 b, float h){
+	float cr = a.r +(b.r- a.r) *h;
+	float cb = a.b +(b.b- a.b) *h;
+	float cg = a.g +(b.g- a.g) *h;
+	return vec3(cr, cg,cb);
+}
+
+void vertex(){
+	lati = vec3(sabbia.r, sabbia.g, sabbia.b);
+	if(VERTEX.y>-1.0){
+		lati = interpColore(sabbia,erba, clamp((VERTEX.y-5.0)/3.0,0.0,1.0));
+	}
+	if(abs(BINORMAL.y)<0.8 || abs(TANGENT.y) <0.8){
+		lati = interpColore(vec4(lati.r,lati.g,lati.b,1.0), roccia, clamp((abs(BINORMAL.y)+0.6)/1.2,0.0,1.0));
+	}
+	
+}
+
+void fragment(){
+
+	ALBEDO = lati;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/sabbia = Color( 0.298039, 0.596078, 0.152941, 1 )
+shader_param/erba = Color( 0.447059, 0.458824, 0.447059, 1 )
+shader_param/roccia = Color( 0.341176, 0.294118, 0, 1 )
