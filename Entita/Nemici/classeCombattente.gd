@@ -7,13 +7,13 @@ var stats = {
 	"mp" : 100,
 	"atk" : 1,
 	"def" : 1,
-	"spd" : 1
+	"spd" : 200
 }
 
 var element
 onready var spawnAtk = get_node("rotable/spawnAtk") 
 
-func _init(natk=1,ndef=1, nhp = 100, nmp = 100, nspd = 1):
+func _init(natk = 1, ndef = 1, nhp = 100, nmp = 100, nspd = 200):
 	stats.atk = natk
 	stats.def = ndef
 	stats.hp = nhp
