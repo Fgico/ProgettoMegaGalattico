@@ -3,10 +3,7 @@ var gravity = Vector3.DOWN * 18  # strength of gravity
 
 export var speed = 10000  # movement speed
 
-
-var spin = 0.1  # rotation speed
-
-
+var scattando 
 var velocity = Vector3()
 var jump = false
 var dir = Vector2(0,0)
@@ -17,9 +14,6 @@ onready var anim = get_node("rotable/mesh/AnimationPlayer")
 onready var cam = get_node("target/Camera")
 onready var stick = get_node("target/Camera/UI/movStick")
 var pacific = true
-#func _ready():
-
-
 
 func _unhandled_input(event):
 	if event is InputEventScreenTouch and event.is_pressed():
@@ -40,8 +34,6 @@ func get_input(delta):
 	velocity.z += dir.y
 	velocity.y = vy
 
-
-
 func _physics_process(delta):
 	velocity += gravity *delta
 	get_input(delta)
@@ -57,9 +49,6 @@ func _physics_process(delta):
 
 func is_moving():
 	return abs(velocity.x) > 0.1 and abs(velocity.z) > 0.1
-
-
-
 
 func _on_attacco_pressed():
 	attacca(attacco)

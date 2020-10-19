@@ -29,3 +29,8 @@ func attacca(attacco):
 
 func hit(danno,element):
 	stats.hp -= danno - stats.def
+	if(stats.hp <0):
+		muori()
+
+func muori():
+	pass

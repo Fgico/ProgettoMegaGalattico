@@ -37,8 +37,8 @@ shape = SubResource( 1 )
 [node name="target" type="Position3D" parent="."]
 
 [node name="Camera" type="Camera" parent="target"]
-transform = Transform( -1, 1.7053e-13, 3.25841e-07, 2.52789e-07, 0.630974, 0.775804, -2.05597e-07, 0.775804, -0.630974, 0, 2.34482, -1.82394 )
-far = 300.0
+transform = Transform( -1, 2.98428e-13, 3.25841e-07, 2.89733e-07, 0.457548, 0.889185, -1.49088e-07, 0.889185, -0.457548, 0, 5.13023, -4.65026 )
+far = 8192.0
 
 [node name="UI" type="Control" parent="target/Camera"]
 margin_right = 40.0
