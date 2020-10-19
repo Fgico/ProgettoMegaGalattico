@@ -1,62 +1,66 @@
-extends KinematicBody
+extends Combattente
 var gravity = Vector3.DOWN * 18  # strength of gravity
 
-export var speed = 3  # movement speed
+export var speed = 10000  # movement speed
 
-export var jump_speed = 6  # jump strength
 
 var spin = 0.1  # rotation speed
 
 
 var velocity = Vector3()
 var jump = false
+var dir = Vector2(0,0)
 
-var anim
-var cam
+var attacco = preload("../Attacchi/interazione.tscn")
+onready var rotable = get_node("rotable")
+onready var anim = get_node("rotable/mesh/AnimationPlayer")
+onready var cam = get_node("target/Camera")
+onready var stick = get_node("target/Camera/UI/movStick")
+var pacific = true
+#func _ready():
 
-func _ready():
-	anim = get_node("mesh/AnimationPlayer")
-	cam = get_node("target/Camera")
 
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		if event.relative.x > 0:
-			rotate_y(-lerp(0, spin, event.relative.x/10))
-		elif event.relative.x < 0:
-			rotate_y(-lerp(0, spin, event.relative.x/10))
+	if event is InputEventScreenTouch and event.is_pressed():
+		stick.position = event.position
+		stick.show()
+	if(event is InputEventScreenTouch and not event.is_pressed()):
+		stick.hide()
+		dir  = Vector2(0,0)
+	if(event is InputEventScreenDrag):
+		dir = stick.position - event.position
 
-func get_input():
+func get_input(delta):
 	var vy = velocity.y
 	velocity = Vector3()
-	if Input.is_action_pressed("giu"):
-		velocity += -transform.basis.z * speed
-	if Input.is_action_pressed("su"):
-		velocity += transform.basis.z * speed
-	if Input.is_action_pressed("sinistra"):
-		velocity += transform.basis.x * speed
-	if Input.is_action_pressed("destra"):
-		velocity += -transform.basis.x * speed
+	dir = dir.normalized()
+	dir = dir * speed*25 * delta
+	velocity.x += dir.x
+	velocity.z += dir.y
 	velocity.y = vy
-	jump = false
-	if Input.is_action_just_pressed("jump"):
-		jump = true
+
+
 
 func _physics_process(delta):
-	velocity += gravity * delta
-	get_input()
-	velocity = move_and_slide(velocity, Vector3.UP,true,4,0.5)
-	if (is_on_floor() or is_on_wall()):
-		if jump:
-			velocity.y = jump_speed
-			anim.play("sword and shield jump 2-loop")
-			anim.advance(0.2)
-		elif is_moving():
-			anim.play("sword and shield run-loop")
-		else:
-			anim.play("sword and shield idle-loop")
+	velocity += gravity *delta
+	get_input(delta)
+	velocity = move_and_slide(velocity, Vector3.UP,true,4,0.3)
+	if is_moving():
+		anim.play("sword and shield run-loop")
+		var angle = atan2(dir.x,dir.y)
+		var char_rot = rotable.get_rotation()
+		char_rot.y = angle
+		rotable.set_rotation(char_rot)
+	else:
+		anim.play("sword and shield idle-loop")
 
 func is_moving():
-	return velocity.x != 0 and velocity.z!=0
+	return abs(velocity.x) > 0.1 and abs(velocity.z) > 0.1
 
 
+
+
+func _on_attacco_pressed():
+	attacca(attacco)
+	pass # Replace with function body.
