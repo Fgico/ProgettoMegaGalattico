@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Oggetti/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entita/testInteractable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entita/Nemici/KinematicBody.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape" id=1]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
@@ -26,6 +27,9 @@ transform = Transform( 1, 0, 0, 0, 0.947417, 0.320001, 0, -0.320001, 0.947417, 0
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.20106, 0 )
+speed = 150
 
 [node name="testInteractable" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 4 )
+
+[node name="KinematicBody" parent="." instance=ExtResource( 3 )]

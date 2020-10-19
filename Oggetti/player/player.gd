@@ -1,11 +1,8 @@
 extends Combattente
 var gravity = Vector3.DOWN * 18  # strength of gravity
 
-export var speed = 10000  # movement speed
-
-
-var spin = 0.1  # rotation speed
-
+export var speed = 100  # movement speed
+var scattando = 1
 
 var velocity = Vector3()
 var jump = false
@@ -21,29 +18,47 @@ var pacific = true
 
 
 
-func _unhandled_input(event):
-	if event is InputEventScreenTouch and event.is_pressed():
-		stick.position = event.position
-		stick.show()
-	if(event is InputEventScreenTouch and not event.is_pressed()):
-		stick.hide()
-		dir  = Vector2(0,0)
-	if(event is InputEventScreenDrag):
-		dir = stick.position - event.position
+#func _unhandled_input(event):
+#	if event is InputEventScreenTouch and event.is_pressed():
+#		stick.position = event.position
+#		stick.show()
+#	if(event is InputEventScreenTouch and not event.is_pressed()):
+#		stick.hide()
+#		dir  = Vector2(0,0)
+#	if(event is InputEventScreenDrag):
+#		dir = stick.position - event.position
 
+func input_pc():
+	dir = Vector2(0,0)
+	if( Input.is_action_pressed("sinistra")):
+		dir.x+= 1
+	elif(Input.is_action_pressed("destra")):
+		dir.x += -1
+	if(Input.is_action_pressed("su")):
+		dir.y += 1
+	elif(Input.is_action_pressed("giu")):
+		dir.y += -1
+	if(Input.is_action_just_pressed("attacco")):
+		attacca(attacco)
+	if (Input.is_action_just_pressed("scatta") and scattando <= 1):
+		scattando = 5
+	
 func get_input(delta):
 	var vy = velocity.y
 	velocity = Vector3()
 	dir = dir.normalized()
-	dir = dir * speed*25 * delta
+	dir = dir * speed *scattando * delta
 	velocity.x += dir.x
 	velocity.z += dir.y
 	velocity.y = vy
 
-
-
 func _physics_process(delta):
+	if(scattando<=1):
+		scattando = 1
+	else:
+		scattando -= delta *10
 	velocity += gravity *delta
+	input_pc()
 	get_input(delta)
 	velocity = move_and_slide(velocity, Vector3.UP,true,4,0.3)
 	if is_moving():
@@ -56,7 +71,7 @@ func _physics_process(delta):
 		anim.play("sword and shield idle-loop")
 
 func is_moving():
-	return abs(velocity.x) > 0.1 and abs(velocity.z) > 0.1
+	return abs(velocity.x) > 0.1 or abs(velocity.z) > 0.1
 
 
 
