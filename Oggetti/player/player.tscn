@@ -28,7 +28,7 @@ corner_radius_bottom_left = 30
 
 [node name="player" type="KinematicBody"]
 script = ExtResource( 2 )
-speed = 10
+speed = 200
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.0136916, 0 )
