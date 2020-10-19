@@ -3,14 +3,18 @@ extends KinematicBody
 class_name  Combattente
 
 var stats = {
-	"hp" : 100,
-	"mp" : 100,
+	"maxhp" : 100,
+	"maxmp" : 100,
 	"atk" : 1,
 	"def" : 1,
 	"spd" : 200
 }
+var hp = stats.maxhp
+var mp = stats.maxmp
+var knownAttacks =[null, null, null, null]
 
 var element
+
 onready var spawnAtk = get_node("rotable/spawnAtk") 
 
 func _init(natk = 1, ndef = 1, nhp = 100, nmp = 100, nspd = 200):
@@ -20,6 +24,7 @@ func _init(natk = 1, ndef = 1, nhp = 100, nmp = 100, nspd = 200):
 	stats.mp = nmp
 	stats.spd = nspd
 
+#prende un attacco e ne crea una nuova istanza davanti al giocatore
 func attacca(attacco):
 	var attacked = attacco.instance()
 	get_parent().add_child(attacked)

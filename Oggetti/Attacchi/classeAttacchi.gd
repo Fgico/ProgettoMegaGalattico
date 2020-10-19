@@ -8,16 +8,9 @@ var element
 var mpCost = 0
 var timeout = 0.5
 
-func _init():
-	print("nato")
-	pass
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var icon = Sprite.new()
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#distrugge l'attacco dopo un po' dalla sua creazione
 func _process(delta):
 	if(timeout<0):
 		self.queue_free()
@@ -25,9 +18,8 @@ func _process(delta):
 		timeout -= delta
 	pass
 
-
+#cosa fare quando attacco colpisce qualcosa
 func hit(body):
 	if(body.is_in_group("enemy")):
 		body.hit(danno,element)
-	print("tocc")
-	pass # Replace with function body.
+	pass 

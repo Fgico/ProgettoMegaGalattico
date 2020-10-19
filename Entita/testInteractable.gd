@@ -17,4 +17,4 @@ func _ready():
 #	pass
 
 func hit(danno,element):
-	print("e")
+	pass

@@ -13,8 +13,14 @@ onready var rotable = get_node("rotable")
 onready var anim = get_node("rotable/mesh/AnimationPlayer")
 onready var cam = get_node("target/Camera")
 onready var stick = get_node("target/Camera/UI/movStick")
+onready var scattoTimer = get_node("Timer/scatto")
+onready var healthBar = get_node("target/Camera/UI/healthBar")
+onready var mpBar = get_node("target/Camera/UI/mpBar")
+
 var pacific = true
-#func _ready():
+
+func _ready():
+	scattoTimer.set_paused(true)
 
 
 
@@ -40,8 +46,9 @@ func input_pc():
 		dir.y += -1
 	if(Input.is_action_just_pressed("attacco")):
 		attacca(attacco)
-	if (Input.is_action_just_pressed("scatta") and scattando <= 1):
+	if (Input.is_action_just_pressed("scatta") and scattoTimer.is_stopped()):
 		scattando = 5
+		scattoTimer.start()
 	
 func get_input(delta):
 	var vy = velocity.y
@@ -73,9 +80,27 @@ func _physics_process(delta):
 func is_moving():
 	return abs(velocity.x) > 0.1 or abs(velocity.z) > 0.1
 
-
-
+func hit(danno, elemento):
+	.hit(danno, elemento)
+	healthBar.value = (stats.maxhp /hp) * 100
 
 func _on_attacco_pressed():
 	attacca(attacco)
+	mpBar.value = (stats.maxmp / mp) *100
+	pass # Replace with function body.
+
+
+func _on_special_pressed():
+	pass # Replace with function body.
+
+
+func _on_scatto_pressed():
+	if (scattando <= 1 and scattoTimer.is_stopped()):
+		scattando = 4;
+		scattoTimer.start()
+	pass # Replace with function body.
+
+
+func _on_scatto_timeout():
+	scattoTimer.stop()
 	pass # Replace with function body.

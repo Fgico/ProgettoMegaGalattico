@@ -14,7 +14,7 @@ func _process(delta):
 	var partenza = nav.get_closest_point(self.global_transform.origin)
 	path = nav.get_simple_path(partenza, arrivo)
 	direzione = path[1] - path[0]
-	direzione = direzione.normalized() * stats.spd * delta * 0.3
+	direzione = direzione.normalized() * stats.spd * delta * 0.5
 	move_and_slide(direzione)
 	
 	

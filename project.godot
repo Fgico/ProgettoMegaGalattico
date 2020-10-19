@@ -28,10 +28,6 @@ _global_script_class_icons={
 
 config/name="Rogue"
 
-[display]
-
-window/vsync/use_vsync=false
-
 [editor_plugins]
 
 enabled=PoolStringArray(  )
