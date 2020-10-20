@@ -20,7 +20,7 @@ onready var mpBar = get_node("target/Camera/UI/mpBar")
 var pacific = true
 
 func _ready():
-	scattoTimer.set_paused(true)
+	scattoTimer.stop()
 
 
 
@@ -103,4 +103,18 @@ func _on_scatto_pressed():
 
 func _on_scatto_timeout():
 	scattoTimer.stop()
+	pass # Replace with function body.
+
+
+func _on_Pause_pressed():
+	get_tree().paused = true
+	get_node("target/Camera/UI/Pause").hide()
+	get_node("target/Camera/UI/PauseMenu").show()
+	pass # Replace with function body.
+
+
+func _on_Resume_pressed():
+	get_tree().paused = false
+	get_node("target/Camera/UI/PauseMenu").hide()
+	get_node("target/Camera/UI/Pause").show()
 	pass # Replace with function body.
