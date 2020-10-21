@@ -47,7 +47,7 @@ func input_pc():
 	if(Input.is_action_just_pressed("attacco")):
 		attacca(attacco)
 	if (Input.is_action_just_pressed("scatta") and scattoTimer.is_stopped()):
-		scattando = 5
+		scattando = 3.5
 		scattoTimer.start()
 	
 func get_input(delta):
@@ -96,7 +96,7 @@ func _on_special_pressed():
 
 func _on_scatto_pressed():
 	if (scattando <= 1 and scattoTimer.is_stopped()):
-		scattando = 4;
+		scattando = 3.5;
 		scattoTimer.start()
 	pass # Replace with function body.
 
