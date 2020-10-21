@@ -7,7 +7,7 @@ var stats = {
 	"maxmp" : 100,
 	"atk" : 1,
 	"def" : 1,
-	"spd" : 200
+	"spd" : 600
 }
 var hp = stats.maxhp
 var mp = stats.maxmp

@@ -1,7 +1,7 @@
 extends Combattente
 var gravity = Vector3.DOWN * 18  # strength of gravity
 
-export var speed = 100  # movement speed
+export var speed = 600  # movement speed
 var scattando = 1
 
 var velocity = Vector3()

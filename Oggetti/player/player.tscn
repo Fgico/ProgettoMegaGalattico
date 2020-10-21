@@ -47,7 +47,6 @@ radius = 40.0
 [node name="player" type="KinematicBody"]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 script = ExtResource( 2 )
-speed = 200
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.0136916, 0 )
