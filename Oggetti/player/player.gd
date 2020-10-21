@@ -12,10 +12,10 @@ var attacco = preload("../Attacchi/interazione.tscn")
 onready var rotable = get_node("rotable")
 onready var anim = get_node("rotable/mesh/AnimationPlayer")
 onready var cam = get_node("target/Camera")
-onready var stick = get_node("target/Camera/UI/movStick")
+onready var stick = get_node("target/Camera/CombatUI/movStick")
 onready var scattoTimer = get_node("Timer/scatto")
-onready var healthBar = get_node("target/Camera/UI/healthBar")
-onready var mpBar = get_node("target/Camera/UI/mpBar")
+onready var healthBar = get_node("target/Camera/CombatUI/healthBar")
+onready var mpBar = get_node("target/Camera/CombatUI/mpBar")
 
 var pacific = true
 
@@ -108,13 +108,13 @@ func _on_scatto_timeout():
 
 func _on_Pause_pressed():
 	get_tree().paused = true
-	get_node("target/Camera/UI/Pause").hide()
-	get_node("target/Camera/UI/PauseMenu").show()
+	get_node("target/Camera/CombatUI/Pause").hide()
+	get_node("target/Camera/CombatUI/PauseMenu").show()
 	pass # Replace with function body.
 
 
 func _on_Resume_pressed():
 	get_tree().paused = false
-	get_node("target/Camera/UI/PauseMenu").hide()
-	get_node("target/Camera/UI/Pause").show()
+	get_node("target/Camera/CombatUI/PauseMenu").hide()
+	get_node("target/Camera/CombatUI/Pause").show()
 	pass # Replace with function body.

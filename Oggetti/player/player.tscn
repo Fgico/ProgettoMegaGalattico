@@ -45,6 +45,7 @@ corner_radius_bottom_left = 20
 radius = 40.0
 
 [node name="player" type="KinematicBody"]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 script = ExtResource( 2 )
 speed = 200
 
