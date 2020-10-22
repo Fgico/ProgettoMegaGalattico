@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "Attacco",
 "language": "GDScript",
-"path": "res://Oggetti/Attacchi/classeAttacchi.gd"
+"path": "res://Entita/Attacchi/classeAttacchi.gd"
 }, {
 "base": "KinematicBody",
 "class": "Combattente",
