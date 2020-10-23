@@ -15,6 +15,7 @@ onready var mpBar = get_node("target/Camera/UI/CombatUI/mpBar")
 onready var screenSize = OS.get_window_size()
 
 func _ready():
+	knownSpecials = [attacco]
 	scattoTimer.stop()
 
 func _input(event):
@@ -42,18 +43,19 @@ func input_pc():
 	setTarget(Vector3(inputDir.x,0,inputDir.y))
 	
 	if Input.is_action_just_pressed("attacco"):
-		attaccaChecked(attacco,true)
+		attaccaChecked(attacco,false)
 	if Input.is_action_just_pressed("scatta"):
 		scatta()
 
 
 func _physics_process(delta):
+	mpBar.value = (float(mp) /stats.maxmp) *100
 	if(scattando<=1):
 		scattando = 1
 	else:
 		scattando -= delta *10
 	scalare = scattando
-#	input_pc()
+	input_pc()
 	._physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -65,7 +67,6 @@ func attaccaChecked(attacco,isSpecial):
 		.attacca(attacco)
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
-			mpBar.value = (float(mp) /stats.maxmp) *100
 		else:
 			anim.play("sword and shield slash-loop")
 			anim.advance(0.5)

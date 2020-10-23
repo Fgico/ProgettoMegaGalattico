@@ -19,6 +19,8 @@ const Dodging = 3
 var hp = stats.maxhp
 var mp = stats.maxmp
 
+var mpRecoveryRate = 3
+
 var attackTimeout
 
 var baseAttack
@@ -46,9 +48,10 @@ func iniziaStats(natk = stats.atk, ndef = stats.def, nhp = stats.maxhp, nmp = st
 
 #prende un attacco e ne crea una nuova istanza davanti al giocatore
 func attacca(attacco):
-	if( mp >= 0 ):			#soluzione temporanea, non si può leggere costomp prima di istanziare l'attacco
-		var attacked = attacco.instance()
-		get_parent().add_child(attacked)
+	var attacked = attacco.instance()
+	get_parent().add_child(attacked)
+	print(attacked.mpCost)
+	if( mp > attacked.mpCost ):			#soluzione temporanea, non si può leggere costomp prima di istanziare l'attacco
 		attacked.global_transform.origin = spawnAtk.global_transform.origin
 		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
 		
@@ -57,6 +60,8 @@ func attacca(attacco):
 		
 		mp -= attacked.mpCost
 		attacked.danno *= stats.atk
+	else:
+		attacked.queue_free()
 
 #cosa accade se colpito
 func hit(danno,element):
@@ -84,6 +89,11 @@ func finalize_direction(delta):
 	velocity.y = vy
 
 func _physics_process(delta):
+	if( mp > stats.maxmp):
+		mp = stats.maxmp
+	else:
+		mp += delta * mpRecoveryRate
+	
 	var vy = velocity.y
 	velocity = Vector3()
 	velocity += gravity * delta

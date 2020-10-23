@@ -44,6 +44,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0703588, 0.213146 )
 [node name="Timer" type="Node" parent="."]
 
 [node name="scatto" type="Timer" parent="Timer"]
-wait_time = 2.0
+wait_time = 1.5
 one_shot = true
 [connection signal="timeout" from="Timer/scatto" to="." method="_on_scatto_timeout"]

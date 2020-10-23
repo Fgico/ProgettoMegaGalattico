@@ -137,6 +137,66 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="spatk1" type="TextureButton" parent="special"]
+visible = false
+anchor_right = 0.086
+anchor_bottom = 0.146
+margin_left = -130.202
+margin_top = 21.8005
+margin_right = 129.298
+margin_bottom = 235.3
+rect_scale = Vector2( 0.7, 0.8 )
+texture_normal = ExtResource( 5 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spatk2" type="TextureButton" parent="special"]
+visible = false
+anchor_right = 0.086
+anchor_bottom = 0.146
+margin_left = 21.5986
+margin_top = -71.9956
+margin_right = 250.099
+margin_bottom = 141.504
+rect_scale = Vector2( 0.8, 0.5 )
+texture_normal = ExtResource( 5 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spatk3" type="TextureButton" parent="special"]
+visible = false
+anchor_right = 0.086
+anchor_bottom = 0.146
+margin_left = 205.187
+margin_top = 21.5985
+margin_right = 433.687
+margin_bottom = 235.099
+rect_scale = Vector2( 0.5, 0.8 )
+texture_normal = ExtResource( 5 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spatk4" type="TextureButton" parent="special"]
+visible = false
+anchor_right = 0.086
+anchor_bottom = 0.146
+margin_left = 28.7983
+margin_top = 194.388
+margin_right = 257.298
+margin_bottom = 407.888
+rect_scale = Vector2( 0.8, 0.5 )
+texture_normal = ExtResource( 5 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="PauseMenu" type="Control" parent="."]
 pause_mode = 2
 visible = false
@@ -204,5 +264,5 @@ __meta__ = {
 [connection signal="button_down" from="pause" to="." method="_on_pause_button_down"]
 [connection signal="button_down" from="attacco" to="." method="_on_attacco_button_down"]
 [connection signal="button_down" from="scatto" to="." method="_on_scatto_button_down"]
-[connection signal="button_down" from="special" to="." method="_on_special_button_down"]
+[connection signal="gui_input" from="special" to="." method="_on_special_gui_input"]
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_Resume_pressed"]
