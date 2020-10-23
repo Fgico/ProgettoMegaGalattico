@@ -1,14 +1,16 @@
 extends Combattente
-var gravity = Vector3.DOWN * 18  # strength of gravity
 
-export var speed = 600  # movement speed
+var gravity = Vector3.DOWN * 18 
+
+var speed = stats.spd  
 var scattando = 1
 
 var velocity = Vector3()
 var jump = false
 var dir = Vector2(0,0)
 
-var attacco = preload("../Attacchi/interazione.tscn")
+#var attacco = preload("../Attacchi/interazione.tscn")
+var attacco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
 onready var rotable = get_node("rotable")
 onready var anim = get_node("rotable/mesh/AnimationPlayer")
 onready var cam = get_node("target/Camera")
@@ -17,22 +19,18 @@ onready var scattoTimer = get_node("Timer/scatto")
 onready var healthBar = get_node("target/Camera/CombatUI/healthBar")
 onready var mpBar = get_node("target/Camera/CombatUI/mpBar")
 
-var pacific = true
-
 func _ready():
 	scattoTimer.stop()
 
-
-
-#func _unhandled_input(event):
-#	if event is InputEventScreenTouch and event.is_pressed():
-#		stick.position = event.position
-#		stick.show()
-#	if(event is InputEventScreenTouch and not event.is_pressed()):
-#		stick.hide()
-#		dir  = Vector2(0,0)
-#	if(event is InputEventScreenDrag):
-#		dir = stick.position - event.position
+func _input(event):
+	if event is InputEventScreenTouch and event.is_pressed():
+		stick.position = event.position
+		stick.show()
+	if(event is InputEventScreenTouch and not event.is_pressed()):
+		stick.hide()
+		dir  = Vector2(0,0)
+	if(event is InputEventScreenDrag):
+		dir = stick.position - event.position
 
 func input_pc():
 	dir = Vector2(0,0)
@@ -50,7 +48,7 @@ func input_pc():
 		scattando = 3.5
 		scattoTimer.start()
 	
-func get_input(delta):
+func finalize_direction(delta):
 	var vy = velocity.y
 	velocity = Vector3()
 	dir = dir.normalized()
@@ -65,8 +63,8 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	velocity += gravity *delta
-	input_pc()
-	get_input(delta)
+	#input_pc()
+	finalize_direction(delta)
 	velocity = move_and_slide(velocity, Vector3.UP,true,4,0.3)
 	if is_moving():
 		anim.play("sword and shield run-loop")
@@ -82,11 +80,11 @@ func is_moving():
 
 func hit(danno, elemento):
 	.hit(danno, elemento)
-	healthBar.value = (stats.maxhp /hp) * 100
+	healthBar.value = (float(hp)/stats.maxhp) * 100
 
 func _on_attacco_pressed():
 	attacca(attacco)
-	mpBar.value = (stats.maxmp / mp) *100
+	mpBar.value = (float(mp) /stats.maxmp) *100
 	pass # Replace with function body.
 
 
