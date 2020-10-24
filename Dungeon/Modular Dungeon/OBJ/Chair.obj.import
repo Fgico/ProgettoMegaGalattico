@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Chair.obj-78c2f84f49946a42ea64ce59a2e3b7cf.mesh"
+
+[deps]
+
+files=[ "res://.import/Chair.obj-78c2f84f49946a42ea64ce59a2e3b7cf.mesh" ]
+
+source_file="res://Modular Dungeon/OBJ/Chair.obj"
+dest_files=[ "res://.import/Chair.obj-78c2f84f49946a42ea64ce59a2e3b7cf.mesh", "res://.import/Chair.obj-78c2f84f49946a42ea64ce59a2e3b7cf.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

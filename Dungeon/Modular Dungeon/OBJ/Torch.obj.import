@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Torch.obj-42e4cedcc7b71f1421e240d006aa003f.mesh"
+
+[deps]
+
+files=[ "res://.import/Torch.obj-42e4cedcc7b71f1421e240d006aa003f.mesh" ]
+
+source_file="res://Modular Dungeon/OBJ/Torch.obj"
+dest_files=[ "res://.import/Torch.obj-42e4cedcc7b71f1421e240d006aa003f.mesh", "res://.import/Torch.obj-42e4cedcc7b71f1421e240d006aa003f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

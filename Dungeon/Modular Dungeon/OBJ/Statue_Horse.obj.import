@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Statue_Horse.obj-972ae8f7ae3c8f48dd858e2c70d4e977.mesh"
+
+[deps]
+
+files=[ "res://.import/Statue_Horse.obj-972ae8f7ae3c8f48dd858e2c70d4e977.mesh" ]
+
+source_file="res://Modular Dungeon/OBJ/Statue_Horse.obj"
+dest_files=[ "res://.import/Statue_Horse.obj-972ae8f7ae3c8f48dd858e2c70d4e977.mesh", "res://.import/Statue_Horse.obj-972ae8f7ae3c8f48dd858e2c70d4e977.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
