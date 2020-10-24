@@ -11,9 +11,7 @@ var danno : int = 0
 var element : int = 0
 
 var mpCost : int = 0
-var timeout : float = 0.5
-
-onready var icon = Sprite.new()
+var timeout : float = 1
 
 func iniziaStats(ndanno,nelement,costo,ntimeout):
 	danno = ndanno
@@ -27,7 +25,6 @@ func _process(delta):
 		self.queue_free()
 	else:
 		timeout -= delta
-	pass
 
 #cosa fare quando attacco colpisce qualcosa
 func hit(body):

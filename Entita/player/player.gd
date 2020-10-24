@@ -3,8 +3,8 @@ extends Combattente
 var scattando = 1
 var inputDir = Vector2()
 
-#var attacco = preload("../Attacchi/interazione.tscn")
-var attacco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
+var attaccoBase = preload("../Attacchi/fisico/SwordSlash.tscn")
+var fuoco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
 onready var anim = get_node("rotable/mesh/AnimationPlayer")
 onready var cam = get_node("target/Camera")
 onready var stick = get_node("target/Camera/UI/CombatUI/movStick")
@@ -15,9 +15,10 @@ onready var mpBar = get_node("target/Camera/UI/CombatUI/mpBar")
 onready var screenSize = OS.get_window_size()
 
 func _ready():
-	knownSpecials = [attacco]
+	knownSpecials = [fuoco]
 	scattoTimer.stop()
 
+#prende input per il movimento dal tocco
 func _input(event):
 	if event is InputEventScreenTouch and event.is_pressed() and event.position.x < screenSize.x/2:
 		stick.position = event.position
@@ -30,6 +31,7 @@ func _input(event):
 		inputDir = stick.position - event.position
 		setTarget(Vector3(inputDir.x,0,inputDir.y))
 
+#input ma dal pc
 func input_pc():
 	inputDir = Vector2(0,0)
 	if( Input.is_action_pressed("sinistra")):
@@ -43,11 +45,12 @@ func input_pc():
 	setTarget(Vector3(inputDir.x,0,inputDir.y))
 	
 	if Input.is_action_just_pressed("attacco"):
-		attaccaChecked(attacco,false)
+		attaccaChecked(attaccoBase,false)
 	if Input.is_action_just_pressed("scatta"):
 		scatta()
 
-
+#aggiorna animazioni, scatto e barra magia e richiama la "farlocca"
+#physics_process della classe madre
 func _physics_process(delta):
 	mpBar.value = (float(mp) /stats.maxmp) *100
 	if(scattando<=1):
@@ -56,12 +59,13 @@ func _physics_process(delta):
 		scattando -= delta *10
 	scalare = scattando
 	input_pc()
-	._physics_process(delta)
+	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
 	elif stato == Idle:
 		anim.play("sword and shield idle-loop")
 
+#piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
 	if (stato != Attacking):
 		.attacca(attacco)
@@ -71,6 +75,8 @@ func attaccaChecked(attacco,isSpecial):
 			anim.play("sword and shield slash-loop")
 			anim.advance(0.5)
 
+#scattando e uno scalare della velocita che diminuisce di 1 al secondo
+#il timer tiene conto di quando poter riscattare
 func scatta():
 	if (scattando <= 1 and scattoTimer.is_stopped()):
 		scattando = 3.5;

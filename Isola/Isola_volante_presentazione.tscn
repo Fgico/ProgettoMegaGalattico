@@ -58,8 +58,8 @@ shape = SubResource( 1 )
 [node name="Torre" parent="Cylinder" index="13" instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.9903, 66.4967, -5.19666 )
 
-[node name="player" parent="Cylinder" index="14" instance=ExtResource( 5 )]
-transform = Transform( 3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, -11.7382, 65.9353, -8.31694 )
-
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="3"]
 transform = Transform( -0.966363, -0.142536, 0.214072, 0, 0.83237, 0.55422, -0.257183, 0.535578, -0.804371, -18.3817, 194.931, -149.351 )
+
+[node name="player" parent="." index="4" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.0718, 0 )

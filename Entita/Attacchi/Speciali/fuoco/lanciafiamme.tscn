@@ -15,4 +15,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.363477, 1.98881 )
 shape = SubResource( 1 )
 
 [node name="RaggioFuoco" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0491372, -0.319227 )
 [connection signal="body_entered" from="." to="." method="_on_Area_body_entered"]

@@ -14,7 +14,7 @@ albedo_texture = ExtResource( 1 )
 _data = [ Vector2( 0.0291777, 0.0511364 ), 0.0, 0.0, 0, 0, Vector2( 0.34748, 0.4125 ), 0.0, 0.0, 0, 0, Vector2( 0.602122, 0.648864 ), 0.0, 0.0, 0, 0 ]
 
 [node name="RaggioFuoco" type="CPUParticles"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0410789, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0410789, -2.21053 )
 material_override = SubResource( 1 )
 cast_shadow = 0
 emitting = false

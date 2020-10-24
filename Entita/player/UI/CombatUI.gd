@@ -4,10 +4,10 @@ onready var player = get_parent().get_parent().get_parent().get_parent()
 onready var pauseMenu = get_node("PauseMenu")
 onready var pause = get_node("pause")
 
-onready var spatk1 = get_node("special/spatk1")
-onready var spatk2 = get_node("special/spatk2")
-onready var spatk3 = get_node("special/spatk3")
-onready var spatk4 = get_node("special/spatk4")
+onready var spatk1 = get_node("gameButtons/special/spatk1")
+onready var spatk2 = get_node("gameButtons/special/spatk2")
+onready var spatk3 = get_node("gameButtons/special/spatk3")
+onready var spatk4 = get_node("gameButtons/special/spatk4")
 
 var spatkPos = null
 
@@ -24,7 +24,7 @@ func _on_pause_button_down():
 	pass # Replace with function body.
 
 func _on_attacco_button_down():
-	player.attaccaChecked(player.attacco,false)
+	player.attaccaChecked(player.attaccoBase,false)
 	pass # Replace with function body.
 
 func _on_scatto_button_down():

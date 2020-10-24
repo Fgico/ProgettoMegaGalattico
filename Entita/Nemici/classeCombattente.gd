@@ -7,14 +7,15 @@ var stats = {
 	"maxmp" : 100,
 	"atk" : 1,
 	"def" : 1,
-	"spd" : 350
+	"spd" : 600
 }
 
+#si nasce in stato Idle
 var stato = 0
 const Idle = 0
 const Moving = 1
 const Attacking = 2
-const Dodging = 3
+const Dodging = 3	#per ora non usato
 
 var hp = stats.maxhp
 var mp = stats.maxmp
@@ -24,9 +25,9 @@ var mpRecoveryRate = 3
 var attackTimeout
 
 var baseAttack
-var knownSpecials = [null, null, null, null]
+var knownSpecials = [] #lista dei quattro attacchi imparati
 
-var element
+var element #ancora non usato del tutto
 
 #variabili per gestire il movimento
 var scalare = 1
@@ -35,9 +36,11 @@ var velocity = Vector3()
 var jump = false
 var targetDir = Vector3()
 
+#necessari per gestire la rotazione della mesh e spawnare l'attacco con la giusta rotazione
 onready var rotable = get_node("rotable")
 onready var spawnAtk = get_node("rotable/spawnAtk") 
 
+#inizializza le stat, stavolta usando i dati nel dizionario di sopra
 func iniziaStats(natk = stats.atk, ndef = stats.def, nhp = stats.maxhp, nmp = stats.maxmp, nspd = stats.spd):
 	stats.atk = natk
 	stats.def = ndef
@@ -50,18 +53,20 @@ func iniziaStats(natk = stats.atk, ndef = stats.def, nhp = stats.maxhp, nmp = st
 func attacca(attacco):
 	var attacked = attacco.instance()
 	get_parent().add_child(attacked)
-	print(attacked.mpCost)
-	if( mp > attacked.mpCost ):			#soluzione temporanea, non si può leggere costomp prima di istanziare l'attacco
+	#soluzione temporanea, non si può leggere costoMp prima di istanziare l'attacco
+	if( mp > attacked.mpCost ):
 		attacked.global_transform.origin = spawnAtk.global_transform.origin
 		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
-		
-		attackTimeout = attacked.timeout
-		stato = Attacking
-		
+		#l attacco copia posizione e rotazione personaggio
+
+		attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
+		stato = Attacking					#aggiorno stato
+
 		mp -= attacked.mpCost
 		attacked.danno *= stats.atk
 	else:
-		attacked.queue_free()
+		attacked.queue_free()				#fix temp: non avevo mp per evocarlo quindi me ne libero
+
 
 #cosa accade se colpito
 func hit(danno,element):
@@ -79,7 +84,7 @@ func setTarget(newtarget : Vector3):
 		if stato != Attacking:
 			stato = Idle
 
-#scalo valori in base a velocità, delta ecc... e li metto in velocità
+#scalo valori in base a velocità, delta ecc... e li metto in velocity
 func finalize_direction(delta):
 	var vy = velocity.y
 	targetDir = targetDir.normalized()
@@ -88,7 +93,11 @@ func finalize_direction(delta):
 	velocity.z += targetDir.z
 	velocity.y = vy
 
-func _physics_process(delta):
+
+#per ora non ha l'under_ score per non confoderla con il physics process di sistema
+#sennò godot invece di sovrascrivere la esegue due volte per ogni nodo che eredita combattente
+#da verificare se anche le altre funzioni sovrascritte hanno effetto simile, ma non pare
+func physics_process(delta):
 	if( mp > stats.maxmp):
 		mp = stats.maxmp
 	else:
