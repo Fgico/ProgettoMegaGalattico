@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entita/player/player.glb" type="PackedScene" id=1]
+[ext_resource path="res://Entita/Equipaggiabili/armi/Sword.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.909804, 0.694118, 0.694118, 1 )
+
+[node name="player" instance=ExtResource( 1 )]
+transform = Transform( 80, 0, 0, 0, 80, 0, 0, 0, 80, 0, 0, 0 )
+
+[node name="Cube" parent="Armature/Skeleton" index="0"]
+material/0 = SubResource( 1 )
+
+[node name="swordAttachment" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
+transform = Transform( 0.148902, -0.375041, 0.91497, 0.818921, -0.471854, -0.326681, 0.554252, 0.797933, 0.236869, -0.00614094, 0.00251071, 0.00228139 )
+bone_name = "right_hand"
+
+[node name="Sword" parent="Armature/Skeleton/swordAttachment" index="0" instance=ExtResource( 2 )]
+transform = Transform( 4.14089e-07, 0.00299998, 1.0793e-05, -0.00023006, 1.0793e-05, -0.00299115, -0.00299117, -4.14817e-07, 0.000230061, 0, 0, 0 )
