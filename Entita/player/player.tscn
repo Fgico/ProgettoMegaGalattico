@@ -1,0 +1,214 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Entita/player/playermesh.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entita/player/player.gd" type="Script" id=2]
+[ext_resource path="res://Entita/player/Controlli assets/genericButton.png" type="Texture" id=3]
+[ext_resource path="res://Entita/player/Label.gd" type="Script" id=4]
+[ext_resource path="res://Entita/player/Controlli assets/specialButton.png" type="Texture" id=5]
+[ext_resource path="res://Entita/player/Controlli assets/scattoButton.png" type="Texture" id=6]
+[ext_resource path="res://Entita/player/Controlli assets/attackButton.png" type="Texture" id=7]
+[ext_resource path="res://Entita/player/Controlli assets/pausa.png" type="Texture" id=8]
+
+
+
+
+
+
+
+
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.0842224
+height = 0.344829
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.196078, 0.498039, 0.196078, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.172549, 0.168627, 0.168627, 1 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.278431, 0.388235, 0.87451, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.815686, 0.815686, 0.815686, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 40.0
+
+[node name="player" type="KinematicBody"]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.0136916, 0 )
+shape = SubResource( 1 )
+
+[node name="target" type="Position3D" parent="."]
+
+[node name="Camera" type="Camera" parent="target"]
+transform = Transform( -1, 1.7053e-13, 3.25841e-07, 2.52789e-07, 0.630974, 0.775804, -2.05597e-07, 0.775804, -0.630974, 0, 2.34482, -1.82394 )
+far = 300.0
+
+[node name="CombatUI" type="Control" parent="target/Camera"]
+margin_right = 1026.0
+margin_bottom = 605.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="attacco" type="TouchScreenButton" parent="target/Camera/CombatUI"]
+position = Vector2( 921.845, 382.754 )
+scale = Vector2( 0.301579, 0.306568 )
+normal = ExtResource( 7 )
+
+[node name="scatto" type="TouchScreenButton" parent="target/Camera/CombatUI"]
+position = Vector2( 812.695, 480.494 )
+scale = Vector2( 0.301579, 0.306568 )
+normal = ExtResource( 6 )
+
+[node name="special" type="TouchScreenButton" parent="target/Camera/CombatUI"]
+position = Vector2( 782, 343.477 )
+scale = Vector2( 0.301579, 0.306568 )
+normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="target/Camera/CombatUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 14.0
+rect_scale = Vector2( 4.01612, 4.629 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="movStick" type="Sprite" parent="target/Camera/CombatUI"]
+visible = false
+position = Vector2( 128.434, 410.276 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="healthBar" type="ProgressBar" parent="target/Camera/CombatUI"]
+margin_left = 30.0
+margin_top = 25.0
+margin_right = 327.0
+margin_bottom = 52.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 100.0
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mpBar" type="ProgressBar" parent="target/Camera/CombatUI"]
+margin_left = 39.0
+margin_top = 44.0
+margin_right = 234.0
+margin_bottom = 64.0
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+value = 100.0
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="TouchScreenButton" parent="target/Camera/CombatUI"]
+pause_mode = 2
+position = Vector2( 946.109, 29.6985 )
+scale = Vector2( 0.7, 0.7 )
+normal = ExtResource( 8 )
+shape = SubResource( 6 )
+
+[node name="PauseMenu" type="Control" parent="target/Camera/CombatUI"]
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -161.0
+margin_top = -153.5
+margin_right = 105.0
+margin_bottom = 86.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="target/Camera/CombatUI/PauseMenu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -50.0
+margin_right = 50.0
+margin_bottom = 50.0
+text = "Resume"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Button" parent="target/Camera/CombatUI/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back2town" type="Button" parent="target/Camera/CombatUI/PauseMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -57.5
+margin_top = -50.0
+margin_right = 57.5
+text = "Go back to town"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rotable" type="Spatial" parent="."]
+
+[node name="mesh" parent="rotable" instance=ExtResource( 1 )]
+transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0 )
+
+[node name="spawnAtk" type="Position3D" parent="rotable"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.302344 )
+
+[node name="Timer" type="Node" parent="."]
+
+[node name="scatto" type="Timer" parent="Timer"]
+wait_time = 2.0
+one_shot = true
+[connection signal="pressed" from="target/Camera/CombatUI/attacco" to="." method="_on_attacco_pressed"]
+[connection signal="pressed" from="target/Camera/CombatUI/scatto" to="." method="_on_scatto_pressed"]
+[connection signal="pressed" from="target/Camera/CombatUI/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="target/Camera/CombatUI/PauseMenu/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="timeout" from="Timer/scatto" to="." method="_on_scatto_timeout"]
