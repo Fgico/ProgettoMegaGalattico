@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 [gd_resource type="SpatialMaterial" format=2]
 
 [resource]
 albedo_color = Color( 0.988235, 0.780392, 0.454902, 1 )
+=======
+[gd_resource type="SpatialMaterial" format=2]
+
+[resource]
+albedo_color = Color( 0.988235, 0.780392, 0.454902, 1 )
+>>>>>>> 4011eef7c8f068c0a8ebfc14a789ac16bf54d998

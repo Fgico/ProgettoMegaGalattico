@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ; Engine configuration file.
 ; It's best edited using the editor UI and not directly,
 ; since the parameters that go here are not all obvious.
@@ -21,3 +22,28 @@ config/icon="res://icon.png"
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+=======
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Dungeon"
+config/icon="res://icon.png"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
+>>>>>>> 4011eef7c8f068c0a8ebfc14a789ac16bf54d998
