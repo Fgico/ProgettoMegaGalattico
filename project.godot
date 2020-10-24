@@ -27,6 +27,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Rogue"
+<<<<<<< HEAD
+=======
+run/main_scene="res://Isola/Isola_volante_presentazione.tscn"
+>>>>>>> main
 
 [editor_plugins]
 

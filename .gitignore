@@ -1,6 +1,6 @@
 *.import
 *.blend1
-
+addons/
 
 # Godot-specific ignores
 .import/
