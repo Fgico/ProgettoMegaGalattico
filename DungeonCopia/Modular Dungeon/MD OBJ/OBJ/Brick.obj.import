@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Brick.obj-49c24ac06a26a8dee12fc9a8f12a4841.mesh"
+
+[deps]
+
+files=[ "res://.import/Brick.obj-49c24ac06a26a8dee12fc9a8f12a4841.mesh" ]
+
+source_file="res://Modular Dungeon/OBJ/Brick.obj"
+dest_files=[ "res://.import/Brick.obj-49c24ac06a26a8dee12fc9a8f12a4841.mesh", "res://.import/Brick.obj-49c24ac06a26a8dee12fc9a8f12a4841.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Column2.obj-be0ded28b4b173cffc363a1a715c548d.mesh"
+
+[deps]
+
+files=[ "res://.import/Column2.obj-be0ded28b4b173cffc363a1a715c548d.mesh" ]
+
+source_file="res://Modular Dungeon/OBJ/Column2.obj"
+dest_files=[ "res://.import/Column2.obj-be0ded28b4b173cffc363a1a715c548d.mesh", "res://.import/Column2.obj-be0ded28b4b173cffc363a1a715c548d.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
