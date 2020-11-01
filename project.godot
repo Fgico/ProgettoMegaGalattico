@@ -14,14 +14,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Entita/Attacchi/classeAttacchi.gd"
 }, {
-"base": "KinematicBody",
+"base": "Moveable",
 "class": "Combattente",
 "language": "GDScript",
-"path": "res://Entita/Nemici/classeCombattente.gd"
+"path": "res://Entita/classiBase/classeCombattente.gd"
+}, {
+"base": "KinematicBody",
+"class": "Moveable",
+"language": "GDScript",
+"path": "res://Entita/classiBase/classeMoveable.gd"
 } ]
 _global_script_class_icons={
 "Attacco": "",
-"Combattente": ""
+"Combattente": "",
+"Moveable": ""
 }
 
 [application]

@@ -26,10 +26,10 @@ func _input(event):
 	if(event is InputEventScreenTouch and not event.is_pressed() and event.position.x < screenSize.x/2):
 		stick.hide()
 		inputDir  = Vector2(0,0)
-		setTarget(Vector3(inputDir.x,0,inputDir.y))
+		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
 	if(event is InputEventScreenDrag):
 		inputDir = stick.position - event.position
-		setTarget(Vector3(inputDir.x,0,inputDir.y))
+		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
 
 #input ma dal pc
 func input_pc():
@@ -42,7 +42,7 @@ func input_pc():
 		inputDir.y += 1
 	elif(Input.is_action_pressed("giu")):
 		inputDir.y += -1
-	setTarget(Vector3(inputDir.x,0,inputDir.y))
+	setTargetDir(Vector3(inputDir.x,0,inputDir.y))
 	
 	if Input.is_action_just_pressed("attacco"):
 		attaccaChecked(attaccoBase,false)
