@@ -6,8 +6,9 @@ class_name Moveable
 #sovrascriverli da stats spd e stats ag per combattente?
 var spd = 600	#velmax
 var curspd = 0
-var accel = 1800		#velore aggiungibile da accel in un secondo
-var friction = 1200 # decelerazione da fermo
+var accel = 4000		#velore aggiungibile da accel in un secondo
+
+var friction = 3000 # decelerazione da fermo
 
 var scalare = 1
 
@@ -38,10 +39,17 @@ func setTargetDir(newtarget : Vector3):
 
 #scalo valori in base a velocità, delta ecc... e li metto in velocity
 func applyDir(delta):
-	curspd = clamp(curspd + accel *delta, 0, spd)
-	hordir.x = targetDir.x
-	hordir.y = targetDir.z
+	#curspd = clamp(curspd + accel *delta, 0, spd)
+	hordir.x = clamp(hordir.x + sign(targetDir.x) * accel * delta,-spd,spd)
+	hordir.y = clamp(hordir.y + sign(targetDir.z) * accel * delta,-spd,spd)
+	hordir = hordir.clamped(600)
+	curspd= hordir.length()
 	
+func guardaVerso(dir : Vector3):
+	var angle = atan2(dir.x,dir.z)
+	var char_rot = rotable.get_rotation()
+	char_rot.y = angle
+	rotable.set_rotation(char_rot)
 
 #per ora non ha l'under_ score per non confoderla con il physics process di sistema
 #sennò godot invece di sovrascrivere la esegue due volte per ogni nodo che eredita combattente
@@ -49,16 +57,16 @@ func applyDir(delta):
 func physics_process(delta):
 	if not is_on_floor():
 		vel += gravity * delta
-	
-	curspd = max(curspd - friction*delta, 0)
-	
+		
 	if stato == Moving:
 		applyDir(delta)
-		var angle = atan2(targetDir.x,targetDir.z)
-		var char_rot = rotable.get_rotation()
-		char_rot.y = angle
-		rotable.set_rotation(char_rot)
-	var dir = hordir *curspd * delta * scalare
+		guardaVerso(targetDir)
+		
+	else:
+		curspd = max (curspd - friction*delta, 0)
+		hordir = hordir.clamped(curspd)
+		
+	var dir = hordir * delta * scalare
 	vel.x = dir.x
 	vel.z = dir.y
 	move_and_slide(vel, Vector3.UP,true,4,0.3)
