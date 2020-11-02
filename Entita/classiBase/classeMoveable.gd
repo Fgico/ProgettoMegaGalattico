@@ -40,8 +40,8 @@ func setTargetDir(newtarget : Vector3):
 #scalo valori in base a velocità, delta ecc... e li metto in velocity
 func applyDir(delta):
 	#curspd = clamp(curspd + accel *delta, 0, spd)
-	hordir.x = clamp(hordir.x + sign(targetDir.x) * accel * delta,-spd,spd)
-	hordir.y = clamp(hordir.y + sign(targetDir.z) * accel * delta,-spd,spd)
+	hordir.x = clamp(hordir.x + targetDir.x * accel * delta,-spd,spd)
+	hordir.y = clamp(hordir.y + targetDir.z * accel * delta,-spd,spd)
 	hordir = hordir.clamped(600)
 	curspd= hordir.length()
 	
@@ -55,16 +55,14 @@ func guardaVerso(dir : Vector3):
 #sennò godot invece di sovrascrivere la esegue due volte per ogni nodo che eredita combattente
 #da verificare se anche le altre funzioni sovrascritte hanno effetto simile, ma non pare
 func physics_process(delta):
+	curspd = max (curspd - friction*delta, 0)
+	hordir = hordir.clamped(curspd)
 	if not is_on_floor():
 		vel += gravity * delta
 		
 	if stato == Moving:
 		applyDir(delta)
 		guardaVerso(targetDir)
-		
-	else:
-		curspd = max (curspd - friction*delta, 0)
-		hordir = hordir.clamped(curspd)
 		
 	var dir = hordir * delta * scalare
 	vel.x = dir.x
