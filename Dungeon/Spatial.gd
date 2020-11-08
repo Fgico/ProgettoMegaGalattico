@@ -17,9 +17,10 @@ func _process(delta):
 func createArray(num, dimensions):
 	var array = []; 
 	
-	for i in dimensions: # array.push([])
+	for i in dimensions: 
+		array.push([])
 		for j in dimensions:  
-		 array[i].push(num)     
+		 array[i].push(num)    
 
 	return array  
 
@@ -51,10 +52,10 @@ func createMap():
 	randomDirection = directions[floor(randi() * directions.length)]
 	while true:
 		randomDirection = directions[floor(randi() * directions.length)]      
-		if ((randomDirection[0] == -lastDirection[0] && 
-		randomDirection[1] == -lastDirection[1]) || 
-		(randomDirection[0] == lastDirection[0] && 
-		randomDirection[1] == lastDirection[1])):
+		if ((randomDirection[0] != -lastDirection[0] && 
+		randomDirection[1] != -lastDirection[1]) || 
+		(randomDirection[0] != lastDirection[0] && 
+		randomDirection[1] != lastDirection[1])):
 			break
 	
 	
