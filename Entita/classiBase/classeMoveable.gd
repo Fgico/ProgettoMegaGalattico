@@ -6,9 +6,9 @@ class_name Moveable
 #sovrascriverli da stats spd e stats ag per combattente?
 var spd = 600	#velmax
 var curspd = 0
-var accel = 4000		#velore aggiungibile da accel in un secondo
+var accel = 3000		#velore aggiungibile da accel in un secondo
 
-var friction = 3000 # decelerazione da fermo
+var friction = 4000 # decelerazione da fermo
 
 var scalare = 1
 

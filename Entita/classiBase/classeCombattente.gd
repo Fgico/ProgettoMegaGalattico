@@ -24,6 +24,13 @@ var attackTimeout
 var baseAttack
 var knownSpecials = [] #lista dei quattro attacchi imparati
 
+#lista di stati possibili
+const Niente = 0
+const Fuoco = 1
+const Ghiaccio = 2
+var debuff = Niente
+var debuffTime = 0
+
 var element #ancora non usato
 
 #necessari per gestire la rotazione della mesh e spawnare l'attacco con la giusta rotazione
@@ -36,16 +43,16 @@ func iniziaStats(natk = stats.atk, ndef = stats.def, nhp = stats.maxhp, nmp = st
 	stats.maxhp = nhp
 	stats.maxmp = nmp
 	stats.spd = nspd
-
+	spd = stats.spd
 
 #prende un attacco e ne crea una nuova istanza davanti al giocatore
 func attacca(attacco):
 	var attacked = attacco.instance()
-	get_parent().add_child(attacked)
+	spawnAtk.add_child(attacked)
 	#soluzione temporanea, non si può leggere costoMp prima di istanziare l'attacco
 	if( mp > attacked.mpCost ):
-		attacked.global_transform.origin = spawnAtk.global_transform.origin
-		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
+#		attacked.global_transform.origin = spawnAtk.global_transform.origin
+#		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
 		#l attacco copia posizione e rotazione personaggio
 
 		attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
@@ -59,7 +66,7 @@ func attacca(attacco):
 
 #cosa accade se colpito
 func hit(danno,element):
-	stats.hp -= danno - stats.def
+	stats.hp = min(danno - stats.def,0)
 
 #per ora non ha l'under_ score per non confoderla con il physics process di sistema
 #sennò godot invece di sovrascrivere la esegue due volte per ogni nodo che eredita combattente
@@ -67,6 +74,23 @@ func hit(danno,element):
 func physics_process(delta):
 	mp = min( mp + mpRecoveryRate* delta, stats.maxmp)
 	
+	#gestione dei debuffs
+	match debuff:
+		Fuoco:
+			hp -= delta
+			debuffTime = max(0, debuffTime-delta)
+			if(debuffTime == 0):
+				debuff = Niente
+		Ghiaccio:
+			spd = stats.spd * 0.8
+			debuffTime = max(0, debuffTime-delta)
+			if(debuffTime == 0):
+				debuff = Niente
+				spd = stats.spd
+		_:
+			pass
+	
+	#se sto attacando finisco l'attacco
 	if stato == Attacking:
 		if(attackTimeout<=0):
 			attackTimeout = 0
@@ -76,5 +100,5 @@ func physics_process(delta):
 				stato = Idle
 		else:
 			attackTimeout -= delta
-			
+	#eseguo la routine di movimento da moveable
 	.physics_process(delta)

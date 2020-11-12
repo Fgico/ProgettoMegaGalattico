@@ -53,12 +53,14 @@ func input_pc():
 #physics_process della classe madre
 func _physics_process(delta):
 	mpBar.value = (float(mp) /stats.maxmp) *100
+	
+	scattando = max( 1 , scattando- delta*10)
 	if(scattando<=1):
 		scattando = 1
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	input_pc()
+	#input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -79,7 +81,7 @@ func attaccaChecked(attacco,isSpecial):
 #il timer tiene conto di quando poter riscattare
 func scatta():
 	if (scattando <= 1 and scattoTimer.is_stopped()):
-		scattando = 3.5;
+		scattando = 4;
 		scattoTimer.start()
 
 func hit(danno, elemento):
