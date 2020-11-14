@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Script/coin.gd" type="Script" id=1]
-[ext_resource path="res://material-coin.material" type="Material" id=2]
+[ext_resource path="res://Modular Dungeon/FBX/material-coin.material" type="Material" id=2]
+[ext_resource path="res://pick-up coin.wav" type="AudioStream" id=3]
+
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "coin"
@@ -66,5 +68,8 @@ wait_time = 0.3
 
 [node name="AnimationCoins" type="AnimationPlayer" parent="."]
 anims/animazioneCoins = SubResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
