@@ -8,3 +8,7 @@ func _ready():
 	
 func _process(delta):
 	animazioni.play("animazioneSbarre")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	get_tree().change_scene("res://Dun2_player.tscn")

@@ -8,3 +8,4 @@ func _ready():
 func _on_SbarreDun_body_entered(body):
 	if body.name == "player":
 		get_tree().change_scene("res://Scene Principali/Passaggio.tscn")
+
