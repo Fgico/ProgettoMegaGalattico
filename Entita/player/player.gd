@@ -5,12 +5,12 @@ var inputDir = Vector2()
 
 var attaccoBase = preload("../Attacchi/fisico/SwordSlash.tscn")
 var fuoco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
-onready var anim = get_node("rotable/mesh/AnimationPlayer")
-onready var cam = get_node("target/Camera")
-onready var stick = get_node("target/Camera/UI/CombatUI/movStick")
-onready var scattoTimer = get_node("Timer/scatto")
-onready var healthBar = get_node("target/Camera/UI/CombatUI/healthBar")
-onready var mpBar = get_node("target/Camera/UI/CombatUI/mpBar")
+onready var anim = $rotable/mesh/AnimationPlayer
+onready var cam = $target/Camera
+onready var stick = $target/Camera/UI/CombatUI/movStick
+onready var scattoTimer = $Timer/scatto
+onready var healthBar = $target/Camera/UI/CombatUI/healthBar
+onready var mpBar = $target/Camera/UI/CombatUI/mpBar
 
 onready var screenSize = OS.get_window_size()
 
@@ -53,6 +53,8 @@ func input_pc():
 #physics_process della classe madre
 func _physics_process(delta):
 	mpBar.value = (float(mp) /stats.maxmp) *100
+	
+	scattando = max( 1 , scattando- delta*10)
 	if(scattando<=1):
 		scattando = 1
 	else:
@@ -79,7 +81,7 @@ func attaccaChecked(attacco,isSpecial):
 #il timer tiene conto di quando poter riscattare
 func scatta():
 	if (scattando <= 1 and scattoTimer.is_stopped()):
-		scattando = 3.5;
+		scattando = 4;
 		scattoTimer.start()
 
 func hit(danno, elemento):

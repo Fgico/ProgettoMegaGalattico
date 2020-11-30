@@ -21,8 +21,18 @@ var mpRecoveryRate = 3
 
 var attackTimeout
 
+var curwpn		#arma equipaggiata
+var curarm		#armatura equipaggiata
+
 var baseAttack
 var knownSpecials = [] #lista dei quattro attacchi imparati
+
+#lista di stati possibili
+const Normal = 0
+const Burnt = 1
+const Freezed = 2
+var debuff = Normal
+var debuffTime = 0
 
 var element #ancora non usato
 
@@ -36,16 +46,17 @@ func iniziaStats(natk = stats.atk, ndef = stats.def, nhp = stats.maxhp, nmp = st
 	stats.maxhp = nhp
 	stats.maxmp = nmp
 	stats.spd = nspd
-
+	spd = stats.spd
 
 #prende un attacco e ne crea una nuova istanza davanti al giocatore
 func attacca(attacco):
 	var attacked = attacco.instance()
-	get_parent().add_child(attacked)
+	spawnAtk.add_child(attacked)
 	#soluzione temporanea, non si può leggere costoMp prima di istanziare l'attacco
+	#si potrebbe fare un attackDB simile a itemDB da cui leggere i dati per fixare
 	if( mp > attacked.mpCost ):
-		attacked.global_transform.origin = spawnAtk.global_transform.origin
-		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
+#		attacked.global_transform.origin = spawnAtk.global_transform.origin
+#		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
 		#l attacco copia posizione e rotazione personaggio
 
 		attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
@@ -58,8 +69,8 @@ func attacca(attacco):
 
 
 #cosa accade se colpito
-func hit(danno,element):
-	stats.hp -= danno - stats.def
+func hit(danno,nelement):
+	stats.hp = min(danno - stats.def, 0)
 
 #per ora non ha l'under_ score per non confoderla con il physics process di sistema
 #sennò godot invece di sovrascrivere la esegue due volte per ogni nodo che eredita combattente
@@ -67,6 +78,26 @@ func hit(danno,element):
 func physics_process(delta):
 	mp = min( mp + mpRecoveryRate* delta, stats.maxmp)
 	
+	#gestione dei debuffs, a ogni frame sottraggo delta, il tempo passato dall'ultimo frame, a debufftime,
+	#se raggiunge 0 è ora di curare il Combattente
+	match debuff:
+		#se bruciato levo vita
+		Burnt:
+			hp -= delta
+			debuffTime = max(0, debuffTime-delta)
+			if(debuffTime == 0):
+				debuff = Normal
+		#se raffredato mi rallento
+		Freezed:
+			spd = stats.spd * 0.8
+			debuffTime = max(0, debuffTime-delta)
+			if(debuffTime == 0):
+				debuff = Normal
+				spd = stats.spd
+		_:
+			pass
+	
+	#se sto attacando finisco l'attacco
 	if stato == Attacking:
 		if(attackTimeout<=0):
 			attackTimeout = 0
@@ -76,5 +107,5 @@ func physics_process(delta):
 				stato = Idle
 		else:
 			attackTimeout -= delta
-			
+	#eseguo la routine di movimento da moveable
 	.physics_process(delta)
