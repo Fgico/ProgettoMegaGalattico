@@ -4,15 +4,16 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/medieval_house_texture.png-e9f3dac3b1ef25a45a07b592641f1398.s3tc.stex"
 path.etc2="res://.import/medieval_house_texture.png-e9f3dac3b1ef25a45a07b592641f1398.etc2.stex"
+path.etc="res://.import/medieval_house_texture.png-e9f3dac3b1ef25a45a07b592641f1398.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Oggetti/Casa_1/medieval_house_texture.png"
-dest_files=[ "res://.import/medieval_house_texture.png-e9f3dac3b1ef25a45a07b592641f1398.s3tc.stex", "res://.import/medieval_house_texture.png-e9f3dac3b1ef25a45a07b592641f1398.etc2.stex" ]
+dest_files=[ "res://.import/medieval_house_texture.png-e9f3dac3b1ef25a45a07b592641f1398.s3tc.stex", "res://.import/medieval_house_texture.png-e9f3dac3b1ef25a45a07b592641f1398.etc2.stex", "res://.import/medieval_house_texture.png-e9f3dac3b1ef25a45a07b592641f1398.etc.stex" ]
 
 [params]
 

@@ -33,7 +33,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Rogue"
-run/main_scene="res://Oggetti/Isola_volante.tscn"
+run/main_scene="res://Isola/ISOLA_VOLANTE/Isola_volante.tscn"
+
+[autoload]
+
+userData="*res://Singletons/userData.gd"
+ItemDb="*res://Singletons/itemDB.gd"
 
 [editor_plugins]
 
