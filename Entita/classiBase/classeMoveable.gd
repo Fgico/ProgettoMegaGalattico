@@ -23,7 +23,7 @@ var jump = false
 var stato = 0
 const Idle = 0
 const Moving = 1
-
+var stunned = 0
 #nodo che contiene nodi interessati alla rotazione, es: mesh instance
 onready var rotable = get_node("rotable")
 
@@ -69,4 +69,5 @@ func physics_process(delta):
 	var dir = hordir * delta * scalare
 	vel.x = dir.x
 	vel.z = dir.y
-	move_and_slide(vel, Vector3.UP,true,10,0.9)
+	if(stunned <1 ):
+		move_and_slide(vel, Vector3.UP,true,10,0.9)

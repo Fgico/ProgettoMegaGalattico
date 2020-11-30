@@ -47,6 +47,7 @@ func iniziaStats(natk = stats.atk, ndef = stats.def, nhp = stats.maxhp, nmp = st
 	stats.maxmp = nmp
 	stats.spd = nspd
 	spd = stats.spd
+	hp = stats.maxhp
 
 #prende un attacco e ne crea una nuova istanza davanti al giocatore
 func attacca(attacco):
@@ -70,8 +71,16 @@ func attacca(attacco):
 
 #cosa accade se colpito
 func hit(danno,nelement):
-	stats.hp = min(danno - stats.def, 0)
+	print(hp)
+	hp = max(hp - danno, 0)
+	if(hp <= 0):
+		muori()
+	print(hp)
+	print(danno)
 
+func muori():
+	pass
+	
 #per ora non ha l'under_ score per non confoderla con il physics process di sistema
 #sennò godot invece di sovrascrivere la esegue due volte per ogni nodo che eredita combattente
 #da verificare se anche le altre funzioni sovrascritte hanno effetto simile, ma non pare
