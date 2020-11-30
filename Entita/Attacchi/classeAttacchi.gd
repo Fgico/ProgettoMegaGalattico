@@ -28,6 +28,6 @@ func _process(delta):
 
 #cosa fare quando attacco colpisce qualcosa
 func hit(body):
-	if(body.is_in_group("enemy")):
+	if(body.is_in_group("enemy") or body.is_in_group("player")):
 		body.hit(danno,element)
 	pass 

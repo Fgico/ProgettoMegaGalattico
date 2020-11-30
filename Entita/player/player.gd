@@ -88,6 +88,10 @@ func hit(danno, elemento):
 	.hit(danno, elemento)
 	healthBar.value = (float(hp)/stats.maxhp) * 100
 
+func muori():
+	rotable.hide()
+	get_tree().paused = true
+
 func _on_scatto_timeout():
 	scattoTimer.stop()
 	pass # Replace with function body.
