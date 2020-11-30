@@ -4,12 +4,12 @@ var attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
 var target = "player"
 
 onready var manager = get_parent()
-onready var anim = get_node("rotable/Skeleton/AnimationPlayer")
+onready var anim = get_node("rotable/Bat2/AnimationPlayer")
+
 var path = null
 
 func _ready():
-	self.iniziaStats(1.5,1,20,1,300)
-	
+	self.iniziaStats(1.5,60,20,1,350)
 
 func _physics_process(delta):
 	stunned -= delta
@@ -23,7 +23,7 @@ func _physics_process(delta):
 		setTargetDir(path[1]-path[0])
 	.physics_process(delta)
 	if stato == Moving:
-		anim.play("SkeletonArmature|Skeleton_Running")
+		anim.play("BatArmature|Bat_Flying")
 
 func hit(danno,nelement):
 	stunned = 2
@@ -36,6 +36,7 @@ func muori():
 
 func _on_Area_body_entered(body):
 	if(body.is_in_group(target)):
+		print("ao")
 		attacca(attacco,target)
-		anim.play("SkeletonArmature|Skeleton_Attack")
-
+		print("ai")
+		anim.play("BatArmature|Bat_Attack2")
