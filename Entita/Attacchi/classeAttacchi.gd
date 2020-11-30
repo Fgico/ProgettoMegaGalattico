@@ -12,6 +12,7 @@ var element : int = 0
 
 var mpCost : int = 0
 var timeout : float = 1
+var target = "enemy"
 
 func iniziaStats(ndanno,nelement,costo,ntimeout):
 	danno = ndanno
@@ -28,6 +29,6 @@ func _process(delta):
 
 #cosa fare quando attacco colpisce qualcosa
 func hit(body):
-	if(body.is_in_group("enemy") or body.is_in_group("player")):
+	if(body.is_in_group(target)):
 		body.hit(danno,element)
 	pass 

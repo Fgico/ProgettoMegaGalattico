@@ -5,6 +5,8 @@ var inputDir = Vector2()
 
 var attaccoBase = preload("../Attacchi/fisico/SwordSlash.tscn")
 var fuoco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
+var target = "enemy"
+
 onready var anim = $rotable/mesh/AnimationPlayer
 onready var cam = $target/Camera
 onready var stick = $target/Camera/UI/CombatUI/movStick
@@ -70,7 +72,7 @@ func _physics_process(delta):
 #piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
 	if (stato != Attacking):
-		.attacca(attacco)
+		.attacca(attacco,target)
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
 		else:

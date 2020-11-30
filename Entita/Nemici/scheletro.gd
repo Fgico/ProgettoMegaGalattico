@@ -1,6 +1,7 @@
 extends Combattente
 
 var attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
+var target = "player"
 
 var state = 0
 
@@ -31,7 +32,7 @@ func muori():
 	self.queue_free()
 
 func _on_Area_body_entered(body):
-	if(body.is_in_group("player")):
-		attacca(attacco)
+	if(body.is_in_group(target)):
+		attacca(attacco,target)
 		anim.play("SkeletonArmature|Skeleton_Attack")
 
