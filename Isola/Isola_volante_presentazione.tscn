@@ -129,3 +129,21 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 48.0492, -3.88041 )
 
 [node name="Combattente3" parent="enemyMaster" index="3" instance=ExtResource( 6 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 48.0492, 6.63842 )
+
+[node name="Combattente4" parent="enemyMaster" index="4" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.1722, 48.0492, 0 )
+
+[node name="Combattente5" parent="enemyMaster" index="5" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.1722, 48.0492, -3.88041 )
+
+[node name="Combattente6" parent="enemyMaster" index="6" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -10.1722, 48.0492, 6.63842 )
+
+[node name="Combattente7" parent="enemyMaster" index="7" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.26323, 48.0492, 0 )
+
+[node name="Combattente8" parent="enemyMaster" index="8" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.26323, 48.0492, -3.88041 )
+
+[node name="Combattente9" parent="enemyMaster" index="9" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.26323, 48.0492, 6.63842 )
