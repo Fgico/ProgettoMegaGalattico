@@ -6,9 +6,9 @@ class_name Moveable
 #sovrascriverli da stats spd e stats ag per combattente?
 var spd = 600	#velmax
 var curspd = 0
-var accel = 3000		#velore aggiungibile da accel in un secondo
+var accel = 4000		#velore aggiungibile da accel in un secondo
 
-var friction = 4000 # decelerazione da fermo
+var friction = 3000 # decelerazione da fermo
 
 var scalare = 1
 
@@ -16,7 +16,7 @@ var targetDir = Vector3()
 var hordir = Vector2(0,0)
 var vel = Vector3()
 
-var gravity = Vector3.DOWN * 300
+var gravity = Vector3.DOWN * 20
 var jump = false
 
 #gestione stati
@@ -59,6 +59,8 @@ func physics_process(delta):
 	hordir = hordir.clamped(curspd)
 	if not is_on_floor():
 		vel += gravity * delta
+	else:
+		vel.y = 0
 		
 	if stato == Moving:
 		applyDir(delta)
@@ -67,4 +69,4 @@ func physics_process(delta):
 	var dir = hordir * delta * scalare
 	vel.x = dir.x
 	vel.z = dir.y
-	move_and_slide(vel, Vector3.UP,true,4,0.3)
+	move_and_slide(vel, Vector3.UP,true,10,0.9)

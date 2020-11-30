@@ -21,14 +21,17 @@ var mpRecoveryRate = 3
 
 var attackTimeout
 
+var curwpn		#arma equipaggiata
+var curarm		#armatura equipaggiata
+
 var baseAttack
 var knownSpecials = [] #lista dei quattro attacchi imparati
 
 #lista di stati possibili
-const Niente = 0
-const Fuoco = 1
-const Ghiaccio = 2
-var debuff = Niente
+const Normal = 0
+const Burnt = 1
+const Freezed = 2
+var debuff = Normal
 var debuffTime = 0
 
 var element #ancora non usato
@@ -50,6 +53,7 @@ func attacca(attacco):
 	var attacked = attacco.instance()
 	spawnAtk.add_child(attacked)
 	#soluzione temporanea, non si può leggere costoMp prima di istanziare l'attacco
+	#si potrebbe fare un attackDB simile a itemDB da cui leggere i dati per fixare
 	if( mp > attacked.mpCost ):
 #		attacked.global_transform.origin = spawnAtk.global_transform.origin
 #		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
@@ -65,8 +69,8 @@ func attacca(attacco):
 
 
 #cosa accade se colpito
-func hit(danno,element):
-	stats.hp = min(danno - stats.def,0)
+func hit(danno,nelement):
+	stats.hp = min(danno - stats.def, 0)
 
 #per ora non ha l'under_ score per non confoderla con il physics process di sistema
 #sennò godot invece di sovrascrivere la esegue due volte per ogni nodo che eredita combattente
@@ -74,18 +78,21 @@ func hit(danno,element):
 func physics_process(delta):
 	mp = min( mp + mpRecoveryRate* delta, stats.maxmp)
 	
-	#gestione dei debuffs
+	#gestione dei debuffs, a ogni frame sottraggo delta, il tempo passato dall'ultimo frame, a debufftime,
+	#se raggiunge 0 è ora di curare il Combattente
 	match debuff:
-		Fuoco:
+		#se bruciato levo vita
+		Burnt:
 			hp -= delta
 			debuffTime = max(0, debuffTime-delta)
 			if(debuffTime == 0):
-				debuff = Niente
-		Ghiaccio:
+				debuff = Normal
+		#se raffredato mi rallento
+		Freezed:
 			spd = stats.spd * 0.8
 			debuffTime = max(0, debuffTime-delta)
 			if(debuffTime == 0):
-				debuff = Niente
+				debuff = Normal
 				spd = stats.spd
 		_:
 			pass

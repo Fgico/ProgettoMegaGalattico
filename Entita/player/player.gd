@@ -5,12 +5,12 @@ var inputDir = Vector2()
 
 var attaccoBase = preload("../Attacchi/fisico/SwordSlash.tscn")
 var fuoco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
-onready var anim = get_node("rotable/mesh/AnimationPlayer")
-onready var cam = get_node("target/Camera")
-onready var stick = get_node("target/Camera/UI/CombatUI/movStick")
-onready var scattoTimer = get_node("Timer/scatto")
-onready var healthBar = get_node("target/Camera/UI/CombatUI/healthBar")
-onready var mpBar = get_node("target/Camera/UI/CombatUI/mpBar")
+onready var anim = $rotable/mesh/AnimationPlayer
+onready var cam = $target/Camera
+onready var stick = $target/Camera/UI/CombatUI/movStick
+onready var scattoTimer = $Timer/scatto
+onready var healthBar = $target/Camera/UI/CombatUI/healthBar
+onready var mpBar = $target/Camera/UI/CombatUI/mpBar
 
 onready var screenSize = OS.get_window_size()
 
@@ -60,7 +60,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	#input_pc()
+	input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
