@@ -15,6 +15,8 @@ func _ready():
 
 func _physics_process(delta):
 	stunned -= delta
+	if(stunned < 1):
+		anim.playback_speed = 1
 	if(manager.player != null):
 		var from = manager.nav.get_closest_point(self.global_transform.origin)
 		var to = manager.nav.get_closest_point(manager.player.global_transform.origin)
@@ -22,9 +24,12 @@ func _physics_process(delta):
 	if(path != null):
 		setTargetDir(path[1]-path[0])
 	.physics_process(delta)
+	if stato == Moving:
+		anim.play("SkeletonArmature|Skeleton_Running")
 
 func hit(danno,nelement):
 	stunned = 2
+	anim.playback_speed = 0
 	.hit(danno,nelement)
 	print(stunned)
 
