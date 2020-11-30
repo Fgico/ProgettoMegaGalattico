@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Trapdoor_open.obj-8b1a7a7b9a66b9d7805c0b4204d8d7ea.mesh"
+
+[deps]
+
+files=[ "res://.import/Trapdoor_open.obj-8b1a7a7b9a66b9d7805c0b4204d8d7ea.mesh" ]
+
+source_file="res://Modular Dungeon/OBJ/Trapdoor_open.obj"
+dest_files=[ "res://.import/Trapdoor_open.obj-8b1a7a7b9a66b9d7805c0b4204d8d7ea.mesh", "res://.import/Trapdoor_open.obj-8b1a7a7b9a66b9d7805c0b4204d8d7ea.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

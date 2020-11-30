@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Stairs_SideCoverWall.obj-97669e1e525dd4f25b30f40021432720.mesh"
+
+[deps]
+
+files=[ "res://.import/Stairs_SideCoverWall.obj-97669e1e525dd4f25b30f40021432720.mesh" ]
+
+source_file="res://Modular Dungeon/OBJ/Stairs_SideCoverWall.obj"
+dest_files=[ "res://.import/Stairs_SideCoverWall.obj-97669e1e525dd4f25b30f40021432720.mesh", "res://.import/Stairs_SideCoverWall.obj-97669e1e525dd4f25b30f40021432720.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
