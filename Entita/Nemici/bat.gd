@@ -8,6 +8,8 @@ onready var anim = get_node("rotable/Bat2/AnimationPlayer")
 
 var path = null
 
+var morto = false
+
 func _ready():
 	self.iniziaStats(1.5,60,20,1,350)
 
@@ -32,7 +34,10 @@ func hit(danno,nelement):
 	print(stunned)
 
 func muori():
-	self.queue_free()
+	morto = true
+	stunned = 0
+	stato = Dead
+	anim.play("DragonArmature|Dragon_Death")
 
 func _on_Area_body_entered(body):
 	if(body.is_in_group(target)):
