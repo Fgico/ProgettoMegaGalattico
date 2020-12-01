@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Entita/Equipaggiabili/armi/assets/Sword.fbx" type="PackedScene" id=1]
-
-[node name="Sword" instance=ExtResource( 1 )]
-transform = Transform( -4.88762e-10, -0.003, -1.31134e-10, 0, -1.31134e-10, 0.003, -0.003, 4.88762e-10, 2.13645e-17, 0, 0, 0 )
