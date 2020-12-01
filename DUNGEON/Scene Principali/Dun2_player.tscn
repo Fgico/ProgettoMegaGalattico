@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://DUNGEON/default_env.tres" type="Environment" id=1]
+[ext_resource path="res://DUNGEON/Scene Principali/Dun2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DUNGEON/Scene Principali/Coins.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DUNGEON/Scene Principali/Item.tscn" type="PackedScene" id=4]
+
+[node name="Dun2_player" type="Spatial"]
+
+[node name="Dun2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+
+[node name="coins1" type="Spatial" parent="."]
+
+[node name="coinsholder1" type="Spatial" parent="coins1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02551, 0.692704, -6.86269 )
+
+[node name="coin" parent="coins1/coinsholder1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.83164 )
+
+[node name="coins8" type="Spatial" parent="."]
+
+[node name="coinsholder8" type="Spatial" parent="coins8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02504, 0.692704, -10.8173 )
+
+[node name="coin" parent="coins8/coinsholder8" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.83164 )
+
+[node name="coins7" type="Spatial" parent="."]
+
+[node name="coinsholder7" type="Spatial" parent="coins7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00063, 0.692704, -6.86269 )
+
+[node name="coin" parent="coins7/coinsholder7" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.83164 )
+
+[node name="coins6" type="Spatial" parent="."]
+
+[node name="coinsholder6" type="Spatial" parent="coins6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00063, 0.692704, -8.84 )
+
+[node name="coin" parent="coins6/coinsholder6" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.83164 )
+
+[node name="coins5" type="Spatial" parent="."]
+
+[node name="coinsholder5" type="Spatial" parent="coins5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00458, 0.692704, -8.85092 )
+
+[node name="coin" parent="coins5/coinsholder5" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.83164 )
+
+[node name="coins4" type="Spatial" parent="."]
+
+[node name="coinsholder4" type="Spatial" parent="coins4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.968094, 0.692704, -10.8182 )
+
+[node name="coin" parent="coins4/coinsholder4" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.83164 )
+
+[node name="coins3" type="Spatial" parent="."]
+
+[node name="coinsholder3" type="Spatial" parent="coins3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.971315, 0.692704, -7.998 )
+
+[node name="coin" parent="coins3/coinsholder3" instance=ExtResource( 3 )]
+
+[node name="coins2" type="Spatial" parent="."]
+
+[node name="coinsholder2" type="Spatial" parent="coins2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00716, 0.692704, -7.97828 )
+
+[node name="coin" parent="coins2/coinsholder2" instance=ExtResource( 3 )]
+
+[node name="items1" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.97172, 0, -4.69378 )
+
+[node name="itemsholder1" type="Spatial" parent="items1"]
+
+[node name="Item" parent="items1/itemsholder1" instance=ExtResource( 4 )]
+transform = Transform( -6.51683e-08, -0.2, -0.34641, 0, 0.34641, -0.2, 0.4, -3.25841e-08, -5.64374e-08, 0.420927, 0.536917, -2.81584 )
+
+[node name="items3" type="Spatial" parent="."]
+
+[node name="itemsholder3" type="Spatial" parent="items3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.69944, 0, -2.76027 )
+
+[node name="Item" parent="items3/itemsholder3" instance=ExtResource( 4 )]
+transform = Transform( -6.51683e-08, -0.2, -0.34641, 0, 0.34641, -0.2, 0.4, -3.25841e-08, -5.64374e-08, 0.420927, 0.536917, -2.81584 )
+
+[node name="items2" type="Spatial" parent="."]
+
+[node name="itemsholder2" type="Spatial" parent="items2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.66266, 0, -4.17629 )
+
+[node name="Item" parent="items2/itemsholder2" instance=ExtResource( 4 )]
+transform = Transform( -6.51683e-08, -0.2, -0.34641, 0, 0.34641, -0.2, 0.4, -3.25841e-08, -5.64374e-08, 0.420927, 0.536917, -2.81584 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 1 )
