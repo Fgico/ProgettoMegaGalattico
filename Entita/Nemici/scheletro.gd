@@ -14,7 +14,6 @@ func _ready():
 	
 
 func _physics_process(delta):
-	if( not morto):
 		stunned -= delta
 		if(stunned < 1):
 			anim.playback_speed = 1
@@ -25,17 +24,20 @@ func _physics_process(delta):
 		if(path != null):
 			setTargetDir(path[1]-path[0])
 		.physics_process(delta)
-		if stato == Moving:
+		if (stato == Moving ):
 			anim.play("SkeletonArmature|Skeleton_Running")
 
 func hit(danno,nelement):
-	stunned = 2
-	anim.playback_speed = 0
-	.hit(danno,nelement)
-	print(stunned)
+	if(not morto):
+		stunned = 2
+		anim.playback_speed = 0
+		.hit(danno,nelement)
+
 
 func muori():
 	morto = true
+	stunned = 0
+	stato = Dead
 	anim.play("SkeletonArmature|Skeleton_Death")
 
 func _on_Area_body_entered(body):
