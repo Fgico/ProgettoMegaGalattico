@@ -91,9 +91,10 @@ func hit(danno, elemento):
 	healthBar.value = (float(hp)/stats.maxhp) * 100
 
 func muori():
-	rotable.hide()
-	get_tree().paused = true
-
+	if(stato != Dead):
+		anim.play("sword and shield death-loop")
+		anim.get_animation("sword and shield death-loop").loop = false
+	stato = Dead
 func _on_scatto_timeout():
 	scattoTimer.stop()
 	pass # Replace with function body.
