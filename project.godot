@@ -14,19 +14,37 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Entita/Attacchi/classeAttacchi.gd"
 }, {
-"base": "KinematicBody",
+"base": "Moveable",
 "class": "Combattente",
 "language": "GDScript",
-"path": "res://Entita/Nemici/classeCombattente.gd"
+"path": "res://Entita/classiBase/classeCombattente.gd"
+}, {
+"base": "TouchScreenButton",
+"class": "EquipableButton",
+"language": "GDScript",
+"path": "res://Interfacce Utente/Inventario/bottoni armi/classeEquipaggiabileUI.gd"
+}, {
+"base": "KinematicBody",
+"class": "Moveable",
+"language": "GDScript",
+"path": "res://Entita/classiBase/classeMoveable.gd"
 } ]
 _global_script_class_icons={
 "Attacco": "",
-"Combattente": ""
+"Combattente": "",
+"EquipableButton": "",
+"Moveable": ""
 }
 
 [application]
 
 config/name="Rogue"
+run/main_scene="res://Isola/Isola_volante_presentazione.tscn"
+
+[autoload]
+
+userData="*res://Singletons/userData.gd"
+ItemDb="*res://Singletons/itemDB.gd"
 
 [editor_plugins]
 

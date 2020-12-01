@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Oggetti/Decorativi_file_importati/Torre/scale_aggiuntiveee.glb" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.62065, 3.12004, 1 )
+
+[node name="scale_aggiuntiveee" instance=ExtResource( 1 )]
+
+[node name="StaticBody" type="StaticBody" parent="Cube157" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube157/StaticBody" index="0"]
+transform = Transform( 0.416645, -0.831651, 0, 0.993692, 0.416646, 0, 0, 0, 1, 2.4311, -0.485942, 0 )
+shape = SubResource( 1 )
