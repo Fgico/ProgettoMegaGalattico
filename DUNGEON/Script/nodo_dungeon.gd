@@ -1,16 +1,18 @@
 extends Spatial
 
-var pianoAttuale = 0
-var piani = []
+onready var pianoAttuale = get_node("Dun1_player")
+onready var player = get_node("player")
 
 func cambioPiano(nuovoLivello):
-	pianoAttuale += 1 #pianoAttuale è un contatore
 	var newPiano = load(nuovoLivello)
-	get_node("Dun1_player").queue_free()
+	pianoAttuale.queue_free()
 	var pianoCreato = newPiano.instance() #creo il nuovo piano
 	self.add_child(pianoCreato)
+	pianoAttuale = pianoCreato
 	get_node("player/target/Camera").current = true
-	
+	if( pianoAttuale.get_node("startPos") != null):
+		var startPos = pianoAttuale.get_node("startPos")
+		player.global_transform.origin = startPos.global_transform.origin
 	#mostra comandi UI
-	get_node("player").UI.show()
+	player.UI.show()
 
