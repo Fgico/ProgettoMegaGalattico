@@ -76,7 +76,7 @@ func _physics_process(delta):
 
 #piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
-	if (stato != Attacking):
+	if (stato != Attacking and stato != Dead):
 		.attacca(attacco,target)
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
