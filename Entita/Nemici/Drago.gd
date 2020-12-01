@@ -29,10 +29,11 @@ func _physics_process(delta):
 		anim.play("DragonArmature|Dragon_Flying")
 
 func hit(danno,nelement):
-	stunned = 2
-	anim.playback_speed = 0
-	.hit(danno,nelement)
-	print(stunned)
+	if(not morto):
+		stunned = 2
+		anim.playback_speed = 0
+		.hit(danno,nelement)
+
 
 func muori():
 	morto = true
