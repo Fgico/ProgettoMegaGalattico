@@ -22,7 +22,8 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89013, -5.56085 )
 
 [node name="Camera" type="Camera" parent="target"]
-transform = Transform( -1, 1.7053e-13, 3.25841e-07, 2.52789e-07, 0.630974, 0.775804, -2.05597e-07, 0.775804, -0.630974, 0, 2.34482, -1.82394 )
+transform = Transform( -1, 2.91322e-13, 3.25841e-07, 1.2587e-07, 0.922377, 0.386292, -3.00548e-07, 0.386292, -0.922377, 0, 0.616494, -4.0288 )
+fov = 61.286
 far = 300.0
 
 [node name="UI" type="Control" parent="target/Camera"]

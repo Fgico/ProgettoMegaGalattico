@@ -4,7 +4,6 @@
 [ext_resource path="res://DUNGEON/Scene Principali/Coins.tscn" type="PackedScene" id=3]
 [ext_resource path="res://DUNGEON/Scene Principali/Item.tscn" type="PackedScene" id=4]
 
-
 [node name="Dun1_player" type="Spatial"]
 
 [node name="Dun1" parent="." instance=ExtResource( 1 )]
