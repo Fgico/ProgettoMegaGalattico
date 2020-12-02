@@ -10,6 +10,8 @@ func cambioPiano(nuovoLivello):
 	self.add_child(pianoCreato)
 	pianoAttuale = pianoCreato
 	get_node("player/target/Camera").current = true
+	
+	#aggiorno posizione player per ogni dungeon
 	if( pianoAttuale.get_node("startPos") != null):
 		var startPos = pianoAttuale.get_node("startPos")
 		player.global_transform.origin = startPos.global_transform.origin
