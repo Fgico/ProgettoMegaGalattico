@@ -42,6 +42,7 @@ func muori():
 	anim.play("DragonArmature|Dragon_Death")
 
 func _on_Area_body_entered(body):
-	if(body.is_in_group(target)):
-		attacca(attacco,target)
-		anim.play("DragonArmature|Dragon_Attack2")
+	if(not morto):
+		if(body.is_in_group(target)):
+			attacca(attacco,target)
+			anim.play("DragonArmature|Dragon_Attack2")

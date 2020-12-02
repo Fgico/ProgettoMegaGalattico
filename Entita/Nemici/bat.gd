@@ -38,11 +38,12 @@ func muori():
 	morto = true
 	stunned = 0
 	stato = Dead
-	anim.play("DragonArmature|Dragon_Death")
+	anim.play("BatArmature|Bat_Death")
 
 func _on_Area_body_entered(body):
-	if(body.is_in_group(target)):
-		print("ao")
-		attacca(attacco,target)
-		print("ai")
-		anim.play("BatArmature|Bat_Attack2")
+	if(not morto):
+		if(body.is_in_group(target)):
+			print("ao")
+			attacca(attacco,target)
+			print("ai")
+			anim.play("BatArmature|Bat_Attack2")
