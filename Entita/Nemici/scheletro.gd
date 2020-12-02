@@ -21,12 +21,10 @@ func _physics_process(delta):
 			var from = manager.nav.get_closest_point(self.global_transform.origin)
 			var to = manager.nav.get_closest_point(manager.player.global_transform.origin)
 			path = manager.nav.get_simple_path(from,to)
-			print(from, to)
 		if(path != null and path.size()>1):
 			setTargetDir((path[1]-path[0]))
 		else:
 			setTargetDir(Vector3(0,0,0))
-		print(manager.player.name, path)
 		.physics_process(delta)
 		if (stato == Moving ):
 			anim.play("SkeletonArmature|Skeleton_Running")
