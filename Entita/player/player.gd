@@ -13,12 +13,13 @@ onready var stick = $target/Camera/UI/CombatUI/movStick
 onready var scattoTimer = $Timer/scatto
 onready var healthBar = $target/Camera/UI/CombatUI/healthBar
 onready var mpBar = $target/Camera/UI/CombatUI/mpBar
-
 onready var screenSize = OS.get_window_size()
+
 
 func _ready():
 	knownSpecials = [fuoco]
 	scattoTimer.stop()
+
 
 #prende input per il movimento dal tocco
 func _input(event):
@@ -97,4 +98,7 @@ func muori():
 func _on_scatto_timeout():
 	scattoTimer.stop()
 	pass # Replace with function body.
+
+
+
 

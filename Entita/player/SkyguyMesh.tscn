@@ -21,6 +21,3 @@ bone_name = "spine_1"
 
 [node name="ArmorSlot" type="Spatial" parent="Armature/Skeleton/WaistBone" index="0"]
 transform = Transform( 1.10613, 4.77049e-18, -3.46945e-18, 0, 1.25105, 0, 3.46945e-18, 0, 1.20002, 46.1119, -168.646, 63.2078 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Armature/Skeleton/WaistBone/ArmorSlot" index="0"]
-transform = Transform( 1, 7.6625e-12, -2.01921e-12, -5.03093e-12, 0.955196, -0.283902, -2.81945e-12, 0.308561, 0.955196, 103.047, 9.79572, -159.801 )
