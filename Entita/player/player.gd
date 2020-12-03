@@ -112,10 +112,12 @@ func convertStringa():
 #CONTATORE MONETE
 func collectCoin():
 	coins = coins + 1
+	userData.coins +=1
 	convertStringa()
 
 #CONTATORE OGGETTI
 func collectItem():
+	userData.coins +=1
 	items = items + 1
 	convertStringa()
 	

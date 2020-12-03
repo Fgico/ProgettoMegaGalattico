@@ -22,12 +22,16 @@ var equipped = {
 	"spAtk4" : null,
 }
 
+var numCoin = 0
+var numItem = 0
+
 var cityStatus = {
 	"smith" : 1,
 	"wizard" : 1
 }
 
 var inventory = {
+	
 	
 }
 
