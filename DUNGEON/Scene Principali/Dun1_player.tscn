@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://DUNGEON/Scene Principali/Dun1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DunTest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://DUNGEON/Scene Principali/Coins.tscn" type="PackedScene" id=3]
 [ext_resource path="res://DUNGEON/Scene Principali/Item.tscn" type="PackedScene" id=4]
 
@@ -116,3 +117,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.69364, 0, 8.72713 )
 
 [node name="Item" parent="items/item3/itemholder3" instance=ExtResource( 4 )]
 transform = Transform( -6.51683e-08, -0.2, -0.34641, 0, 0.34641, -0.2, 0.4, -3.25841e-08, -5.64374e-08, 2.43218, 0.48917, -5.88319 )
+
+[node name="DunTest" parent="." instance=ExtResource( 2 )]

@@ -8,13 +8,13 @@
 [node name="nodo_dungeon" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Dun1_player" parent="." instance=ExtResource( 2 )]
-
 [node name="player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.57147, 1.39677, -21.0589 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85848, 4.69957, -38.1211 )
 
 [node name="Position3D" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17898, 0, -19.2471 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
+
+[node name="Dun1_player" parent="." instance=ExtResource( 2 )]
