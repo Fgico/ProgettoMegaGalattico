@@ -3,7 +3,6 @@
 [ext_resource path="res://DUNGEON/Nuovi assets/dungeon_collection_2/Dungeon Set 2/trap_floor_saw.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://DUNGEON/Script/Trappola.gd" type="Script" id=2]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.65098, 0.65098, 0.65098, 1 )
 
@@ -38,15 +37,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 0, 1, 0 ), Vector3( 1.8, 1, 0 ), Vector3( 3.8, 1, 0 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionShape:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.5, 0.7, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.00423098, 0.874715, 0 ), Vector3( 0.444758, 0.874715, 0 ), Vector3( 1.20423, 0.874715, 0 ), Vector3( 1.80813, 1.06648, 0 ), Vector3( 2.46431, 1.04091, 0 ), Vector3( 3.35951, 1.01535, 0 ), Vector3( 3.78512, 1.00256, 0 ) ]
+}
 
 [sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.54721, 0.502702, 0.0374745 )
 
 [node name="Trappola" type="Area"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Trappola" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( -0.418017, 0.908439, 0, -0.908439, -0.418017, 0, 0, 0, 1, 2.52545, 1, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
 __meta__ = {
@@ -62,6 +76,6 @@ shape = SubResource( 2 )
 anims/animazioneTrappola = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.16894, 1.09938, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40317, 1.0433, 0 )
 shape = SubResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_Trappola_body_entered"]

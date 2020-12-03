@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://DUNGEON/Nuovi assets/dungeon_collection_2/Dungeon Set 2/struct_block_normal.obj" type="ArrayMesh" id=1]
 
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.510513, 0.507697, 0.499323 )
 
-[sub_resource type="ConcavePolygonShape" id=3]
-data = PoolVector3Array( 0.5, 1, -0.5, -0.5, 1, -0.5, -0.5, 0, -0.5, 0.5, 0, -0.5, 0.5, 1, -0.5, -0.5, 0, -0.5, -0.5, 1, 0.5, -0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 1, 0.5, -0.5, 1, -0.5, 0.5, 1, -0.5, -0.5, 1, 0.5, 0.5, 1, 0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 1, 0.5, 0.5, 0, 0.5, -0.5, 1, -0.5, -0.5, 1, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, -0.5, 1, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 1, 0.5, 0.5, 1, -0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 1, 0.5, 0.5, 0, -0.5 )
+[sub_resource type="NavigationMesh" id=2]
 
 [node name="Spatial" type="Spatial"]
 
@@ -16,4 +17,8 @@ material/0 = null
 [node name="StaticBody" type="StaticBody" parent="Blocco"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Blocco/StaticBody"]
-shape = SubResource( 3 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+shape = SubResource( 4 )
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Blocco"]
+navmesh = SubResource( 2 )
