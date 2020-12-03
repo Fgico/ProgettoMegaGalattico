@@ -1,5 +1,7 @@
 extends Node
 
+var savePath = "user://DangerousSkies.save"
+
 #struttura di appoggio inizializzata per memorizzare
 #l'id dell'oggetto e il loro livello,inutile salvarla
 var equipabble = {
@@ -10,7 +12,7 @@ var equipabble = {
 
 var userInfo = {
 	"name" : "",
-	"pass" : ""
+	"password" : ""
 }
 
 var equipped = {
@@ -35,3 +37,23 @@ var inventory = {
 	
 }
 
+
+func saveToFile():
+	var saveFile = File.new()
+	saveFile.open(savePath,File.WRITE)
+	saveFile.store_line(to_json(userInfo))
+	saveFile.store_line(to_json(equipped))
+	saveFile.store_line(to_json(numCoin))
+	saveFile.store_line(to_json(numItem))
+	saveFile.store_line(to_json(cityStatus))
+	saveFile.close()
+
+func loadFromFIle():
+	var loadFile = File.new()
+	if not loadFile.file_exists(savePath):
+		return
+	loadFile.open(savePath, File.READ)
+	var data = parse_json(loadFile.get_line())
+	userInfo.name = data.name
+	userInfo.password =data.password
+	
