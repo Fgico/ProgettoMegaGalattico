@@ -1,9 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Oggetti/Decorativi/Casa_1/medieval_house_texture.png" type="Texture" id=1]
-[ext_resource path="res://Oggetti/Decorativi/Casa_1/Casa_1.glb" type="PackedScene" id=2]
-
-
+[ext_resource path="res://Oggetti/Casa_1/medieval_house_texture.png" type="Texture" id=1]
+[ext_resource path="res://Oggetti/Casa_1/Casa_1.glb" type="PackedScene" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
