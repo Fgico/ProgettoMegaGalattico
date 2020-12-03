@@ -13,7 +13,7 @@ bone_name = "right_hand"
 transform = Transform( -6.49405, 2.18674, 18.7895, 18.6889, 3.81309, 6.0155, -2.92457, 19.511, -3.28151, 1.01459, 9.71051, 1.12958 )
 
 [node name="Sword" parent="Armature/Skeleton/rHandBone/weaponSlot" index="0" instance=ExtResource( 1 )]
-transform = Transform( 1, -4.51109e-10, 0, 9.45874e-10, 1, 0, 6.51926e-09, 0, 1, 0.0570917, 0.102167, 0.00559342 )
+transform = Transform( 130, 3.00686e-20, -9.91822e-06, 0, 130, 3.94114e-13, 9.91822e-06, -3.94114e-13, 130, -0.0296521, 0.187943, -0.0277779 )
 
 [node name="WaistBone" type="BoneAttachment" parent="Armature/Skeleton" index="2"]
 transform = Transform( 1, 8.77841e-13, -2.23985e-11, -2.18238e-12, 0.97093, 0.239363, 1.9992e-11, -0.239363, 0.97093, 0.000266586, 149.927, -3.8787 )

@@ -52,23 +52,24 @@ func iniziaStats(natk = stats.atk, ndef = stats.def, nhp = stats.maxhp, nmp = st
 
 #prende un attacco e ne crea una nuova istanza davanti al giocatore
 func attacca(attacco,target):
-	var attacked = attacco.instance()
-	spawnAtk.add_child(attacked)
-	#soluzione temporanea, non si può leggere costoMp prima di istanziare l'attacco
-	#si potrebbe fare un attackDB simile a itemDB da cui leggere i dati per fixare
-	if( mp > attacked.mpCost ):
-#		attacked.global_transform.origin = spawnAtk.global_transform.origin
-#		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
-		#l attacco copia posizione e rotazione personaggio
+	if(stato != Dead):
+		var attacked = attacco.instance()
+		spawnAtk.add_child(attacked)
+		#soluzione temporanea, non si può leggere costoMp prima di istanziare l'attacco
+		#si potrebbe fare un attackDB simile a itemDB da cui leggere i dati per fixare
+		if( mp > attacked.mpCost ):
+	#		attacked.global_transform.origin = spawnAtk.global_transform.origin
+	#		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
+			#l attacco copia posizione e rotazione personaggio
 
-		attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
-		stato = Attacking					#aggiorno stato
+			attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
+			stato = Attacking					#aggiorno stato
 
-		mp -= attacked.mpCost
-		attacked.danno *= stats.atk
-		attacked.target = target
-	else:
-		attacked.queue_free()				#fix temp: non avevo mp per evocarlo quindi me ne libero
+			mp -= attacked.mpCost
+			attacked.danno *= stats.atk
+			attacked.target = target
+		else:
+			attacked.queue_free()				#fix temp: non avevo mp per evocarlo quindi me ne libero
 
 
 #cosa accade se colpito

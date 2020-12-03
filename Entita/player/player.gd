@@ -3,6 +3,10 @@ extends Combattente
 var scattando = 1
 var inputDir = Vector2()
 
+var coins = 0
+var items = 0
+
+
 var attaccoBase = preload("../Attacchi/fisico/SwordSlash.tscn")
 var fuoco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
 var target = "enemy"
@@ -13,13 +17,13 @@ onready var stick = $target/Camera/UI/CombatUI/movStick
 onready var scattoTimer = $Timer/scatto
 onready var healthBar = $target/Camera/UI/CombatUI/healthBar
 onready var mpBar = $target/Camera/UI/CombatUI/mpBar
-onready var screenSize = OS.get_window_size()
+onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "PASSAGGIO"
 
+onready var screenSize = OS.get_window_size()
 
 func _ready():
 	knownSpecials = [fuoco]
 	scattoTimer.stop()
-
 
 #prende input per il movimento dal tocco
 func _input(event):
@@ -72,7 +76,7 @@ func _physics_process(delta):
 
 #piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
-	if (stato != Attacking):
+	if (stato != Attacking and stato != Dead):
 		.attacca(attacco,target)
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
@@ -92,13 +96,26 @@ func hit(danno, elemento):
 	healthBar.value = (float(hp)/stats.maxhp) * 100
 
 func muori():
-	rotable.hide()
-	get_tree().paused = true
-
+	if(stato != Dead):
+		anim.play("sword and shield death-loop")
+		anim.get_animation("sword and shield death-loop").loop = false
+	stato = Dead
 func _on_scatto_timeout():
 	scattoTimer.stop()
 	pass # Replace with function body.
 
+func convertStringa():
+	$target/Camera/UI/UIcoins_item/counterCoins.text = String(coins)
+	$target/Camera/UI/UIcoins_item/counterItems.text = String(items)
 
 
+#CONTATORE MONETE
+func collectCoin():
+	coins = coins + 1
+	convertStringa()
 
+#CONTATORE OGGETTI
+func collectItem():
+	items = items + 1
+	convertStringa()
+	

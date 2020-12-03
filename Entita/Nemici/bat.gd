@@ -8,6 +8,8 @@ onready var anim = get_node("rotable/Bat2/AnimationPlayer")
 
 var path = null
 
+var morto = false
+
 func _ready():
 	self.iniziaStats(1.5,60,20,1,350)
 
@@ -26,17 +28,22 @@ func _physics_process(delta):
 		anim.play("BatArmature|Bat_Flying")
 
 func hit(danno,nelement):
-	stunned = 2
-	anim.playback_speed = 0
-	.hit(danno,nelement)
-	print(stunned)
+	if(not morto):
+		stunned = 2
+		anim.playback_speed = 0
+		.hit(danno,nelement)
+
 
 func muori():
-	self.queue_free()
+	morto = true
+	stunned = 0
+	stato = Dead
+	anim.play("BatArmature|Bat_Death")
 
 func _on_Area_body_entered(body):
-	if(body.is_in_group(target)):
-		print("ao")
-		attacca(attacco,target)
-		print("ai")
-		anim.play("BatArmature|Bat_Attack2")
+	if(not morto):
+		if(body.is_in_group(target)):
+			print("ao")
+			attacca(attacco,target)
+			print("ai")
+			anim.play("BatArmature|Bat_Attack2")
