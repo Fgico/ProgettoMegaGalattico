@@ -2,8 +2,8 @@ extends Node
 
 var savePath = "user://DangerousSkies.save"
 
-func _ready():
-	loadFromFile()
+#func _ready():
+#	loadFromFile()
 
 #struttura di appoggio inizializzata per memorizzare
 #l'id dell'oggetto e il loro livello,inutile salvarla
