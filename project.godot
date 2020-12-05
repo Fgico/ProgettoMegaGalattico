@@ -46,10 +46,6 @@ run/main_scene="res://Isola/ISOLA_VOLANTE/Isola_volante.tscn"
 userData="*res://Singletons/userData.gd"
 ItemDb="*res://Singletons/itemDB.gd"
 
-[editor_plugins]
-
-enabled=PoolStringArray(  )
-
 [input]
 
 ui_up={
