@@ -26,6 +26,9 @@ func _physics_process(delta):
 		else:
 			setTargetDir(Vector3(0,0,0))
 		.physics_process(delta)
+		#print("manager.nav = ", manager.nav)
+		#print("manager.player = ", manager.player)
+		#print("path = ", path)
 		if (stato == Moving ):
 			anim.play("SkeletonArmature|Skeleton_Running")
 
