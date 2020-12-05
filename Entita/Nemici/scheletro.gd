@@ -2,7 +2,6 @@ extends Combattente
 
 var attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
 var target = "player"
-onready var pathlock = Mutex.new()
 
 onready var manager = get_parent()
 onready var anim = get_node("rotable/Skeleton/AnimationPlayer")
@@ -18,16 +17,13 @@ func _process(delta):
 	stunned -= delta
 	if(stunned < 1):
 		anim.playback_speed = 1
-
-	pathlock.lock()
-	if(path != null and path.size() >1):
+	if(path != null and path.size()>1):
 		if( (path[0] - self.global_transform.origin).length() < 1):
 			path.remove(0)
 		if(path.size()>1):
 			setTargetDir( path[1] - self.global_transform.origin)
 	else:
 		setTargetDir(Vector3(0,0,0))
-	pathlock.unlock()
 	
 func _physics_process(delta):
 		.physics_process(delta)

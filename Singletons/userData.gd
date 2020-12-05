@@ -35,10 +35,7 @@ var cityStatus = {
 	"wizard" : 1
 }
 
-var inventory = {
-	
-	
-}
+var inventory = []
 
 
 func saveToFile():
@@ -49,6 +46,7 @@ func saveToFile():
 	saveFile.store_line(to_json(numCoin))
 	saveFile.store_line(to_json(numItem))
 	saveFile.store_line(to_json(cityStatus))
+	saveFile.store_line(to_json(inventory))
 	saveFile.close()
 
 func loadFromFile():
@@ -72,4 +70,7 @@ func loadFromFile():
 	numItem = data
 	data = parse_json(loadFile.get_line())
 	cityStatus = data
+	data = parse_json(loadFile.get_line())
+	if(data != null):
+		inventory = data
 	loadFile.close()
