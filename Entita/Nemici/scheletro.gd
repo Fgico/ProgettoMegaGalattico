@@ -17,8 +17,7 @@ func _process(delta):
 	stunned -= delta
 	if(stunned < 1):
 		anim.playback_speed = 1
-
-	if(path != null and path.size() >1):
+	if(path != null and path.size()>1):
 		if( (path[0] - self.global_transform.origin).length() < 1):
 			path.remove(0)
 		if(path.size()>1):
