@@ -39,16 +39,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Rogue"
-run/main_scene="res://Isola/ISOLA_VOLANTE/Isola_volante.tscn"
+run/main_scene="res://Isola/Isola_volante_presentazione.tscn"
 
 [autoload]
 
 userData="*res://Singletons/userData.gd"
 ItemDb="*res://Singletons/itemDB.gd"
-
-[display]
-
-window/vsync/use_vsync=false
 
 [editor_plugins]
 
@@ -103,6 +99,7 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 quality/directional_shadow/size.mobile=1024
 quality/shadow_atlas/size.mobile=1024
