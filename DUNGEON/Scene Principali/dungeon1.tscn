@@ -1,0 +1,250 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Entita/Nemici/scheletro.tscn" type="PackedScene" id=1]
+[ext_resource path="res://dungeon1/dungeon1.glb" type="PackedScene" id=2]
+[ext_resource path="res://Entita/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemyMaster.gd" type="Script" id=4]
+[ext_resource path="res://dungeon1/tileNormal.png" type="Texture" id=5]
+[ext_resource path="res://DUNGEON/Scene Principali/Item.tscn" type="PackedScene" id=6]
+[ext_resource path="res://DUNGEON/Scene Principali/Coins.tscn" type="PackedScene" id=7]
+[ext_resource path="res://DUNGEON/Script/dungeon1.gd" type="Script" id=8]
+[ext_resource path="res://DUNGEON/Modular Dungeon/OBJ/Arch_bars.obj" type="ArrayMesh" id=9]
+
+[sub_resource type="ProceduralSky" id=1]
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+
+[sub_resource type="PlaneMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.0196078, 0.0117647, 0.0666667, 1 )
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource( 5 )
+uv1_scale = Vector3( 8, 8, 8 )
+
+[sub_resource type="PlaneMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.0196078, 0.0117647, 0.0666667, 1 )
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource( 5 )
+uv1_scale = Vector3( 7.1, 1, 1.7 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 1, 1.02248, 1 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1.28752, 0.896621, 1.16743 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1.51421, 0.562749, 1.51892 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 1.27051, 1.91601, 1.97445 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 0.956016, 1, 1 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 0.517227, 3.85785, 9.94572 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 4.35312, 3.73183, 0.389711 )
+
+[sub_resource type="NavigationMesh" id=14]
+vertices = PoolVector3Array( 0.651058, 0, 0.81935, 1, 0, 0.755356, 1, 0, 0.587414, 0.657331, 0, 0.593949, -0.49537, 0, -0.41174, -0.485696, 0, 0.817176, -0.0149797, 0, 0.812328, 0, 0, -1, -0.5, 0, -1, -0.498219, 0, -0.773778, -0.417742, 0, -0.774474, -0.367175, 0, -0.77609, -0.378011, 0, -0.410834, -0.701831, 0, 0.77048, -0.734338, 0, -0.413583, 0, 0, -1, -0.0149797, 0, 0.812328, 0.405689, 0, 0.820349, 0.470359, 0, -0.427872, 0.408569, 0, -0.427225, 0.410736, 0, -0.776319, 0.488344, 0, -0.775016, 0.5, 0, -1, 0.410505, 0, 1.0054, -0.0101637, 0, 0.997379, -0.00233768, 0, 1.21475, 0.418331, 0, 1.22278, -0.0101637, 0, 0.997379, -0.464627, 0, 0.999803, -0.440547, 0, 1.21475, -0.00233768, 0, 1.21475, -1.00099, 0, -0.550581, -1.00374, 0, 0.691681, -0.797003, 0, -0.414067, -0.794815, 0, -0.558341, 0.470359, 0, -0.427872, 0.405689, 0, 0.820349, 0.67685, 0, -0.107478, 0.685829, 0, -0.430127, -0.485696, 0, 0.817176, 0.643781, 0, 1.00405, 0.488344, 0, -0.775016, 0.69533, 0, -0.771544, 0.701238, 0, -0.983838, 0.5, 0, -1, 1, 0, -0.118697, 1, 0, -1, 0.757489, 0, -0.7705, 0.78783, 0, -0.7705, 0.779161, 0, -0.431104, -0.564068, 0, 0.999803, -0.464627, 0, 0.999803 )
+polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 0, 3, 2 ), PoolIntArray( 4, 6, 5 ), PoolIntArray( 7, 9, 8 ), PoolIntArray( 9, 11, 10 ), PoolIntArray( 12, 6, 4 ), PoolIntArray( 7, 11, 9 ), PoolIntArray( 11, 6, 12 ), PoolIntArray( 6, 11, 7 ), PoolIntArray( 13, 4, 5 ), PoolIntArray( 13, 14, 4 ), PoolIntArray( 15, 17, 16 ), PoolIntArray( 17, 19, 18 ), PoolIntArray( 20, 22, 21 ), PoolIntArray( 15, 19, 17 ), PoolIntArray( 20, 15, 22 ), PoolIntArray( 19, 15, 20 ), PoolIntArray( 23, 25, 24 ), PoolIntArray( 23, 26, 25 ), PoolIntArray( 27, 29, 28 ), PoolIntArray( 27, 30, 29 ), PoolIntArray( 31, 13, 32 ), PoolIntArray( 13, 33, 14 ), PoolIntArray( 33, 31, 34 ), PoolIntArray( 13, 31, 33 ), PoolIntArray( 35, 0, 36 ), PoolIntArray( 3, 38, 37 ), PoolIntArray( 35, 3, 0 ), PoolIntArray( 3, 35, 38 ), PoolIntArray( 16, 28, 39 ), PoolIntArray( 16, 27, 28 ), PoolIntArray( 36, 24, 6 ), PoolIntArray( 36, 23, 24 ), PoolIntArray( 36, 0, 23 ), PoolIntArray( 0, 40, 23 ), PoolIntArray( 41, 43, 42 ), PoolIntArray( 41, 44, 43 ), PoolIntArray( 38, 45, 37 ), PoolIntArray( 46, 42, 43 ), PoolIntArray( 42, 48, 47 ), PoolIntArray( 49, 45, 38 ), PoolIntArray( 46, 48, 42 ), PoolIntArray( 48, 45, 49 ), PoolIntArray( 45, 48, 46 ), PoolIntArray( 50, 5, 51 ), PoolIntArray( 50, 13, 5 ) ]
+
+[sub_resource type="SpatialMaterial" id=15]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 1, 1.38163, 1 )
+
+[sub_resource type="Animation" id=17]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sbarre:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.421599, 0 ), Vector3( 0, 2.82305, 0 ) ]
+}
+
+[node name="dungeon1" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+script = ExtResource( 8 )
+
+[node name="Plane" parent="." index="1"]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="3"]
+environment = SubResource( 2 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
+transform = Transform( -0.00366629, -0.716229, 0.697856, -0.00376277, 0.697865, 0.716219, -0.999986, 0, -0.00525358, 33.1679, 23.5519, 0 )
+light_color = Color( 0.866667, 0.866667, 0.866667, 1 )
+shadow_enabled = true
+
+[node name="Piano1" type="MeshInstance" parent="." index="5"]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 4.859, 0.0611076, 8.142 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="Piano2" type="MeshInstance" parent="." index="6"]
+transform = Transform( 7.01398, 0, 0, 0, 1, 0, 0, 0, 1.69062, 4.96837, 0.0219867, 19.4443 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
+
+[node name="StaticBody" type="StaticBody" parent="." index="7"]
+
+[node name="Colonna1" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 1.84326, 0, 0, 0, 4.66631, 0, 0, 0, 1.89288, -0.972528, 5.34541, 2.3604 )
+shape = SubResource( 7 )
+
+[node name="Colonna2" type="CollisionShape" parent="StaticBody" index="1"]
+transform = Transform( 1.84326, 0, 0, 0, 4.66631, 0, 0, 0, 1.89288, 10.9597, 5.34541, 2.3604 )
+shape = SubResource( 7 )
+
+[node name="Botti" type="CollisionShape" parent="StaticBody" index="2"]
+transform = Transform( 0.845094, 0, 0, 0, 0.855872, 0, 0, 0, 0.92948, -3.95746, 1.01729, 9.44172 )
+shape = SubResource( 8 )
+
+[node name="Bauli" type="CollisionShape" parent="StaticBody" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97169, 0.854261, 13.3172 )
+shape = SubResource( 9 )
+
+[node name="Crate" type="CollisionShape" parent="StaticBody" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2272, 2.23493, 0.0199518 )
+shape = SubResource( 10 )
+
+[node name="Piano" type="CollisionShape" parent="StaticBody" index="5"]
+transform = Transform( 11.0289, 0, 0, 0, 0.08, 0, 0, 0, 12.8259, 4.90968, 0.0401645, 10.3184 )
+shape = SubResource( 11 )
+
+[node name="Muro" type="CollisionShape" parent="StaticBody" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.28338, 4.15191, 7.68707 )
+shape = SubResource( 12 )
+
+[node name="Muro2" type="CollisionShape" parent="StaticBody" index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2965, 4.15191, 7.68707 )
+shape = SubResource( 12 )
+
+[node name="Muro3" type="CollisionShape" parent="StaticBody" index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1782, 4.09165, -2.70572 )
+shape = SubResource( 13 )
+
+[node name="Muro4" type="CollisionShape" parent="StaticBody" index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16463, 4.09165, -2.70572 )
+shape = SubResource( 13 )
+
+[node name="enemyMaster" type="Node" parent="." index="8"]
+script = ExtResource( 4 )
+
+[node name="Navigation" type="Navigation" parent="enemyMaster" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9737, 0, 18.1271 )
+
+[node name="PlaneMesh" type="NavigationMeshInstance" parent="enemyMaster/Navigation" index="0"]
+transform = Transform( 10.0561, -1.27407e-12, -3.66157e-06, 0, 12, -3.66157e-06, -3.27671e-06, -3.9101e-06, -11.2373, -20.0109, 1.57204, -27.2576 )
+visible = false
+navmesh = SubResource( 14 )
+
+[node name="Combattente" parent="enemyMaster" index="1" instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.01397, 0.975074, 0 )
+
+[node name="Combattente2" parent="enemyMaster" index="2" instance=ExtResource( 1 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.92707, 1.16558, 0 )
+
+[node name="player" parent="." index="9" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 4.52234, 1.68367, 17.4712 )
+
+[node name="coins" type="Node" parent="." index="10"]
+
+[node name="coin" parent="coins" index="0" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99407, 1.38993, -11.6949 )
+
+[node name="coin2" parent="coins" index="1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.82, 1.38993, -11.6949 )
+
+[node name="coin3" parent="coins" index="2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5784, 1.38993, -11.6949 )
+
+[node name="coin4" parent="coins" index="3" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5494, 1.38993, -11.6949 )
+
+[node name="coin5" parent="coins" index="4" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25077, 1.38993, -9.52112 )
+
+[node name="coin6" parent="coins" index="5" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0767, 1.38993, -9.52112 )
+
+[node name="coin7" parent="coins" index="6" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8351, 1.38993, -9.52112 )
+
+[node name="coin8" parent="coins" index="7" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80609, 1.38993, -9.52112 )
+
+[node name="coin9" parent="coins" index="8" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76376, 1.38993, -7.19328 )
+
+[node name="coin10" parent="coins" index="9" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.937829, 1.38993, -7.19328 )
+
+[node name="coin11" parent="coins" index="10" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.820576, 1.38993, -7.19328 )
+
+[node name="coin12" parent="coins" index="11" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79156, 1.38993, -7.19328 )
+
+[node name="items" type="Node" parent="." index="11"]
+
+[node name="Item" parent="items" index="0" instance=ExtResource( 6 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -14.0672, 0.679349, -12.738 )
+
+[node name="Item2" parent="items" index="1" instance=ExtResource( 6 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -14.0672, 0.679349, -10.9796 )
+
+[node name="Item3" parent="items" index="2" instance=ExtResource( 6 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -14.0672, 0.679349, -9.12509 )
+
+[node name="Item4" parent="items" index="3" instance=ExtResource( 6 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 3.76722, 1.34036, -3.73131 )
+
+[node name="Item5" parent="items" index="4" instance=ExtResource( 6 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 3.76722, 1.34036, -1.97296 )
+
+[node name="Item6" parent="items" index="5" instance=ExtResource( 6 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 3.76722, 1.34036, -0.11843 )
+
+[node name="AreaSbarre" type="Area" parent="." index="12"]
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 4.94985, 0.789622, -3.04268 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sbarre" type="MeshInstance" parent="AreaSbarre" index="0"]
+transform = Transform( 1.35368, 0, 0, 0, 1.32664, 0, 0, 0, 1, -0.0726318, -0.421599, 0 )
+mesh = ExtResource( 9 )
+material/0 = SubResource( 15 )
+
+[node name="CollisionShape" type="CollisionShape" parent="AreaSbarre" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17449, -0.410578 )
+shape = SubResource( 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AreaSbarre" index="2"]
+anims/animazioneSbarre = SubResource( 17 )
+
+[node name="Camera" type="Camera" parent="AreaSbarre" index="3"]
+transform = Transform( -0.751759, 0, -0.659438, 0, 1, 0, 0.659438, 0, -0.751759, -4.34811, 1.73279, -6.64348 )
+fov = 40.8067
+[connection signal="body_entered" from="AreaSbarre" to="." method="_on_AreaSbarre_body_entered"]
+[connection signal="body_entered" from="AreaSbarre" to="player" method="_on_AreaSbarre_body_entered"]

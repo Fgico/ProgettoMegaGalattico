@@ -5,28 +5,23 @@ var target = "player"
 
 onready var manager = get_parent()
 onready var anim = get_node("rotable/Skeleton/AnimationPlayer")
-var path 
+var path = null
 
 var morto = false
 
 func _ready():
-	manager.figli.append(self)
 	self.iniziaStats(1.5,1,20,1,300)
 	
-func _process(delta):
-	stunned -= delta
-	if(stunned < 1):
-		anim.playback_speed = 1
-	if(path != null and path.size()>1):
-		if( (path[0] - self.global_transform.origin).length() < 1):
-			path.remove(0)
-		if(path.size()>1):
-			setTargetDir( path[1] - self.global_transform.origin)
-	else:
-		setTargetDir(Vector3(0,0,0))
-	
+
 func _physics_process(delta):
+		stunned -= delta
+		if(stunned < 1):
+			anim.playback_speed = 1
+		setTargetDir(manager.player.global_transform.origin - self.global_transform.origin)
 		.physics_process(delta)
+		#print("manager.nav = ", manager.nav)
+		#print("manager.player = ", manager.player)
+		#print("path = ", path)
 		if (stato == Moving ):
 			anim.play("SkeletonArmature|Skeleton_Running")
 
