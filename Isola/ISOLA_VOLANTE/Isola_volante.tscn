@@ -11454,7 +11454,7 @@ mesh = ExtResource( 21 )
 material/0 = ExtResource( 20 )
 
 [node name="MeshInstance2048" type="MeshInstance" parent="Nodo_erba" index="767"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.0953, 64.6804, -139.442 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 87.1231, 64.549, -139.515 )
 mesh = ExtResource( 21 )
 material/0 = ExtResource( 20 )
 
