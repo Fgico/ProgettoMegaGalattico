@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Rogue"
-run/main_scene="res://DUNGEON/Scene Principali/nodo_dungeon.tscn"
+run/main_scene="res://Isola/ISOLA_VOLANTE/Isola_volante.tscn"
 
 [autoload]
 
@@ -103,11 +103,8 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-quality/driver/fallback_to_gles2=true
 threads/thread_model=2
 vram_compression/import_etc=true
-quality/directional_shadow/size.mobile=512
-quality/shadow_atlas/size.mobile=256
 quality/shadow_atlas/quadrant_0_subdiv=0
 quality/shadow_atlas/quadrant_1_subdiv=0
 quality/shadow_atlas/quadrant_2_subdiv=0
