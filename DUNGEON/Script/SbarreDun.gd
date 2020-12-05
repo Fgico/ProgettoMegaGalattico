@@ -12,5 +12,6 @@ func _on_SbarreDun_body_entered(body):
 		passaggioCreato.get_node("Camera").current = true
 		passaggioCreato.get_node("player").UI.hide()
 		body.UI.hide()
+		nodoDungeon.pianoAttuale.get_node("DunTest/enemyMaster").fine()
 		nodoDungeon.pianoAttuale.queue_free()
 		nodoDungeon.pianoAttuale = passaggioCreato
