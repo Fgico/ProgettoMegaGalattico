@@ -25,19 +25,23 @@ func _ready():
 	knownSpecials = [fuoco]
 	scattoTimer.stop()
 
+var stickidx = -1
 #prende input per il movimento dal tocco
 func _input(event):
 	if event is InputEventScreenTouch and event.is_pressed() and event.position.x < screenSize.x/2:
 		stick.position = event.position
 		stick.show()
-	if(event is InputEventScreenTouch and not event.is_pressed() and event.position.x < screenSize.x/2):
+		stickidx = event.index
+	if(event is InputEventScreenTouch and not event.is_pressed() and event.index == stickidx):
 		stick.hide()
 		inputDir  = Vector2(0,0)
+		stickidx = -1
 		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
-	if(event is InputEventScreenDrag):
+	if(event is InputEventScreenDrag and event.index == stickidx):
 		inputDir = stick.position - event.position
 		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
-
+	
+		
 #input ma dal pc
 func input_pc():
 	inputDir = Vector2(0,0)

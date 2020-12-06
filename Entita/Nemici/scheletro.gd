@@ -17,7 +17,8 @@ func _physics_process(delta):
 		stunned -= delta
 		if(stunned < 1):
 			anim.playback_speed = 1
-		setTargetDir(manager.player.global_transform.origin - self.global_transform.origin)
+		if(manager.player != null):
+			setTargetDir(manager.player.global_transform.origin - self.global_transform.origin)
 		.physics_process(delta)
 		#print("manager.nav = ", manager.nav)
 		#print("manager.player = ", manager.player)

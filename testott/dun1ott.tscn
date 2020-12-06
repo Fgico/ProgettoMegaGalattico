@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://testott/dun1ott.glb" type="PackedScene" id=1]
+
+
+[node name="dun1ott" instance=ExtResource( 1 )]
