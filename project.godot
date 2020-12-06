@@ -48,8 +48,11 @@ ItemDb="*res://Singletons/itemDB.gd"
 
 [display]
 
+window/size/width=1280
+window/size/height=720
 window/vsync/use_vsync=false
 window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [editor_plugins]
 
