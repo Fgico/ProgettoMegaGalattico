@@ -23,15 +23,8 @@ func _on_pause_button_down():
 	get_tree().paused = true
 	pass # Replace with function body.
 
-func _on_attacco_button_down():
-	player.attaccaChecked(player.attaccoBase,false)
-	pass # Replace with function body.
-
-func _on_scatto_button_down():
-	player.scatta()
-	pass # Replace with function body.
-
 var touchIdx = -1
+
 func _on_special_gui_input(event):
 	if(event is InputEventScreenTouch and event.is_pressed() ):
 		spatk1.show()
@@ -40,24 +33,22 @@ func _on_special_gui_input(event):
 		spatk4.show()
 		spatkPos = event.position
 		touchIdx = event.index
-	
 	if(event is InputEventScreenDrag and spatkPos!= null):
 		var drag =  spatkPos - event.position
 		if(drag.length() / OS.get_screen_dpi() > 1):
 			drag = drag.normalized()
 			if(drag.x > -0.5 and (drag.y < 0.5  and drag.y >-0.5)):
 				spawnaSpatk(0)
-			elif(drag.y > -0.5 and (drag.x < 0.5  and drag.x >-0.5)):
+			if(drag.y > -0.5 and (drag.x < 0.5  and drag.x >-0.5)):
 				spawnaSpatk(1)
 			elif(drag.x < 0.5 and (drag.y < 0.5  and drag.y >-0.5)):
 				spawnaSpatk(2)
 			elif(drag.y < 0.5 and (drag.x < 0.5  and drag.x >-0.5)):
 				spawnaSpatk(3)
-
-func _input(event):
 	if(event is InputEventScreenTouch and not event.is_pressed() and event.index == touchIdx ):
 		tastoSpecialLevatutto()
 		touchIdx = -1
+	
 
 func tastoSpecialLevatutto():
 	spatk1.hide()
@@ -70,3 +61,15 @@ func spawnaSpatk(i):
 	if(i< player.knownSpecials.size()):
 		player.attaccaChecked(player.knownSpecials[i],true)
 	tastoSpecialLevatutto()
+
+
+func _on_attacco_gui_input(event):
+	if event is InputEventScreenTouch and event.is_pressed():
+		player.attaccaChecked(player.attaccoBase,false)
+
+
+
+func _on_scatto_gui_input(event):
+	if event is InputEventScreenTouch and event.is_pressed():
+		player.scatta()
+

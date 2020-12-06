@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Rogue"
-run/main_scene="res://testott/Spatial.tscn"
+run/main_scene="res://DUNGEON/Scene Principali/dungeon1.tscn"
 
 [autoload]
 
@@ -104,6 +104,7 @@ pointing/emulate_mouse_from_touch=false
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 threads/thread_model=2
 vram_compression/import_etc=true
 quality/shadow_atlas/quadrant_0_subdiv=0
@@ -111,5 +112,7 @@ quality/shadow_atlas/quadrant_1_subdiv=0
 quality/shadow_atlas/quadrant_2_subdiv=0
 quality/shadow_atlas/quadrant_3_subdiv=0
 quality/reflections/irradiance_max_size=32
+quality/shading/force_vertex_shading.mobile=false
+environment/default_clear_color=Color( 0.498039, 0.596078, 0.580392, 1 )
 quality/reflections/atlas_size=0
 quality/dynamic_fonts/use_oversampling=false

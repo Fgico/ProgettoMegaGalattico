@@ -97,51 +97,44 @@ __meta__ = {
 [node name="PauseMenu" type="Control" parent="."]
 pause_mode = 2
 visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -133.0
-margin_top = -120.0
-margin_right = 133.0
-margin_bottom = 120.0
+anchor_left = 0.36999
+anchor_top = 0.3
+anchor_right = 0.63001
+anchor_bottom = 0.7
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Resume" type="Button" parent="PauseMenu"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
+anchor_right = 1.019
+anchor_bottom = 0.279
+margin_right = -0.0540161
+margin_bottom = 0.0399933
 text = "Resume"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Settings" type="Button" parent="PauseMenu"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -25.0
-margin_right = 50.0
-margin_bottom = 25.0
+anchor_top = 0.371
+anchor_right = 1.0
+anchor_bottom = 0.604
+margin_left = -9.0
+margin_top = -0.0400085
+margin_right = 8.0
+margin_bottom = 0.0399933
 text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="back2town" type="Button" parent="PauseMenu"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchor_top = 0.746
+anchor_right = 1.038
 anchor_bottom = 1.0
-margin_left = -57.5
-margin_top = -50.0
-margin_right = 57.5
+margin_left = -4.0
+margin_top = -0.0400085
+margin_right = -0.108032
 text = "Go back to town"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -160,64 +153,61 @@ __meta__ = {
 }
 
 [node name="gameButtons" type="Control" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
+anchor_left = 0.622679
+anchor_top = 0.458333
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -387.042
-margin_top = -323.186
-margin_right = -1.04248
-margin_bottom = 1.81415
 size_flags_horizontal = 2
 size_flags_vertical = 2
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="attacco" type="TextureButton" parent="gameButtons"]
-anchor_left = 0.684
-anchor_top = 0.133
-anchor_right = 0.958
-anchor_bottom = 0.411
-margin_left = -25.9258
-margin_top = -8.0089
-margin_right = 118.31
-margin_bottom = 151.641
+anchor_left = 0.545975
+anchor_top = 0.0681072
+anchor_right = 0.86981
+anchor_bottom = 0.452722
+margin_left = -1.52588e-05
+margin_right = 125.0
+margin_bottom = 125.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 2 )
+expand = true
 stretch_mode = 5
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="scatto" type="TextureButton" parent="gameButtons"]
-anchor_left = 0.379
-anchor_top = 0.557
-anchor_right = 0.653
-anchor_bottom = 0.889
-margin_left = 0.0754547
-margin_top = 0.033371
-margin_right = 180.084
-margin_bottom = 187.649
+anchor_left = 0.379196
+anchor_top = 0.557103
+anchor_right = 0.638316
+anchor_bottom = 0.87535
+margin_right = 185.752
+margin_bottom = 192.085
 rect_scale = Vector2( 0.35, 0.35 )
 texture_normal = ExtResource( 3 )
+expand = true
 stretch_mode = 5
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="special" type="TextureButton" parent="gameButtons"]
-anchor_right = 0.086
-anchor_bottom = 0.146
-margin_left = 67.0
-margin_top = 29.0
-margin_right = 286.556
-margin_bottom = 234.616
+anchor_left = 0.173575
+anchor_top = 0.0892307
+anchor_right = 0.402755
+anchor_bottom = 0.361763
+margin_top = 1.90735e-06
+margin_right = 164.289
+margin_bottom = 164.493
 rect_scale = Vector2( 0.35, 0.35 )
 texture_normal = ExtResource( 4 )
+expand = true
 stretch_mode = 5
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="spatk1" type="TextureButton" parent="gameButtons/special"]
@@ -281,6 +271,7 @@ __meta__ = {
 }
 [connection signal="button_down" from="pause" to="." method="_on_pause_button_down"]
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_Resume_pressed"]
-[connection signal="button_down" from="gameButtons/attacco" to="." method="_on_attacco_button_down"]
-[connection signal="button_down" from="gameButtons/scatto" to="." method="_on_scatto_button_down"]
+[connection signal="gui_input" from="gameButtons/attacco" to="." method="_on_attacco_gui_input"]
+[connection signal="gui_input" from="gameButtons/scatto" to="." method="_on_scatto_gui_input"]
 [connection signal="gui_input" from="gameButtons/special" to="." method="_on_special_gui_input"]
+[connection signal="gui_input" from="gameButtons/special/spatk1" to="." method="_on_spatk1_gui_input"]
