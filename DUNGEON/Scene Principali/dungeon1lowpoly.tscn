@@ -76,7 +76,7 @@ tracks/0/keys = {
 }
 
 [node name="dungeon1" instance=ExtResource( 7 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1.86256, 0, 9.84001 )
+transform = Transform( -1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, 1.86256, 0, 9.84001 )
 script = ExtResource( 3 )
 
 [node name="Plane" parent="." index="1"]

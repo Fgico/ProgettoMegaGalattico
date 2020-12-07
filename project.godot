@@ -38,7 +38,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Rogue"
+config/name="The Dun"
+run/main_scene="res://DUNGEON/Scene Principali/dungeon1lowpoly.tscn"
+config/icon="res://DUNGEON/PNG/skull png.png"
 
 [autoload]
 
