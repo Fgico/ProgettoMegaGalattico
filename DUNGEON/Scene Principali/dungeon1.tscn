@@ -165,7 +165,7 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.01397, 0.975074, 0 )
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.92707, 1.16558, 0 )
 
 [node name="player" parent="." index="9" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 4.52234, 1.68367, 17.4712 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 4.52234, 1.68367, 21.9277 )
 
 [node name="coins" type="Node" parent="." index="10"]
 
