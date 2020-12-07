@@ -1,9 +1,9 @@
 extends Spatial
 
 onready var animazioni = get_node("AreaSbarre/AnimationPlayer")
-onready var camera = get_node("AreaSbarre/Camera")
+onready var camera = get_node("AreaSbarre/CameraSbarre")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	animazioni.stop()
 	pass # Replace with function body.
@@ -12,7 +12,7 @@ func _ready():
 
 
 func _on_AreaSbarre_body_entered(body):
-	if body.is_in_group():
-		camera.current() == true
+	if body.is_in_group("player"):
 		animazioni.play("animazioneSbarre")
+		camera.current = true
 	pass # Replace with function body.
