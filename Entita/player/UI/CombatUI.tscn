@@ -86,8 +86,10 @@ texture = ExtResource( 5 )
 [node name="pause" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -50.0
-margin_bottom = 50.0
+margin_left = -72.4493
+margin_top = 20.2043
+margin_right = -22.4493
+margin_bottom = 70.2043
 texture_normal = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
