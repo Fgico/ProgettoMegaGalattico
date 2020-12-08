@@ -1486,6 +1486,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AtkSpeed" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer/ScrollContainer/Stats"]
+margin_top = 68.0
+margin_right = 226.0
+margin_bottom = 98.0
+
+[node name="StatsName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer/ScrollContainer/Stats/AtkSpeed"]
+margin_right = 111.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "AtkSpd"
+
+[node name="StatsValue" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer/ScrollContainer/Stats/AtkSpeed"]
+margin_left = 115.0
+margin_right = 226.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ItemIcon" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_left = 230.0
 margin_right = 300.0
@@ -1493,9 +1518,9 @@ margin_bottom = 163.0
 rect_min_size = Vector2( 70, 70 )
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
-margin_top = 207.0
+margin_top = 208.0
 margin_right = 300.0
-margin_bottom = 221.0
+margin_bottom = 222.0
 rect_min_size = Vector2( 0, 14 )
 
 [node name="ItemInspector2" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
@@ -1575,6 +1600,31 @@ size_flags_horizontal = 3
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "240"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AtkSpeed" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector2/HBoxContainer/ScrollContainer/Stats"]
+margin_top = 68.0
+margin_right = 226.0
+margin_bottom = 98.0
+
+[node name="StatsName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector2/HBoxContainer/ScrollContainer/Stats/AtkSpeed"]
+margin_right = 111.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "AtkSpd"
+
+[node name="StatsValue" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector2/HBoxContainer/ScrollContainer/Stats/AtkSpeed"]
+margin_left = 115.0
+margin_right = 226.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "100"
 __meta__ = {
 "_edit_use_anchors_": false
 }

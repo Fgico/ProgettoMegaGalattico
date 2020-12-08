@@ -1,0 +1,92 @@
+{
+  "Wood Sword": {
+    "ItemAttack": 10,
+    "ItemDefense": 0,
+    "ItemDurability": 10,
+    "AtkSpeed": 5
+  },
+  "Iron Sword": {
+    "ItemAttack": 15,
+    "ItemDefense": 0,
+    "ItemDurability": 15,
+    "AtkSpeed": 10
+  },
+  "Steel Sword": {
+    "ItemAttack": 20,
+    "ItemDefense": 0,
+    "ItemDurability": 20,
+    "AtkSpeed": 15
+  },
+  "Cloth Cuirass": {
+    "ItemAttack": 0,
+    "ItemDefense": 5,
+    "ItemDurability": 10,
+    "AtkSpeed": 0
+  },
+  "Iron Cuirass": {
+    "ItemAttack": 0,
+    "ItemDefense": 10,
+    "ItemDurability": 15,
+    "AtkSpeed": 0
+  },
+  "Steel Cuirass": {
+    "ItemAttack": 0,
+    "ItemDefense": 15,
+    "ItemDurability": 20,
+    "AtkSpeed": 0
+  },
+  "Cloth Helmet": {
+    "ItemAttack": 0,
+    "ItemDefense": 5,
+    "ItemDurability": 10,
+    "AtkSpeed": 0
+  },
+  "Iron Helmet": {
+    "ItemAttack": 0,
+    "ItemDefense": 10,
+    "ItemDurability": 15,
+    "AtkSpeed": 0
+  },
+  "Steel Helmet": {
+    "ItemAttack": 0,
+    "ItemDefense": 15,
+    "ItemDurability": 20,
+    "AtkSpeed": 0
+  },
+  "Cloth Gaunlet": {
+    "ItemAttack": 0,
+    "ItemDefense": 5,
+    "ItemDurability": 10,
+    "AtkSpeed": 0
+  },
+  "Iron Gaunlet": {
+    "ItemAttack": 0,
+    "ItemDefense": 10,
+    "ItemDurability": 15,
+    "AtkSpeed": 0
+  },
+  "Steel Gaunlet": {
+    "ItemAttack": 0,
+    "ItemDefense": 15,
+    "ItemDurability": 20,
+    "AtkSpeed": 0
+  },
+  "Cloth Boots": {
+    "ItemAttack": 0,
+    "ItemDefense": 5,
+    "ItemDurability": 10,
+    "AtkSpeed": 0
+  },
+  "Iron Boots": {
+    "ItemAttack": 0,
+    "ItemDefense": 10,
+    "ItemDurability": 15,
+    "AtkSpeed": 0
+  },
+  "Steel Boots": {
+    "ItemAttack": 0,
+    "ItemDefense": 15,
+    "ItemDurability": 20,
+    "AtkSpeed": 0
+  }
+}
