@@ -1,37 +1,35 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Entita/player/Label.gd" type="Script" id=1]
-[ext_resource path="res://DUNGEON/PNG/magico.png" type="Texture" id=2]
-[ext_resource path="res://DUNGEON/PNG/speed.png" type="Texture" id=3]
-[ext_resource path="res://DUNGEON/PNG/play.png" type="Texture" id=4]
+[ext_resource path="res://DUNGEON/PNG/speed.png" type="Texture" id=2]
+[ext_resource path="res://DUNGEON/PNG/magico.png" type="Texture" id=3]
+[ext_resource path="res://DUNGEON/PNG/spadina.png" type="Texture" id=4]
 [ext_resource path="res://Entita/player/Controlli assets/genericButton.png" type="Texture" id=5]
-[ext_resource path="res://DUNGEON/PNG/spadina.png" type="Texture" id=6]
+[ext_resource path="res://DUNGEON/PNG/play.png" type="Texture" id=6]
 [ext_resource path="res://Entita/player/UI/CombatUI.gd" type="Script" id=7]
 
-[sub_resource type="Theme" id=1]
-
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.196078, 0.498039, 0.196078, 1 )
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.172549, 0.168627, 0.168627, 1 )
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.278431, 0.388235, 0.87451, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.815686, 0.815686, 0.815686, 1 )
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -54,9 +52,8 @@ anchor_right = 0.046
 anchor_bottom = 0.072
 margin_right = 300.0
 margin_bottom = 1.0
-theme = SubResource( 1 )
-custom_styles/fg = SubResource( 2 )
-custom_styles/bg = SubResource( 3 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
 value = 100.0
 rounded = true
 percent_visible = false
@@ -71,8 +68,8 @@ anchor_right = 0.059
 anchor_bottom = 0.078
 margin_right = 200.0
 margin_bottom = 7.74
-custom_styles/fg = SubResource( 4 )
-custom_styles/bg = SubResource( 5 )
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
 value = 100.0
 rounded = true
 percent_visible = false
@@ -89,12 +86,12 @@ texture = ExtResource( 5 )
 [node name="pause" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -170.782
-margin_top = 8.10199
-margin_right = 132.218
-margin_bottom = 305.102
+margin_left = -169.0
+margin_top = 9.0
+margin_right = 134.0
+margin_bottom = 306.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -169,9 +166,8 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -354.944
+margin_left = -354.0
 margin_top = -304.0
-margin_right = -0.94397
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -181,12 +177,12 @@ anchor_left = 0.684
 anchor_top = 0.133
 anchor_right = 0.958
 anchor_bottom = 0.411
-margin_left = -59.5733
-margin_top = -56.7841
-margin_right = 306.431
-margin_bottom = 311.704
+margin_left = -72.1093
+margin_top = -21.1517
+margin_right = 293.895
+margin_bottom = 347.336
 rect_scale = Vector2( 0.35, 0.35 )
-texture_normal = ExtResource( 6 )
+texture_normal = ExtResource( 4 )
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -197,13 +193,12 @@ anchor_left = 0.379
 anchor_top = 0.557
 anchor_right = 0.653
 anchor_bottom = 0.889
-margin_left = -40.5111
-margin_top = -49.992
-margin_right = 155.493
-margin_bottom = 142.08
+margin_left = -86.9245
+margin_top = -32.9666
+margin_right = 109.079
+margin_bottom = 159.105
 rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 0.5, 0 )
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 2 )
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -212,18 +207,19 @@ __meta__ = {
 [node name="special" type="TextureButton" parent="gameButtons"]
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = -3.05151
-margin_top = -16.0437
-margin_right = 323.504
-margin_bottom = 252.572
+margin_left = -33.6436
+margin_top = -25.8959
+margin_right = 292.912
+margin_bottom = 242.72
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 2 )
+texture_normal = ExtResource( 3 )
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="spatk1" type="TextureButton" parent="gameButtons/special"]
+visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
 margin_left = -130.202
@@ -238,6 +234,7 @@ __meta__ = {
 }
 
 [node name="spatk2" type="TextureButton" parent="gameButtons/special"]
+visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
 margin_left = 21.5986
@@ -252,6 +249,7 @@ __meta__ = {
 }
 
 [node name="spatk3" type="TextureButton" parent="gameButtons/special"]
+visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
 margin_left = 205.187
@@ -266,6 +264,7 @@ __meta__ = {
 }
 
 [node name="spatk4" type="TextureButton" parent="gameButtons/special"]
+visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
 margin_left = 28.7983
