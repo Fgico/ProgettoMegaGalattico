@@ -44,7 +44,7 @@ run/main_scene="res://DUNGEON/Scene Principali/nodo_dungeon.tscn"
 [autoload]
 
 userData="*res://Singletons/userData.gd"
-ItemDb="*res://Singletons/itemDB.gd"
+ItemDB="*res://Singletons/itemDB.gd"
 
 [display]
 
