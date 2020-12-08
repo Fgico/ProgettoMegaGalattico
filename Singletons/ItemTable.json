@@ -53,19 +53,19 @@
     "ItemDurability": 20,
     "AtkSpeed": 0
   },
-  "Cloth Gaunlet": {
+  "Cloth Buttom": {
     "ItemAttack": 0,
     "ItemDefense": 5,
     "ItemDurability": 10,
     "AtkSpeed": 0
   },
-  "Iron Gaunlet": {
+  "Iron Buttom": {
     "ItemAttack": 0,
     "ItemDefense": 10,
     "ItemDurability": 15,
     "AtkSpeed": 0
   },
-  "Steel Gaunlet": {
+  "Steel Buttom": {
     "ItemAttack": 0,
     "ItemDefense": 15,
     "ItemDurability": 20,
