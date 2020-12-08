@@ -153,8 +153,8 @@ __meta__ = {
 }
 
 [node name="gameButtons" type="Control" parent="."]
-anchor_left = 0.622679
-anchor_top = 0.458333
+anchor_left = 0.702835
+anchor_top = 0.521667
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 2
@@ -274,4 +274,3 @@ __meta__ = {
 [connection signal="gui_input" from="gameButtons/attacco" to="." method="_on_attacco_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto" to="." method="_on_scatto_gui_input"]
 [connection signal="gui_input" from="gameButtons/special" to="." method="_on_special_gui_input"]
-[connection signal="gui_input" from="gameButtons/special/spatk1" to="." method="_on_spatk1_gui_input"]

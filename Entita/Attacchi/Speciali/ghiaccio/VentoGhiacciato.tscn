@@ -14,5 +14,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0553904, 0, 1.64325 )
 shape = SubResource( 1 )
 
 [node name="folataghiacciata" parent="." instance=ExtResource( 1 )]
-explosiveness = 0.13
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.424217 )
+cast_shadow = 0
+amount = 5
+explosiveness = 0.1
+spread = 3.7
+angular_velocity = 0.0
+hue_variation = -1.0
 [connection signal="body_entered" from="." to="." method="_on_Area_body_entered"]

@@ -35,7 +35,7 @@ func _on_special_gui_input(event):
 		touchIdx = event.index
 	if(event is InputEventScreenDrag and spatkPos!= null):
 		var drag =  spatkPos - event.position
-		if(drag.length() / OS.get_screen_dpi() > 1):
+		if(drag.length() / OS.get_screen_dpi() > 0.5):
 			drag = drag.normalized()
 			if(drag.x > -0.5 and (drag.y < 0.5  and drag.y >-0.5)):
 				spawnaSpatk(0)
@@ -45,6 +45,8 @@ func _on_special_gui_input(event):
 				spawnaSpatk(2)
 			elif(drag.y < 0.5 and (drag.x < 0.5  and drag.x >-0.5)):
 				spawnaSpatk(3)
+				
+func _input(event):
 	if(event is InputEventScreenTouch and not event.is_pressed() and event.index == touchIdx ):
 		tastoSpecialLevatutto()
 		touchIdx = -1
@@ -58,7 +60,7 @@ func tastoSpecialLevatutto():
 	spatkPos = null
 
 func spawnaSpatk(i):
-	if(i< player.knownSpecials.size()):
+	if( i< player.knownSpecials.size()):
 		player.attaccaChecked(player.knownSpecials[i],true)
 	tastoSpecialLevatutto()
 

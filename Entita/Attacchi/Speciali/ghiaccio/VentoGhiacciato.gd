@@ -1,7 +1,7 @@
 extends Attacco
 
 func _ready():
-	iniziaStats(20,Ghiaccio,25,1.5)
+	iniziaStats(20,Ghiaccio,20,1)
 	get_node("folataghiacciata").emitting = true
 
 func _on_Area_body_entered(body):

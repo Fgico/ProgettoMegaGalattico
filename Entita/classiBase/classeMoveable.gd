@@ -23,6 +23,8 @@ var jump = false
 var stato = 0
 const Idle = 0
 const Moving = 1
+const Dead = 4
+
 var stunned = 0
 #nodo che contiene nodi interessati alla rotazione, es: mesh instance
 onready var rotable = get_node("rotable")
@@ -57,7 +59,7 @@ func guardaVerso(dir : Vector3):
 func physics_process(delta):
 	curspd = max (curspd - friction*delta, 0)
 	hordir = hordir.clamped(curspd)
-	if not is_on_floor():
+	if not is_on_floor() and stato != Dead:
 		vel += gravity * delta
 	else:
 		vel.y = 0
@@ -69,5 +71,5 @@ func physics_process(delta):
 	var dir = hordir * delta * scalare
 	vel.x = dir.x
 	vel.z = dir.y
-	if(stunned <1 ):
+	if(stunned < 1 ):
 		move_and_slide(vel, Vector3.UP,true,10,0.9)

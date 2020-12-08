@@ -91,22 +91,17 @@ visible = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="3"]
 environment = SubResource( 2 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
-transform = Transform( 0.446756, -0.6396, 0.625557, -0.00376277, 0.697865, 0.716219, -0.894648, -0.322329, 0.309369, 21.987, 23.5519, 29.1677 )
-light_color = Color( 0.866667, 0.866667, 0.866667, 1 )
-shadow_enabled = true
-
-[node name="Piano1" type="MeshInstance" parent="." index="5"]
+[node name="Piano1" type="MeshInstance" parent="." index="4"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 4.859, 0.269793, 8.142 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
-[node name="Piano2" type="MeshInstance" parent="." index="6"]
+[node name="Piano2" type="MeshInstance" parent="." index="5"]
 transform = Transform( 7.01398, 0, 0, 0, 1, 0, 0, 0, 1.69062, 4.96837, 0.0882089, 19.4443 )
 mesh = SubResource( 5 )
 material/0 = SubResource( 6 )
 
-[node name="StaticBody" type="StaticBody" parent="." index="7"]
+[node name="StaticBody" type="StaticBody" parent="." index="6"]
 
 [node name="Colonna1" type="CollisionShape" parent="StaticBody" index="0"]
 transform = Transform( 1.84326, 0, 0, 0, 4.66631, 0, 0, 0, 1.89288, -0.972528, 5.34541, 2.3604 )
@@ -148,7 +143,7 @@ shape = SubResource( 13 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16463, 4.09165, -2.70572 )
 shape = SubResource( 13 )
 
-[node name="enemyMaster" type="Node" parent="." index="8"]
+[node name="enemyMaster" type="Node" parent="." index="7"]
 script = ExtResource( 4 )
 
 [node name="Navigation" type="Navigation" parent="enemyMaster" index="0"]
@@ -165,10 +160,10 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.01397, 0.975074, 0 )
 [node name="Combattente2" parent="enemyMaster" index="2" instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.92707, 1.16558, 0 )
 
-[node name="player" parent="." index="9" instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 4.52234, 3.65475, 17.4712 )
+[node name="player" parent="." index="8" instance=ExtResource( 3 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 4.52234, 2.76233, 17.4712 )
 
-[node name="coins" type="Node" parent="." index="10"]
+[node name="coins" type="Node" parent="." index="9"]
 
 [node name="coin" parent="coins" index="0" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99407, 1.38993, -11.6949 )
@@ -206,7 +201,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.820576, 1.38993, -7.19328 )
 [node name="coin12" parent="coins" index="11" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79156, 1.38993, -7.19328 )
 
-[node name="items" type="Node" parent="." index="11"]
+[node name="items" type="Node" parent="." index="10"]
 
 [node name="Item" parent="items" index="0" instance=ExtResource( 6 )]
 transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -14.0672, 0.679349, -12.738 )
@@ -226,7 +221,7 @@ transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25
 [node name="Item6" parent="items" index="5" instance=ExtResource( 6 )]
 transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 3.76722, 1.34036, -0.11843 )
 
-[node name="AreaSbarre" type="Area" parent="." index="12"]
+[node name="AreaSbarre" type="Area" parent="." index="11"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 4.94985, 0.789622, -3.04268 )
 __meta__ = {
 "_edit_group_": true
@@ -247,5 +242,9 @@ anims/animazioneSbarre = SubResource( 17 )
 [node name="Camera" type="Camera" parent="AreaSbarre" index="3"]
 transform = Transform( -0.751759, 0, -0.659438, 0, 1, 0, 0.659438, 0, -0.751759, -4.34811, 1.73279, -6.64348 )
 fov = 40.8067
-[connection signal="body_entered" from="AreaSbarre" to="." method="_on_AreaSbarre_body_entered"]
+
+[node name="OmniLight" type="OmniLight" parent="." index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51451, 5.5044, 17.4609 )
+omni_range = 42.7716
 [connection signal="body_entered" from="AreaSbarre" to="player" method="_on_AreaSbarre_body_entered"]
+[connection signal="body_entered" from="AreaSbarre" to="." method="_on_AreaSbarre_body_entered"]

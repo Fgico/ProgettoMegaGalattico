@@ -27,7 +27,6 @@ func hit(danno,nelement):
 
 func muori():
 	get_node("CollisionShape").disabled = true
-	self.gravity = Vector3.UP * 0
 	morto = true
 	stunned = 0
 	stato = Dead

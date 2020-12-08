@@ -13,7 +13,6 @@ var stats = {
 #si nasce in stato Idle, eredito definizione altri stati da Moveable
 const Attacking = 2
 const Dodging = 3	#per ora non usato
-const Dead = 4
 
 var hp = stats.maxhp
 var mp = stats.maxmp

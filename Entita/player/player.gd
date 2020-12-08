@@ -9,6 +9,10 @@ var items = 0
 
 var attaccoBase = preload("../Attacchi/fisico/SwordSlash.tscn")
 var fuoco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
+var ghiaccio = preload("res://Entita/Attacchi/Speciali/ghiaccio/VentoGhiacciato.tscn")
+var tuono = preload("res://Entita/Attacchi/Speciali/elettro/Tuono.tscn")
+var bolla = preload("res://Entita/Attacchi/Speciali/acqua/Bollaraggio.tscn")
+
 var target = "enemy"
 
 onready var anim = $rotable/mesh/AnimationPlayer
@@ -22,7 +26,7 @@ onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "P
 onready var screenSize = OS.get_window_size()
 
 func _ready():
-	knownSpecials = [fuoco]
+	knownSpecials = [fuoco,ghiaccio, tuono, bolla]
 	scattoTimer.stop()
 
 var stickidx = -1
@@ -71,7 +75,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-#	input_pc()
+	input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -85,8 +89,9 @@ func attaccaChecked(attacco,isSpecial):
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
 		else:
-			anim.play("sword and shield slash-loop")
-			anim.advance(0.5)
+			if(stato == Attacking):
+				anim.play("sword and shield slash-loop")
+				anim.advance(0.5)
 
 #scattando e uno scalare della velocita che diminuisce di 1 al secondo
 #il timer tiene conto di quando poter riscattare
