@@ -248,6 +248,7 @@ __meta__ = {
 }
 
 [node name="Weapons" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
+visible = false
 margin_left = 208.0
 margin_right = 421.0
 margin_bottom = 553.0
@@ -261,26 +262,26 @@ size_flags_vertical = 3
 script = ExtResource( 6 )
 
 [node name="Armor" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_left = 425.0
-margin_right = 639.0
+margin_left = 208.0
+margin_right = 530.0
 margin_bottom = 553.0
 size_flags_horizontal = 3
 
 [node name="Armor" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Armor"]
-margin_right = 214.0
+margin_right = 322.0
 margin_bottom = 553.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 10 )
 
 [node name="Consumable" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_left = 643.0
+margin_left = 534.0
 margin_right = 857.0
 margin_bottom = 553.0
 size_flags_horizontal = 3
 
 [node name="Consumable" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Consumable"]
-margin_right = 214.0
+margin_right = 323.0
 margin_bottom = 553.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
