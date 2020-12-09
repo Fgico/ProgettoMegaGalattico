@@ -10,6 +10,7 @@ func _ready():
 
 func _on_AreaSbarre_body_entered(body):
 	if body.is_in_group("player"):
+		body.UI.hide()
 		camera.current = true
 		animazioni.play("animazioneSbarre")
 	pass # Replace with function body.
