@@ -11,7 +11,7 @@ metallic = 0.86
 [node name="SkyguyMesh" instance=ExtResource( 3 )]
 
 [node name="rHandBone" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
-transform = Transform( 0.00586108, -0.999982, -0.00132427, -0.0212233, 0.00119971, -0.999774, 0.999757, 0.00588787, -0.021216, -87.7803, 175.861, -12.0534 )
+transform = Transform( -0.548858, -0.815329, 0.18437, -0.384221, 0.0501825, -0.921876, 0.74238, -0.576818, -0.340809, -10.5529, 212.41, 33.5314 )
 bone_name = "right_hand"
 
 [node name="weaponSlot" type="Spatial" parent="Armature/Skeleton/rHandBone" index="0"]
@@ -21,7 +21,7 @@ transform = Transform( -6.49405, 2.18674, 18.7895, 18.6889, 3.81309, 6.0155, -2.
 transform = Transform( 130, 3.00686e-20, -9.91822e-06, 0, 130, 3.94114e-13, 9.91822e-06, -3.94114e-13, 130, -0.0296521, 0.187943, -0.0277779 )
 
 [node name="WaistBone" type="BoneAttachment" parent="Armature/Skeleton" index="2"]
-transform = Transform( 1, -2.76015e-12, -2.3177e-11, -2.21374e-12, 0.97093, 0.239362, 2.13427e-11, -0.239362, 0.97093, 0.000266586, 165.519, -7.7225 )
+transform = Transform( -0.80558, -0.483936, 0.341827, -0.413288, 0.872376, 0.26106, -0.424538, 0.0690314, -0.902774, -16.7693, 181.607, 71.6005 )
 bone_name = "spine_2"
 
 [node name="ArmorSlot" type="Spatial" parent="Armature/Skeleton/WaistBone" index="0"]

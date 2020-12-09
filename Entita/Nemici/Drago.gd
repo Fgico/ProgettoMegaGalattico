@@ -17,7 +17,7 @@ func muori():
 	anim.play("DragonArmature|Dragon_Death")
 
 func _on_Area_body_entered(body):
-	if(not morto):
+	if(not morto and stunned <=1):
 		if(body.is_in_group(target)):
 			if(mp > 30):
 				attacca(fuoco,target)

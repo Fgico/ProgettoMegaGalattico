@@ -16,7 +16,7 @@ func muori():
 	anim.play("SkeletonArmature|Skeleton_Death")
 
 func _on_Area_body_entered(body):
-	if(not morto):
+	if(not morto and stunned <=1 and not force):
 		if(body.is_in_group(target)):
 			attacca(attacco,target)
 			anim.play("SkeletonArmature|Skeleton_Attack")

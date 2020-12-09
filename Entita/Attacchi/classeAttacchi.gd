@@ -27,8 +27,15 @@ func _process(delta):
 	else:
 		timeout -= delta
 
+func setSpd(_spd):
+	pass
+
+func perAtk(_atk):
+	pass
+
 #cosa fare quando attacco colpisce qualcosa
 func hit(body):
 	if(body.is_in_group(target)):
 		body.hit(danno,element)
 	pass 
+	

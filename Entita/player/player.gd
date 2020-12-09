@@ -13,6 +13,8 @@ var ghiaccio = preload("res://Entita/Attacchi/Speciali/ghiaccio/VentoGhiacciato.
 var tuono = preload("res://Entita/Attacchi/Speciali/elettro/Tuono.tscn")
 var bolla = preload("res://Entita/Attacchi/Speciali/acqua/Bollaraggio.tscn")
 
+var combo = 0
+
 var target = "enemy"
 
 onready var anim = $rotable/mesh/AnimationPlayer
