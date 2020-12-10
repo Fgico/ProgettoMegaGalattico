@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Isola/Isola_volante.glb" type="PackedScene" id=1]
 [ext_resource path="res://Isola/Torre_tscn/catena_grande_ottimizzata.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Isola/ISOLA_VOLANTE/Case_tscn/casa_esperienza.gd" type="Script" id=13]
 [ext_resource path="res://Isola/Oggetti_vari_tscn/Strada.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Isola/Torre_tscn/Scala_aggiuntiva.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Isola/Oggetti_vari_tscn/Torcia_prova_2.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Isola/Natura_tscn/ErbaShader.tres" type="Material" id=17]
 [ext_resource path="res://Isola/ISOLA_VOLANTE/Case_tscn/casa_armaiolo.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Isola/ISOLA_VOLANTE/Case_tscn/casa_armaiolo.gd" type="Script" id=19]
@@ -224,10 +223,11 @@ tracks/1/keys = {
 
 [sub_resource type="Environment" id=9]
 background_mode = 1
-background_color = Color( 0.619608, 0.819608, 0.866667, 1 )
-ambient_light_color = Color( 0.898039, 0.945098, 0.956863, 1 )
+background_color = Color( 0.348706, 0.528, 0.569883, 1 )
+ambient_light_color = Color( 0.495424, 0.550536, 0.576392, 1 )
 ambient_light_energy = 0.0
 fog_enabled = true
+tonemap_exposure = 0.8328
 glow_enabled = true
 glow_intensity = 0.47
 glow_strength = 0.43
@@ -5159,8 +5159,10 @@ shape = SubResource( 1 )
 transform = Transform( -1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -21.3019, 8.261, 32.4602 )
 
 [node name="DirectionalLight3" type="DirectionalLight" parent="." index="7"]
-transform = Transform( -0.618216, -0.786008, 1.25709e-09, 3.51205e-08, -2.60238e-08, 1, -0.786009, 0.618216, 4.36933e-08, 0, 322.222, 0.378304 )
+transform = Transform( -0.594142, -0.803847, -0.0287335, -0.802758, 0.594834, -0.0418758, 0.0507534, -0.00181411, -0.99871, 0, 322.222, 0.378304 )
+light_energy = 0.0
 shadow_enabled = true
+shadow_color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight3" index="0"]
 autoplay = "SunRotate"
@@ -11521,140 +11523,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.125 )
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 4.17298, 63.936, -59.2837 )
 
 [node name="Torce" type="Node" parent="Nodo_oggetti_vari" index="6"]
-
-[node name="Torch" parent="Nodo_oggetti_vari/Torce" index="0" instance=ExtResource( 16 )]
-transform = Transform( -0.993419, 7.19666e-05, 0.114538, 0, 1, -0.000628319, -0.114538, -0.000624183, -0.993419, 7.628, 73.7702, -17.6819 )
-
-[node name="OmniLight" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch" index="1"]
-transform = Transform( 0.783444, -1.45519e-11, -0.621462, 0.000390476, 1, 0.000492252, 0.621462, -0.000628318, 0.783444, 0.027998, 0.709755, 0.136974 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 3.1
-light_indirect_energy = 0.84
-light_specular = 0.0
-shadow_enabled = true
-shadow_bias = 1.09
-omni_range = 22.8546
-omni_attenuation = 3.48219
-
-[node name="Torch2" parent="Nodo_oggetti_vari/Torce" index="1" instance=ExtResource( 16 )]
-transform = Transform( -0.943524, -0.000208165, -0.331305, 0, 1, -0.000628319, 0.331305, -0.000592833, -0.943524, 1.20509, 73.7702, -17.6819 )
-
-[node name="OmniLight" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch2" index="1"]
-transform = Transform( 0.783444, -1.45519e-11, -0.621462, 0.000390476, 1, 0.000492252, 0.621462, -0.000628318, 0.783444, 0.027998, 0.709755, 0.136974 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 3.1
-light_indirect_energy = 0.84
-light_specular = 0.0
-shadow_enabled = true
-shadow_bias = 1.09
-omni_range = 20.579
-omni_attenuation = 3.48219
-
-[node name="Torch3" parent="Nodo_oggetti_vari/Torce" index="2" instance=ExtResource( 16 )]
-transform = Transform( 1, 1.45519e-11, 0, 1.45519e-11, 1, 0, 0, 0, 1, 50.1256, 67.4296, -32.3485 )
-
-[node name="OmniLight" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch3" index="1"]
-transform = Transform( 1, -2.91038e-11, 0, 0, 1, 0, 0, 0, 1, 0, 0.596893, -0.858784 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 1.97
-light_indirect_energy = 7.01
-shadow_enabled = true
-shadow_bias = 0.42
-omni_range = 9.00322
-
-[node name="Torch4" parent="Nodo_oggetti_vari/Torce" index="3" instance=ExtResource( 16 )]
-transform = Transform( 1, 4.36557e-11, 0, 4.36557e-11, 1, 0, 0, 0, 1, 61.8528, 67.4296, -32.3485 )
-
-[node name="OmniLight" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch4" index="1"]
-transform = Transform( 1, -2.91038e-11, 0, 0, 1, 0, 0, 0, 1, 0, 0.596893, -0.858784 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 1.97
-light_indirect_energy = 7.01
-shadow_enabled = true
-shadow_bias = 0.42
-omni_range = 9.00322
-
-[node name="OmniLight2" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch4" index="2"]
-transform = Transform( 1, -8.73115e-11, 0, 0, 1, 0, 0, 0, 1, -6.57881, 0.596893, -14.6778 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 1.97
-light_indirect_energy = 7.01
-shadow_enabled = true
-shadow_bias = 0.42
-omni_range = 9.00322
-
-[node name="OmniLight3" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch4" index="3"]
-transform = Transform( 1, -8.73115e-11, 0, 0, 1, 0, 0, 0, 1, -8.65726, 0.596893, -29.848 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 1.97
-light_indirect_energy = 7.01
-shadow_enabled = true
-shadow_bias = 0.42
-omni_range = 9.00322
-
-[node name="OmniLight4" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch4" index="4"]
-transform = Transform( 1, -8.73115e-11, 0, 0, 1, 0, 0, 0, 1, -8.65726, 0.596893, -51.7504 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 1.97
-light_indirect_energy = 7.01
-shadow_enabled = true
-shadow_bias = 0.42
-omni_range = 9.00322
-
-[node name="OmniLight5" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch4" index="5"]
-transform = Transform( 1, -8.73115e-11, 0, 0, 1, 0, 0, 0, 1, -8.65726, 0.596893, -66.402 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 1.97
-light_indirect_energy = 7.01
-shadow_enabled = true
-shadow_bias = 0.42
-omni_range = 9.00322
-
-[node name="Torch5" parent="Nodo_oggetti_vari/Torce" index="4" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 92.9835, 67.007, -35.3034 )
-
-[node name="OmniLight" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch5" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.858543, 0 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 2.85
-light_indirect_energy = 7.72
-shadow_enabled = true
-omni_range = 9.9
-
-[node name="OmniLight2" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch5" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.858543, 22 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 2.85
-light_indirect_energy = 7.72
-shadow_enabled = true
-omni_range = 9.9
-
-[node name="OmniLight3" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch5" index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0738, 0.858543, 49 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 2.85
-light_indirect_energy = 7.72
-shadow_enabled = true
-omni_range = 9.9
-
-[node name="OmniLight4" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch5" index="4"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0738, 0.858543, 72 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 2.85
-light_indirect_energy = 7.72
-shadow_enabled = true
-omni_range = 9.9
-
-[node name="Torch6" parent="Nodo_oggetti_vari/Torce" index="5" instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 102.903, 67.007, -35.3034 )
-
-[node name="OmniLight" type="OmniLight" parent="Nodo_oggetti_vari/Torce/Torch6" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.858543, 0 )
-light_color = Color( 0.964706, 0.8, 0.584314, 1 )
-light_energy = 2.85
-light_indirect_energy = 7.72
-shadow_enabled = true
-omni_range = 9.9
 
 [node name="Nodo_erba" type="Node" parent="." index="12"]
 
