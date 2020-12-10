@@ -2,8 +2,6 @@ extends KinematicBody
 
 class_name Moveable
 
-
-
 #variabili di movimento
 #sovrascriverli da stats spd e stats ag per combattente?
 var spd = 600	#velmax
@@ -11,18 +9,15 @@ var curspd = 0
 var accel = 4000		#velore aggiungibile da accel in un secondo
 
 var friction = 3000 # decelerazione da fermo
+
 var scalare = 1
 
 var targetDir = Vector3()
 var hordir = Vector2(0,0)
 var vel = Vector3()
+
 var gravity = Vector3.DOWN * 20
 var jump = false
-var health = 100
-
-
-
-
 
 #gestione stati
 var stato = 0
@@ -32,8 +27,6 @@ var stunned = 0
 #nodo che contiene nodi interessati alla rotazione, es: mesh instance
 onready var rotable = get_node("rotable")
 
-	
-	
 func setTargetDir(newtarget : Vector3):
 	if newtarget != Vector3(0,0,0):
 		targetDir = newtarget.normalized()

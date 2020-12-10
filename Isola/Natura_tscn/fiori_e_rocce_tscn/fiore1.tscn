@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Isola/File_glb/fiori_e_rocce_glb/fiore1.glb" type="PackedScene" id=1]
-
-[node name="fiore1" instance=ExtResource( 1 )]
