@@ -13,8 +13,6 @@ var ghiaccio = preload("res://Entita/Attacchi/Speciali/ghiaccio/VentoGhiacciato.
 var tuono = preload("res://Entita/Attacchi/Speciali/elettro/Tuono.tscn")
 var bolla = preload("res://Entita/Attacchi/Speciali/acqua/Bollaraggio.tscn")
 
-var combo = 0
-
 var target = "enemy"
 
 onready var anim = $rotable/mesh/AnimationPlayer
@@ -86,7 +84,7 @@ func _physics_process(delta):
 
 #piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
-	if (stato != Attacking and stato != Dead):
+	if (stato != Attacking and stato != Dead and combo == 0):
 		.attacca(attacco,target)
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
@@ -94,6 +92,21 @@ func attaccaChecked(attacco,isSpecial):
 			if(stato == Attacking):
 				anim.play("sword and shield slash-loop")
 				anim.advance(0.5)
+				combo+=1
+	if(combo >0 and stato!= Dead):
+		if(attackTimeout >0 and attackTimeout <0.2):
+			match combo:
+				1:
+					anim.play("sword and shield slash 3-loop")
+					.attacca(attacco,target)
+					anim.advance(0.5)
+					combo += 1
+				2:
+					anim.play("sword and shield attack 2-loop")
+					var attackDir = (spawnAtk.global_transform.origin - self.global_transform.origin).normalized()
+					setForce(attackDir, 500, 0.5)
+					.attacca(attacco,target)
+					combo = 0
 
 #scattando e uno scalare della velocita che diminuisce di 1 al secondo
 #il timer tiene conto di quando poter riscattare
