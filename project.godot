@@ -28,18 +28,24 @@ _global_script_classes=[ {
 "class": "Moveable",
 "language": "GDScript",
 "path": "res://Entita/classiBase/classeMoveable.gd"
+}, {
+"base": "Combattente",
+"class": "Nemico",
+"language": "GDScript",
+"path": "res://Entita/classiBase/classeNemico.gd"
 } ]
 _global_script_class_icons={
 "Attacco": "",
 "Combattente": "",
 "EquipableButton": "",
-"Moveable": ""
+"Moveable": "",
+"Nemico": ""
 }
 
 [application]
 
 config/name="Rogue"
-run/main_scene="res://Isola/ISOLA_VOLANTE/Isola_volante.tscn"
+run/main_scene="res://nodo_isola.tscn"
 
 [autoload]
 

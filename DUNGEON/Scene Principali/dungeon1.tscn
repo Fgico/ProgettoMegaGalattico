@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Entita/Nemici/scheletro.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dungeon1/dungeon1.glb" type="PackedScene" id=2]
@@ -77,6 +77,21 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, -0.421599, 0 ), Vector3( 0, 2.82305, 0 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "fadetoblack1"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [node name="dungeon1" instance=ExtResource( 2 )]
@@ -242,5 +257,22 @@ anims/animazioneSbarre = SubResource( 17 )
 [node name="Camera" type="Camera" parent="AreaSbarre" index="3"]
 transform = Transform( -0.751759, 0, -0.659438, 0, 1, 0, 0.659438, 0, -0.751759, -4.34811, 1.73279, -6.64348 )
 fov = 40.8067
+
+[node name="startPos" type="Position3D" parent="." index="12"]
+transform = Transform( 1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 5.34624, 0.614036, 21.3288 )
+
+[node name="TransitionD1" type="CanvasLayer" parent="." index="13"]
+
+[node name="ColorRect" type="ColorRect" parent="TransitionD1" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationFading1" type="AnimationPlayer" parent="TransitionD1/ColorRect" index="0"]
+anims/fadetoblack1 = SubResource( 18 )
 [connection signal="body_entered" from="AreaSbarre" to="." method="_on_AreaSbarre_body_entered"]
 [connection signal="animation_finished" from="AreaSbarre/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="TransitionD1/ColorRect/AnimationFading1" to="." method="_on_AnimationFading1_animation_finished"]

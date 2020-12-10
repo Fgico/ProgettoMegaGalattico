@@ -12,7 +12,7 @@ material/0 = ExtResource( 2 )
 material/1 = ExtResource( 3 )
 
 [node name="OmniLight" type="OmniLight" parent="Torch"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412526, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.773295, 0 )
 light_color = Color( 0.968627, 0.290196, 0.0784314, 1 )
 light_energy = 6.0
 light_indirect_energy = 11.43
