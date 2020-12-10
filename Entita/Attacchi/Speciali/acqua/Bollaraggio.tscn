@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Entita/Attacchi/particles/acqua/bubbles.png" type="Texture" id=1]
+[ext_resource path="res://Entita/Attacchi/Speciali/acqua/Bollaraggio.gd" type="Script" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+params_use_alpha_scissor = true
+params_alpha_scissor_threshold = 0.54
+albedo_color = Color( 0.447059, 0.690196, 0.901961, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 1.5, 3 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.445455 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 0.653696, 1, 1.665 )
+
+[node name="Area" type="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.646224 )
+script = ExtResource( 2 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+transform = Transform( -0.991994, 0, 0.126285, 0, 1, 0, -0.126285, 0, -0.991994, 0, 0, 2.46937 )
+material_override = SubResource( 1 )
+amount = 5
+mesh = SubResource( 2 )
+direction = Vector3( 0, 0, -1 )
+spread = 5.0
+flatness = 0.86
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 2.5
+scale_amount_random = 1.0
+scale_amount_curve = SubResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144147, 0, 3.72495 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="." to="." method="_on_Area_body_entered"]

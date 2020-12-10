@@ -16,6 +16,10 @@ var targetDir = Vector3()
 var hordir = Vector2(0,0)
 var vel = Vector3()
 
+var force 
+var forceStrength
+var forceTimer = 0
+
 var gravity = Vector3.DOWN * 20
 var jump = false
 
@@ -23,6 +27,8 @@ var jump = false
 var stato = 0
 const Idle = 0
 const Moving = 1
+const Dead = 4
+
 var stunned = 0
 #nodo che contiene nodi interessati alla rotazione, es: mesh instance
 onready var rotable = get_node("rotable")
@@ -51,13 +57,20 @@ func guardaVerso(dir : Vector3):
 	char_rot.y = angle
 	rotable.set_rotation(char_rot)
 
+#force sposta il moveable senza ruotarlo e applicare accelerazioni, come una turbolenza
+#utile per effetti tipo knockback o avanzamento per gli attacchi
+func setForce(dir,strength, forceTime : float):
+	force = dir
+	forceStrength = strength
+	forceTimer = forceTime
+
 #per ora non ha l'under_ score per non confoderla con il physics process di sistema
 #sennò godot invece di sovrascrivere la esegue due volte per ogni nodo che eredita combattente
 #da verificare se anche le altre funzioni sovrascritte hanno effetto simile, ma non pare
 func physics_process(delta):
 	curspd = max (curspd - friction*delta, 0)
 	hordir = hordir.clamped(curspd)
-	if not is_on_floor():
+	if not is_on_floor() and stato != Dead:
 		vel += gravity * delta
 	else:
 		vel.y = 0
@@ -69,5 +82,11 @@ func physics_process(delta):
 	var dir = hordir * delta * scalare
 	vel.x = dir.x
 	vel.z = dir.y
-	if(stunned <1 ):
+	if(stunned < 1 and not force):
 		move_and_slide(vel, Vector3.UP,true,10,0.9)
+	if(force):
+		move_and_slide(force * forceStrength *delta, Vector3.UP,true,10,0.9)
+		forceTimer -= delta
+		forceStrength -= 60*delta
+		if(forceTimer <= 0):
+			force = null
