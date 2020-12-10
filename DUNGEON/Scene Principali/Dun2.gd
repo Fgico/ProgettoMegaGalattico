@@ -15,3 +15,8 @@ func _on_AreaSbarre2_body_entered(body):
 		camera2.current = true
 		animazione.play("animazioneSbarre2")
 	pass # Replace with function body.
+
+
+func _on_AnimationPlayer_animation_finished(animazioneSbarre2):
+	get_tree().change_scene("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+	pass # Replace with function body.

@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Rogue"
-run/main_scene="res://DUNGEON/Scene Principali/nodo_dungeon.tscn"
+run/main_scene="res://Isola/ISOLA_VOLANTE/Isola_volante.tscn"
 
 [autoload]
 

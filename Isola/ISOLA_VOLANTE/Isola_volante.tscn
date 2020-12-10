@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://Isola/Isola_volante.glb" type="PackedScene" id=1]
 [ext_resource path="res://Isola/Torre_tscn/catena_grande_ottimizzata.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Isola/ISOLA_VOLANTE/Case_tscn/casa_esperienza.gd" type="Script" id=13]
 [ext_resource path="res://Isola/Oggetti_vari_tscn/Strada.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Isola/Torre_tscn/Scala_aggiuntiva.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Isola/ISOLA_VOLANTE/Isola_volante.gd" type="Script" id=16]
 [ext_resource path="res://Isola/Natura_tscn/ErbaShader.tres" type="Material" id=17]
 [ext_resource path="res://Isola/ISOLA_VOLANTE/Case_tscn/casa_armaiolo.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Isola/ISOLA_VOLANTE/Case_tscn/casa_armaiolo.gd" type="Script" id=19]
@@ -223,10 +224,9 @@ tracks/1/keys = {
 
 [sub_resource type="Environment" id=9]
 background_mode = 1
-background_color = Color( 0.479653, 0.668956, 0.71334, 1 )
-ambient_light_color = Color( 0.749467, 0.799497, 0.816462, 1 )
+background_color = Color( 0.619608, 0.819608, 0.866667, 1 )
+ambient_light_color = Color( 0.898039, 0.945098, 0.956863, 1 )
 fog_enabled = true
-tonemap_exposure = 0.91362
 
 [sub_resource type="Animation" id=10]
 resource_name = "Sky Color"
@@ -244,7 +244,25 @@ tracks/0/keys = {
 "values": [ Color( 0.505882, 0.756863, 0.815686, 1 ) ]
 }
 
+[sub_resource type="BoxShape" id=11]
+
+[sub_resource type="Animation" id=12]
+resource_name = "fadetoblack"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
 [node name="Isola_volante" instance=ExtResource( 1 )]
+script = ExtResource( 16 )
 
 [node name="Nodo_strade" type="Node" parent="." index="0"]
 
@@ -5154,8 +5172,7 @@ shape = SubResource( 1 )
 transform = Transform( -1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, -21.3019, 8.261, 32.4602 )
 
 [node name="DirectionalLight3" type="DirectionalLight" parent="." index="7"]
-transform = Transform( -0.614244, -0.788952, 0.0161222, 0.450421, -0.333756, 0.828087, -0.64794, 0.515909, 0.560368, 0, 322.222, 0.378304 )
-light_energy = 0.621141
+transform = Transform( -0.618216, -0.786008, 1.25709e-09, 3.51205e-08, -2.60238e-08, 1, -0.786009, 0.618216, 4.36933e-08, 0, 322.222, 0.378304 )
 shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight3" index="0"]
@@ -5163,7 +5180,7 @@ autoplay = "SunRotate"
 anims/SunRotate = SubResource( 2 )
 
 [node name="player" parent="." index="8" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100.441, 80.0265, -26.6792 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.30096, 75.2312, -79.6311 )
 
 [node name="Nodo_natura" type="Node" parent="." index="9"]
 
@@ -11598,7 +11615,34 @@ environment = SubResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WorldEnvironment" index="0"]
 "anims/Sky Color" = SubResource( 10 )
+
+[node name="AreaEntrata" type="Area" parent="." index="15"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3291, 72.7515, -19.0906 )
+
+[node name="CollisionShape" type="CollisionShape" parent="AreaEntrata" index="0"]
+shape = SubResource( 11 )
+
+[node name="Transition" type="CanvasLayer" parent="." index="16"]
+
+[node name="ColorRect" type="ColorRect" parent="Transition" index="0"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -299.5
+margin_right = 512.0
+margin_bottom = 299.5
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationFading" type="AnimationPlayer" parent="Transition/ColorRect" index="0"]
+anims/fadetoblack = SubResource( 12 )
 [connection signal="body_entered" from="Nodo_case_iter/casa_armaiolo/Area" to="Nodo_case_iter/casa_armaiolo" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Nodo_case_iter/casa_armaiolo/Area" to="Nodo_case_iter/casa_armaiolo" method="_on_Area_body_exited"]
 [connection signal="body_entered" from="Nodo_case_iter/casa_esperienza/Area" to="Nodo_case_iter/casa_esperienza" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Nodo_case_iter/casa_esperienza/Area" to="Nodo_case_iter/casa_esperienza" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="AreaEntrata" to="." method="_on_AreaEntrata_body_entered"]
+[connection signal="animation_finished" from="Transition/ColorRect/AnimationFading" to="." method="_on_AnimationFading_animation_finished"]
