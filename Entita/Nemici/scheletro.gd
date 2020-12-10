@@ -2,6 +2,7 @@ extends Combattente
 
 var attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
 var target = "player"
+var fermo = Vector3(0,0,0)
 
 onready var manager = get_parent()
 onready var anim = get_node("rotable/Skeleton/AnimationPlayer")
@@ -9,23 +10,33 @@ var path = null
 
 var morto = false
 
+
 func _ready():
+	self.setTargetDir(fermo)
 	self.iniziaStats(1.5,1,20,1,300)
-	
+
+func _on_AreaNemico_body_entered(body):
+	if body.is_in_group("player"):
+		setTargetDir(manager.player.global_transform.origin - self.global_transform.origin)
+
 
 func _physics_process(delta):
 		stunned -= delta
 		if(stunned < 1):
 			anim.playback_speed = 1
-		if(manager.player != null):
-			var from = manager.nav.get_closest_point(self.global_transform.origin)
-			var to = manager.nav.get_closest_point(manager.player.global_transform.origin)
-			path = manager.nav.get_simple_path(from,to)
-		if(path != null and path.size()>1):
-			setTargetDir((path[1]-path[0]))
-		else:
-			setTargetDir(Vector3(0,0,0))
+			setTargetDir(manager.player.global_transform.origin - self.global_transform.origin)
+			#if(manager.player != null):
+				#var from = manager.nav.get_closest_point(self.global_transform.origin)
+				#var to = manager.nav.get_closest_point(manager.player.global_transform.origin)
+				#path = manager.nav.get_simple_path(from,to)
+		#if(path != null and path.size()>1):
+			#setTargetDir((path[1]-path[0]))
+		#else:
+			#setTargetDir(Vector3(0,0,0))
 		.physics_process(delta)
+		#print("manager.nav = ", manager.nav)
+		#print("manager.player = ", manager.player)
+		#print("path = ", path)
 		if (stato == Moving ):
 			anim.play("SkeletonArmature|Skeleton_Running")
 
@@ -47,4 +58,3 @@ func _on_Area_body_entered(body):
 		if(body.is_in_group(target)):
 			attacca(attacco,target)
 			anim.play("SkeletonArmature|Skeleton_Attack")
-
