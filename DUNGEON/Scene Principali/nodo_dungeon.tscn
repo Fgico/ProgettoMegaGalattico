@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://nodo_dungeon.gd" type="Script" id=1]
-[ext_resource path="res://DUNGEON/Scene Principali/dungeon1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DUNGEON/Script/nodo_dungeon.gd" type="Script" id=1]
+[ext_resource path="res://DUNGEON/Scene Principali/Dun1_player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entita/player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DUNGEON/default_env.tres" type="Environment" id=4]
 
 [node name="nodo_dungeon" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="dungeon1" parent="." instance=ExtResource( 2 )]
-
-[node name="startPos" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.88944, 0, -30.0035 )
-
 [node name="player" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13971, 2.70806, -30.0118 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85848, 4.69957, -38.1211 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.17898, 0, -19.2471 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 4 )
+
+[node name="Dun1_player" parent="." instance=ExtResource( 2 )]
