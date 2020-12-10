@@ -12,22 +12,22 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "Attacco",
 "language": "GDScript",
-"path": "res://Entita/Attacchi/classeAttacchi.gd"
+"path": "res://screenshots/Entita/Attacchi/classeAttacchi.gd"
 }, {
 "base": "Moveable",
 "class": "Combattente",
 "language": "GDScript",
-"path": "res://Entita/classiBase/classeCombattente.gd"
+"path": "res://screenshots/Entita/classiBase/classeCombattente.gd"
 }, {
 "base": "TouchScreenButton",
 "class": "EquipableButton",
 "language": "GDScript",
-"path": "res://Interfacce Utente/Inventario/bottoni armi/classeEquipaggiabileUI.gd"
+"path": "res://screenshots/Interfacce Utente/Inventario/bottoni armi/classeEquipaggiabileUI.gd"
 }, {
 "base": "KinematicBody",
 "class": "Moveable",
 "language": "GDScript",
-"path": "res://Entita/classiBase/classeMoveable.gd"
+"path": "res://screenshots/Entita/classiBase/classeMoveable.gd"
 } ]
 _global_script_class_icons={
 "Attacco": "",
