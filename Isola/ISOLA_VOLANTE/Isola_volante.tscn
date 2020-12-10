@@ -11385,7 +11385,7 @@ transform = Transform( 0.24071, 0, -3.99275, 0, 4, 0, 3.99275, 0, 0.24071, -35.1
 [node name="Nodo_case_iter" type="Node" parent="." index="9"]
 
 [node name="casa_armaiolo" parent="Nodo_case_iter" index="0" instance=ExtResource( 18 )]
-transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 112.962, 64.401, 60.5242 )
+transform = Transform( -3, 0, -4.52987e-07, 0, 3, 0, 4.52987e-07, 0, -3, 131.164, 64.401, -113.726 )
 script = ExtResource( 19 )
 
 [node name="Camera" type="Camera" parent="Nodo_case_iter/casa_armaiolo" index="32"]
