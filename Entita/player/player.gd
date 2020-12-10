@@ -69,6 +69,10 @@ func input_pc():
 #physics_process della classe madre
 func _physics_process(delta):
 	mpBar.value = (float(mp) /stats.maxmp) *100
+	
+	if( not scattoTimer.is_stopped()):
+		dodgeBar.value = (1.5 - scattoTimer.time_left) / 1.5 * 100
+	
 	scattando = max( 1 , scattando- delta*10)
 	if(scattando<=1):
 		scattando = 1
