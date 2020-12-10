@@ -4,14 +4,14 @@
 [ext_resource path="res://Entita/Attacchi/fisico/slasheffect.png" type="Texture" id=3]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.210226, 0.729275, 1.75822 )
+extents = Vector3( 0.484002, 0.729275, 1.17401 )
 
 [node name="Area" type="Area"]
 transform = Transform( -1.51991e-07, 0, 0.932913, 0, 4, 0, -1.84764, 0, -3.01018e-07, 0.49258, 0, -0.0126915 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.378704, 0, -0.487291 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.434249, 0, -0.496459 )
 shape = SubResource( 1 )
 disabled = true
 

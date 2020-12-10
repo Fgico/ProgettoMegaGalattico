@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Entita/Equipaggiabili/armi/Sword.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entita/Equipaggiabili/Armature/armor1.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://Entita/player/meshes/SkyguyMesh.gltf" type="PackedScene" id=3]
+[ext_resource path="res://Entita/player/meshes/newSkyguyMesh.gltf" type="PackedScene" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 params_cull_mode = 2
@@ -10,8 +10,11 @@ metallic = 0.86
 
 [node name="SkyguyMesh" instance=ExtResource( 3 )]
 
+[node name="Armature" parent="." index="0"]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
+
 [node name="rHandBone" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
-transform = Transform( 0.00586098, -0.999982, -0.00132419, -0.0212232, 0.00119973, -0.999774, 0.999757, 0.00588777, -0.0212159, -87.7803, 175.861, -12.0534 )
+transform = Transform( 0.286949, -0.737151, 0.611774, 0.7982, -0.169117, -0.578166, 0.529657, 0.654223, 0.539866, -38.9013, 140.598, -33.6505 )
 bone_name = "right_hand"
 
 [node name="weaponSlot" type="Spatial" parent="Armature/Skeleton/rHandBone" index="0"]
@@ -21,12 +24,12 @@ transform = Transform( -6.49405, 2.18674, 18.7895, 18.6889, 3.81309, 6.0155, -2.
 transform = Transform( 130, 3.00686e-20, -9.91822e-06, 0, 130, 3.94114e-13, 9.91822e-06, -3.94114e-13, 130, -0.0296521, 0.187943, -0.0277779 )
 
 [node name="WaistBone" type="BoneAttachment" parent="Armature/Skeleton" index="2"]
-transform = Transform( 1, 8.77832e-13, -2.22675e-11, -2.21373e-12, 0.97093, 0.239362, 1.98648e-11, -0.239362, 0.97093, 0.000266586, 165.519, -7.7225 )
+transform = Transform( 0.661913, -0.0531369, -0.747694, 0.0216075, 0.998422, -0.0518269, 0.749268, 0.0181492, 0.662017, 0.676293, 167.838, 3.31613 )
 bone_name = "spine_2"
 
 [node name="ArmorSlot" type="Spatial" parent="Armature/Skeleton/WaistBone" index="0"]
 
 [node name="MeshInstance" type="MeshInstance" parent="Armature/Skeleton/WaistBone/ArmorSlot" index="0"]
-transform = Transform( 1.0967, -8.25014e-13, -1.45643e-12, 5.52277e-13, 0.965782, -0.265824, -1.34592e-12, 0.259389, 0.99434, -1.06921, -159.7, -33.3778 )
+transform = Transform( 1.0967, -2.98023e-08, 0, -1.49012e-08, 0.965782, -0.265824, -2.98023e-08, 0.259389, 0.99434, -1.06921, -159.7, -33.3778 )
 mesh = ExtResource( 2 )
 material/0 = SubResource( 1 )

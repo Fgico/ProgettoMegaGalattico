@@ -6,6 +6,7 @@ const Fisico = 0
 const Fuoco = 1
 const Ghiaccio = 2
 const Elettro = 3
+const Acqua = 4
 
 var danno : int = 0
 var element : int = 0

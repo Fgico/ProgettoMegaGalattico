@@ -13,7 +13,6 @@ func _physics_process(delta):
 
 func muori():
 	.muori()
-	print("morto!")
 	anim.play("SkeletonArmature|Skeleton_Death")
 
 func _on_Area_body_entered(body):

@@ -45,12 +45,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Rogue"
-run/main_scene="res://nodo_isola.tscn"
+run/main_scene="res://DUNGEON/Scene Principali/dungeon1.tscn"
 
 [autoload]
 
 userData="*res://Singletons/userData.gd"
 ItemDb="*res://Singletons/itemDB.gd"
+
+[display]
+
+window/vsync/use_vsync=false
 
 [editor_plugins]
 
@@ -107,7 +111,11 @@ pointing/emulate_touch_from_mouse=true
 
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
-quality/directional_shadow/size.mobile=1024
-quality/shadow_atlas/size.mobile=1024
-quality/filters/use_nearest_mipmap_filter=true
-quality/filters/msaa=1
+quality/shadow_atlas/quadrant_0_subdiv=0
+quality/shadow_atlas/quadrant_1_subdiv=0
+quality/shadow_atlas/quadrant_2_subdiv=0
+quality/shadow_atlas/quadrant_3_subdiv=0
+quality/reflections/irradiance_max_size=32
+environment/default_clear_color=Color( 0.498039, 0.596078, 0.580392, 1 )
+quality/reflections/atlas_size=0
+quality/dynamic_fonts/use_oversampling=false
