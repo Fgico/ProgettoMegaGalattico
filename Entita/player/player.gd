@@ -21,6 +21,11 @@ onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "P
 
 onready var screenSize = OS.get_window_size()
 
+
+
+
+		
+
 func _ready():
 	knownSpecials = [fuoco]
 	scattoTimer.stop()
@@ -108,6 +113,11 @@ func convertStringa():
 	$target/Camera/UI/UIcoins_item/counterCoins.text = String(coins)
 	$target/Camera/UI/UIcoins_item/counterItems.text = String(items)
 
+#Danno di caduta
+
+
+
+
 
 #CONTATORE MONETE
 func collectCoin():
@@ -119,3 +129,4 @@ func collectItem():
 	items = items + 1
 	convertStringa()
 	
+

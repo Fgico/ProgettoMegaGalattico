@@ -19,12 +19,11 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.00
 shape = SubResource( 1 )
 
 [node name="target" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89013, -5.56085 )
+transform = Transform( 1, 0, 0, 0, 0.999775, -0.021187, 0, 0.021187, 0.999775, 0, 4.35053, -4.71503 )
 
 [node name="Camera" type="Camera" parent="target"]
-transform = Transform( -1, 2.98427e-13, 3.25841e-07, 1.2587e-07, 0.922377, 0.386292, -3.00548e-07, 0.386292, -0.922377, 0, 0.82254, -4.18827 )
-current = true
-fov = 51.4912
+transform = Transform( -1, 2.77111e-13, 3.25841e-07, 2.34624e-07, 0.693918, 0.720054, -2.26107e-07, 0.720054, -0.693918, 0, 3.09602, -2.83098 )
+fov = 71.7
 far = 300.0
 
 [node name="UI" type="Control" parent="target/Camera"]
@@ -39,6 +38,8 @@ __meta__ = {
 [node name="UIcoins_item" parent="target/Camera/UI" instance=ExtResource( 4 )]
 
 [node name="CombatUI" parent="target/Camera/UI" instance=ExtResource( 3 )]
+margin_top = 7.0
+margin_right = 3.0
 
 [node name="rotable" type="Spatial" parent="."]
 
