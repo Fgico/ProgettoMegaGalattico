@@ -75,3 +75,8 @@ func _on_scatto_gui_input(event):
 	if event is InputEventScreenTouch and event.is_pressed():
 		player.scatta()
 
+
+
+func _on_ProgressBar_gui_input(event):
+	if event is InputEventScreenTouch and event.is_pressed():
+		player.scatta()
