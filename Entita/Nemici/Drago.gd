@@ -1,48 +1,26 @@
-extends Combattente
+extends Nemico
 
-var attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
-var target = "player"
-
-onready var manager = get_parent()
-onready var anim = get_node("rotable/Dragon/AnimationPlayer")
-
-var path = null
-
-var morto = false
+var fuoco = load("res://Entita/Attacchi/Speciali/fuoco/lanciafiamme.tscn")
 
 func _ready():
-	self.iniziaStats(1.5,100,20,1,350)
-
+	self.iniziaStats(1.5,100,20,100,350)
+	attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
+	anim = get_node("rotable/mesh/AnimationPlayer")
 
 func _physics_process(delta):
-	stunned -= delta
-	if(stunned < 1):
-		anim.playback_speed = 1
-	if(manager.player != null):
-		var from = manager.nav.get_closest_point(self.global_transform.origin)
-		var to = manager.nav.get_closest_point(manager.player.global_transform.origin)
-		path = manager.nav.get_simple_path(from,to)
-	if(path != null):
-		setTargetDir(path[1]-path[0])
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("DragonArmature|Dragon_Flying")
 
-func hit(danno,nelement):
-	if(not morto):
-		stunned = 2
-		anim.playback_speed = 0
-		.hit(danno,nelement)
-
-
 func muori():
-	morto = true
-	stunned = 0
-	stato = Dead
+	.muori()
 	anim.play("DragonArmature|Dragon_Death")
 
 func _on_Area_body_entered(body):
-	if(not morto):
+	if(not morto and stunned <=1):
 		if(body.is_in_group(target)):
-			attacca(attacco,target)
+			if(mp > 30):
+				attacca(fuoco,target)
+			else:
+				attacca(attacco,target)
 			anim.play("DragonArmature|Dragon_Attack2")

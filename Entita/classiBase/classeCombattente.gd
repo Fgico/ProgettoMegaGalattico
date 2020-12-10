@@ -13,7 +13,6 @@ var stats = {
 #si nasce in stato Idle, eredito definizione altri stati da Moveable
 const Attacking = 2
 const Dodging = 3	#per ora non usato
-const Dead = 4
 
 var hp = stats.maxhp
 var mp = stats.maxmp
@@ -26,6 +25,7 @@ var curwpn		#arma equipaggiata
 var curarm		#armatura equipaggiata
 
 var baseAttack
+var atkSpd = 1
 var knownSpecials = [] #lista dei quattro attacchi imparati
 
 #lista di stati possibili
@@ -60,26 +60,23 @@ func attacca(attacco,target):
 		if( mp > attacked.mpCost ):
 	#		attacked.global_transform.origin = spawnAtk.global_transform.origin
 	#		attacked.set_rotation(spawnAtk.get_parent().get_rotation())
-			#l attacco copia posizione e rotazione personaggio
-
-			attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
-			stato = Attacking					#aggiorno stato
+	#codice eventualmente utile per fare proiettili, per ora no
 
 			mp -= attacked.mpCost
-			attacked.danno *= stats.atk
+			attacked.perAtk(stats.atk)
+			attacked.setSpd(atkSpd)
 			attacked.target = target
+			attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
+			stato = Attacking					#aggiorno stato
 		else:
 			attacked.queue_free()				#fix temp: non avevo mp per evocarlo quindi me ne libero
 
 
 #cosa accade se colpito
 func hit(danno,nelement):
-	print(hp)
 	hp = max(hp - danno, 0)
 	if(hp <= 0):
 		muori()
-	print(hp)
-	print(danno)
 
 func muori():
 	pass

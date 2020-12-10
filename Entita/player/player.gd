@@ -9,6 +9,12 @@ var items = 0
 
 var attaccoBase = preload("../Attacchi/fisico/SwordSlash.tscn")
 var fuoco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
+var ghiaccio = preload("res://Entita/Attacchi/Speciali/ghiaccio/VentoGhiacciato.tscn")
+var tuono = preload("res://Entita/Attacchi/Speciali/elettro/Tuono.tscn")
+var bolla = preload("res://Entita/Attacchi/Speciali/acqua/Bollaraggio.tscn")
+
+var combo = 0
+
 var target = "enemy"
 
 onready var anim = $rotable/mesh/AnimationPlayer
@@ -22,25 +28,26 @@ onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "P
 onready var screenSize = OS.get_window_size()
 
 func _ready():
-	coins = userData.numCoin
-	items = userData.numItem
-	convertStringa()
-	knownSpecials = [fuoco]
+	knownSpecials = [fuoco,ghiaccio, tuono, bolla]
 	scattoTimer.stop()
 
+var stickidx = -1
 #prende input per il movimento dal tocco
 func _input(event):
 	if event is InputEventScreenTouch and event.is_pressed() and event.position.x < screenSize.x/2:
 		stick.position = event.position
 		stick.show()
-	if(event is InputEventScreenTouch and not event.is_pressed() and event.position.x < screenSize.x/2):
+		stickidx = event.index
+	if(event is InputEventScreenTouch and not event.is_pressed() and event.index == stickidx):
 		stick.hide()
 		inputDir  = Vector2(0,0)
+		stickidx = -1
 		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
-	if(event is InputEventScreenDrag):
+	if(event is InputEventScreenDrag and event.index == stickidx):
 		inputDir = stick.position - event.position
 		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
-
+	
+		
 #input ma dal pc
 func input_pc():
 	inputDir = Vector2(0,0)
@@ -84,8 +91,9 @@ func attaccaChecked(attacco,isSpecial):
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
 		else:
-			anim.play("sword and shield slash-loop")
-			anim.advance(0.5)
+			if(stato == Attacking):
+				anim.play("sword and shield slash-loop")
+				anim.advance(0.5)
 
 #scattando e uno scalare della velocita che diminuisce di 1 al secondo
 #il timer tiene conto di quando poter riscattare
@@ -115,14 +123,10 @@ func convertStringa():
 #CONTATORE MONETE
 func collectCoin():
 	coins = coins + 1
-	userData.numCoin +=1
-	userData.saveToFile()
 	convertStringa()
 
 #CONTATORE OGGETTI
 func collectItem():
-	items +=1
-	userData.numItem += 1
-	userData.saveToFile()
+	items = items + 1
 	convertStringa()
 	
