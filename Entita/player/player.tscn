@@ -22,7 +22,7 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89013, -5.56085 )
 
 [node name="Camera" type="Camera" parent="target"]
-transform = Transform( -1, 9.16603e-13, 3.25842e-07, 1.17329e-07, 0.932923, 0.360077, -3.03985e-07, 0.360077, -0.932923, 0, 0.470902, -3.70692 )
+transform = Transform( -1, 9.16603e-13, 3.25842e-07, 1.17329e-07, 0.932923, 0.360077, -3.03985e-07, 0.360077, -0.932923, 0, 1.56547, -6.49459 )
 current = true
 fov = 58.8753
 
