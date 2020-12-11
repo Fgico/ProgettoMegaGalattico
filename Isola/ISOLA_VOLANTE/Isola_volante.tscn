@@ -11620,12 +11620,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3291, 72.7515, -19.0906 )
 shape = SubResource( 11 )
 
 [node name="Transition" type="CanvasLayer" parent="." index="15"]
+layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="Transition" index="0"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -3,7 +3,6 @@ extends Spatial
 onready var animazioni = get_node("AreaSbarre/AnimationPlayer")
 onready var camera = get_node("AreaSbarre/Camera")
 onready var fade = get_node("TransitionD1/ColorRect/AnimationFading1")
-onready var nemico = get_node("enemyMaster/Combattente")
 
 func _ready():
 	animazioni.stop()

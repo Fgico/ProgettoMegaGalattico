@@ -262,6 +262,7 @@ fov = 40.8067
 transform = Transform( 1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 5.34624, 0.614036, 21.3288 )
 
 [node name="TransitionD1" type="CanvasLayer" parent="." index="13"]
+layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="TransitionD1" index="0"]
 anchor_right = 1.0
