@@ -22,7 +22,7 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89013, -5.56085 )
 
 [node name="Camera" type="Camera" parent="target"]
-transform = Transform( -1, 1.10845e-12, 3.25841e-07, 2.55738e-07, 0.619684, 0.784851, -2.01918e-07, 0.784851, -0.619684, 0, 10.9258, -4.88136 )
+transform = Transform( -1, 1.20082e-12, 3.25842e-07, 1.17329e-07, 0.932923, 0.360077, -3.03985e-07, 0.360077, -0.932923, 0, 0.820086, -2.99937 )
 current = true
 
 [node name="UI" type="Control" parent="target/Camera"]
