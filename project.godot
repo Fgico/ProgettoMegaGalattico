@@ -44,7 +44,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Rogue"
+config/name="Dangerous Skies"
 run/main_scene="res://nodo_isola.tscn"
 
 [autoload]
