@@ -43,13 +43,13 @@ func _on_Other_pressed():
 
 
 func _on_Equip_pressed():
-	if elem_curr.tipo != null:
-		if elem_curr.tipo == 0:
-			userData.equipped.curWeapon = elem_curr.posizione
-			sceneUtili.player.stats.atk = ItemDB.weapons[elem_curr.posizione].dmg / 10
-		if elem_curr.tipo == 1:
-			userData.equipped.curArmor = elem_curr.posizione
-			sceneUtili.player.stats.def = ItemDB.armors[elem_curr.posizione].def
+	if elem_curr.tipo == 0:
+		userData.equipped.curWeapon = elem_curr.posizione
+		sceneUtili.player.stats.atk = ItemDB.weapons[elem_curr.posizione].dmg / 10
+	if elem_curr.tipo == 1:
+		userData.equipped.curArmor = elem_curr.posizione
+		sceneUtili.player.stats.def = ItemDB.armors[elem_curr.posizione].def
+		print(elem_curr)
 
 
 func _on_TrashBin_pressed():

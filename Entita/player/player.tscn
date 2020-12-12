@@ -43,6 +43,9 @@ margin_left = -1027.0
 [node name="CombatUI" parent="target/Camera/UI" instance=ExtResource( 3 )]
 
 [node name="Control" parent="target/Camera/UI" instance=ExtResource( 5 )]
+margin_top = -2.0
+margin_right = 1.0
+margin_bottom = -2.0
 
 [node name="rotable" type="Spatial" parent="."]
 
