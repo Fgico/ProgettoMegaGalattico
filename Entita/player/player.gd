@@ -13,8 +13,6 @@ var ghiaccio = preload("res://Entita/Attacchi/Speciali/ghiaccio/VentoGhiacciato.
 var tuono = preload("res://Entita/Attacchi/Speciali/elettro/Tuono.tscn")
 var bolla = preload("res://Entita/Attacchi/Speciali/acqua/Bollaraggio.tscn")
 
-var combo = 0
-
 var target = "enemy"
 
 onready var anim = $rotable/mesh/AnimationPlayer
@@ -23,6 +21,7 @@ onready var stick = $target/Camera/UI/CombatUI/movStick
 onready var scattoTimer = $Timer/scatto
 onready var healthBar = $target/Camera/UI/CombatUI/healthBar
 onready var mpBar = $target/Camera/UI/CombatUI/mpBar
+onready var dodgeBar = $target/Camera/UI/CombatUI/gameButtons/scatto/ProgressBar
 onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "PASSAGGIO"
 
 onready var screenSize = OS.get_window_size()
@@ -72,6 +71,9 @@ func input_pc():
 func _physics_process(delta):
 	mpBar.value = (float(mp) /stats.maxmp) *100
 	
+	if( not scattoTimer.is_stopped()):
+		dodgeBar.value = (1.5 - scattoTimer.time_left) / 1.5 * 100
+	
 	scattando = max( 1 , scattando- delta*10)
 	if(scattando<=1):
 		scattando = 1
@@ -87,7 +89,7 @@ func _physics_process(delta):
 
 #piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
-	if (stato != Attacking and stato != Dead):
+	if (stato != Attacking and stato != Dead and combo == 0):
 		.attacca(attacco,target)
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
@@ -95,6 +97,21 @@ func attaccaChecked(attacco,isSpecial):
 			if(stato == Attacking):
 				anim.play("sword and shield slash-loop")
 				anim.advance(0.5)
+				combo+=1
+	if(combo >0 and stato!= Dead):
+		if(attackTimeout >0 and attackTimeout <0.2):
+			match combo:
+				1:
+					anim.play("sword and shield slash 3-loop")
+					.attacca(attacco,target)
+					anim.advance(0.5)
+					combo += 1
+				2:
+					anim.play("sword and shield attack 2-loop")
+					var attackDir = (spawnAtk.global_transform.origin - self.global_transform.origin).normalized()
+					setForce(attackDir, 500, 0.5)
+					.attacca(attacco,target)
+					combo = 0
 
 #scattando e uno scalare della velocita che diminuisce di 1 al secondo
 #il timer tiene conto di quando poter riscattare
@@ -102,6 +119,8 @@ func scatta():
 	if (scattando <= 1 and scattoTimer.is_stopped()):
 		scattando = 4;
 		scattoTimer.start()
+		dodgeBar.value = 0
+		
 
 func hit(danno, elemento):
 	.hit(danno, elemento)
@@ -112,8 +131,10 @@ func muori():
 		anim.play("sword and shield death-loop")
 		anim.get_animation("sword and shield death-loop").loop = false
 	stato = Dead
+
 func _on_scatto_timeout():
 	scattoTimer.stop()
+	dodgeBar.value = 100
 	pass # Replace with function body.
 
 func convertStringa():

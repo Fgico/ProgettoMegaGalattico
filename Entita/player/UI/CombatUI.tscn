@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Entita/player/Label.gd" type="Script" id=1]
-[ext_resource path="res://Entita/player/Controlli assets/attackButton.png" type="Texture" id=2]
-[ext_resource path="res://Entita/player/Controlli assets/scattoButton.png" type="Texture" id=3]
-[ext_resource path="res://Entita/player/Controlli assets/specialButton.png" type="Texture" id=4]
+[ext_resource path="res://Interfacce Utente/bottoniCombat/skillButtons.png" type="Texture" id=2]
+[ext_resource path="res://Interfacce Utente/bottoniCombat/dodgeButton.png" type="Texture" id=3]
+[ext_resource path="res://Interfacce Utente/bottoniCombat/attackButton.png" type="Texture" id=4]
 [ext_resource path="res://Entita/player/Controlli assets/genericButton.png" type="Texture" id=5]
-[ext_resource path="res://Entita/player/Controlli assets/pausa.png" type="Texture" id=6]
+[ext_resource path="res://Interfacce Utente/bottoniCombat/pauseButton.png" type="Texture" id=6]
 [ext_resource path="res://Entita/player/UI/CombatUI.gd" type="Script" id=7]
+[ext_resource path="res://Interfacce Utente/bottoniCombat/emptyButton.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.196078, 0.498039, 0.196078, 1 )
@@ -35,6 +36,20 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.407843, 0.376471, 0.301961, 1 )
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0 )
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
 
 [node name="CombatUI" type="Control"]
 anchor_right = 1.0
@@ -81,14 +96,15 @@ __meta__ = {
 visible = false
 position = Vector2( 128.434, 410.276 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="pause" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -86.0
-margin_top = 7.0
-margin_bottom = 50.0
+margin_left = -87.0
+margin_top = 14.0
+margin_bottom = 100.0
+rect_scale = Vector2( 0.7, 0.7 )
 texture_normal = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -172,7 +188,7 @@ margin_left = -1.52588e-05
 margin_right = 125.0
 margin_bottom = 125.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 2 )
+texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -181,10 +197,11 @@ __meta__ = {
 
 [node name="scatto" type="TextureButton" parent="gameButtons"]
 anchor_left = 0.379196
-anchor_top = 0.557103
-anchor_right = 0.638316
+anchor_top = 0.557
+anchor_right = 0.684
 anchor_bottom = 0.87535
-margin_right = 185.752
+margin_top = 0.0295563
+margin_right = 171.864
 margin_bottom = 192.085
 rect_scale = Vector2( 0.35, 0.35 )
 texture_normal = ExtResource( 3 )
@@ -192,6 +209,29 @@ expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": true
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="gameButtons/scatto"]
+show_behind_parent = true
+anchor_left = 0.132
+anchor_top = 0.162
+anchor_right = 0.847
+anchor_bottom = 1.0
+margin_left = -9.91722
+margin_top = -0.914333
+margin_right = -10.0522
+margin_bottom = -49.4218
+rect_rotation = 270.0
+rect_pivot_offset = Vector2( 100, 90 )
+size_flags_vertical = 1
+custom_styles/fg = SubResource( 5 )
+custom_styles/bg = SubResource( 6 )
+max_value = 100.0
+value = 100.0
+rounded = true
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="special" type="TextureButton" parent="gameButtons"]
@@ -203,7 +243,7 @@ margin_top = 1.90735e-06
 margin_right = 164.289
 margin_bottom = 164.493
 rect_scale = Vector2( 0.35, 0.35 )
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 2 )
 expand = true
 stretch_mode = 5
 __meta__ = {
@@ -273,4 +313,5 @@ __meta__ = {
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="gui_input" from="gameButtons/attacco" to="." method="_on_attacco_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto" to="." method="_on_scatto_gui_input"]
+[connection signal="gui_input" from="gameButtons/scatto/ProgressBar" to="." method="_on_ProgressBar_gui_input"]
 [connection signal="gui_input" from="gameButtons/special" to="." method="_on_special_gui_input"]

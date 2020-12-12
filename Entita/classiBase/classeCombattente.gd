@@ -26,6 +26,7 @@ var curarm		#armatura equipaggiata
 
 var baseAttack
 var atkSpd = 1
+var combo = 0	#per ora usata solo in player, usata per capire quanti attacchi fisici abbiamo fatto di fila
 var knownSpecials = [] #lista dei quattro attacchi imparati
 
 #lista di stati possibili
@@ -112,7 +113,8 @@ func physics_process(delta):
 	if stato == Attacking:
 		if(attackTimeout<=0):
 			attackTimeout = 0
-			if targetDir != Vector3(0,0,0):
+			combo = 0
+			if targetDir != Vector3.ZERO:
 				stato = Moving
 			else:
 				stato = Idle
