@@ -19,7 +19,9 @@ uniform vec3 uv2_offset;
 
 
 void vertex() {
-	VERTEX.x += sin(TIME) * float(VERTEX.y > 0.8);
+	if(VERTEX.y>0.9){
+		VERTEX.x += sin(TIME)
+		}
 	UV=UV*uv1_scale.xy+uv1_offset.xy;
 }
 
