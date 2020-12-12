@@ -18,6 +18,7 @@ script = ExtResource( 2 )
 [node name="rotable" type="Spatial" parent="."]
 
 [node name="spawnAtk" type="Position3D" parent="rotable"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97775, 2.12363 )
 
 [node name="mesh" parent="rotable" instance=ExtResource( 1 )]
 
