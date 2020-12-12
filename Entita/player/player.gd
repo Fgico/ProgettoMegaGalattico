@@ -146,4 +146,7 @@ func collectCoin():
 func collectItem():
 	items = items + 1
 	convertStringa()
-	
+
+func collectCoinEnemy():
+	coins = coins + 5
+	convertStringa()

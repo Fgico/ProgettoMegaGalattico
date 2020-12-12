@@ -27,7 +27,8 @@ func muori():
 	get_parent().add_child(coin)
 	coin.global_transform.origin = spawnAtk.global_transform.origin
 	coins_scene = coin
-	
+	var anim = coins_scene.get_node("AnimationCascata")
+	anim.play("animazioneCascata")
 
 
 
