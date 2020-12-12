@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://DUNGEON/Script/coin.gd" type="Script" id=1]
 [ext_resource path="res://DUNGEON/pick-up coin.wav" type="AudioStream" id=3]
@@ -24,7 +24,7 @@ surfaces/0 = {
 radius = 0.349634
 height = 0.208452
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("coinMesh:translation")
@@ -51,6 +51,22 @@ tracks/1/keys = {
 "values": [ Vector3( 1, 1, 1 ), Vector3( 0.5, 0.5, 0.5 ), Vector3( 0.3, 0.3, 0.3 ) ]
 }
 
+[sub_resource type="Animation" id=6]
+resource_name = "animazioneCascata"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("coinMesh:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 1.04349, 0.561508, -0.490602 ), Vector3( 1.26212, -0.276297, -1.1659 ), Vector3( 1.70474, -0.213908, -1.47933 ), Vector3( 1.74972, -0.641723, -1.77133 ) ]
+}
+
 [node name="coin" type="Area"]
 script = ExtResource( 1 )
 
@@ -66,9 +82,12 @@ shape = SubResource( 3 )
 wait_time = 0.3
 
 [node name="AnimationCoins" type="AnimationPlayer" parent="."]
-anims/animazioneCoins = SubResource( 4 )
+anims/animazioneCoins = SubResource( 5 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="AnimationCascata" type="AnimationPlayer" parent="."]
+anims/animazioneCascata = SubResource( 6 )
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -25,8 +25,9 @@ func muori():
 	var coins_scene = preload("res://DUNGEON/Scene Principali/Coins.tscn")
 	var coin = coins_scene.instance()
 	get_parent().add_child(coin)
-	coin.global_transform.origin = attacco.global_transform.origin
+	coin.global_transform.origin = spawnAtk.global_transform.origin
 	coins_scene = coin
+	
 
 
 
