@@ -9,7 +9,7 @@ func _physics_process(delta):
 
 #il giocatore entra in collisione con le monete e le raccoglie
 func _on_coin_body_entered(body):
-	if body.name == "player":
+	if body.is_in_group("player"):
 		body.collectCoin()
 		$AudioStreamPlayer.play()
 		$AnimationCoins.play("animazioneCoins")

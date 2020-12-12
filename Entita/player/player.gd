@@ -142,11 +142,15 @@ func collectCoin():
 	coins = coins + 1
 	convertStringa()
 
+func collectCoinEnemy():
+	coins = coins + 5
+	convertStringa()
+
+func collectCoinBoss():
+	coins = coins + 10
+	convertStringa()
+
 #CONTATORE OGGETTI
 func collectItem():
 	items = items + 1
-	convertStringa()
-
-func collectCoinEnemy():
-	coins = coins + 5
 	convertStringa()

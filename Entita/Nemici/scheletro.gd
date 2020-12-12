@@ -29,6 +29,8 @@ func muori():
 	coins_scene = coin
 	var anim = coins_scene.get_node("AnimationCascata")
 	anim.play("animazioneCascata")
+	$Flash.play("deathFlash")
+	$Timer.start()
 
 
 
@@ -37,3 +39,8 @@ func _on_Area_body_entered(body):
 		if(body.is_in_group(target)):
 			attacca(attacco,target)
 			anim.play("SkeletonArmature|Skeleton_Attack")
+
+
+func _on_Timer_timeout():
+	queue_free()
+	pass # Replace with function body.
