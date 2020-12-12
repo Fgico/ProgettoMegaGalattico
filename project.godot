@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Entita/classiBase/classeCombattente.gd"
 }, {
-"base": "TouchScreenButton",
-"class": "EquipableButton",
-"language": "GDScript",
-"path": "res://Interfacce Utente/Inventario/bottoni armi/classeEquipaggiabileUI.gd"
-}, {
 "base": "KinematicBody",
 "class": "Moveable",
 "language": "GDScript",
@@ -37,7 +32,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Attacco": "",
 "Combattente": "",
-"EquipableButton": "",
 "Moveable": "",
 "Nemico": ""
 }
@@ -51,6 +45,7 @@ run/main_scene="res://DUNGEON/Scene Principali/dungeon1.tscn"
 
 userData="*res://Singletons/userData.gd"
 ItemDB="*res://Singletons/itemDB.gd"
+sceneUtili="*res://Singletons/SceneUtili.gd"
 
 [display]
 
