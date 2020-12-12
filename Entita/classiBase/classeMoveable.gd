@@ -82,7 +82,7 @@ func physics_process(delta):
 	var dir = hordir * delta * scalare
 	vel.x = dir.x
 	vel.z = dir.y
-	if(stunned < 1 and not force):
+	if(stunned <= 0 and not force):
 		move_and_slide(vel, Vector3.UP,true,10,0.9)
 	if(force):
 		move_and_slide(force * forceStrength *delta, Vector3.UP,true,10,0.9)

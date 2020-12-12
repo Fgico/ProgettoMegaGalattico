@@ -121,8 +121,8 @@ func scatta():
 		dodgeBar.value = 0
 		
 
-func hit(danno, elemento):
-	.hit(danno, elemento)
+func hit(danno, elemento,malusRate):
+	.hit(danno, elemento,malusRate)
 	healthBar.value = (float(hp)/stats.maxhp) * 100
 
 func muori():

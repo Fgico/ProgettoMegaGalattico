@@ -2,7 +2,7 @@ extends Nemico
 
 func _ready():
 	attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
-	self.iniziaStats(1.5,1,20,1,300)
+	self.iniziaStats(1.5,1,60,1,300)
 	anim = get_node("rotable/mesh/AnimationPlayer")
 	
 
