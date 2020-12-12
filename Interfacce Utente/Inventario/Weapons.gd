@@ -16,5 +16,4 @@ func selezionaOggetto(oggetto, posOggetto):
 	var parent = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()
 	parent.elem_curr.tipo = oggetto
 	parent.elem_curr.posizione = posOggetto
-	print(parent.elem_curr)
 	pass

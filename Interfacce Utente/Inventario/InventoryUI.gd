@@ -43,13 +43,16 @@ func _on_Other_pressed():
 
 
 func _on_Equip_pressed():
+	print("ciao")
 	if elem_curr.tipo != null:
 		if elem_curr.tipo == 0:
 			userData.equipped.curWeapon = elem_curr.posizione
 			sceneUtili.player.stats.atk = ItemDB.weapons[elem_curr.posizione].dmg / 10
+			print(ItemDB.weapons[elem_curr.posizione])
 		if elem_curr.tipo == 1:
 			userData.equipped.curArmor = elem_curr.posizione
 			sceneUtili.player.stats.def = ItemDB.armors[elem_curr.posizione].def
+			print(ItemDB.armors[elem_curr.posizione])
 
 
 func _on_TrashBin_pressed():
@@ -62,3 +65,27 @@ func _on_Compare_pressed():
 
 func _on_ExitButton_pressed():
 	self.queue_free() 
+
+
+#func _on_Equip_gui_input(event):
+#	print("ciao")
+#	if elem_curr.tipo != null:
+#		if elem_curr.tipo == 0:
+#			userData.equipped.curWeapon = elem_curr.posizione
+#			sceneUtili.player.stats.atk = ItemDB.weapons[elem_curr.posizione].dmg / 10
+#		if elem_curr.tipo == 1:
+#			userData.equipped.curArmor = elem_curr.posizione
+#			sceneUtili.player.stats.def = ItemDB.armors[elem_curr.posizione].def
+#			print(ItemDB.armors[elem_curr.posizione])
+
+
+#func _on_Label_gui_input(event):
+#	print("ciao")
+#	if elem_curr.tipo != null:
+#		if elem_curr.tipo == 0:
+#			userData.equipped.curWeapon = elem_curr.posizione
+#			sceneUtili.player.stats.atk = ItemDB.weapons[elem_curr.posizione].dmg / 10
+#		if elem_curr.tipo == 1:
+#			userData.equipped.curArmor = elem_curr.posizione
+#			sceneUtili.player.stats.def = ItemDB.armors[elem_curr.posizione].def
+#			print(ItemDB.armors[elem_curr.posizione])

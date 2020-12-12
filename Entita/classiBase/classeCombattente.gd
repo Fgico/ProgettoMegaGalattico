@@ -74,7 +74,9 @@ func attacca(attacco,target):
 
 #cosa accade se colpito
 func hit(danno,nelement):
-	hp = max(hp - danno, 0)
+	hp = max(hp - danno / stats.def, 0)
+	print(hp)
+	print(stats.def)
 	if(hp <= 0):
 		muori()
 
