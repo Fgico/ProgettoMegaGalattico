@@ -22,6 +22,11 @@ func muori():
 	get_parent().contaNemici -=1
 	print("muore scheletro: ", get_parent().contaNemici)
 	anim.play("SkeletonArmature|Skeleton_Death")
+	var coins_scene = preload("res://DUNGEON/Scene Principali/Coins.tscn")
+	var coin = coins_scene.instance()
+	get_parent().add_child(coin)
+	coin.global_transform.origin = attacco.global_transform.origin
+	coins_scene = coin
 
 
 
