@@ -29,6 +29,7 @@ onready var screenSize = OS.get_window_size()
 func _ready():
 	knownSpecials = [fuoco,ghiaccio, tuono, bolla]
 	scattoTimer.stop()
+	sceneUtili.player = self
 
 var stickidx = -1
 #prende input per il movimento dal tocco

@@ -35,7 +35,11 @@ var cityStatus = {
 	"wizard" : 1
 }
 
-var inventory = []
+var inventory = {
+	"weapons" : [1],
+	"armors" : [1],
+	"consumable" : []
+}
 
 
 func saveToFile():
