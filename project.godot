@@ -38,8 +38,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Rogue"
-run/main_scene="res://DUNGEON/Scene Principali/dungeon1.tscn"
+config/name="Dangerous Skies!!!"
+run/main_scene="res://nodo_isola.tscn"
 
 [autoload]
 
@@ -105,7 +105,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 quality/shadow_atlas/quadrant_0_subdiv=0
 quality/shadow_atlas/quadrant_1_subdiv=0

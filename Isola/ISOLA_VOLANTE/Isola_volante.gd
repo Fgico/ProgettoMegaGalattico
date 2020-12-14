@@ -10,7 +10,8 @@ func _ready():
 
 
 func _on_AreaEntrata_body_entered(body):
-	if body.is_in_group("player"):
+	if (body.is_in_group("player")):
+		body.UI.hide()
 		fade.play("fadetoblack")
 	pass # Replace with function body.
 

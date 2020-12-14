@@ -22,8 +22,9 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89013, -5.56085 )
 
 [node name="Camera" type="Camera" parent="target"]
-transform = Transform( -1, 1.10845e-12, 3.25841e-07, 2.55738e-07, 0.619684, 0.784851, -2.01918e-07, 0.784851, -0.619684, 0, 10.9258, -4.88136 )
+transform = Transform( -1, 8.95286e-13, 3.25842e-07, 2.65573e-07, 0.57941, 0.815036, -1.88795e-07, 0.815036, -0.57941, 0, 5.05844, -1.74136 )
 current = true
+fov = 58.8753
 
 [node name="UI" type="Control" parent="target/Camera"]
 anchor_right = 1.0

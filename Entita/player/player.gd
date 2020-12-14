@@ -80,7 +80,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	input_pc()
+	#input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -152,4 +152,7 @@ func collectCoin():
 func collectItem():
 	items = items + 1
 	convertStringa()
-	
+
+func collectCoinEnemy():
+	coins = coins + 5
+	convertStringa()
