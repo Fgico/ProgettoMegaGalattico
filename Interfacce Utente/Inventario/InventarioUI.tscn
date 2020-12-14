@@ -224,6 +224,8 @@ anchor_left = 0.550781
 anchor_top = 0.476667
 anchor_right = 0.647781
 anchor_bottom = 0.644667
+margin_left = -4.24268
+margin_right = -4.57068
 
 [node name="ViewportContainer" type="ViewportContainer" parent="."]
 anchor_left = 0.707
