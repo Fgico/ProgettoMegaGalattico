@@ -109,6 +109,7 @@ func attaccaChecked(attacco,isSpecial):
 				2:
 					anim.play("sword and shield attack 2-loop")
 					var attackDir = (spawnAtk.global_transform.origin - self.global_transform.origin).normalized()
+					attackDir.y = 0
 					setForce(attackDir, 500, 0.5)
 					.attacca(attacco,target)
 					combo = 0

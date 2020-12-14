@@ -46,6 +46,7 @@ run/main_scene="res://DUNGEON/Scene Principali/dungeon1.tscn"
 userData="*res://Singletons/userData.gd"
 ItemDB="*res://Singletons/itemDB.gd"
 sceneUtili="*res://Singletons/SceneUtili.gd"
+Firebase="*res://Singletons/firebase.gd"
 
 [display]
 

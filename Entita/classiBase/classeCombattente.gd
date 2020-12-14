@@ -104,7 +104,6 @@ func physics_process(delta):
 		#se raffredato mi rallento
 		Freezed:
 			spd = stats.spd * 0.5
-			print(spd,debuffTime)
 			debuffTime = max(0, debuffTime-delta)
 			if(debuffTime == 0):
 				debuff = Normal
