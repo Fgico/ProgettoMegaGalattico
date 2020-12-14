@@ -105,6 +105,7 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 quality/shadow_atlas/quadrant_0_subdiv=0
 quality/shadow_atlas/quadrant_1_subdiv=0

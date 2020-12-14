@@ -541,7 +541,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8147e-06, 0, 2 )
 
 [node name="Floor_Modular8" parent="Nodo_strade/Floor_Modular6" index="11" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9707, -0.034584, 9.99774 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08628, -0.034584, 9.99774 )
 
 [node name="Floor_Modular9" parent="Nodo_strade/Floor_Modular6" index="12" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9707, -0.034584, 1.99774 )
@@ -550,7 +550,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9707, -0.034584, 1.99774 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8147e-06, 0, 4 )
 
 [node name="Floor_Modular12" parent="Nodo_strade/Floor_Modular6" index="14" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9707, -0.034584, 11.9977 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.69939, -0.0774612, 12.0456 )
 
 [node name="Floor_Modular13" parent="Nodo_strade/Floor_Modular6" index="15" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9707, -0.034584, 3.99774 )
@@ -559,7 +559,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9707, -0.034584, 3.99774 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8147e-06, 0, 6 )
 
 [node name="Floor_Modular16" parent="Nodo_strade/Floor_Modular6" index="17" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97069, -0.034584, 13.9977 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.57492, -0.034584, 13.9977 )
 
 [node name="Floor_Modular17" parent="Nodo_strade/Floor_Modular6" index="18" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9707, -0.034584, 5.99774 )
@@ -601,7 +601,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.81615
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.816158, -0.034584, -2.00226 )
 
 [node name="Floor_Modular85" parent="Nodo_strade/Floor_Modular6" index="31" instance=ExtResource( 14 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.816151, -0.034584, 9.99774 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.816143, -0.034584, 9.99774 )
 
 [node name="Floor_Modular86" parent="Nodo_strade/Floor_Modular6" index="32" instance=ExtResource( 14 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.816143, -0.034584, 11.9977 )
@@ -775,7 +775,7 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.81615
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.816154, -0.034584, 21.9977 )
 
 [node name="Floor_Modular3" parent="Nodo_strade" index="11" instance=ExtResource( 14 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.58449, 64.4139, -32.4719 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.56808, 64.4139, -32.4719 )
 
 [node name="Flood_modulare_piccolo6" parent="Nodo_strade/Floor_Modular3" index="1" instance=ExtResource( 14 )]
 transform = Transform( 1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 107, 0, -38 )
@@ -5106,6 +5106,7 @@ transform = Transform( -0.290865, 0.566393, 0.771101, -0.0551891, 0.794672, -0.6
 
 [node name="Cylinder" parent="." index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1287, -0.155281, -0.574312 )
+use_in_baked_light = false
 
 [node name="StaticBody" type="StaticBody" parent="Cylinder" index="0"]
 
@@ -11903,6 +11904,7 @@ material/0 = ExtResource( 3 )
 
 [node name="Particles" type="Particles" parent="Fontana" index="4"]
 transform = Transform( 3, 0, 0, 0, -3, 4.52987e-07, 0, -4.52987e-07, -3, -0.108391, 0.173332, 0.0888023 )
+visible = false
 material_override = SubResource( 10 )
 amount = 50
 lifetime = 1.15
@@ -11914,6 +11916,7 @@ draw_pass_1 = SubResource( 17 )
 
 [node name="Particles2" type="Particles" parent="Fontana" index="5"]
 transform = Transform( -1.5, 3.92298e-07, 2.59808, 0, -3, 4.52987e-07, 2.59808, 2.26494e-07, 1.5, -0.108391, 0.173332, 0.0888023 )
+visible = false
 material_override = SubResource( 10 )
 amount = 50
 lifetime = 1.15
@@ -11924,8 +11927,7 @@ process_material = SubResource( 15 )
 draw_pass_1 = SubResource( 17 )
 
 [node name="Particelle_gl2" type="CPUParticles" parent="Fontana" index="6"]
-transform = Transform( 3, 0, 0, 0, -3, 4.52987e-07, 0, -4.52987e-07, -3, -0.400547, -0.731873, 0.305557 )
-visible = false
+transform = Transform( 3, 0, 0, 0, -3, 4.52987e-07, 0, -4.52987e-07, -3, -0.278806, 0.34346, -0.0484123 )
 material_override = SubResource( 10 )
 amount = 50
 lifetime = 0.4
@@ -11946,13 +11948,18 @@ color_ramp = SubResource( 11 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="16"]
 transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 13.4708, 251.431, 0 )
-light_energy = 1.85
+light_energy = 1.3
 light_indirect_energy = 0.87
-shadow_enabled = true
+light_bake_mode = 0
+shadow_bias = 16.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight" index="0"]
 autoplay = "sun_anim"
 anims/sun_anim = SubResource( 18 )
+
+[node name="BakedLightmap" type="BakedLightmap" parent="." index="17"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 75.2856, 0 )
+bake_extents = Vector3( 235.656, 193.378, 224.884 )
 [connection signal="body_entered" from="Nodo_case_iter/casa_armaiolo/Area" to="Nodo_case_iter/casa_armaiolo" method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Nodo_case_iter/casa_armaiolo/Area" to="Nodo_case_iter/casa_armaiolo" method="_on_Area_body_exited"]
 [connection signal="body_entered" from="Nodo_case_iter/casa_esperienza/Area" to="Nodo_case_iter/casa_esperienza" method="_on_Area_body_entered"]

@@ -9,6 +9,7 @@ data = PoolVector3Array( -0.0411, 0.074, -0.0509, -0.0411, -0.0386, 0.01, -0.041
 
 [node name="House2" parent="." index="0"]
 transform = Transform( 100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 14.3975, 0 )
+use_in_baked_light = true
 
 [node name="StaticBody" type="StaticBody" parent="House2" index="0"]
 
