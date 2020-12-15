@@ -20,6 +20,8 @@ func muori():
 	get_parent().contaNemici -= 1
 	print("muore drago: ", get_parent().contaNemici)
 	anim.play("DragonArmature|Dragon_Death")
+	
+	#nemico droppa le monete da morto
 	var coins_scene = preload("res://DUNGEON/Scene Principali/coinBoss.tscn")
 	var coin = coins_scene.instance()
 	get_parent().add_child(coin)
