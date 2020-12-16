@@ -2,7 +2,7 @@
 
 [ext_resource path="res://DUNGEON/Script/coin.gd" type="Script" id=1]
 [ext_resource path="res://DUNGEON/PNG/effetti_per_particelle/spotlight_8.png" type="Texture" id=2]
-[ext_resource path="res://DUNGEON/pick-up coin.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/pick-up coin.wav" type="AudioStream" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.815686, 0.596078, 0.0117647, 1 )

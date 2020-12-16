@@ -15,7 +15,7 @@ func muori():
 	anim.play("BatArmature|Bat_Death")
 	
 	#nemico droppa le monete da morto
-	var coins_scene = preload("res://DUNGEON/Scene Principali/coinBat.tscn")
+	var coins_scene = load("res://DUNGEON/Scene Principali/coinBat.tscn")
 	var coin = coins_scene.instance()
 	get_parent().add_child(coin)
 	coin.global_transform.origin = spawnAtk.global_transform.origin

@@ -1,8 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://DUNGEON/pick-up coin.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/pick-up coin.wav" type="AudioStream" id=1]
 [ext_resource path="res://DUNGEON/Script/coinEnemy.gd" type="Script" id=2]
 [ext_resource path="res://DUNGEON/Item/obj/material-coin.material" type="Material" id=3]
+
+
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "coin"

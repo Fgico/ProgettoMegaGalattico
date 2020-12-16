@@ -24,7 +24,7 @@ func muori():
 	anim.play("SkeletonArmature|Skeleton_Death")
 	
 	#nemico droppa le monete da morto
-	var coins_scene = preload("res://DUNGEON/Scene Principali/coinEnemy.tscn")
+	var coins_scene = load("res://DUNGEON/Scene Principali/coinEnemy.tscn")
 	var coin = coins_scene.instance()
 	get_parent().add_child(coin)
 	coin.global_transform.origin = spawnAtk.global_transform.origin
@@ -33,6 +33,7 @@ func muori():
 	anim.play("animazioneCascata")
 	$Flash.play("deathFlash")
 	$Timer.start()
+
 
 
 
