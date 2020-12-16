@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Interfacce Utente/ScenaIniziale/Logo.png" type="Texture" id=1]
-[ext_resource path="res://Interfacce Utente/ScenaIniziale/backgroundtest.jpg" type="Texture" id=2]
+[ext_resource path="res://Interfacce Utente/ScenaIniziale/background copy.png" type="Texture" id=1]
+[ext_resource path="res://Interfacce Utente/ScenaIniziale/Immagini/Logo real final.png" type="Texture" id=2]
+[ext_resource path="res://Interfacce Utente/ScenaIniziale/Buttons/NewGameButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Interfacce Utente/ScenaIniziale/Buttons/ContinueButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interfacce Utente/ScenaIniziale/Buttons/SettingsButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Interfacce Utente/ScenaIniziale/fade_in/FadeIn.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Interfacce Utente/ScenaIniziale/TitleScreen.gd" type="Script" id=7]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -13,39 +19,68 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
+margin_right = 3.0
+margin_bottom = 5.0
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 120.0
-margin_top = 77.251
-margin_right = 1160.0
-margin_bottom = 637.251
+margin_left = 119.0
+margin_top = 50.0
+margin_right = 1180.0
+margin_bottom = 666.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Logo" type="TextureRect" parent="Menu"]
-margin_right = 1040.0
+margin_right = 1061.0
 margin_bottom = 190.0
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 194.0
-margin_right = 1040.0
-margin_bottom = 560.0
+margin_right = 1061.0
+margin_bottom = 616.0
 size_flags_vertical = 3
+alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 1040.0
-margin_bottom = 366.0
+margin_right = 528.0
+margin_bottom = 422.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 45
+alignment = 1
+
+[node name="NewGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_top = 76.0
+margin_right = 528.0
+margin_bottom = 136.0
+rect_min_size = Vector2( 360, 60 )
+
+[node name="ContinueButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
+margin_top = 181.0
+margin_right = 528.0
+margin_bottom = 241.0
+rect_min_size = Vector2( 360, 60 )
+
+[node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
+margin_top = 286.0
+margin_right = 528.0
+margin_bottom = 346.0
+rect_min_size = Vector2( 360, 60 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
+margin_left = 532.0
+margin_right = 1061.0
+margin_bottom = 422.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="NewGame" type="Button" parent="Menu/CenterRow/Buttons"]
-margin_right = 1040.0
-margin_bottom = 20.0
-flat = true
+[node name="FadeIn" parent="." instance=ExtResource( 6 )]
+visible = false
+[connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
