@@ -16,13 +16,13 @@ var bolla = preload("res://Entita/Attacchi/Speciali/acqua/Bollaraggio.tscn")
 var target = "enemy"
 
 onready var anim = $rotable/mesh/AnimationPlayer
-onready var cam = $target/Camera
-onready var stick = $target/Camera/UI/CombatUI/movStick
+onready var cam = $rotable/Camera
+onready var stick = $rotable/Camera/UI/CombatUI/movStick
 onready var scattoTimer = $Timer/scatto
-onready var healthBar = $target/Camera/UI/CombatUI/healthBar
-onready var mpBar = $target/Camera/UI/CombatUI/mpBar
-onready var dodgeBar = $target/Camera/UI/CombatUI/gameButtons/scatto/ProgressBar
-onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "PASSAGGIO"
+onready var healthBar = $rotable/Camera/UI/CombatUI/healthBar
+onready var mpBar = $rotable/Camera/UI/CombatUI/mpBar
+onready var dodgeBar = $rotable/Camera/UI/CombatUI/gameButtons/scatto/ProgressBar
+onready var UI = get_node("rotable/Camera/UI") #nasconde l'UI durante la scena "PASSAGGIO"
 
 onready var screenSize = OS.get_window_size()
 
@@ -47,8 +47,6 @@ func _input(event):
 		inputDir = stick.position - event.position
 		var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, inputDir.angle_to(Vector2.UP))
 		setTargetDir(Vector3(movDir.x,0,movDir.z))
-		#setTargetDir(Vector3(inputDir.x,0,inputDir.y))
-	
 		
 #input ma dal pc
 func input_pc():
@@ -141,8 +139,8 @@ func _on_scatto_timeout():
 	pass # Replace with function body.
 
 func convertStringa():
-	$target/Camera/UI/UIcoins_item/counterCoins.text = String(coins)
-	$target/Camera/UI/UIcoins_item/counterItems.text = String(items)
+	$rotable/Camera/UI/UIcoins_item/counterCoins.text = String(coins)
+	$rotable/Camera/UI/UIcoins_item/counterItems.text = String(items)
 
 
 #CONTATORE MONETE

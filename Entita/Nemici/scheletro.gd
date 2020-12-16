@@ -19,8 +19,7 @@ func _physics_process(delta):
 
 func muori():
 	.muori()
-	get_parent().contaNemici -=1
-	print("muore scheletro: ", get_parent().contaNemici)
+	get_parent().contaNemici -= 1
 	anim.play("SkeletonArmature|Skeleton_Death")
 	var coins_scene = preload("res://DUNGEON/Scene Principali/Coins.tscn")
 	var coin = coins_scene.instance()
