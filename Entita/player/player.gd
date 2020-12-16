@@ -16,7 +16,7 @@ var bolla = preload("res://Entita/Attacchi/Speciali/acqua/Bollaraggio.tscn")
 var target = "enemy"
 
 onready var anim = $rotable/mesh/AnimationPlayer
-#onready var cam = $target/Camera
+onready var cam = $target/Camera
 onready var stick = $target/Camera/UI/CombatUI/movStick
 onready var scattoTimer = $Timer/scatto
 onready var healthBar = $target/Camera/UI/CombatUI/healthBar
@@ -68,7 +68,6 @@ func input_pc():
 #aggiorna animazioni, scatto e barra magia e richiama la "farlocca"
 #physics_process della classe madre
 func _physics_process(delta):
-	var camera = get_node("target2/Camera_stalker").get_global_transform()
 	mpBar.value = (float(mp) /stats.maxmp) *100
 	scattando = max( 1 , scattando- delta*10)
 	if(scattando<=1):
@@ -76,7 +75,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	input_pc()
+	#input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -148,6 +147,10 @@ func collectCoin():
 	convertStringa()
 
 func collectCoinEnemy():
+	coins = coins + 3
+	convertStringa()
+
+func collectCoinBat():
 	coins = coins + 5
 	convertStringa()
 

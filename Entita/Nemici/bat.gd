@@ -13,9 +13,26 @@ func _physics_process(delta):
 func muori():
 	.muori()
 	anim.play("BatArmature|Bat_Death")
+	
+	#nemico droppa le monete da morto
+	var coins_scene = preload("res://DUNGEON/Scene Principali/coinBat.tscn")
+	var coin = coins_scene.instance()
+	get_parent().add_child(coin)
+	coin.global_transform.origin = spawnAtk.global_transform.origin
+	coins_scene = coin
+	var anim = coins_scene.get_node("AnimationCascata3")
+	anim.play("animazioneCascata")
+	$Flash.play("deathFlash")
+	$Timer.start()
+
 
 func _on_Area_body_entered(body):
 	if(not morto and stunned <=1):
 		if(body.is_in_group(target)):
 			attacca(attacco,target)
 			anim.play("BatArmature|Bat_Attack2")
+
+
+func _on_Timer_timeout():
+	queue_free()
+	pass # Replace with function body.
