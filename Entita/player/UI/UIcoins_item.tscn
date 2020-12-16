@@ -28,14 +28,14 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 770.587, 49.0406 )
+position = Vector2( 704, 49.041 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="labelCoins(X)" type="Label" parent="."]
-margin_left = 826.229
+margin_left = 766.125
 margin_top = 36.244
-margin_right = 854.229
+margin_right = 794.125
 margin_bottom = 84.244
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0.792157, 0.301961, 1 )
@@ -45,9 +45,9 @@ __meta__ = {
 }
 
 [node name="counterCoins" type="Label" parent="."]
-margin_left = 862.751
+margin_left = 800.0
 margin_top = 6.55214
-margin_right = 991.751
+margin_right = 930.94
 margin_bottom = 107.552
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.792157, 0.301961, 1 )
@@ -57,13 +57,13 @@ __meta__ = {
 }
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 774.757, 155.24 )
+position = Vector2( 704, 155.24 )
 rotation = 1.39626
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 1 )
 
 [node name="labelItems(X)" type="Label" parent="."]
-margin_left = 826.229
+margin_left = 766.0
 margin_top = 143.054
 margin_right = 854.229
 margin_bottom = 191.054
@@ -74,7 +74,7 @@ __meta__ = {
 }
 
 [node name="counterItems" type="Label" parent="."]
-margin_left = 862.751
+margin_left = 800.0
 margin_top = 114.8
 margin_right = 965.751
 margin_bottom = 215.8
