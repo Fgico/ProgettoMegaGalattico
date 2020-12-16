@@ -29,6 +29,7 @@ onready var screenSize = OS.get_window_size()
 func _ready():
 	knownSpecials = [fuoco,ghiaccio, tuono, bolla]
 	scattoTimer.stop()
+	sceneUtili.player = self
 
 var stickidx = -1
 #prende input per il movimento dal tocco
@@ -69,6 +70,10 @@ func input_pc():
 #physics_process della classe madre
 func _physics_process(delta):
 	mpBar.value = (float(mp) /stats.maxmp) *100
+	
+	if( not scattoTimer.is_stopped()):
+		dodgeBar.value = (1.5 - scattoTimer.time_left) / 1.5 * 100
+	
 	scattando = max( 1 , scattando- delta*10)
 	if(scattando<=1):
 		scattando = 1
@@ -104,6 +109,7 @@ func attaccaChecked(attacco,isSpecial):
 				2:
 					anim.play("sword and shield attack 2-loop")
 					var attackDir = (spawnAtk.global_transform.origin - self.global_transform.origin).normalized()
+					attackDir.y = 0
 					setForce(attackDir, 500, 0.5)
 					.attacca(attacco,target)
 					combo = 0
@@ -117,8 +123,8 @@ func scatta():
 		dodgeBar.value = 0
 		
 
-func hit(danno, elemento):
-	.hit(danno, elemento)
+func hit(danno, elemento,malusRate):
+	.hit(danno, elemento,malusRate)
 	healthBar.value = (float(hp)/stats.maxhp) * 100
 
 

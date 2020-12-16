@@ -10,26 +10,26 @@ var accel = 4000		#velore aggiungibile da accel in un secondo
 
 var friction = 3000 # decelerazione da fermo
 
-var scalare = 1
+var scalare :float = 1
 
-var targetDir = Vector3()
-var hordir = Vector2(0,0)
-var vel = Vector3()
+var targetDir : Vector3 = Vector3()
+var hordir : Vector2 = Vector2(0,0)
+var vel : Vector3 = Vector3()
 
-var force 
-var forceStrength
-var forceTimer = 0
+var force : Vector3
+var forceStrength : float
+var forceTimer :float  = 0
 
-var gravity = Vector3.DOWN * 20
+var gravity : Vector3 = Vector3.DOWN * 20
 var jump = false
 
 #gestione stati
-var stato = 0
+var stato : int = 0
 const Idle = 0
 const Moving = 1
 const Dead = 4
 
-var stunned = 0
+var stunned : float = 0
 #nodo che contiene nodi interessati alla rotazione, es: mesh instance
 onready var rotable = get_node("rotable")
 
@@ -44,7 +44,7 @@ func setTargetDir(newtarget : Vector3):
 			stato = Idle
 
 #scalo valori in base a velocità, delta ecc... e li metto in velocity
-func applyDir(delta):
+func applyDir(delta : float):
 	#curspd = clamp(curspd + accel *delta, 0, spd)
 	hordir.x = clamp(hordir.x + targetDir.x * accel * delta,-spd,spd)
 	hordir.y = clamp(hordir.y + targetDir.z * accel * delta,-spd,spd)
@@ -59,7 +59,7 @@ func guardaVerso(dir : Vector3):
 
 #force sposta il moveable senza ruotarlo e applicare accelerazioni, come una turbolenza
 #utile per effetti tipo knockback o avanzamento per gli attacchi
-func setForce(dir,strength, forceTime : float):
+func setForce(dir : Vector3 ,strength : float, forceTime : float):
 	force = dir
 	forceStrength = strength
 	forceTimer = forceTime
@@ -82,11 +82,11 @@ func physics_process(delta):
 	var dir = hordir * delta * scalare
 	vel.x = dir.x
 	vel.z = dir.y
-	if(stunned < 1 and not force):
+	if(stunned <= 0 and not force):
 		move_and_slide(vel, Vector3.UP,true,10,0.9)
-	if(force):
+	if(force != Vector3.ZERO):
 		move_and_slide(force * forceStrength *delta, Vector3.UP,true,10,0.9)
 		forceTimer -= delta
 		forceStrength -= 60*delta
 		if(forceTimer <= 0):
-			force = null
+			force = Vector3.ZERO

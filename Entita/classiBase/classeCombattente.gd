@@ -33,6 +33,8 @@ var knownSpecials = [] #lista dei quattro attacchi imparati
 const Normal = 0
 const Burnt = 1
 const Freezed = 2
+const Shocked = 3
+
 var debuff = Normal
 var debuffTime = 0
 
@@ -74,7 +76,7 @@ func attacca(attacco,target):
 
 
 #cosa accade se colpito
-func hit(danno,nelement):
+func hit(danno,nelement,malusRate):
 	hp = max(hp - danno, 0)
 	if(hp <= 0):
 		muori()
@@ -93,13 +95,22 @@ func physics_process(delta):
 	match debuff:
 		#se bruciato levo vita
 		Burnt:
-			hp -= delta
+			hp = max(hp - delta * 3, 0)
+			if(hp <= 0):
+				muori()
 			debuffTime = max(0, debuffTime-delta)
 			if(debuffTime == 0):
 				debuff = Normal
 		#se raffredato mi rallento
 		Freezed:
-			spd = stats.spd * 0.8
+			spd = stats.spd * 0.5
+			debuffTime = max(0, debuffTime-delta)
+			if(debuffTime == 0):
+				debuff = Normal
+				spd = stats.spd
+			
+		Shocked:
+			spd = stats.spd *0.0
 			debuffTime = max(0, debuffTime-delta)
 			if(debuffTime == 0):
 				debuff = Normal
