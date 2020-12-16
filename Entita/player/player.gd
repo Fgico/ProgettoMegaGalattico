@@ -82,7 +82,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	#input_pc()
+	input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -129,11 +129,15 @@ func hit(danno, elemento,malusRate):
 	.hit(danno, elemento,malusRate)
 	healthBar.value = (float(hp)/stats.maxhp) * 100
 
+
+
 func muori():
 	if(stato != Dead):
 		anim.play("sword and shield death-loop")
 		anim.get_animation("sword and shield death-loop").loop = false
 	stato = Dead
+
+
 
 func _on_scatto_timeout():
 	scattoTimer.stop()
@@ -150,11 +154,19 @@ func collectCoin():
 	coins = coins + 1
 	convertStringa()
 
+func collectCoinEnemy():
+	coins = coins + 3
+	convertStringa()
+
+func collectCoinBat():
+	coins = coins + 5
+	convertStringa()
+
+func collectCoinBoss():
+	coins = coins + 10
+	convertStringa()
+
 #CONTATORE OGGETTI
 func collectItem():
 	items = items + 1
-	convertStringa()
-
-func collectCoinEnemy():
-	coins = coins + 5
 	convertStringa()

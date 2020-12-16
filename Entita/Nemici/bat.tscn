@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Entita/Nemici/modelli/Bat1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entita/Nemici/bat.gd" type="Script" id=2]
-[ext_resource path="res://Entita/Attacchi/statusParticlesColors/ParticlesSpawner.tscn" type="PackedScene" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2, 2, 1 )
@@ -10,6 +9,22 @@ extents = Vector3( 2, 2, 1 )
 [sub_resource type="CapsuleShape" id=2]
 radius = 1.04449
 height = 2.59486
+
+[sub_resource type="Animation" id=3]
+resource_name = "deathFlash"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false, true, false ]
+}
 
 [node name="Bat" type="KinematicBody" groups=[
 "enemy",
@@ -20,7 +35,7 @@ script = ExtResource( 2 )
 [node name="rotable" type="Spatial" parent="."]
 
 [node name="spawnAtk" type="Position3D" parent="rotable"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10051, 2.91502 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3354, 2.91502 )
 
 [node name="mesh" parent="rotable" instance=ExtResource( 1 )]
 
@@ -35,5 +50,10 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.10098, 0.412524 )
 shape = SubResource( 2 )
 
-[node name="ParticlesSpawner" parent="." instance=ExtResource( 3 )]
+[node name="Flash" type="AnimationPlayer" parent="."]
+anims/deathFlash = SubResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 [connection signal="body_entered" from="rotable/Area" to="." method="_on_Area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
