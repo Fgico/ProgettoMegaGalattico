@@ -8,7 +8,8 @@ var target = "player"
 
 var path = null
 
-var morto = false
+var morto : bool = false
+var ready2Attack : bool = false
 
 onready var manager = get_parent()
 onready var statusParticles : CPUParticles = get_node("ParticlesSpawner/CPUParticles")
@@ -27,6 +28,12 @@ func _physics_process(delta):
 			statusParticles.emitting = false
 		if(manager.player != null):
 			setTargetDir(manager.player.global_transform.origin - self.global_transform.origin)
+		if(ready2Attack and stato != Attacking and manager.player.stato != Dead and not morto and stunned <=1 and not force):
+			pass
+			#attaccaWrapped()
+
+func attaccaWrapped():
+	pass
 
 func hit(danno,nelement,malusRate):
 	if(not morto):

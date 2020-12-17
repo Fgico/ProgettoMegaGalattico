@@ -9,12 +9,13 @@ params_cull_mode = 2
 metallic = 0.86
 
 [node name="SkyguyMesh" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.09095, 0 )
 
 [node name="Armature" parent="." index="0"]
 transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 
 [node name="rHandBone" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
-transform = Transform( 0.286949, -0.737151, 0.611774, 0.7982, -0.169117, -0.578166, 0.529657, 0.654223, 0.539866, -38.9013, 140.598, -33.6505 )
+transform = Transform( 0.0123071, -0.96804, -0.250492, 0.077648, -0.24883, 0.965429, -0.996904, -0.0313319, 0.072104, -100.742, 108.988, -42.9776 )
 bone_name = "right_hand"
 
 [node name="weaponSlot" type="Spatial" parent="Armature/Skeleton/rHandBone" index="0"]
@@ -24,7 +25,7 @@ transform = Transform( -6.49405, 2.18674, 18.7895, 18.6889, 3.81309, 6.0155, -2.
 transform = Transform( 130, 3.00686e-20, -9.91822e-06, 0, 130, 3.94114e-13, 9.91822e-06, -3.94114e-13, 130, -0.0296521, 0.187943, -0.0277779 )
 
 [node name="WaistBone" type="BoneAttachment" parent="Armature/Skeleton" index="2"]
-transform = Transform( 0.661913, -0.0531369, -0.747694, 0.0216075, 0.998422, -0.0518269, 0.749268, 0.0181492, 0.662017, 0.676293, 167.838, 3.31613 )
+transform = Transform( 0.933152, -0.339958, -0.116858, 0.060701, -0.171395, 0.98333, -0.35432, -0.92469, -0.139302, -8.26062, 120.014, -35.9667 )
 bone_name = "spine_2"
 
 [node name="ArmorSlot" type="Spatial" parent="Armature/Skeleton/WaistBone" index="0"]
