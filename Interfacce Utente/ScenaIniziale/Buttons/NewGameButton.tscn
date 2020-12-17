@@ -6,4 +6,4 @@
 scene_to_load = "res://Interfacce Utente/ScenaIniziale/Game/NewGame.tscn"
 
 [node name="Label" parent="." index="0"]
-text = "NewGame >"
+text = "	< NewGame >"

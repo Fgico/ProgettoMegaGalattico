@@ -6,4 +6,4 @@
 scene_to_load = "res://Interfacce Utente/ScenaIniziale/Game/Continue.tscn"
 
 [node name="Label" parent="." index="0"]
-text = "Continue >"
+text = "< Continue >"
