@@ -445,7 +445,6 @@ transform = Transform( -0.290865, 0.566393, 0.771101, -0.0551891, 0.794672, -0.6
 [node name="Cylinder" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8713, -0.155281, -0.574312 )
 cast_shadow = 0
-use_in_baked_light = false
 
 [node name="StaticBody" type="StaticBody" parent="Cylinder" index="0"]
 
@@ -6784,13 +6783,14 @@ near = 0.42
 far = 261.3
 
 [node name="Area" type="Area" parent="Case iterative/casa_esperienza" index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 6.93889e-18, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Case iterative/casa_esperienza/Area" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74364, 0.953009, 7.03634 )
 shape = SubResource( 3 )
 
 [node name="Pavimento_casa_esperienza" parent="Case iterative/casa_esperienza" index="13" instance=ExtResource( 31 )]
-transform = Transform( -0.970804, 0.00166999, 0.00960002, -0.002382, 1.002, -1.6e-05, -0.00960004, -5.20622e-16, -0.9744, 15.4081, -1.3534, 14.6298 )
+transform = Transform( -0.970804, 0.00166999, 0.00960002, -0.002382, 1.002, -1.6e-05, -0.00960004, -5.06866e-16, -0.9744, 15.4081, -1.3534, 14.6298 )
 
 [node name="CerchioAura_armaiolo" type="Spatial" parent="Case iterative" index="2"]
 transform = Transform( 0.9, 0, 0, 0, 1, 0, 0, 0, 0.9, 97.4984, 70.691, 47.0536 )

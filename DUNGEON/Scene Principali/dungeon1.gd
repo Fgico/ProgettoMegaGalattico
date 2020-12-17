@@ -10,7 +10,7 @@ func _ready():
 
 #PASSAGGIO 1°DUNGEON
 func AreaSbarre_entered(body):
-	if(body.is_in_group("player") and get_node("enemyMaster").contaNemici == 0):
+	if(body.is_in_group("player") and get_node("enemyMaster").contaNemici <= 0):
 		body.UI.hide()
 		camera.current = true
 		animazione1.play("animazioneSbarre")

@@ -2,9 +2,7 @@
 
 [ext_resource path="res://DUNGEON/Item/obj/wrench01.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://DUNGEON/Script/Item.gd" type="Script" id=2]
-[ext_resource path="res://Sounds/pick-up coin.wav" type="AudioStream" id=3]
-
-
+[ext_resource path="res://Sounds/Pickitem.ogg" type="AudioStream" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.337964, 1.64328, 0.542556 )
