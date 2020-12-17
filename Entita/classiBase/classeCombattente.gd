@@ -105,7 +105,7 @@ func physics_process(delta):
 		#se bruciato levo vita
 		Burnt:
 			hp = max(hp - delta * 3, 0)
-			if(hp <= 0):
+			if(hp <= 0 and stato != Dead):
 				muori()
 			debuffTime = max(0, debuffTime-delta)
 			if(debuffTime == 0):
