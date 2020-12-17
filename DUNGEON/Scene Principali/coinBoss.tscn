@@ -62,6 +62,7 @@ shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+bus = "fx"
 
 [node name="AnimationCascata2" type="AnimationPlayer" parent="."]
 anims/animazioneCascata = SubResource( 3 )

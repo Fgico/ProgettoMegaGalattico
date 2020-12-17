@@ -72,5 +72,6 @@ anims/animazioneCoins = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+bus = "fx"
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

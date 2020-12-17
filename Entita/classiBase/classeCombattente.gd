@@ -10,6 +10,13 @@ var stats = {
 	"spd" : 600
 }
 
+var armorStats = {
+	"head" : 1,
+	"chest" : 1,
+	"pants" : 1,
+	"shoes" :1
+}
+
 #si nasce in stato Idle, eredito definizione altri stati da Moveable
 const Attacking = 2
 const Dodging = 3	#per ora non usato
@@ -71,14 +78,16 @@ func attacca(attacco,target):
 			attacked.target = target
 			attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
 			stato = Attacking					#aggiorno stato
+			return attackTimeout
 		else:
 			attacked.queue_free()				#fix temp: non avevo mp per evocarlo quindi me ne libero
-
+			return 0
 
 #cosa accade se colpito
 func hit(danno,nelement,malusRate):
 	hp = max(hp - danno, 0)
-	if(hp <= 0):
+	if(hp <= 0 and stato != Dead):
+		print("morendo",self,self.hp)
 		muori()
 
 func muori():

@@ -58,4 +58,5 @@ wait_time = 3.0
 
 [node name="ParticlesSpawner" parent="." instance=ExtResource( 3 )]
 [connection signal="body_entered" from="rotable/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="rotable/Area" to="." method="_on_Area_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

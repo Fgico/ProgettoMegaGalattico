@@ -19,6 +19,7 @@ func _physics_process(delta):
 
 func muori():
 	.muori()
+	print("morto",self,self.hp)
 	get_parent().contaNemici -= 1
 	anim.play("SkeletonArmature|Skeleton_Death")
 	
@@ -35,13 +36,22 @@ func muori():
 
 
 
-func _on_Area_body_entered(body):
-	if(not morto and stunned <=1 and not force):
-		if(body.is_in_group(target)):
-			attacca(attacco,target)
-			anim.play("SkeletonArmature|Skeleton_Attack")
+func attaccaWrapped():
+	attacca(attacco,target)
+	anim.play("SkeletonArmature|Skeleton_Attack")
 
 
 func _on_Timer_timeout():
 	queue_free()
 	pass # Replace with function body.
+
+
+func _on_Area_body_entered(body):
+	if(body.is_in_group(target)):
+		ready2Attack = true
+
+
+func _on_Area_body_exited(body):
+	if(body.is_in_group(target)):
+		ready2Attack = false
+

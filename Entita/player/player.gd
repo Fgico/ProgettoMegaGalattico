@@ -82,7 +82,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	#input_pc()
+	input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -92,7 +92,7 @@ func _physics_process(delta):
 #piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
 	if (stato != Attacking and stato != Dead and combo == 0):
-		.attacca(attacco,target)
+		var tempo = .attacca(attacco,target)
 		if isSpecial:
 			anim.play("sword and shield casting 2-loop")
 		else:
@@ -105,7 +105,7 @@ func attaccaChecked(attacco,isSpecial):
 			match combo:
 				1:
 					anim.play("sword and shield slash 3-loop")
-					.attacca(attacco,target)
+					var tempo = .attacca(attacco,target)
 					anim.advance(0.5)
 					combo += 1
 				2:
@@ -113,7 +113,8 @@ func attaccaChecked(attacco,isSpecial):
 					var attackDir = (spawnAtk.global_transform.origin - self.global_transform.origin).normalized()
 					attackDir.y = 0
 					setForce(attackDir, 500, 0.5)
-					.attacca(attacco,target)
+					var tempo = .attacca(attacco,target)
+					anim.playback_speed = tempo / atkSpd
 					combo = 0
 
 #scattando e uno scalare della velocita che diminuisce di 1 al secondo
@@ -170,3 +171,8 @@ func collectCoinBoss():
 func collectItem():
 	items = items + 1
 	convertStringa()
+
+func equipWeapon(id : int):
+	var wpn = ItemDB.weapons[id]
+	self.stats.atk = wpn.dmg/10
+	self.atkSpd = 1/(wpn.spd/5)

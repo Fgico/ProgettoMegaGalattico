@@ -66,6 +66,7 @@ wait_time = 0.22
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+bus = "fx"
 
 [node name="AnimationCascata3" type="AnimationPlayer" parent="."]
 anims/animazioneCascata = SubResource( 3 )
