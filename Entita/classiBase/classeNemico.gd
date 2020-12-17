@@ -29,8 +29,7 @@ func _physics_process(delta):
 		if(manager.player != null):
 			setTargetDir(manager.player.global_transform.origin - self.global_transform.origin)
 		if(ready2Attack and stato != Attacking and manager.player.stato != Dead and not morto and stunned <=1 and not force):
-			pass
-			#attaccaWrapped()
+			attaccaWrapped()
 
 func attaccaWrapped():
 	pass
