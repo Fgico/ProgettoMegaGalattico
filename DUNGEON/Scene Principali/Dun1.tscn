@@ -1,0 +1,301 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://dungeon1/dungeon1.glb" type="PackedScene" id=1]
+[ext_resource path="res://Entita/Nemici/scheletro.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Meshlib/mattonella.meshlib" type="MeshLibrary" id=3]
+[ext_resource path="res://Entita/Attacchi/statusParticlesColors/ParticlesSpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entita/Nemici/bat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://DUNGEON/Modular Dungeon/OBJ/Arch_bars.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://DUNGEON/Scene Principali/Item.tscn" type="PackedScene" id=7]
+[ext_resource path="res://DUNGEON/Scene Principali/dungeon1.gd" type="Script" id=8]
+[ext_resource path="res://enemyMaster.gd" type="Script" id=9]
+[ext_resource path="res://DUNGEON/Scene Principali/Coins.tscn" type="PackedScene" id=10]
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.296786, 4.23462, 10.3547 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 4.12261, 3.80181, 0.644526 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 1.89246, 4.99366, 1.89893 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 1.2596, 1.69755, 1.87411 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1.17096, 0.812618, 1.12876 )
+
+[sub_resource type="BoxShape" id=10]
+extents = Vector3( 1.2649, 0.817602, 1.55381 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 11.3256, 0.281444, 14.1551 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 1.66918, 1, 1.56641 )
+
+[sub_resource type="Animation" id=16]
+resource_name = "animazioneSbarre"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sbarre/sbarre_mesh:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.421599, 0 ), Vector3( 0, 2.82305, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sbarre/collisione_sbarre:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.127429, 1.82, -0.98621 ), Vector3( -0.127429, 5.46031, -0.98621 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.101961, 0.101961, 0.101961, 1 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 1.53846, 1.81908, 0.0997343 )
+
+[sub_resource type="Animation" id=19]
+resource_name = "fadetoblack1"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="dungeon1" instance=ExtResource( 1 )]
+transform = Transform( -1.5, 0, -4.88762e-07, 0, 1.5, 0, 4.88762e-07, 0, -1.5, -0.0463428, 0, 0 )
+script = ExtResource( 8 )
+
+[node name="Plane" parent="." index="1"]
+visible = false
+
+[node name="PianoPerimetro" parent="." index="2"]
+visible = false
+
+[node name="Pavimento" type="GridMap" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.046, 0, 19.975 )
+mesh_library = ExtResource( 3 )
+cell_size = Vector3( 0.05, 0.05, 0.05 )
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PoolIntArray( 20, 3, 1441792, 60, 3, 538312704, 100, 3, 1441792, 140, 3, 1441792, 180, 3, 1441792, 220, 3, 538312704, 65516, 3, -1609170944, 20, 43, 538312704, 60, 43, 538312704, 100, 43, 1441792, 140, 43, 538312704, 180, 43, 538312704, 60, 65059, 538312704, 100, 65059, 538312704, 140, 65059, 538312704, 20, 65099, 538312704, 60, 65099, 538312704, 100, 65099, 538312704, 140, 65099, -1609170944, 180, 65099, 538312704, 220, 65099, 538312704, 260, 65099, 538312704, 65436, 65099, 1441792, 65476, 65099, 538312704, 65516, 65099, 1441792, 65836, 65099, 538312704, 20, 65139, 1441792, 60, 65139, 1441792, 100, 65139, 1441792, 140, 65139, 1441792, 180, 65139, 1441792, 220, 65139, 1441792, 260, 65139, 1441792, 65436, 65139, 538312704, 65476, 65139, 1441792, 65516, 65139, 1441792, 65836, 65139, 538312704, 20, 65179, 1441792, 60, 65179, 1441792, 100, 65179, 1441792, 140, 65179, 1441792, 180, 65179, 538312704, 220, 65179, 1441792, 260, 65179, 1441792, 65436, 65179, 1441792, 65476, 65179, 1441792, 65516, 65179, 1441792, 65836, 65179, 538312704, 20, 65219, 1441792, 60, 65219, 538312704, 100, 65219, 1441792, 140, 65219, 1441792, 180, 65219, 1441792, 220, 65219, 1441792, 260, 65219, 1441792, 65436, 65219, 1441792, 65476, 65219, 1441792, 65516, 65219, 1441792, 65836, 65219, -1609170944, 20, 65259, 1441792, 60, 65259, 1441792, 100, 65259, 1441792, 140, 65259, 1441792, 180, 65259, 1441792, 220, 65259, 1441792, 260, 65259, 1441792, 65436, 65259, 538312704, 65476, 65259, 1441792, 65516, 65259, 1441792, 65836, 65259, 538312704, 20, 65299, 1441792, 60, 65299, 1441792, 100, 65299, 1441792, 140, 65299, 1441792, 180, 65299, 1441792, 220, 65299, 1441792, 260, 65299, 1441792, 65436, 65299, -1609170944, 65476, 65299, 1441792, 65516, 65299, 1441792, 65836, 65299, 538312704, 20, 65339, 1441792, 60, 65339, 1441792, 100, 65339, 1441792, 140, 65339, 1441792, 180, 65339, 1441792, 220, 65339, 1441792, 260, 65339, 1441792, 65436, 65339, -1609170944, 65476, 65339, 1441792, 65516, 65339, 1441792, 65836, 65339, 538312704, 20, 65379, 1441792, 60, 65379, 1441792, 100, 65379, 1441792, 140, 65379, 1441792, 180, 65379, 1441792, 220, 65379, 1441792, 260, 65379, 1441792, 300, 65379, 538312704, 65436, 65379, 538312704, 65476, 65379, 1441792, 65516, 65379, 1441792, 20, 65419, 1441792, 60, 65419, 1441792, 100, 65419, 1441792, 140, 65419, 1441792, 180, 65419, 1441792, 220, 65419, 1441792, 260, 65419, 1441792, 300, 65419, 538312704, 65436, 65419, 538312704, 65476, 65419, 1441792, 65516, 65419, 1441792, 20, 65459, 1441792, 60, 65459, 1441792, 100, 65459, 1441792, 140, 65459, 1441792, 180, 65459, 1441792, 220, 65459, 1441792, 260, 65459, 1441792, 300, 65459, 1441792, 65436, 65459, 538312704, 65476, 65459, 1441792, 65516, 65459, 1441792, 20, 65499, 1441792, 60, 65499, 1441792, 100, 65499, 1441792, 140, 65499, 1441792, 180, 65499, 1441792, 220, 65499, 1441792, 260, 65499, -1609170944, 65436, 65499, 538312704, 65476, 65499, 538312704, 65516, 65499, 1441792 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="4"]
+transform = Transform( 0.0103881, -0.454308, 0.487792, 0.0096728, 0.487902, 0.454205, -0.666516, -2.81293e-13, 0.0141942, 39.973, 33.0433, 0 )
+shadow_enabled = true
+
+[node name="StaticBody" type="StaticBody" parent="." index="5"]
+
+[node name="Parete1" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.03534, 4.90507, 7.09199 )
+shape = SubResource( 5 )
+
+[node name="Parete2" type="CollisionShape" parent="StaticBody" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9495, 4.90507, 7.09199 )
+shape = SubResource( 5 )
+
+[node name="Parete3" type="CollisionShape" parent="StaticBody" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9838, 4.63446, -2.95657 )
+shape = SubResource( 6 )
+
+[node name="Parete4" type="CollisionShape" parent="StaticBody" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898535, 4.63446, -2.95657 )
+shape = SubResource( 6 )
+
+[node name="Colonna1" type="CollisionShape" parent="StaticBody" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.957421, 5.74605, 2.34123 )
+shape = SubResource( 7 )
+
+[node name="Colonna2" type="CollisionShape" parent="StaticBody" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8907, 5.74605, 2.34123 )
+shape = SubResource( 7 )
+
+[node name="Casse" type="CollisionShape" parent="StaticBody" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1367, 2.25833, 0.131635 )
+shape = SubResource( 8 )
+
+[node name="Botti" type="CollisionShape" parent="StaticBody" index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97859, 1.30772, 9.59992 )
+shape = SubResource( 9 )
+
+[node name="Bauli" type="CollisionShape" parent="StaticBody" index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14457, 1.17659, 13.0771 )
+shape = SubResource( 10 )
+
+[node name="Pavimento" type="CollisionShape" parent="StaticBody" index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00665, -0.102344, 9.26167 )
+shape = SubResource( 11 )
+
+[node name="enemyMaster" type="Node" parent="." index="6"]
+script = ExtResource( 9 )
+
+[node name="Combattente" parent="enemyMaster" index="0" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.8664, 0.828717, -1.25963 )
+
+[node name="ParticlesSpawner2" parent="enemyMaster/Combattente" index="5" instance=ExtResource( 4 )]
+
+[node name="Combattente2" parent="enemyMaster" index="1" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -9.42629, 0.828717, -1.25963 )
+
+[node name="ParticlesSpawner2" parent="enemyMaster/Combattente2" index="5" instance=ExtResource( 4 )]
+
+[node name="Combattente3" parent="enemyMaster" index="2" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.83263, 0.828717, -1.25963 )
+
+[node name="ParticlesSpawner2" parent="enemyMaster/Combattente3" index="5" instance=ExtResource( 4 )]
+
+[node name="Combattente4" parent="enemyMaster" index="3" instance=ExtResource( 2 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.79779, 0.828717, -1.25963 )
+
+[node name="ParticlesSpawner2" parent="enemyMaster/Combattente4" index="5" instance=ExtResource( 4 )]
+
+[node name="Bat" parent="enemyMaster" index="4" instance=ExtResource( 5 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -7.48532, 0, -4.26649 )
+
+[node name="ParticlesSpawner2" parent="enemyMaster/Bat" index="5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0300741, 2.96239, 0 )
+
+[node name="area_sbarre" type="Area" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.79808, 7.10604, 16.1476 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="area_sbarre" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68114, -5.76944, -18.0606 )
+shape = SubResource( 12 )
+
+[node name="AnimationSbarre" type="AnimationPlayer" parent="area_sbarre" index="1"]
+anims/animazioneSbarre = SubResource( 16 )
+
+[node name="Camera" type="Camera" parent="area_sbarre" index="2"]
+transform = Transform( 0.75671, -0.141163, 0.638328, 0, 0.976409, 0.215928, -0.653751, -0.163395, 0.738858, 2.17409, -3.31581, -13.8854 )
+fov = 47.6402
+
+[node name="Sbarre" type="StaticBody" parent="area_sbarre" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76109, -6.06109, -19.1914 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="sbarre_mesh" type="MeshInstance" parent="area_sbarre/Sbarre" index="0"]
+transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, -0.421599, 0 )
+mesh = ExtResource( 6 )
+material/0 = SubResource( 13 )
+
+[node name="collisione_sbarre" type="CollisionShape" parent="area_sbarre/Sbarre" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127429, 1.82, -0.98621 )
+shape = SubResource( 14 )
+
+[node name="coins" type="Node" parent="." index="8"]
+
+[node name="coin" parent="coins" index="0" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9131, 1.4, -16.1851 )
+
+[node name="coin2" parent="coins" index="1" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9117, 1.4, -16.1851 )
+
+[node name="coin3" parent="coins" index="2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.91031, 1.4, -16.1851 )
+
+[node name="coin4" parent="coins" index="3" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90891, 1.4, -16.1851 )
+
+[node name="coin5" parent="coins" index="4" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87976, 1.4, -13.7651 )
+
+[node name="coin6" parent="coins" index="5" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.87836, 1.4, -13.7651 )
+
+[node name="coin7" parent="coins" index="6" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87696, 1.4, -13.7651 )
+
+[node name="coin8" parent="coins" index="7" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.87556, 1.4, -13.7651 )
+
+[node name="coin9" parent="coins" index="8" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74558, 1.4, -10.7401 )
+
+[node name="coin10" parent="coins" index="9" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74418, 1.4, -10.7401 )
+
+[node name="coin11" parent="coins" index="10" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74278, 1.4, -10.7401 )
+
+[node name="coin12" parent="coins" index="11" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.258616, 1.4, -10.7401 )
+
+[node name="items" type="Node" parent="." index="9"]
+
+[node name="Item" parent="items" index="0" instance=ExtResource( 7 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -21.7871, 1.4, -16.7419 )
+
+[node name="Item2" parent="items" index="1" instance=ExtResource( 7 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -21.7871, 1.4, -14.1202 )
+
+[node name="Item3" parent="items" index="2" instance=ExtResource( 7 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -21.7871, 1.4, -11.2296 )
+
+[node name="Item4" parent="items" index="3" instance=ExtResource( 7 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -21.7871, 1.4, -8.27185 )
+
+[node name="Item5" parent="items" index="4" instance=ExtResource( 7 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 6.01222, 1.4, -8.27185 )
+
+[node name="Item6" parent="items" index="5" instance=ExtResource( 7 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 6.01222, 1.4, -5.65018 )
+
+[node name="Item7" parent="items" index="6" instance=ExtResource( 7 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 6.01222, 1.4, -2.75961 )
+
+[node name="Item8" parent="items" index="7" instance=ExtResource( 7 )]
+transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 6.01222, 1.4, 0.198178 )
+
+[node name="transitionD1" type="CanvasLayer" parent="." index="10"]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="transitionD1" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="animation_fading1" type="AnimationPlayer" parent="transitionD1/ColorRect" index="0"]
+anims/fadetoblack1 = SubResource( 19 )
+
+[node name="startPos" type="Position3D" parent="." index="11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96705, 0.393094, 21.3812 )
+[connection signal="body_entered" from="area_sbarre" to="." method="_on_area_sbarre_body_entered"]
+[connection signal="animation_finished" from="area_sbarre/AnimationSbarre" to="." method="_on_AnimationSbarre_animation_finished"]
+[connection signal="animation_finished" from="transitionD1/ColorRect/animation_fading1" to="." method="_on_animation_fading1_animation_finished"]

@@ -7,6 +7,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="Torch" type="MeshInstance" parent="."]
+pause_mode = 2
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 3 )
