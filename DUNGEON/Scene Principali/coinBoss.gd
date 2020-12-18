@@ -2,6 +2,7 @@ extends Area
 
 
 func _ready():
+	self.show()
 	pass # Replace with function body.
 
 func _physics_process(delta):
@@ -14,6 +15,7 @@ func _on_coinBoss_body_entered(body):
 		body.collectCoinBoss()
 		$Timer.start()
 		$AudioStreamPlayer.play()
+		self.hide()
 	pass # Replace with function body.
 
 
