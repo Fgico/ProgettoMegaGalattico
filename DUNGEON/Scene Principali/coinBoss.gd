@@ -11,7 +11,7 @@ func _physics_process(delta):
 
 func _on_coinBoss_body_entered(body):
 	if body.is_in_group("player"):
-		body.collectCoinBoss()
+		body.addCoins(10)
 		$Timer.start()
 		$AudioStreamPlayer.play()
 	pass # Replace with function body.

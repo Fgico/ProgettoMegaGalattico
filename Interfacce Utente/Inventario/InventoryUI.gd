@@ -7,7 +7,8 @@ onready var other = get_node("DoubleEdgesBackground/PaperBackground/VBoxContaine
 
 var elem_curr = {
 	 "tipo" : null,
-	"posizione" : 0
+	"posizione" : 0,
+	"container" : null
 }
 
 

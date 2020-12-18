@@ -2,6 +2,7 @@ extends Combattente
 
 var scattando = 1
 var inputDir = Vector2()
+var lockMovement : bool = false 
 
 var coins = 0
 var items = 0
@@ -30,6 +31,9 @@ func _ready():
 	knownSpecials = [fuoco,ghiaccio, tuono, bolla]
 	scattoTimer.stop()
 	sceneUtili.player = self
+	coins = userData.numCoin
+	items = userData.numItem
+	convertStringa()
 
 var stickidx = -1
 #prende input per il movimento dal tocco
@@ -43,7 +47,7 @@ func _input(event):
 		inputDir  = Vector2(0,0)
 		stickidx = -1
 		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
-	if(event is InputEventScreenDrag and event.index == stickidx):
+	if(event is InputEventScreenDrag and event.index == stickidx and not lockMovement):
 		inputDir = stick.position - event.position
 		var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, inputDir.angle_to(Vector2.UP))
 		setTargetDir(Vector3(movDir.x,0,movDir.z))
@@ -61,7 +65,9 @@ func input_pc():
 		inputDir.y += 1
 	elif(Input.is_action_pressed("giu")):
 		inputDir.y += -1
-	setTargetDir(Vector3(inputDir.x,0,inputDir.y))
+	if(not lockMovement):
+		var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, inputDir.angle_to(Vector2.UP))
+		setTargetDir(Vector3(movDir.x,0,movDir.z))
 	
 	if Input.is_action_just_pressed("attacco"):
 		attaccaChecked(attaccoBase,false)
@@ -82,7 +88,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	input_pc()
+	#input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -149,30 +155,32 @@ func convertStringa():
 	$target/Camera/UI/UIcoins_item/counterCoins.text = String(coins)
 	$target/Camera/UI/UIcoins_item/counterItems.text = String(items)
 
+func changeNumItem(newNum : int):
+	items = newNum
+	userData.numItem = newNum
+	convertStringa()
+
+func changeNumCoins(newNum : int):
+	items = newNum
+	userData.numItem = newNum
+	convertStringa()
 
 #CONTATORE MONETE
-func collectCoin():
-	coins = coins + 1
-	convertStringa()
-
-func collectCoinEnemy():
-	coins = coins + 3
-	convertStringa()
-
-func collectCoinBat():
-	coins = coins + 5
-	convertStringa()
-
-func collectCoinBoss():
-	coins = coins + 10
+func addCoins(value : int):
+	coins += value
+	userData.numCoin = coins
 	convertStringa()
 
 #CONTATORE OGGETTI
 func collectItem():
 	items = items + 1
+	userData.numItem = items
 	convertStringa()
 
 func equipWeapon(id : int):
 	var wpn = ItemDB.weapons[id]
 	self.stats.atk = wpn.dmg/10
-	self.atkSpd = 1/(wpn.spd/5)
+	self.atkSpd = 1/ (wpn.spd/5)
+
+func equipArmor(id : int):
+	pass
