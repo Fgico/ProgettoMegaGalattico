@@ -20,5 +20,4 @@ func _on_Area_body_exited(body):
 	if body.name == "player":
 		body.cam.current=true
 		body.UI.show()
-		body.lockMovement = false
 	pass # Replace with function body.

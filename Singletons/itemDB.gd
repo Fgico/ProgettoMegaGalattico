@@ -38,7 +38,7 @@ var armors = [
 		"mesh" : "res://Entita/Equipaggiabili/armi/Sword.tscn",
 		"icon" : ICON_PATH + "Cloth Cuirass.png",
 		"def" : 5,
-		"slot" : 0,
+		"slot" : 1,
 		"costo" : 20
 	},
 	{
@@ -46,14 +46,14 @@ var armors = [
 		"mesh" : "res://Entita/Equipaggiabili/armi/Sword.tscn",
 		"icon" : ICON_PATH + "Iron Cuirass.png",
 		"def" : 10,
-		"slot" : 0,
+		"slot" : 1,
 		"costo" : 40
 	},
 	{
 		"name" : "Steel Cuirass",
 		"icon" : ICON_PATH + "Iron Cuirass.png",
 		"def" : 15,
-		"slot" : 0,
+		"slot" : 1,
 		"costo" : 60
 	},
 	{
@@ -81,42 +81,42 @@ var armors = [
 		"name" : "Cloth Bottom",
 		"icon" : ICON_PATH + "Cloth Bottom.png",
 		"def" : 5,
-		"slot" : 0,
+		"slot" : 2,
 		"costo" : 20
 	},
 	{
 		"name" : "Iron Bottom",
 		"icon" : ICON_PATH + "Iron Bottom.png",
 		"def" : 10,
-		"slot" : 0,
+		"slot" : 2,
 		"costo" : 40
 	},
 	{
 		"name" : "Steel Bottom",
 		"icon" : ICON_PATH + "Iron Bottom.png",
 		"def" : 15,
-		"slot" : 0,
+		"slot" : 2,
 		"costo" : 60
 	},
 	{
 		"name" : "Cloth Boots",
 		"icon" : ICON_PATH + "Cloth Boots.png",
 		"def" : 5,
-		"slot" : 0,
+		"slot" : 3,
 		"costo" : 20
 	},
 	{
 		"name" : "Iron Boots",
 		"icon" : ICON_PATH + "Iron Boots.png",
 		"def" : 10,
-		"slot" : 0,
+		"slot" : 3,
 		"costo" : 40
 	},
 	{
 		"name" : "Steel Boots",
 		"icon" : ICON_PATH + "Iron Boots.png",
 		"def" : 15,
-		"slot" : 0,
+		"slot" : 3,
 		"costo" : 60
 	}
 ]

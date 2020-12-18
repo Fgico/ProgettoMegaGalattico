@@ -178,9 +178,19 @@ func collectItem():
 	convertStringa()
 
 func equipWeapon(id : int):
-	var wpn = ItemDB.weapons[id]
-	self.stats.atk = wpn.dmg/10
-	self.atkSpd = 1/ (wpn.spd/5)
+	if(id != 0):
+		var wpn = ItemDB.weapons[id]
+		self.stats.atk = wpn.dmg/10
+		self.atkSpd = 1/ (wpn.atkspd/5)
 
 func equipArmor(id : int):
-	pass
+	if(id != 0):
+		var armr = ItemDB.armors[id]
+		self.armorStats[armr.slot] = armr.def
+		updateDef()
+
+func updateDef():
+	var def = 0
+	for armr in armorStats:
+		def += armr
+	stats.def = def

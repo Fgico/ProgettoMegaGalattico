@@ -10,12 +10,8 @@ var stats = {
 	"spd" : 600
 }
 
-var armorStats = {
-	"head" : 1,
-	"chest" : 1,
-	"pants" : 1,
-	"shoes" :1
-}
+#in ordine: elmetto, petto, pantaloni, scarpe
+var armorStats = [1, 1, 1, 1]
 
 #si nasce in stato Idle, eredito definizione altri stati da Moveable
 const Attacking = 2
@@ -130,13 +126,17 @@ func physics_process(delta):
 	#se sto attacando finisco l'attacco
 	if stato == Attacking:
 		if(attackTimeout<=0):
-			attackTimeout = 0
-			combo = 0
-			if targetDir != Vector3.ZERO:
-				stato = Moving
-			else:
-				stato = Idle
+			attaccoFinito()
 		else:
 			attackTimeout -= delta
 	#eseguo la routine di movimento da moveable
 	.physics_process(delta)
+
+func attaccoFinito():
+	attackTimeout = 0
+	combo = 0
+	if targetDir != Vector3.ZERO:
+		stato = Moving
+	else:
+		stato = Idle
+	

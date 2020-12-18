@@ -1,5 +1,7 @@
 extends Control
 
+var inventoryScreen = preload("res://Interfacce Utente/Inventario/InventoryUI.tscn")
+
 onready var player = get_parent().get_parent().get_parent().get_parent()
 onready var pauseMenu = get_node("PauseMenu")
 onready var pause = get_node("pause")
@@ -80,3 +82,10 @@ func _on_scatto_gui_input(event):
 func _on_ProgressBar_gui_input(event):
 	if event is InputEventScreenTouch and event.is_pressed():
 		player.scatta()
+
+
+func _on_bag_pressed():
+	var inv = inventoryScreen.instance()
+	player.add_child(inv)
+	player.UI.hide()
+	player.lockMovement = true

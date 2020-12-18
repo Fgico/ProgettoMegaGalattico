@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Entita/player/Label.gd" type="Script" id=1]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/skillButtons.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Interfacce Utente/bottoniCombat/pauseButton.png" type="Texture" id=6]
 [ext_resource path="res://Entita/player/UI/CombatUI.gd" type="Script" id=7]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/emptyButton.png" type="Texture" id=8]
+[ext_resource path="res://Interfacce Utente/bag.png" type="Texture" id=9]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.196078, 0.498039, 0.196078, 1 )
@@ -226,7 +227,6 @@ rect_pivot_offset = Vector2( 100, 90 )
 size_flags_vertical = 1
 custom_styles/fg = SubResource( 5 )
 custom_styles/bg = SubResource( 6 )
-max_value = 100.0
 value = 100.0
 rounded = true
 percent_visible = false
@@ -309,9 +309,22 @@ stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bag" type="TextureButton" parent="."]
+margin_left = 43.0
+margin_top = 68.0
+margin_right = 118.0
+margin_bottom = 143.0
+texture_normal = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_down" from="pause" to="." method="_on_pause_button_down"]
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="gui_input" from="gameButtons/attacco" to="." method="_on_attacco_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto" to="." method="_on_scatto_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto/ProgressBar" to="." method="_on_ProgressBar_gui_input"]
 [connection signal="gui_input" from="gameButtons/special" to="." method="_on_special_gui_input"]
+[connection signal="pressed" from="bag" to="." method="_on_bag_pressed"]

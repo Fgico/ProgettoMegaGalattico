@@ -36,7 +36,6 @@ func selezionaOggetto(oggetto, posOggetto, container):
 	elem_curr.container = container
 	elem_curr.costo = container.costo
 	stats.updateValue(elem_curr.tipo, elem_curr.posizione)
-	print(elem_curr)
 
 func _ready():
 	shopLevel = userData.cityStatus.smith
@@ -82,6 +81,7 @@ func _on_buy_pressed():
 
 func _on_ExitButton_pressed():
 	self.queue_free()
+	sceneUtili.player.lockMovement = false
 	pass
 
 
