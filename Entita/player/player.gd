@@ -150,6 +150,7 @@ func convertStringa():
 	$target/Camera/UI/UIcoins_item/counterItems.text = String(items)
 
 
+
 #CONTATORE MONETE
 func collectCoin():
 	coins = coins + 1
