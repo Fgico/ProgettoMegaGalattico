@@ -5,6 +5,10 @@ onready var animazione2 = get_node("AreaSbarre2/AnimationPlayer")
 onready var camera2 = get_node("AreaSbarre2/Camera")
 
 func _ready():
+	$lowSphere/AnimationPlayer.play("oscillo")
+	$lowSphere5/AnimationPlayer.play("oscillo5")
+	$lowSphere7/AnimationPlayer.play("oscillo7")
+	$lowSphere8/AnimationPlayer.play("oscillo8")
 	pass # Replace with function body.
 
 
