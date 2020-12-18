@@ -92,4 +92,5 @@ func _on_upgrade_pressed():
 		checkStoreUpgrades()
 		fillShop()
 		updateCounters()
+		userData.cityStatus.smith = shopLevel
 		pass

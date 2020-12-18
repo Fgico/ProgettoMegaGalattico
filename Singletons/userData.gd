@@ -28,11 +28,18 @@ var cityStatus = {
 }
 
 var inventory = {
-	"weapons" : [1,2,3],
-	"armors" : [1,2,3],
+	"weapons" : [1],
+	"armors" : [1],
 	"consumable" : []
 }
 
+var settings = {
+	"musicMuted" : false,
+	"fxMuted" : false,
+	"shadows" : true,
+	"shadowQuality" : 2,
+	"grass" : true
+}
 
 func saveToFile():
 	var saveFile = File.new()
