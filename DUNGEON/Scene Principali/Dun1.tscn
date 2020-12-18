@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://dungeon1/dungeon1.glb" type="PackedScene" id=1]
 [ext_resource path="res://Entita/Nemici/scheletro.tscn" type="PackedScene" id=2]
@@ -11,31 +11,43 @@
 [ext_resource path="res://enemyMaster.gd" type="Script" id=9]
 [ext_resource path="res://DUNGEON/Scene Principali/Coins.tscn" type="PackedScene" id=10]
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.296786, 4.23462, 10.3547 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 4.12261, 3.80181, 0.644526 )
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 1.89246, 4.99366, 1.89893 )
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 1.2596, 1.69755, 1.87411 )
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 1.17096, 0.812618, 1.12876 )
 
-[sub_resource type="BoxShape" id=10]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 1.2649, 0.817602, 1.55381 )
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 11.3256, 0.281444, 14.1551 )
 
-[sub_resource type="BoxShape" id=12]
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 1.73767, 0.470907, 0.0588794 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 4.85949, 0.389943, 0.047456 )
+
+[sub_resource type="BoxShape" id=15]
+extents = Vector3( 0.65504, 0.393019, 0.0571474 )
+
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 0.0383861, 0.330841, 1 )
+
+[sub_resource type="BoxShape" id=8]
 extents = Vector3( 1.66918, 1, 1.56641 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=9]
 resource_name = "animazioneSbarre"
 length = 3.0
 tracks/0/type = "value"
@@ -63,13 +75,13 @@ tracks/1/keys = {
 "values": [ Vector3( -0.127429, 1.82, -0.98621 ), Vector3( -0.127429, 5.46031, -0.98621 ) ]
 }
 
-[sub_resource type="SpatialMaterial" id=13]
+[sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 0.101961, 0.101961, 0.101961, 1 )
 
-[sub_resource type="BoxShape" id=14]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 1.53846, 1.81908, 0.0997343 )
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=12]
 resource_name = "fadetoblack1"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
@@ -102,7 +114,7 @@ cell_center_x = false
 cell_center_y = false
 cell_center_z = false
 data = {
-"cells": PoolIntArray( 20, 3, 1441792, 60, 3, 538312704, 100, 3, 1441792, 140, 3, 1441792, 180, 3, 1441792, 220, 3, 538312704, 65516, 3, -1609170944, 20, 43, 538312704, 60, 43, 538312704, 100, 43, 1441792, 140, 43, 538312704, 180, 43, 538312704, 60, 65059, 538312704, 100, 65059, 538312704, 140, 65059, 538312704, 20, 65099, 538312704, 60, 65099, 538312704, 100, 65099, 538312704, 140, 65099, -1609170944, 180, 65099, 538312704, 220, 65099, 538312704, 260, 65099, 538312704, 65436, 65099, 1441792, 65476, 65099, 538312704, 65516, 65099, 1441792, 65836, 65099, 538312704, 20, 65139, 1441792, 60, 65139, 1441792, 100, 65139, 1441792, 140, 65139, 1441792, 180, 65139, 1441792, 220, 65139, 1441792, 260, 65139, 1441792, 65436, 65139, 538312704, 65476, 65139, 1441792, 65516, 65139, 1441792, 65836, 65139, 538312704, 20, 65179, 1441792, 60, 65179, 1441792, 100, 65179, 1441792, 140, 65179, 1441792, 180, 65179, 538312704, 220, 65179, 1441792, 260, 65179, 1441792, 65436, 65179, 1441792, 65476, 65179, 1441792, 65516, 65179, 1441792, 65836, 65179, 538312704, 20, 65219, 1441792, 60, 65219, 538312704, 100, 65219, 1441792, 140, 65219, 1441792, 180, 65219, 1441792, 220, 65219, 1441792, 260, 65219, 1441792, 65436, 65219, 1441792, 65476, 65219, 1441792, 65516, 65219, 1441792, 65836, 65219, -1609170944, 20, 65259, 1441792, 60, 65259, 1441792, 100, 65259, 1441792, 140, 65259, 1441792, 180, 65259, 1441792, 220, 65259, 1441792, 260, 65259, 1441792, 65436, 65259, 538312704, 65476, 65259, 1441792, 65516, 65259, 1441792, 65836, 65259, 538312704, 20, 65299, 1441792, 60, 65299, 1441792, 100, 65299, 1441792, 140, 65299, 1441792, 180, 65299, 1441792, 220, 65299, 1441792, 260, 65299, 1441792, 65436, 65299, -1609170944, 65476, 65299, 1441792, 65516, 65299, 1441792, 65836, 65299, 538312704, 20, 65339, 1441792, 60, 65339, 1441792, 100, 65339, 1441792, 140, 65339, 1441792, 180, 65339, 1441792, 220, 65339, 1441792, 260, 65339, 1441792, 65436, 65339, -1609170944, 65476, 65339, 1441792, 65516, 65339, 1441792, 65836, 65339, 538312704, 20, 65379, 1441792, 60, 65379, 1441792, 100, 65379, 1441792, 140, 65379, 1441792, 180, 65379, 1441792, 220, 65379, 1441792, 260, 65379, 1441792, 300, 65379, 538312704, 65436, 65379, 538312704, 65476, 65379, 1441792, 65516, 65379, 1441792, 20, 65419, 1441792, 60, 65419, 1441792, 100, 65419, 1441792, 140, 65419, 1441792, 180, 65419, 1441792, 220, 65419, 1441792, 260, 65419, 1441792, 300, 65419, 538312704, 65436, 65419, 538312704, 65476, 65419, 1441792, 65516, 65419, 1441792, 20, 65459, 1441792, 60, 65459, 1441792, 100, 65459, 1441792, 140, 65459, 1441792, 180, 65459, 1441792, 220, 65459, 1441792, 260, 65459, 1441792, 300, 65459, 1441792, 65436, 65459, 538312704, 65476, 65459, 1441792, 65516, 65459, 1441792, 20, 65499, 1441792, 60, 65499, 1441792, 100, 65499, 1441792, 140, 65499, 1441792, 180, 65499, 1441792, 220, 65499, 1441792, 260, 65499, -1609170944, 65436, 65499, 538312704, 65476, 65499, 538312704, 65516, 65499, 1441792 )
+"cells": PoolIntArray( 20, 3, 1441792, 60, 3, 1441792, 100, 3, 538312704, 140, 3, 1441792, 180, 3, 1441792, 220, 3, 1441792, 65516, 3, 1441792, 20, 43, 1441792, 60, 43, 1441792, 100, 43, 538312704, 140, 43, 1441792, 180, 43, 1441792, 60, 65059, 1441792, 100, 65059, 538312704, 140, 65059, 1441792, 20, 65099, -1072300032, 60, 65099, 1441792, 100, 65099, 1441792, 140, 65099, 1441792, 180, 65099, 1441792, 220, 65099, 1441792, 260, 65099, 1441792, 65436, 65099, 1441792, 65476, 65099, 1441792, 65516, 65099, 1441792, 65836, 65099, 1441792, 20, 65139, 1441792, 60, 65139, 1441792, 100, 65139, 1441792, 140, 65139, 1441792, 180, 65139, 1441792, 220, 65139, 1441792, 260, 65139, 1441792, 65436, 65139, 1441792, 65476, 65139, 1441792, 65516, 65139, 1441792, 65836, 65139, -1072300032, 20, 65179, 1441792, 60, 65179, 1441792, 100, 65179, 1441792, 140, 65179, 1441792, 180, 65179, 1441792, 220, 65179, 1441792, 260, 65179, 1441792, 65436, 65179, 1441792, 65476, 65179, 1441792, 65516, 65179, 1441792, 65836, 65179, 1441792, 20, 65219, 1441792, 60, 65219, 1441792, 100, 65219, 1441792, 140, 65219, 1441792, 180, 65219, 1441792, 220, 65219, 1441792, 260, 65219, 1441792, 65436, 65219, 1441792, 65476, 65219, 1441792, 65516, 65219, 1441792, 65836, 65219, 1441792, 20, 65259, 1441792, 60, 65259, 1441792, 100, 65259, 1441792, 140, 65259, 1441792, 180, 65259, 1441792, 220, 65259, 1441792, 260, 65259, 1441792, 65436, 65259, 1441792, 65476, 65259, 1441792, 65516, 65259, 1441792, 65836, 65259, 1441792, 20, 65299, 1441792, 60, 65299, 1441792, 100, 65299, 1441792, 140, 65299, 1441792, 180, 65299, 1441792, 220, 65299, 1441792, 260, 65299, 1441792, 65436, 65299, 1441792, 65476, 65299, 1441792, 65516, 65299, 1441792, 65836, 65299, 1441792, 20, 65339, 1441792, 60, 65339, 1441792, 100, 65339, 1441792, 140, 65339, 1441792, 180, 65339, 1441792, 220, 65339, 1441792, 260, 65339, 1441792, 65436, 65339, 1441792, 65476, 65339, 1441792, 65516, 65339, 1441792, 65836, 65339, 1441792, 20, 65379, 1441792, 60, 65379, 1441792, 100, 65379, 1441792, 140, 65379, 1441792, 180, 65379, 1441792, 220, 65379, 1441792, 260, 65379, 1441792, 300, 65379, 1441792, 65436, 65379, 1441792, 65476, 65379, 1441792, 65516, 65379, 1441792, 20, 65419, 1441792, 60, 65419, 1441792, 100, 65419, 1441792, 140, 65419, 1441792, 180, 65419, 1441792, 220, 65419, 1441792, 260, 65419, 1441792, 300, 65419, 1441792, 65436, 65419, 1441792, 65476, 65419, 1441792, 65516, 65419, 1441792, 20, 65459, 1441792, 60, 65459, 1441792, 100, 65459, 1441792, 140, 65459, 1441792, 180, 65459, 1441792, 220, 65459, 1441792, 260, 65459, 1441792, 300, 65459, 1441792, 65436, 65459, 1441792, 65476, 65459, 1441792, 65516, 65459, 1441792, 20, 65499, 1441792, 60, 65499, 1441792, 100, 65499, 1441792, 140, 65499, 1441792, 180, 65499, 1441792, 220, 65499, 1441792, 260, 65499, 1441792, 300, 65499, -1073741824, 65436, 65499, 1441792, 65476, 65499, 1441792, 65516, 65499, 1441792 )
 }
 __meta__ = {
 "_editor_clip_": 0,
@@ -117,43 +129,87 @@ shadow_enabled = true
 
 [node name="Parete1" type="CollisionShape" parent="StaticBody" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.03534, 4.90507, 7.09199 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="Parete2" type="CollisionShape" parent="StaticBody" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.9495, 4.90507, 7.09199 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="Parete3" type="CollisionShape" parent="StaticBody" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9838, 4.63446, -2.95657 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="Parete4" type="CollisionShape" parent="StaticBody" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898535, 4.63446, -2.95657 )
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="Colonna1" type="CollisionShape" parent="StaticBody" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.957421, 5.74605, 2.34123 )
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="Colonna2" type="CollisionShape" parent="StaticBody" index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8907, 5.74605, 2.34123 )
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="Casse" type="CollisionShape" parent="StaticBody" index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1367, 2.25833, 0.131635 )
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="Botti" type="CollisionShape" parent="StaticBody" index="7"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.97859, 1.30772, 9.59992 )
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
 [node name="Bauli" type="CollisionShape" parent="StaticBody" index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.14457, 1.17659, 13.0771 )
-shape = SubResource( 10 )
+shape = SubResource( 6 )
 
 [node name="Pavimento" type="CollisionShape" parent="StaticBody" index="9"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.00665, -0.102344, 9.26167 )
-shape = SubResource( 11 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="10"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, -3.98763, 1.02997, 19.3853 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody" index="11"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, 13.7018, 1.02997, 19.3853 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody" index="12"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, 5.01178, 0.977627, 23.0657 )
+shape = SubResource( 14 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody" index="13"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, -1.00306, 0.78686, 21.0482 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody" index="14"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, 10.8627, 0.78686, 21.0482 )
+shape = SubResource( 15 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="StaticBody" index="15"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, -1.84692, 0.773104, 20.1889 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="StaticBody" index="16"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, 11.7619, 0.773104, 20.1889 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="StaticBody" index="17"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, 15.6642, 0.773104, 18.633 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="StaticBody" index="18"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, -5.91172, 0.774036, 18.633 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="StaticBody" index="19"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, 9.95403, 0.773104, 22.112 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="StaticBody" index="20"]
+transform = Transform( 1, 0, 1.7053e-13, 0, 1, 0, -1.7053e-13, 0, 1, 0.0502501, 0.773104, 22.112 )
+shape = SubResource( 16 )
 
 [node name="enemyMaster" type="Node" parent="." index="6"]
 script = ExtResource( 9 )
@@ -192,10 +248,10 @@ __meta__ = {
 
 [node name="CollisionShape" type="CollisionShape" parent="area_sbarre" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68114, -5.76944, -18.0606 )
-shape = SubResource( 12 )
+shape = SubResource( 8 )
 
 [node name="AnimationSbarre" type="AnimationPlayer" parent="area_sbarre" index="1"]
-anims/animazioneSbarre = SubResource( 16 )
+anims/animazioneSbarre = SubResource( 9 )
 
 [node name="Camera" type="Camera" parent="area_sbarre" index="2"]
 transform = Transform( 0.75671, -0.141163, 0.638328, 0, 0.976409, 0.215928, -0.653751, -0.163395, 0.738858, 2.17409, -3.31581, -13.8854 )
@@ -210,11 +266,11 @@ __meta__ = {
 [node name="sbarre_mesh" type="MeshInstance" parent="area_sbarre/Sbarre" index="0"]
 transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, -0.421599, 0 )
 mesh = ExtResource( 6 )
-material/0 = SubResource( 13 )
+material/0 = SubResource( 10 )
 
 [node name="collisione_sbarre" type="CollisionShape" parent="area_sbarre/Sbarre" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127429, 1.82, -0.98621 )
-shape = SubResource( 14 )
+shape = SubResource( 11 )
 
 [node name="coins" type="Node" parent="." index="8"]
 
@@ -230,28 +286,40 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.91031, 1.4, -16.1851 )
 [node name="coin4" parent="coins" index="3" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.90891, 1.4, -16.1851 )
 
-[node name="coin5" parent="coins" index="4" instance=ExtResource( 10 )]
+[node name="coin13" parent="coins" index="4" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9564, 1.4, -18.8332 )
+
+[node name="coin14" parent="coins" index="5" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.955, 1.4, -18.8332 )
+
+[node name="coin15" parent="coins" index="6" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9537, 1.4, -18.8332 )
+
+[node name="coin16" parent="coins" index="7" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9523, 1.4, -18.8332 )
+
+[node name="coin5" parent="coins" index="8" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87976, 1.4, -13.7651 )
 
-[node name="coin6" parent="coins" index="5" instance=ExtResource( 10 )]
+[node name="coin6" parent="coins" index="9" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.87836, 1.4, -13.7651 )
 
-[node name="coin7" parent="coins" index="6" instance=ExtResource( 10 )]
+[node name="coin7" parent="coins" index="10" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87696, 1.4, -13.7651 )
 
-[node name="coin8" parent="coins" index="7" instance=ExtResource( 10 )]
+[node name="coin8" parent="coins" index="11" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.87556, 1.4, -13.7651 )
 
-[node name="coin9" parent="coins" index="8" instance=ExtResource( 10 )]
+[node name="coin9" parent="coins" index="12" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74558, 1.4, -10.7401 )
 
-[node name="coin10" parent="coins" index="9" instance=ExtResource( 10 )]
+[node name="coin10" parent="coins" index="13" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.74418, 1.4, -10.7401 )
 
-[node name="coin11" parent="coins" index="10" instance=ExtResource( 10 )]
+[node name="coin11" parent="coins" index="14" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74278, 1.4, -10.7401 )
 
-[node name="coin12" parent="coins" index="11" instance=ExtResource( 10 )]
+[node name="coin12" parent="coins" index="15" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.258616, 1.4, -10.7401 )
 
 [node name="items" type="Node" parent="." index="9"]
@@ -292,7 +360,7 @@ __meta__ = {
 }
 
 [node name="animation_fading1" type="AnimationPlayer" parent="transitionD1/ColorRect" index="0"]
-anims/fadetoblack1 = SubResource( 19 )
+anims/fadetoblack1 = SubResource( 12 )
 
 [node name="startPos" type="Position3D" parent="." index="11"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96705, 0.393094, 21.3812 )
