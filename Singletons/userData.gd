@@ -35,10 +35,10 @@ var inventory = {
 
 var settings = {
 	"musicMuted" : false,
-	"fxMuted" : false,
+	"sfxMuted" : false,
 	"shadows" : true,
 	"shadowQuality" : 2,
-	"grass" : true
+	"details" : true
 }
 
 func saveToFile():

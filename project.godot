@@ -108,7 +108,6 @@ pointing/emulate_touch_from_mouse=true
 quality/driver/driver_name="GLES2"
 threads/thread_model=2
 vram_compression/import_etc=true
-quality/directional_shadow/size.mobile=4096
 quality/shadow_atlas/quadrant_3_subdiv=3
 quality/shadows/filter_mode=0
 quality/reflections/irradiance_max_size=32

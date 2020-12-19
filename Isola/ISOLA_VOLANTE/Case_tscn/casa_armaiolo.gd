@@ -19,5 +19,4 @@ func _on_Area_body_entered(body):
 func _on_Area_body_exited(body):
 	if body.name == "player":
 		body.cam.current=true
-		body.UI.show()
 	pass # Replace with function body.

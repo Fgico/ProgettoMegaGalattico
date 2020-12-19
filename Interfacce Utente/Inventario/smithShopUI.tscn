@@ -13,15 +13,15 @@
 [ext_resource path="res://Interfacce Utente/Inventario/FontShop.tres" type="DynamicFont" id=11]
 [ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/paper background_pressed.png" type="Texture" id=12]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 4 )
 
@@ -175,7 +175,7 @@ margin_top = 5.0
 margin_right = 875.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
 [node name="ExitButton" type="TextureButton" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header"]
@@ -225,7 +225,7 @@ size_flags_vertical = 3
 [node name="ItemName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
 margin_right = 300.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Stats:"
 valign = 1
@@ -291,7 +291,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 3.8147e-06
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Upgrade Store"
 align = 1
@@ -327,7 +327,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 3.8147e-06
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Buy Item"
 align = 1

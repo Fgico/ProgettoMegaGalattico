@@ -82,6 +82,7 @@ func _on_buy_pressed():
 func _on_ExitButton_pressed():
 	self.queue_free()
 	sceneUtili.player.lockMovement = false
+	sceneUtili.player.UI.show()
 	pass
 
 

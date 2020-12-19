@@ -51,6 +51,9 @@ margin_right = 930.94
 margin_bottom = 107.552
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.792157, 0.301961, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 4
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -79,6 +82,9 @@ margin_top = 114.8
 margin_right = 965.751
 margin_bottom = 215.8
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 5
+custom_constants/shadow_offset_y = 4
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
