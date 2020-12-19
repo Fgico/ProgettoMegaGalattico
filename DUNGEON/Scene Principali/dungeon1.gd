@@ -18,13 +18,15 @@ func _on_area_sbarre_body_entered(body):
 
 
 func _on_AnimationSbarre_animation_finished(animazioneSbarre):
-	fade.play("fadetoblack1")
+	fade.play("anim1")
 	pass # Replace with function body.
 
 
-func _on_animation_fading1_animation_finished(fadetoblack1):
+func _on_animation_fading1_animation_finished(anim1):
 	get_tree().root.get_node("nodo_isola").cambioPiano("res://DUNGEON/Scene Principali/Dun2.tscn")
 	pass # Replace with function body.
 
 
 
+
+	
