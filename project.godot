@@ -103,6 +103,10 @@ scatta={
 
 pointing/emulate_touch_from_mouse=true
 
+[physics]
+
+3d/active_soft_world=false
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

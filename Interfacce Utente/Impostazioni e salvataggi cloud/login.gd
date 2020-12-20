@@ -18,4 +18,3 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		print(responseBody.result.error)
 	else:
 		print("ok")
-	print(responseBody.result)
