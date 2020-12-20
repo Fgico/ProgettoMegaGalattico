@@ -327,12 +327,12 @@ __meta__ = {
 }
 
 [node name="sbarre_mesh" type="MeshInstance" parent="area_sbarre/Sbarre" index="0"]
-transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 1.52519, 0 )
+transform = Transform( 1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, -0.421599, 0 )
 mesh = ExtResource( 6 )
 material/0 = SubResource( 14 )
 
 [node name="collisione_sbarre" type="CollisionShape" parent="area_sbarre/Sbarre" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127429, 4.00419, -0.98621 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127429, 1.82, -0.98621 )
 shape = SubResource( 15 )
 
 [node name="coins" type="Node" parent="." index="8"]
