@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Interfacce Utente/Inventario/InventoryUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entita/player/player.tscn" type="PackedScene" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+
+[node name="Inventory" parent="." instance=ExtResource( 1 )]

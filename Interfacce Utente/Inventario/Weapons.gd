@@ -3,18 +3,16 @@ extends VBoxContainer
 var container = preload("res://Interfacce Utente/Inventario/ItemContainer.tscn")
 
 func _ready():
+	fillWeapons()
+
+func fillWeapons():
+	var pos = 0
 	for item in userData.inventory.weapons:
 		var newCont = container.instance()
 		self.add_child(newCont)
-		newCont.get_node("ItemName").text = ItemDB.weapons[item].name
-		var texture = load(ItemDB.weapons[item].icon)
-		newCont.get_node("ItemBackground/ItemButton").texture_normal = texture
-		newCont.item = 0
-		newCont.itemPos = item
+		newCont.putItem(1, item, pos)
+		pos += 1
 
-func selezionaOggetto(oggetto, posOggetto):
-	var parent = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent()
-	parent.elem_curr.tipo = oggetto
-	parent.elem_curr.posizione = posOggetto
-	print(parent.elem_curr)
-	pass
+func selezionaOggetto(container):
+	var parent = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().selezionaOggetto(container)
+

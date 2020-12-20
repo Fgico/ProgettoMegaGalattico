@@ -19,8 +19,8 @@ var equipped = {
 	"spAtk4" : 0,
 }
 
-var numCoin = 0
-var numItem = 0
+var numCoin = 100
+var numItem = 100
 
 var cityStatus = {
 	"smith" : 1,
@@ -33,6 +33,13 @@ var inventory = {
 	"consumable" : []
 }
 
+var settings = {
+	"musicMuted" : false,
+	"sfxMuted" : false,
+	"shadows" : true,
+	"shadowQuality" : 2,
+	"details" : true
+}
 
 func saveToFile():
 	var saveFile = File.new()

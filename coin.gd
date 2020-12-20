@@ -11,7 +11,7 @@ func _physics_process(delta):
 
 func _on_coinBat_body_entered(body):
 	if body.is_in_group("player"):
-		body.collectCoinBat()
+		body.addCoins(5)
 		$AudioStreamPlayer.play()
 		self.hide()
 		$Timer.start()

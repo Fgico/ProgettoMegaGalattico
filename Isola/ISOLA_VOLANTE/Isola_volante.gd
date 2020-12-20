@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var player = get_node("player")
+onready var player = sceneUtili.player
 onready var fade = get_node("Transition/ColorRect/AnimationFading")
 
 # Called when the node enters the scene tree for the first time.
