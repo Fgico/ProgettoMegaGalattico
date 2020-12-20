@@ -11,7 +11,6 @@
 [ext_resource path="res://Interfacce Utente/Inventario/Armor.gd" type="Script" id=10]
 [ext_resource path="res://Interfacce Utente/Inventario/InventoryUI.gd" type="Script" id=11]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 4 )
@@ -20,7 +19,7 @@ font_data = ExtResource( 4 )
 size = 24
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 4 )
 
@@ -308,7 +307,7 @@ size_flags_vertical = 3
 [node name="ItemName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
 margin_right = 300.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "ItemInspector1"
 valign = 1
@@ -349,7 +348,7 @@ size_flags_vertical = 3
 [node name="ItemName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector2"]
 margin_right = 300.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "ItemInspector2"
 valign = 1
