@@ -292,7 +292,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="NinePatchRect"]
+[node name="Quit" type="TextureButton" parent="NinePatchRect"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -67.0
@@ -313,4 +313,4 @@ __meta__ = {
 [connection signal="toggled" from="NinePatchRect/Audio/sfxMute" to="." method="_on_sfxMute_toggled"]
 [connection signal="pressed" from="NinePatchRect/videoButton/Video" to="." method="_on_Video_pressed"]
 [connection signal="pressed" from="NinePatchRect/audioButton/audio" to="." method="_on_audio_pressed"]
-[connection signal="pressed" from="NinePatchRect/TextureButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="NinePatchRect/Quit" to="." method="_on_quit_pressed"]
