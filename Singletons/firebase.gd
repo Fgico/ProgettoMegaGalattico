@@ -1,7 +1,7 @@
 extends Node
 
-const apiKey = "apikey"
-const projId = "projid"
+const apiKey = "AIzaSyC5Z1vkyotHz-owXoc4gy4GuiI5_MmhCCI"
+const projId = "mc-dangerous-skies-2020"
 
 const registerUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=%s" % apiKey
 const loginUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=%s" % apiKey
@@ -34,8 +34,9 @@ func register(email, password, httpNode):
 	var result = yield(httpNode, "request_completed") as Array
 	if( result[1]== 200):
 		userInfo = getUserInfo(result)
+		saveDic(httpNode)
 
-func login(email, password, httpNode):
+func login(email, password, httpNode, saveOrLoad):
 	var body = {
 		"email" : email,
 		"password" : password,
@@ -45,7 +46,11 @@ func login(email, password, httpNode):
 	var result = yield(httpNode, "request_completed") as Array
 	if( result[1]== 200):
 		userInfo = getUserInfo(result)
-		saveDic(httpNode)
+		if(saveOrLoad == 1):
+			getDic(httpNode)
+		else:
+			updateDic(httpNode)
+		
 	
 func saveDic(requester):
 	var path = firestoreUrl + "users?documentId=%s" %  userInfo.id
