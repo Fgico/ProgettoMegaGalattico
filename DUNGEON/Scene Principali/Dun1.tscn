@@ -47,7 +47,7 @@ extents = Vector3( 0.65504, 0.393019, 0.0571474 )
 extents = Vector3( 0.0383861, 0.330841, 1 )
 
 [sub_resource type="BoxShape" id=12]
-extents = Vector3( 1.66918, 1, 1.56641 )
+extents = Vector3( 1.66918, 1, 2.06328 )
 
 [sub_resource type="Animation" id=13]
 length = 3.0

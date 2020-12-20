@@ -14,20 +14,21 @@ func _on_area_sbarre_body_entered(body):
 		body.UI.hide()
 		camera.current = true
 		animazione.play("animazioneSbarre")
+		
 		pass # Replace with function body.
 
 
-func _on_AnimationSbarre_animation_finished(AnimationSbarre):
+func _on_AnimationSbarre_animation_finished(animazioneSbarre):
 	fade.play("anim1")
+	pass # Replace with function body.
+
+
+func _on_animation_fading1_animation_finished(anim1):
 	get_tree().root.get_node("nodo_isola").cambioPiano("res://DUNGEON/Scene Principali/Dun2.tscn")
 	pass # Replace with function body.
 
 
-#func _on_animation_fading1_animation_finished(anim1):
-#	get_tree().root.get_node("nodo_isola").cambioPiano("res://DUNGEON/Scene Principali/Dun2.tscn")
-#	pass # Replace with function body.
-
-
-
 
 	
+	
+	pass # Replace with function body.

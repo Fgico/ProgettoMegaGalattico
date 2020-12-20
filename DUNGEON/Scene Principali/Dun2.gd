@@ -4,27 +4,9 @@ onready var fade2 = get_node("Transition2/ColorRect/AnimationFading2")
 onready var animazione2 = get_node("AreaSbarre2/AnimationPlayer")
 onready var camera2 = get_node("AreaSbarre2/Camera")
 
-func _ready():
-	$lowSphere/AnimationPlayer.play("oscillo")
-	$lowSphere5/AnimationPlayer.play("oscillo5")
-	$lowSphere7/AnimationPlayer.play("oscillo7")
-	$lowSphere8/AnimationPlayer.play("oscillo8")
-	$lowSphere10/AnimationPlayer.play("oscillo10")
-	$lowSphere11/AnimationPlayer.play("oscillo11")
-	$lowSphere12/AnimationPlayer.play("oscillo12")
-	$lowSphere13/AnimationPlayer.play("oscillo13")
-	$lowSphere14/AnimationPlayer.play("oscillo14")
-	$lowSphere15/AnimationPlayer.play("oscillo15")
-	$lowSphere16/AnimationPlayer.play("oscillo16")
-	$lowSphere17/AnimationPlayer.play("oscillo17")
-	$lowSphere18/AnimationPlayer.play("oscillo18")
-	$lowSphere19/AnimationPlayer.play("oscillo19")
-	$lowSphere2/AnimationPlayer.play("oscillo2")
-	$lowSphere3/AnimationPlayer.play("oscillo3")
-	$lowSphere4/AnimationPlayer.play("oscillo4")
-	$lowSphere6/AnimationPlayer.play("oscillo6")
-	$lowSphere9/AnimationPlayer.play("oscillo9")
-	pass # Replace with function body.
+#func _ready():
+	
+#pass # Replace with function body.
 
 
 #PASSAGGIO 2°DUNGEON
