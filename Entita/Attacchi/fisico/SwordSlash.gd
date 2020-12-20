@@ -7,7 +7,7 @@ var showupWhen = 0.15
 var showupTime = 0.3
 
 func _ready():
-	iniziaStats(16,0,0,0.8)
+	iniziaStats(12,0,0,0.8)
 	pass 
 
 func _process(delta):

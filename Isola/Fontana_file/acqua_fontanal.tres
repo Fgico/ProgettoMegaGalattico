@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Isola/Fontana_file/acqua_fontana_shader.shader" type="Shader" id=1]
+[ext_resource path="res://Isola/Fontana_file/water_diffuse.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/amplitude = Vector2( 0.01, 0.05 )
+shader_param/frequency = Vector2( 3, 2.5 )
+shader_param/time_factor = Vector2( 2, 3 )
+shader_param/uv_offset_scale = Vector2( 0.2, 0.2 )
+shader_param/uv_offset_time_scale = 0.01
+shader_param/uv_offset_amplitude = 0.2
+shader_param/texture_scale = Vector2( 10, 10 )
+shader_param/refraction = 0.05
+shader_param/beer_factor = 1.0
+shader_param/texturemap = ExtResource( 2 )

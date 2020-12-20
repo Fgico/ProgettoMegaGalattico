@@ -5,30 +5,22 @@ var savePath = "user://DangerousSkies.save"
 #func _ready():
 #	loadFromFile()
 
-#struttura di appoggio inizializzata per memorizzare
-#l'id dell'oggetto e il loro livello,inutile salvarla
-var equipabble = {
-	"id" : 0,
-	"lvl" : 1,
-}
-
-
 var userInfo = {
 	"name" : "gino",
 	"password" : "banfi"
 }
 
 var equipped = {
-	"curWeapon" : null,
-	"curArmor" : null,
-	"spAtk1" : null,
-	"spAtk2" : null,
-	"spAtk3" : null,
-	"spAtk4" : null,
+	"curWeapon" : 0,
+	"curArmor" : 0,
+	"spAtk1" : 0,
+	"spAtk2" : 0,
+	"spAtk3" : 0,
+	"spAtk4" : 0,
 }
 
-var numCoin = 0
-var numItem = 0
+var numCoin = 100
+var numItem = 100
 
 var cityStatus = {
 	"smith" : 1,
@@ -41,6 +33,13 @@ var inventory = {
 	"consumable" : []
 }
 
+var settings = {
+	"musicMuted" : false,
+	"sfxMuted" : false,
+	"shadows" : true,
+	"shadowQuality" : 2,
+	"details" : true
+}
 
 func saveToFile():
 	var saveFile = File.new()
@@ -56,7 +55,7 @@ func saveToFile():
 func loadFromFile():
 	var loadFile = File.new()
 	if not loadFile.file_exists(savePath):
-		return
+		return false
 	loadFile.open(savePath, File.READ)
 	var data = parse_json(loadFile.get_line())
 	userInfo.name = data.name
@@ -78,3 +77,4 @@ func loadFromFile():
 	if(data != null):
 		inventory = data
 	loadFile.close()
+	return true

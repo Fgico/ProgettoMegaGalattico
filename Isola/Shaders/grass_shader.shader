@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode cull_disabled;
+render_mode unshaded, cull_disabled;
 
 uniform vec4 color_top:hint_color = vec4(1,1,1,1);
 uniform vec4 color_bottom:hint_color = vec4(0,0,0,1);

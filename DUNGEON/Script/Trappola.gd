@@ -11,5 +11,5 @@ func _process(delta):
 #DANNO TRAPPOLA
 func _on_Trappola_body_entered(body):
 	if body.name == 'player':
-		body.hit(10, 0)
+		body.hit(10, 0, 0)
 	
