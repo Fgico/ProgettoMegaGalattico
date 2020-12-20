@@ -82,7 +82,7 @@ albedo_color = Color( 0.101961, 0.101961, 0.101961, 1 )
 [sub_resource type="BoxShape" id=15]
 extents = Vector3( 1.53846, 1.81908, 0.0997343 )
 
-[sub_resource type="Shader" id=19]
+[sub_resource type="Shader" id=16]
 code = "shader_type canvas_item;
 render_mode unshaded;
 
@@ -102,13 +102,13 @@ void fragment(){
 
 "
 
-[sub_resource type="ShaderMaterial" id=20]
-shader = SubResource( 19 )
+[sub_resource type="ShaderMaterial" id=17]
+shader = SubResource( 16 )
 shader_param/cutoff = 1.0
 shader_param/smooth_size = 0.24
 shader_param/mask = ExtResource( 12 )
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=18]
 resource_name = "anim1"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:material:shader_param/cutoff")
@@ -135,7 +135,7 @@ tracks/1/keys = {
 "values": [ 0.24, 0.71, 0.347 ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=19]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -149,14 +149,14 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="ProceduralSky" id=17]
+[sub_resource type="ProceduralSky" id=20]
 sky_top_color = Color( 0.945098, 0.427451, 0.203922, 1 )
 sky_curve = 0.428115
 sky_energy = 6.0
 
-[sub_resource type="Environment" id=18]
+[sub_resource type="Environment" id=21]
 background_mode = 3
-background_sky = SubResource( 17 )
+background_sky = SubResource( 20 )
 background_color = Color( 0.121569, 0.164706, 0.270588, 1 )
 
 [node name="dungeon1" instance=ExtResource( 1 )]
@@ -420,7 +420,7 @@ transform = Transform( -1.5, 0, -4.88762e-07, 0, 1.5, 0, 4.88762e-07, 0, -1.5, -
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="transitionD1" index="0"]
-material = SubResource( 20 )
+material = SubResource( 17 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0 )
@@ -429,14 +429,14 @@ __meta__ = {
 }
 
 [node name="animation_fading1" type="AnimationPlayer" parent="transitionD1/ColorRect" index="0"]
-anims/anim1 = SubResource( 21 )
-anims/fadetoblack1 = SubResource( 16 )
+anims/anim1 = SubResource( 18 )
+anims/fadetoblack1 = SubResource( 19 )
 
 [node name="startPos" type="Position3D" parent="." index="12"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96705, 0.393094, 21.3812 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="13"]
-environment = SubResource( 18 )
+environment = SubResource( 21 )
 [connection signal="body_entered" from="area_sbarre" to="." method="_on_area_sbarre_body_entered"]
 [connection signal="animation_finished" from="area_sbarre/AnimationSbarre" to="." method="_on_AnimationSbarre_animation_finished"]
 [connection signal="animation_finished" from="transitionD1/ColorRect/animation_fading1" to="." method="_on_animation_fading1_animation_finished"]
