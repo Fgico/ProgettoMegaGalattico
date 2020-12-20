@@ -142,7 +142,9 @@ func muori():
 	if(stato != Dead):
 		anim.play("sword and shield death-loop")
 		anim.get_animation("sword and shield death-loop").loop = false
+		$AudioStreamPlayer.play()
 	stato = Dead
+	
 
 
 
