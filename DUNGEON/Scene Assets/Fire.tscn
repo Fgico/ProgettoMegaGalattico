@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://DUNGEON/Modular Dungeon/OBJ/Torch.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://DUNGEON/Modular Dungeon/FBX/LightWood.material" type="Material" id=2]
 [ext_resource path="res://DUNGEON/Modular Dungeon/FBX/Fire.material" type="Material" id=3]
+[ext_resource path="res://DUNGEON/lowSphere.obj" type="ArrayMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+flags_albedo_tex_force_srgb = true
+flags_do_not_receive_shadows = true
+albedo_color = Color( 1, 0.647059, 0.27451, 0.270588 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -13,3 +21,5 @@ material/1 = ExtResource( 3 )
 
 [node name="lowSphere" type="MeshInstance" parent="."]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.001755, 0.50732, -0.0147122 )
+mesh = ExtResource( 4 )
+material/0 = SubResource( 1 )

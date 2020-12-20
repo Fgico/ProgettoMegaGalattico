@@ -88,7 +88,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	#input_pc()
+	input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -146,7 +146,7 @@ func muori():
 
 func restoreStatus():
 	stato = Idle
-	hp = stats.maxhp
+	healthBar.value = stats.maxhp
 
 func _on_scatto_timeout():
 	scattoTimer.stop()
