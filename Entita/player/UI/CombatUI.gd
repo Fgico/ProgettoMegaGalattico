@@ -103,6 +103,6 @@ func _on_Settings_pressed():
 func _on_back2town_pressed():
 	
 	get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
-	
+	sceneUtili.player.restoreStatus()
 	
 	pass # Replace with function body.
