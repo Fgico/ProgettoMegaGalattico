@@ -11,7 +11,7 @@ flags_transparent = true
 flags_unshaded = true
 flags_do_not_receive_shadows = true
 flags_disable_ambient_light = true
-albedo_color = Color( 1, 0.647059, 0.27451, 0.270588 )
+albedo_color = Color( 1, 0.647059, 0.27451, 0.0980392 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "oscillo"
@@ -51,9 +51,12 @@ material/0 = ExtResource( 2 )
 material/1 = ExtResource( 3 )
 
 [node name="lowSphere" type="MeshInstance" parent="."]
-transform = Transform( 1.54944, 0, 0, 0, 1.54944, 0, 0, 0, 1.54944, 0, 1.09005, 0.503952 )
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.847984, 0.42512 )
 mesh = ExtResource( 4 )
 material/0 = SubResource( 1 )
 
 [node name="oscillation" type="AnimationPlayer" parent="."]
 anims/oscillo = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.5237 )

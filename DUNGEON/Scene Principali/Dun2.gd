@@ -5,6 +5,13 @@ onready var animazione2 = get_node("AreaSbarre2/AnimationPlayer")
 onready var camera2 = get_node("AreaSbarre2/Camera")
 
 func _ready():
+	
+	
+	
+	
+	
+	
+	
 	pass # Replace with function body.
 
 

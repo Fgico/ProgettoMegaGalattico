@@ -20,11 +20,11 @@ func _on_Resume_pressed():
 	pause.show()
 	pass # Replace with function body.
 
-func _on_pause_button_down():
-	pause.hide()
-	pauseMenu.show()
-	get_tree().paused = true
-	pass # Replace with function body.
+#func _on_pause_button_down():
+#	pause.hide()
+#	pauseMenu.show()
+#	get_tree().paused = true
+#	pass # Replace with function body.
 
 var touchIdx = -1
 
@@ -96,7 +96,7 @@ func _on_Settings_pressed():
 	var settings = menu_sett.instance()
 	self.add_child(settings)
 	player.UI.show()
-	player.lockMovement = true
+	
 	pass # Replace with function body.
 
 
@@ -106,3 +106,11 @@ func _on_back2town_pressed():
 	sceneUtili.player.restoreStatus()
 	
 	pass # Replace with function body.
+
+
+func _on_pause_pressed():
+	pause.hide()
+	pauseMenu.show()
+	get_tree().paused = true
+	pass # Replace with function body.
+	

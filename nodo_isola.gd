@@ -3,6 +3,12 @@ extends Spatial
 onready var pianoAttuale = get_node("Isola_volante")
 onready var player = get_node("player")
 
+func _ready():
+	$Control.hide()
+	
+	pass # Replace with function body.
+
+
 func cambioPiano(nuovoLivello):
 	var newPiano = load(nuovoLivello)
 	pianoAttuale.queue_free()
@@ -15,5 +21,6 @@ func cambioPiano(nuovoLivello):
 	if( pianoAttuale.get_node("startPos") != null):
 		var startPos = pianoAttuale.get_node("startPos")
 		player.global_transform.origin = startPos.global_transform.origin
+	
 	#mostra comandi UI
 	player.UI.show()
