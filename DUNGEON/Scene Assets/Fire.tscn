@@ -1,18 +1,49 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://DUNGEON/Modular Dungeon/OBJ/Torch.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://DUNGEON/Modular Dungeon/FBX/LightWood.material" type="Material" id=2]
 [ext_resource path="res://DUNGEON/Modular Dungeon/FBX/Fire.material" type="Material" id=3]
 [ext_resource path="res://DUNGEON/lowSphere.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://DUNGEON/Scene Assets/Fire.gd" type="Script" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
 flags_transparent = true
 flags_unshaded = true
-flags_albedo_tex_force_srgb = true
 flags_do_not_receive_shadows = true
+flags_disable_ambient_light = true
 albedo_color = Color( 1, 0.647059, 0.27451, 0.270588 )
 
+[sub_resource type="Animation" id=2]
+resource_name = "oscillo"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("lowSphere:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.7, 2.2, 3.1, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.847984, 0.42512 ), Vector3( 0, 1.54742, 0.652897 ), Vector3( 0, 1.11802, 0.652897 ), Vector3( 0, 1.21508, 0.455931 ), Vector3( 0, 0.905099, 0.455931 ), Vector3( 0, 1.22744, 0.850429 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("lowSphere:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4, 3.5, 4.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.5, 1.5, 1.5 ), Vector3( 1.7, 1.7, 1.7 ), Vector3( 2, 2, 2 ), Vector3( 1.6, 1.6, 1.6 ) ]
+}
+
 [node name="Spatial" type="Spatial"]
+script = ExtResource( 5 )
 
 [node name="Torch" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
@@ -20,6 +51,9 @@ material/0 = ExtResource( 2 )
 material/1 = ExtResource( 3 )
 
 [node name="lowSphere" type="MeshInstance" parent="."]
-transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.001755, 0.50732, -0.0147122 )
+transform = Transform( 1.54944, 0, 0, 0, 1.54944, 0, 0, 0, 1.54944, 0, 1.09005, 0.503952 )
 mesh = ExtResource( 4 )
 material/0 = SubResource( 1 )
+
+[node name="oscillation" type="AnimationPlayer" parent="."]
+anims/oscillo = SubResource( 2 )
