@@ -3,7 +3,7 @@ extends Nemico
 
 func _ready():
 	attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
-	self.iniziaStats(1.5,1,60,1,300)
+	self.iniziaStats(0.8,1,60,1,300)
 	anim = get_node("rotable/mesh/AnimationPlayer")
 	get_parent().contaNemici += 1
 	print("nasce scheletro: ", get_parent().contaNemici)

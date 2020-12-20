@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://DUNGEON/pick-up coin.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/pick-up coin.wav" type="AudioStream" id=1]
 [ext_resource path="res://DUNGEON/Script/coinEnemy.gd" type="Script" id=2]
 [ext_resource path="res://DUNGEON/Item/obj/material-coin.material" type="Material" id=3]
 
@@ -68,6 +68,6 @@ bus = "fx"
 anims/animazioneCascata = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.22
+wait_time = 0.3
 [connection signal="body_entered" from="." to="." method="_on_coinEnemy_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

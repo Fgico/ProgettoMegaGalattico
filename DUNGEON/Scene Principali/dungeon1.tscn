@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Entita/Nemici/scheletro.tscn" type="PackedScene" id=1]
 [ext_resource path="res://dungeon1/dungeon1.glb" type="PackedScene" id=2]
+[ext_resource path="res://Entita/Attacchi/statusParticlesColors/ParticlesSpawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemyMaster.gd" type="Script" id=4]
 [ext_resource path="res://dungeon1/tileNormal.png" type="Texture" id=5]
 [ext_resource path="res://DUNGEON/Scene Principali/Item.tscn" type="PackedScene" id=6]
@@ -9,6 +10,13 @@
 [ext_resource path="res://DUNGEON/Scene Principali/dungeon1.gd" type="Script" id=8]
 [ext_resource path="res://DUNGEON/Modular Dungeon/OBJ/Arch_bars.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://Entita/Nemici/bat.tscn" type="PackedScene" id=33]
+
+[sub_resource type="ProceduralSky" id=1]
+
+[sub_resource type="Environment" id=2]
+background_mode = 3
+background_sky = SubResource( 1 )
+background_color = Color( 0.101961, 0.0941176, 0.145098, 1 )
 
 [sub_resource type="PlaneMesh" id=3]
 
@@ -58,9 +66,10 @@ polygons = [ PoolIntArray( 0, 2, 1 ), PoolIntArray( 0, 3, 2 ), PoolIntArray( 4, 
 extents = Vector3( 1, 1.38163, 1.34087 )
 
 [sub_resource type="Animation" id=16]
+resource_name = "animazioneSbarre"
 length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sbarre/SbarreMesh:translation")
+tracks/0/path = NodePath("Sbarre/sbarre_mesh:translation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -72,7 +81,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, -0.421599, 0 ), Vector3( 0, 2.82305, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sbarre/collisioneSbarre:translation")
+tracks/1/path = NodePath("Sbarre/collisione_sbarre:translation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -91,7 +100,7 @@ albedo_color = Color( 0, 0, 0, 1 )
 extents = Vector3( 1.81687, 2.20115, 0.0594289 )
 
 [sub_resource type="Animation" id=19]
-resource_name = "AnimazioneIncollata"
+resource_name = "fadetoblack1"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -110,26 +119,31 @@ transform = Transform( -1.5, 0, -5.84122e-07, 0, 1.5, 0, 5.84122e-07, 0, -1.5, 0
 script = ExtResource( 8 )
 
 [node name="Livello" parent="." index="0"]
-transform = Transform( 2.5, 0, 1.13687e-13, 0, 2.5, 0, -1.13687e-13, 0, 2.5, -14.8111, 0, 2.31465 )
-use_in_baked_light = false
+transform = Transform( 2.5, 0, 2.27374e-13, 0, 2.5, 0, -2.27374e-13, 0, 2.5, -14.8111, 0, 2.31465 )
+use_in_baked_light = true
 
 [node name="Plane" parent="." index="1"]
 visible = false
 
 [node name="PianoPerimetro" parent="." index="2"]
 transform = Transform( 1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 14.9737, 0, 18.1271 )
+use_in_baked_light = true
 
-[node name="Piano1" type="MeshInstance" parent="." index="3"]
-transform = Transform( 10, 0, 2.72848e-12, 0, 10, 0, -2.72848e-12, 0, 10, 4.859, 0.0611076, 8.142 )
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="3"]
+environment = SubResource( 2 )
+
+[node name="Piano1" type="MeshInstance" parent="." index="4"]
+transform = Transform( 10, 0, 2.27374e-12, 0, 10, 0, -2.27374e-12, 0, 10, 4.859, 0.0611076, 8.142 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
 
-[node name="Piano2" type="MeshInstance" parent="." index="4"]
+[node name="Piano2" type="MeshInstance" parent="." index="5"]
 transform = Transform( 7.01398, 0, 2.27374e-13, 0, 1, 0, -4.54747e-13, 0, 1.69062, 4.96837, 0.0219867, 19.4443 )
 mesh = SubResource( 5 )
 material/0 = SubResource( 6 )
 
-[node name="StaticBody" type="StaticBody" parent="." index="5"]
+[node name="StaticBody" type="StaticBody" parent="." index="6"]
+transform = Transform( 1, 0, 2.84217e-14, 0, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0 )
 
 [node name="Colonna1" type="CollisionShape" parent="StaticBody" index="0"]
 transform = Transform( 1.84326, 0, 0, 0, 4.66631, 0, 0, 0, 1.89288, -0.972528, 5.34541, 2.3604 )
@@ -171,7 +185,7 @@ shape = SubResource( 13 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16463, 4.09165, -2.70572 )
 shape = SubResource( 13 )
 
-[node name="enemyMaster" type="Node" parent="." index="6"]
+[node name="enemyMaster" type="Node" parent="." index="7"]
 script = ExtResource( 4 )
 
 [node name="Navigation" type="Navigation" parent="enemyMaster" index="0"]
@@ -185,22 +199,34 @@ navmesh = SubResource( 14 )
 [node name="Combattente" parent="enemyMaster" index="1" instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7.3856, 1.72234, 0 )
 
+[node name="ParticlesSpawner" parent="enemyMaster/Combattente" index="4" instance=ExtResource( 3 )]
+
 [node name="Combattente2" parent="enemyMaster" index="2" instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.2987, 1.90592, 0 )
+
+[node name="ParticlesSpawner" parent="enemyMaster/Combattente2" index="4" instance=ExtResource( 3 )]
 
 [node name="Combattente4" parent="enemyMaster" index="3" instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.2987, 1.90592, -4.96839 )
 
+[node name="ParticlesSpawner" parent="enemyMaster/Combattente4" index="4" instance=ExtResource( 3 )]
+
 [node name="Combattente5" parent="enemyMaster" index="4" instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11.451, 1.90592, -4.96839 )
+
+[node name="ParticlesSpawner" parent="enemyMaster/Combattente5" index="4" instance=ExtResource( 3 )]
 
 [node name="Combattente3" parent="enemyMaster" index="5" instance=ExtResource( 1 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11.6468, 1.80389, 0 )
 
+[node name="ParticlesSpawner" parent="enemyMaster/Combattente3" index="4" instance=ExtResource( 3 )]
+
 [node name="Bat" parent="enemyMaster" index="6" instance=ExtResource( 33 )]
 transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -7.4843, 3.09549, -5.89271 )
 
-[node name="coins" type="Node" parent="." index="7"]
+[node name="ParticlesSpawner" parent="enemyMaster/Bat" index="4" instance=ExtResource( 3 )]
+
+[node name="coins" type="Node" parent="." index="8"]
 
 [node name="coin17" parent="coins" index="0" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01735, 1.32785, -11.5044 )
@@ -250,7 +276,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1936, 1.32785, -18.3022 )
 [node name="coin32" parent="coins" index="15" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4229, 1.32785, -18.3022 )
 
-[node name="items" type="Node" parent="." index="8"]
+[node name="items" type="Node" parent="." index="9"]
 
 [node name="Item7" parent="items" index="0" instance=ExtResource( 6 )]
 transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, 6.83101, 1.1014, 1.71354 )
@@ -276,7 +302,7 @@ transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25
 [node name="Item14" parent="items" index="7" instance=ExtResource( 6 )]
 transform = Transform( -6.51683e-08, 0.2, 0.34641, 0, 0.34641, -0.2, -0.4, -3.25841e-08, -5.64374e-08, -22.2716, 1.1014, -15.5875 )
 
-[node name="AreaSbarre" type="Area" parent="." index="9"]
+[node name="AreaSbarre" type="Area" parent="." index="10"]
 transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 4.94985, 0.789622, -3.04268 )
 __meta__ = {
 "_edit_group_": true
@@ -290,7 +316,7 @@ shape = SubResource( 15 )
 anims/animazioneSbarre = SubResource( 16 )
 
 [node name="Camera" type="Camera" parent="AreaSbarre" index="2"]
-transform = Transform( -0.529086, 0, -0.405601, 0, 0.666667, 0, 0.405601, 0, -0.529086, -4.34811, 1.73279, -6.64348 )
+transform = Transform( -0.751759, 0, -0.659438, 0, 1, 0, 0.659438, 0, -0.751759, -4.34811, 1.73279, -6.64348 )
 fov = 40.8067
 
 [node name="Sbarre" type="StaticBody" parent="AreaSbarre" index="3"]
@@ -307,10 +333,10 @@ material/0 = SubResource( 17 )
 transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.127429, 1.82, -0.98621 )
 shape = SubResource( 18 )
 
-[node name="startPos" type="Position3D" parent="." index="10"]
+[node name="startPos" type="Position3D" parent="." index="11"]
 transform = Transform( 1, 0, 5.68434e-14, 0, 1, 0, -5.68434e-14, 0, 1, 5.34624, 0.614036, 21.3288 )
 
-[node name="TransitionD1" type="CanvasLayer" parent="." index="11"]
+[node name="TransitionD1" type="CanvasLayer" parent="." index="12"]
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="TransitionD1" index="0"]
@@ -324,10 +350,8 @@ __meta__ = {
 [node name="AnimationFading1" type="AnimationPlayer" parent="TransitionD1/ColorRect" index="0"]
 anims/fadetoblack1 = SubResource( 19 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="12"]
-transform = Transform( 0.372506, -0.468706, 0.293255, -2.20082e-07, 0.353605, 0.565162, -0.552887, -0.315789, 0.19758, 11.0653, 3.12912, 17.0945 )
-shadow_enabled = true
-directional_shadow_mode = 0
+[node name="dungeon1" parent="." index="13" instance=ExtResource( 2 )]
+visible = false
 [connection signal="body_entered" from="AreaSbarre" to="." method="AreaSbarre_entered"]
 [connection signal="animation_finished" from="AreaSbarre/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="TransitionD1/ColorRect/AnimationFading1" to="." method="_on_AnimationFading1_animation_finished"]

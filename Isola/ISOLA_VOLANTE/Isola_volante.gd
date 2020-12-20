@@ -17,5 +17,5 @@ func _on_AreaEntrata_body_entered(body):
 
 
 func _on_AnimationFading_animation_finished(fadetoblack):
-	get_tree().root.get_node("nodo_isola").cambioPiano("res://DUNGEON/Scene Principali/dungeon1.tscn")
+	get_tree().root.get_node("nodo_isola").cambioPiano("res://DUNGEON/Scene Principali/Dun1.tscn")
 	pass # Replace with function body.

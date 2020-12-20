@@ -446,7 +446,6 @@ transform = Transform( -0.290865, 0.566393, 0.771101, -0.0551891, 0.794672, -0.6
 [node name="Cylinder" parent="." index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8713, -0.155281, -0.574312 )
 cast_shadow = 0
-use_in_baked_light = false
 
 [node name="StaticBody" type="StaticBody" parent="Cylinder" index="0"]
 
@@ -6785,13 +6784,14 @@ near = 0.42
 far = 261.3
 
 [node name="Area" type="Area" parent="Case iterative/casa_esperienza" index="12"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 6.93889e-18, 1, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Case iterative/casa_esperienza/Area" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74364, 0.953009, 7.03634 )
 shape = SubResource( 3 )
 
 [node name="Pavimento_casa_esperienza" parent="Case iterative/casa_esperienza" index="13" instance=ExtResource( 31 )]
-transform = Transform( -0.970804, 0.00166999, 0.00960002, -0.002382, 1.002, -1.6e-05, -0.00960004, -5.20622e-16, -0.9744, 15.4081, -1.3534, 14.6298 )
+transform = Transform( -0.970804, 0.00166999, 0.00960002, -0.002382, 1.002, -1.6e-05, -0.00960004, -5.06866e-16, -0.9744, 15.4081, -1.3534, 14.6298 )
 
 [node name="CerchioAura_armaiolo" type="Spatial" parent="Case iterative" index="2"]
 transform = Transform( 0.9, 0, 0, 0, 1, 0, 0, 0, 0.9, 97.4984, 70.691, 47.0536 )
@@ -7612,19 +7612,37 @@ anims/fadetoblack = SubResource( 28 )
 [node name="coins" type="Node" parent="." index="12"]
 
 [node name="coin" parent="coins" index="0" instance=ExtResource( 46 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 65.4663, -47.3517 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24974, 65.4663, -71.8297 )
 
 [node name="coin2" parent="coins" index="1" instance=ExtResource( 46 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74593, 65.4663, -47.3517 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.38443, 65.4663, -67.9094 )
 
 [node name="coin3" parent="coins" index="2" instance=ExtResource( 46 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6028, 65.4663, -47.3517 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2093, 65.4663, -66.9629 )
 
 [node name="coin4" parent="coins" index="3" instance=ExtResource( 46 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9031, 65.4663, -47.3517 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.048, 65.4663, -70.104 )
+
+[node name="coin5" parent="coins" index="4" instance=ExtResource( 46 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.3577, 65.4663, -76.04 )
+
+[node name="coin6" parent="coins" index="5" instance=ExtResource( 46 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9008, 65.4663, -82.247 )
+
+[node name="coin7" parent="coins" index="6" instance=ExtResource( 46 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4165, 65.4663, -86.6121 )
+
+[node name="coin9" parent="coins" index="7" instance=ExtResource( 46 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.68702, 65.4663, -83.5357 )
+
+[node name="coin10" parent="coins" index="8" instance=ExtResource( 46 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46637, 65.4663, -77.7326 )
+
+[node name="coin8" parent="coins" index="9" instance=ExtResource( 46 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.957, 65.4663, -86.2582 )
 
 [node name="startPos" type="Position3D" parent="." index="13"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.53016, 65.3224, -73.1873 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.35626, 65.3224, -92.0805 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="14"]
 transform = Transform( 1, 0, 0, 0, -0.722388, 0.691488, 0, -0.691488, -0.722388, 0, 169.359, -167.747 )
