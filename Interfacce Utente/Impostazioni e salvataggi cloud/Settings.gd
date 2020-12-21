@@ -15,6 +15,8 @@ onready var detailCheck = get_node("NinePatchRect/Video/detailsCheck")
 func _ready():
 	musicCheck.pressed = userData.settings.musicMuted
 	sfxCheck.pressed = userData.settings.sfxMuted
+	shadowCheck.pressed = userData.settings.shadows
+	detailCheck.presed = userData.settings.details
 	pass 
 
 

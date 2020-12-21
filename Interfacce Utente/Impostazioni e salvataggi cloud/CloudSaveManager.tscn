@@ -274,7 +274,7 @@ margin_bottom = 21.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "USERNAME: "
+text = "EMAIL: "
 
 [node name="LineEdit" type="LineEdit" parent="TextureRect/login/VBoxContainer/HBoxContainer"]
 margin_left = 153.0
@@ -401,9 +401,9 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/register/VBoxContainer"]
-margin_top = 83.0
+margin_top = 103.0
 margin_right = 357.0
-margin_bottom = 107.0
+margin_bottom = 127.0
 
 [node name="Label2" type="Label" parent="TextureRect/register/VBoxContainer/HBoxContainer"]
 margin_top = 2.0
@@ -423,9 +423,9 @@ margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/register/VBoxContainer"]
-margin_top = 111.0
+margin_top = 131.0
 margin_right = 357.0
-margin_bottom = 135.0
+margin_bottom = 155.0
 
 [node name="Label3" type="Label" parent="TextureRect/register/VBoxContainer/HBoxContainer2"]
 margin_top = 2.0
@@ -445,9 +445,9 @@ margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/register/VBoxContainer"]
-margin_top = 139.0
+margin_top = 159.0
 margin_right = 357.0
-margin_bottom = 163.0
+margin_bottom = 183.0
 
 [node name="Label4" type="Label" parent="TextureRect/register/VBoxContainer/HBoxContainer3"]
 margin_top = 2.0
