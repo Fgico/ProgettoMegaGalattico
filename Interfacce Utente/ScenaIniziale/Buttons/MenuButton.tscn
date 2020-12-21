@@ -22,7 +22,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.784314, 0.176471, 0.176471, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
-text = "LABEL"
+text = "< Cloud >"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
