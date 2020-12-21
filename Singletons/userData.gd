@@ -47,8 +47,8 @@ func saveToFile():
 	saveFile.store_line(to_json(numCoin))
 	saveFile.store_line(to_json(numItem))
 	saveFile.store_line(to_json(cityStatus))
-	saveFile.store_line(to_json(inventory))
 	saveFile.store_line(to_json(settings))
+	saveFile.store_line(to_json(inventory))
 	saveFile.close()
 
 func loadFromFile():

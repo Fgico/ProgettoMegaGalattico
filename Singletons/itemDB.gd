@@ -17,7 +17,7 @@ var weapons = [
 		"mesh" : "res://Entita/Equipaggiabili/armi/Sword.tscn",
 		"icon" : ICON_PATH + "Iron Sword.png",
 		"atk" : 15,
-		"atkspd" : 10,
+		"atkspd" : 7,
 		"costo" : 40
 	},
 	{
@@ -25,7 +25,7 @@ var weapons = [
 		"mesh" : "res://Entita/Equipaggiabili/armi/Sword.tscn",
 		"icon" : ICON_PATH + "Steel Sword.png",
 		"atk" : 20,
-		"atkspd" : 15,
+		"atkspd" : 10,
 		"costo" : 60
 	}
 ]

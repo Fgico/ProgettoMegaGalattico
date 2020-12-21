@@ -66,4 +66,5 @@ func _on_TrashBin_pressed():
 func _on_ExitButton_pressed():
 	self.queue_free() 
 	get_parent().UI.show()
+	userData.saveToFile()
 	sceneUtili.player.lockMovement = false

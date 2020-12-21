@@ -112,7 +112,8 @@ func attaccaChecked(attacco,isSpecial):
 			if(stato == Attacking):
 				anim.play("sword and shield slash-loop")
 				anim.advance(0.5)
-				anim.playback_speed = tempo / atkSpd
+				if(tempo != 0):
+					anim.playback_speed = tempo / atkSpd
 				combo+=1
 	if(combo >0 and stato!= Dead):
 		if(attackTimeout >0 and attackTimeout <0.2):
@@ -120,8 +121,9 @@ func attaccaChecked(attacco,isSpecial):
 				1:
 					anim.play("sword and shield slash 3-loop")
 					var tempo = .attacca(attacco,target)
+					if(tempo != 0):
+						anim.playback_speed = tempo / atkSpd
 					anim.advance(0.5)
-					anim.playback_speed = tempo / atkSpd
 					combo += 1
 				2:
 					anim.play("sword and shield attack 2-loop")
@@ -129,7 +131,8 @@ func attaccaChecked(attacco,isSpecial):
 					attackDir.y = 0
 					setForce(attackDir, 500, 0.5)
 					var tempo = .attacca(attacco,target)
-					anim.playback_speed = tempo / atkSpd
+					if(tempo != 0):
+						anim.playback_speed = tempo / atkSpd
 					combo = 0
 
 #scattando e uno scalare della velocita che diminuisce di 1 al secondo
@@ -208,7 +211,7 @@ func equipWeapon(id : int):
 	if(id != 0):
 		var wpn = ItemDB.weapons[id]
 		self.stats.atk = wpn.atk/10
-		self.atkSpd = 1/ (wpn.atkspd/5)
+		self.atkSpd = 1 / (wpn.atkspd/5.0)
 
 func equipArmor(id : int):
 	if(id != 0):

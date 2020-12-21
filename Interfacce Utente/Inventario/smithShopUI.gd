@@ -93,6 +93,7 @@ func _on_ExitButton_pressed():
 	self.queue_free()
 	sceneUtili.player.lockMovement = false
 	sceneUtili.player.UI.show()
+	userData.saveToFile()
 	pass
 
 
