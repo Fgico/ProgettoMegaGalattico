@@ -4,6 +4,7 @@ onready var audioPanel = get_node("NinePatchRect/Audio")
 onready var videoPanel = get_node("NinePatchRect/Video")
 
 func _ready():
+	
 	pass 
 
 

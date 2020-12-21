@@ -148,7 +148,7 @@ func muori():
 
 func restoreStatus():
 	stato = Idle
-	hp = stats.maxhp
+	healthBar.value = stats.maxhp
 
 func _on_scatto_timeout():
 	scattoTimer.stop()

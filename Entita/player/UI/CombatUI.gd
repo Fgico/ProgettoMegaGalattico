@@ -1,6 +1,7 @@
 extends Control
 
 var inventoryScreen = preload("res://Interfacce Utente/Inventario/InventoryUI.tscn")
+var menu_sett = preload("res://Interfacce Utente/Impostazioni e salvataggi cloud/Settings.tscn")
 
 onready var player = get_parent().get_parent().get_parent().get_parent()
 onready var pauseMenu = get_node("PauseMenu")
@@ -19,11 +20,11 @@ func _on_Resume_pressed():
 	pause.show()
 	pass # Replace with function body.
 
-func _on_pause_button_down():
-	pause.hide()
-	pauseMenu.show()
-	get_tree().paused = true
-	pass # Replace with function body.
+#func _on_pause_button_down():
+#	pause.hide()
+#	pauseMenu.show()
+#	get_tree().paused = true
+#	pass # Replace with function body.
 
 var touchIdx = -1
 
@@ -89,3 +90,27 @@ func _on_bag_pressed():
 	player.add_child(inv)
 	player.UI.hide()
 	player.lockMovement = true
+
+
+func _on_Settings_pressed():
+	var settings = menu_sett.instance()
+	self.add_child(settings)
+	player.UI.show()
+	
+	pass # Replace with function body.
+
+
+func _on_back2town_pressed():
+	
+	get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+	sceneUtili.player.restoreStatus()
+	
+	pass # Replace with function body.
+
+
+func _on_pause_pressed():
+	pause.hide()
+	pauseMenu.show()
+	get_tree().paused = true
+	pass # Replace with function body.
+	
