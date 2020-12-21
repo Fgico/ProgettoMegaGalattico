@@ -3,7 +3,18 @@ extends Control
 onready var audioPanel = get_node("NinePatchRect/Audio")
 onready var videoPanel = get_node("NinePatchRect/Video")
 
+onready var musicCheck = get_node("NinePatchRect/Audio/musicMute")
+onready var sfxCheck = get_node("NinePatchRect/Audio/sfxMute")
+
+onready var fxSlider = get_node("NinePatchRect/Audio/HSlider2")
+onready var musicSlider = get_node("NinePatchRect/Audio/HSlider")
+
+onready var shadowCheck = get_node("NinePatchRect/Video/shadowCheck")
+onready var detailCheck = get_node("NinePatchRect/Video/detailsCheck")
+
 func _ready():
+	musicCheck.pressed = userData.settings.musicMuted
+	sfxCheck.pressed = userData.settings.sfxMuted
 	pass 
 
 
@@ -21,6 +32,7 @@ func _on_Video_pressed():
 
 
 func _on_quit_pressed():
+	userData.saveToFile()
 	self.queue_free()
 
 
@@ -57,8 +69,8 @@ func _on_sfxSlider_value_changed(value):
 		4.0:
 			AudioServer.set_bus_volume_db(2,-9)
 		5.0:
-			AudioServer.set_bus_volume_db(2,-6)
-
+			AudioServer.set_bus_volume_db(2,0)
+	userData.settings.sfxVolume = value
 
 func _on_musicSlider_value_changed(value):
 	match value:
@@ -71,4 +83,5 @@ func _on_musicSlider_value_changed(value):
 		4.0:
 			AudioServer.set_bus_volume_db(1,-9)
 		5.0:
-			AudioServer.set_bus_volume_db(1,-6)
+			AudioServer.set_bus_volume_db(1, 0)
+	userData.settings.musicVolume = value

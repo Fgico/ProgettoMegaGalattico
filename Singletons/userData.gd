@@ -4,6 +4,8 @@ var savePath = "user://DangerousSkies.save"
 
 func _ready():
 	loadFromFile()
+	AudioServer.set_bus_mute(1, settings.musicMuted)
+	AudioServer.set_bus_mute(2, settings.sfxMuted)
 
 var userInfo = {
 	"name" : "gino",

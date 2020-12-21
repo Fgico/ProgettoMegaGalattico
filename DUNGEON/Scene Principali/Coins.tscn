@@ -114,6 +114,7 @@ anims/animazioneCoins = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+bus = "fx"
 
 [node name="AnimationCascata" type="AnimationPlayer" parent="."]
 anims/animazioneCascata = SubResource( 5 )
