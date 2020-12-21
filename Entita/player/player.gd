@@ -196,7 +196,7 @@ func loadEquipment():
 func equipWeapon(id : int):
 	if(id != 0):
 		var wpn = ItemDB.weapons[id]
-		self.stats.atk = wpn.dmg/10
+		self.stats.atk = wpn.atk/10
 		self.atkSpd = 1/ (wpn.atkspd/5)
 
 func equipArmor(id : int):

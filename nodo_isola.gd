@@ -4,8 +4,6 @@ onready var pianoAttuale = get_node("Isola_volante")
 onready var player = get_node("player")
 
 func _ready():
-	$Control.hide()
-	
 	pass # Replace with function body.
 
 

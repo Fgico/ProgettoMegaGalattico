@@ -39,7 +39,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Dangerous Skies!!!"
-run/main_scene="res://nodo_isola.tscn"
+run/main_scene="res://Interfacce Utente/ScenaIniziale/TitleScreen.tscn"
+boot_splash/image="res://Interfacce Utente/ScenaIniziale/Immagini/background copy.png"
 
 [autoload]
 
@@ -50,7 +51,11 @@ Firebase="*res://Singletons/firebase.gd"
 
 [display]
 
+window/size/width=1280
+window/size/height=720
 window/vsync/use_vsync=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
