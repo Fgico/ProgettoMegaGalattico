@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Entita/player/Label.gd" type="Script" id=1]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/skillButtons.png" type="Texture" id=2]
@@ -43,22 +43,14 @@ corner_radius_bottom_left = 20
 size = 20
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 20
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=7]
-size = 20
-font_data = ExtResource( 10 )
-
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.407843, 0.376471, 0.301961, 1 )
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
 corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0 )
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
@@ -145,7 +137,6 @@ margin_left = -6.67413
 margin_top = -1.33484
 margin_right = -6.72815
 margin_bottom = -1.29485
-custom_fonts/font = SubResource( 5 )
 text = "Resume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -158,7 +149,6 @@ anchor_bottom = 0.604
 margin_left = -6.0
 margin_top = -0.0400085
 margin_bottom = 11.04
-custom_fonts/font = SubResource( 6 )
 text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -172,7 +162,7 @@ margin_left = -6.447
 margin_top = -0.039978
 margin_right = -11.5555
 margin_bottom = 6.00002
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "Go back to town"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -239,15 +229,15 @@ anchor_left = 0.132
 anchor_top = 0.162
 anchor_right = 0.847
 anchor_bottom = 1.0
-margin_left = -9.91722
-margin_top = -0.914333
-margin_right = -10.0522
-margin_bottom = -49.4218
+margin_left = -6.0
+margin_top = 19.0
+margin_right = 10.0
+margin_bottom = -34.0
 rect_rotation = 270.0
 rect_pivot_offset = Vector2( 100, 90 )
 size_flags_vertical = 1
-custom_styles/fg = SubResource( 8 )
-custom_styles/bg = SubResource( 9 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
 value = 100.0
 rounded = true
 percent_visible = false

@@ -24,21 +24,6 @@ func _on_quit_pressed():
 	self.queue_free()
 
 
-func _on_shadowSlider_value_changed(value):
-	print(value)
-	match value:
-		1.0:
-			print(ProjectSettings.set_setting("rendering/quality/directional_shadow/size.mobile", 1024))
-			ProjectSettings.set_setting("rendering/quality/directional_shadow/size", 1024)
-		2.0:
-			ProjectSettings.set_setting("rendering/quality/directional_shadow/size.mobile", 2048)
-			ProjectSettings.set_setting("rendering/quality/directional_shadow/size", 2048)
-		3.0:
-			ProjectSettings.set_setting("rendering/quality/directional_shadow/size.mobile", 4096)
-			ProjectSettings.set_setting("rendering/quality/directional_shadow/size", 4096)
-	ProjectSettings.save()
-
-
 func _on_shadowCheck_toggled(button_pressed):
 	userData.settings.shadows = button_pressed
 	pass 
@@ -59,3 +44,31 @@ func _on_sfxMute_toggled(button_pressed):
 	userData.settings.sfxMuted = button_pressed
 	AudioServer.set_bus_mute(2, button_pressed)
 	pass 
+
+
+func _on_sfxSlider_value_changed(value):
+	match value:
+		1.0:
+			AudioServer.set_bus_volume_db(2, -18)
+		2.0:
+			AudioServer.set_bus_volume_db(2, -15)
+		3.0:
+			AudioServer.set_bus_volume_db(2,-12)
+		4.0:
+			AudioServer.set_bus_volume_db(2,-9)
+		5.0:
+			AudioServer.set_bus_volume_db(2,-6)
+
+
+func _on_musicSlider_value_changed(value):
+	match value:
+		1.0:
+			AudioServer.set_bus_volume_db(1, -18)
+		2.0:
+			AudioServer.set_bus_volume_db(1, -15)
+		3.0:
+			AudioServer.set_bus_volume_db(1,-12)
+		4.0:
+			AudioServer.set_bus_volume_db(1,-9)
+		5.0:
+			AudioServer.set_bus_volume_db(1,-6)

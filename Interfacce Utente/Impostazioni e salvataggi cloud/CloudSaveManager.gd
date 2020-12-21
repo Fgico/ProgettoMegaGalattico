@@ -67,4 +67,5 @@ func _on_resetButton_pressed():
 	"weapons" : [],
 	"armors" : []
 }
+	userData.saveToFile()
 	pass # Replace with function body.
