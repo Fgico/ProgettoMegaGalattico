@@ -120,7 +120,6 @@ vram_compression/import_etc=true
 quality/shadow_atlas/quadrant_3_subdiv=3
 quality/shadows/filter_mode=0
 quality/reflections/irradiance_max_size=32
-batching/lights/max_join_items=64
 environment/default_clear_color=Color( 0.498039, 0.596078, 0.580392, 1 )
 quality/reflections/atlas_size=0
 quality/dynamic_fonts/use_oversampling=false

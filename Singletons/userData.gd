@@ -18,8 +18,8 @@ var equipped = {
 	"shoes" : 0
 }
 
-var numCoin = 0
-var numItem = 0
+var numCoin = 200
+var numItem = 100
 
 var cityStatus = {
 	"smith" : 1,

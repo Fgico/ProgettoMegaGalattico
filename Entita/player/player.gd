@@ -57,18 +57,25 @@ func _input(event):
 		
 #input ma dal pc
 func input_pc():
+	var premuto = false
 	inputDir = Vector2(0,0)
 	if( Input.is_action_pressed("sinistra")):
 		inputDir.x+= 1
+		premuto = true
 	elif(Input.is_action_pressed("destra")):
 		inputDir.x += -1
+		premuto = true
 	if(Input.is_action_pressed("su")):
 		inputDir.y += 1
+		premuto = true
 	elif(Input.is_action_pressed("giu")):
 		inputDir.y += -1
+		premuto = true
 	var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, inputDir.angle_to(Vector2.UP))
 	setTargetDir(Vector3(movDir.x,0,movDir.z))
-	
+	if( not premuto):
+		setTargetDir(Vector3.ZERO)
+		
 	if Input.is_action_just_pressed("attacco"):
 		attaccaChecked(attaccoBase,false)
 	if Input.is_action_just_pressed("scatta"):
@@ -88,7 +95,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	#input_pc()
+	input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -105,6 +112,7 @@ func attaccaChecked(attacco,isSpecial):
 			if(stato == Attacking):
 				anim.play("sword and shield slash-loop")
 				anim.advance(0.5)
+				anim.playback_speed = tempo / atkSpd
 				combo+=1
 	if(combo >0 and stato!= Dead):
 		if(attackTimeout >0 and attackTimeout <0.2):
@@ -113,6 +121,7 @@ func attaccaChecked(attacco,isSpecial):
 					anim.play("sword and shield slash 3-loop")
 					var tempo = .attacca(attacco,target)
 					anim.advance(0.5)
+					anim.playback_speed = tempo / atkSpd
 					combo += 1
 				2:
 					anim.play("sword and shield attack 2-loop")
@@ -136,7 +145,9 @@ func hit(danno, elemento,malusRate):
 	.hit(danno, elemento,malusRate)
 	healthBar.value = (float(hp)/stats.maxhp) * 100
 
-
+func attaccoFinito():
+	anim.playback_speed = 1
+	.attaccoFinito()
 
 func muori():
 	if(stato != Dead):
