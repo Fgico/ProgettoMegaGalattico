@@ -2,8 +2,11 @@ extends Spatial
 
 var shopUI = preload("res://Interfacce Utente/Inventario/smithShopUI.tscn")
 
+var path : PoolVector2Array
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var newArr = PoolVector2Array()
+	path = newArr
 	pass # Replace with function body.
 
 func _on_Area_body_entered(body):

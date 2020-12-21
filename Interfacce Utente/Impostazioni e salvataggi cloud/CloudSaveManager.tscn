@@ -1,0 +1,509 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Interfacce Utente/Inventario/Font/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/paper background_pressed.png" type="Texture" id=2]
+[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/background.png" type="Texture" id=3]
+[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/wood background.png" type="Texture" id=4]
+[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/paper background.png" type="Texture" id=5]
+[ext_resource path="res://Interfacce Utente/Inventario/smallFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Interfacce Utente/Inventario/FontShop.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Interfacce Utente/Impostazioni e salvataggi cloud/registrazione.gd" type="Script" id=8]
+[ext_resource path="res://Interfacce Utente/Impostazioni e salvataggi cloud/login.gd" type="Script" id=9]
+[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/exit.png" type="Texture" id=10]
+[ext_resource path="res://Interfacce Utente/Impostazioni e salvataggi cloud/CloudSaveManager.gd" type="Script" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=2]
+color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 1 )
+
+[node name="CloudSaveManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.1875
+anchor_top = 0.1
+anchor_right = 0.8125
+anchor_bottom = 0.9
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="TextureRect"]
+margin_left = 25.0
+margin_top = 22.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Cloud save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -81.0
+margin_top = -134.0
+margin_right = 81.0
+margin_bottom = 76.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quitButtonMenu" type="TextureButton" parent="TextureRect/Menu"]
+anchor_left = 0.95
+anchor_top = 0.035
+anchor_right = 0.95
+anchor_bottom = 0.035
+margin_left = 175.1
+margin_top = -96.5675
+margin_right = 215.1
+margin_bottom = -56.5675
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Menu"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 18
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="load" type="TextureRect" parent="TextureRect/Menu/VBoxContainer"]
+margin_right = 180.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 180, 70 )
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+
+[node name="buy" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/load"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/Menu/VBoxContainer/load/buy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.8147e-06
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "Save"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="TextureRect" parent="TextureRect/Menu/VBoxContainer"]
+margin_top = 88.0
+margin_right = 180.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 180, 70 )
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+
+[node name="buy" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/save"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/Menu/VBoxContainer/save/buy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.8147e-06
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "Load"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="register" type="TextureRect" parent="TextureRect/Menu/VBoxContainer"]
+margin_top = 176.0
+margin_right = 180.0
+margin_bottom = 246.0
+rect_min_size = Vector2( 180, 70 )
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+
+[node name="buy" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/register"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/Menu/VBoxContainer/register/buy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.8147e-06
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "Register"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="login" type="Control" parent="TextureRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -320.0
+margin_top = -240.0
+margin_right = 320.0
+margin_bottom = 240.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/login"]
+anchor_left = 0.31875
+anchor_top = 0.36875
+anchor_right = 0.665625
+anchor_bottom = 0.74375
+margin_left = -40.0
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/login/VBoxContainer"]
+margin_right = 302.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="TextureRect/login/VBoxContainer/HBoxContainer"]
+margin_top = 2.0
+margin_right = 149.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "USERNAME: "
+
+[node name="LineEdit" type="LineEdit" parent="TextureRect/login/VBoxContainer/HBoxContainer"]
+margin_left = 153.0
+margin_right = 302.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/login/VBoxContainer"]
+margin_top = 28.0
+margin_right = 302.0
+margin_bottom = 52.0
+
+[node name="Label2" type="Label" parent="TextureRect/login/VBoxContainer/HBoxContainer2"]
+margin_top = 2.0
+margin_right = 149.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PASSWORD:"
+
+[node name="LineEdit2" type="LineEdit" parent="TextureRect/login/VBoxContainer/HBoxContainer2"]
+margin_left = 153.0
+margin_right = 302.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+secret = true
+
+[node name="HSeparator" type="HSeparator" parent="TextureRect/login/VBoxContainer"]
+margin_top = 56.0
+margin_right = 302.0
+margin_bottom = 106.0
+custom_styles/separator = SubResource( 2 )
+custom_constants/separation = 50
+
+[node name="login" type="TextureRect" parent="TextureRect/login/VBoxContainer"]
+margin_top = 110.0
+margin_right = 302.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 180, 70 )
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+
+[node name="buy" type="TextureButton" parent="TextureRect/login/VBoxContainer/login"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/login/VBoxContainer/login/buy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.8147e-06
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "Login"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="TextureRect/login"]
+
+[node name="result" type="Label" parent="TextureRect/login"]
+anchor_left = 0.5
+anchor_top = 0.957
+anchor_right = 0.5
+anchor_bottom = 0.957
+margin_left = -20.0
+margin_top = -47.0
+margin_right = 20.0
+margin_bottom = -8.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quitButton" type="TextureButton" parent="TextureRect/login"]
+anchor_left = 0.95
+anchor_top = 0.035
+anchor_right = 0.95
+anchor_bottom = 0.035
+margin_left = -40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 10 )
+expand = true
+
+[node name="register" type="Control" parent="TextureRect"]
+visible = false
+anchor_left = -0.3
+anchor_top = -0.125
+anchor_right = 1.3
+anchor_bottom = 1.125
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/register"]
+anchor_left = 0.5
+anchor_top = 0.165
+anchor_right = 0.503
+anchor_bottom = 0.5
+margin_left = -175.0
+margin_top = -7.62939e-06
+margin_right = 178.928
+margin_bottom = 45.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/register/VBoxContainer"]
+margin_top = 83.0
+margin_right = 357.0
+margin_bottom = 107.0
+
+[node name="Label2" type="Label" parent="TextureRect/register/VBoxContainer/HBoxContainer"]
+margin_top = 2.0
+margin_right = 143.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Email                    "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="email" type="LineEdit" parent="TextureRect/register/VBoxContainer/HBoxContainer"]
+margin_left = 147.0
+margin_right = 357.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/register/VBoxContainer"]
+margin_top = 111.0
+margin_right = 357.0
+margin_bottom = 135.0
+
+[node name="Label3" type="Label" parent="TextureRect/register/VBoxContainer/HBoxContainer2"]
+margin_top = 2.0
+margin_right = 144.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Password             "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pass" type="LineEdit" parent="TextureRect/register/VBoxContainer/HBoxContainer2"]
+margin_left = 148.0
+margin_right = 357.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/register/VBoxContainer"]
+margin_top = 139.0
+margin_right = 357.0
+margin_bottom = 163.0
+
+[node name="Label4" type="Label" parent="TextureRect/register/VBoxContainer/HBoxContainer3"]
+margin_top = 2.0
+margin_right = 142.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ConfirmPassword"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="passconfirm" type="LineEdit" parent="TextureRect/register/VBoxContainer/HBoxContainer3"]
+margin_left = 146.0
+margin_right = 357.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+
+[node name="HTTPRequest" type="HTTPRequest" parent="TextureRect/register"]
+
+[node name="register" type="TextureRect" parent="TextureRect/register"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = 4.0
+margin_right = 150.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 180, 70 )
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buy" type="TextureButton" parent="TextureRect/register/register"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/register/register/buy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.8147e-06
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "Register"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="result" type="Label" parent="TextureRect/register"]
+anchor_left = 0.5
+anchor_top = 0.957
+anchor_right = 0.5
+anchor_bottom = 0.957
+margin_left = -20.0
+margin_top = -101.84
+margin_right = 20.0
+margin_bottom = -62.84
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quitButton" type="TextureButton" parent="TextureRect/register"]
+anchor_left = 0.95
+anchor_top = 0.035
+anchor_right = 0.95
+anchor_bottom = 0.035
+margin_left = -212.8
+margin_top = 55.8
+margin_right = -172.8
+margin_bottom = 95.8
+texture_normal = ExtResource( 10 )
+expand = true
+[connection signal="pressed" from="TextureRect/Menu/quitButtonMenu" to="." method="_on_quitButtonMenu_pressed"]
+[connection signal="pressed" from="TextureRect/Menu/VBoxContainer/load/buy" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="TextureRect/Menu/VBoxContainer/save/buy" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="TextureRect/Menu/VBoxContainer/register/buy" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="TextureRect/login/VBoxContainer/login/buy" to="TextureRect/login" method="_on_Button_pressed"]
+[connection signal="request_completed" from="TextureRect/login/HTTPRequest" to="TextureRect/login" method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="TextureRect/login/quitButton" to="." method="_on_quitButtonLogin_pressed"]
+[connection signal="request_completed" from="TextureRect/register/HTTPRequest" to="TextureRect/register" method="_on_HTTPRequest_request_completed"]
+[connection signal="pressed" from="TextureRect/register/register/buy" to="TextureRect/register" method="_on_Button_pressed"]
+[connection signal="pressed" from="TextureRect/register/quitButton" to="." method="_on_quitButtonRegister_pressed"]

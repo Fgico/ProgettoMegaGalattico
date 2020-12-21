@@ -93,7 +93,7 @@ func _physics_process(delta):
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
 	elif stato == Idle:
-		anim.play("sword and shield idle-loop")
+		anim.play("sword and shield idle 4-loop")
 
 #piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
@@ -146,7 +146,9 @@ func muori():
 	stato = Dead
 	
 
-
+func restoreStatus():
+	stato = Idle
+	hp = stats.maxhp
 
 func _on_scatto_timeout():
 	scattoTimer.stop()
