@@ -2,19 +2,20 @@
 
 [ext_resource path="res://DUNGEON/Modular Dungeon/OBJ/Torch.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://DUNGEON/Modular Dungeon/FBX/LightWood.material" type="Material" id=2]
-[ext_resource path="res://DUNGEON/Modular Dungeon/FBX/Fire.material" type="Material" id=3]
 [ext_resource path="res://DUNGEON/lowSphere.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://DUNGEON/Scene Assets/Fire.gd" type="Script" id=5]
 
 [sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 1, 0.529412, 0.117647, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
 flags_transparent = true
 flags_unshaded = true
 flags_do_not_receive_shadows = true
 flags_disable_ambient_light = true
 albedo_color = Color( 1, 0.647059, 0.27451, 0.0980392 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "oscillo"
+[sub_resource type="Animation" id=3]
 length = 5.0
 loop = true
 tracks/0/type = "value"
@@ -48,15 +49,15 @@ script = ExtResource( 5 )
 [node name="Torch" type="MeshInstance" parent="."]
 mesh = ExtResource( 1 )
 material/0 = ExtResource( 2 )
-material/1 = ExtResource( 3 )
+material/1 = SubResource( 1 )
 
 [node name="lowSphere" type="MeshInstance" parent="."]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.847984, 0.42512 )
 mesh = ExtResource( 4 )
-material/0 = SubResource( 1 )
+material/0 = SubResource( 2 )
 
 [node name="oscillation" type="AnimationPlayer" parent="."]
-anims/oscillo = SubResource( 2 )
+anims/oscillo = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.5237 )
