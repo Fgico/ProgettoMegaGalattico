@@ -16,15 +16,20 @@ font_data = ExtResource( 3 )
 margin_right = 649.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 0, 70 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ItemBackground" type="TextureRect" parent="."]
-margin_right = 70.0
+margin_left = 126.0
+margin_right = 196.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 70, 70 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
 texture = ExtResource( 1 )
 expand = true
 
@@ -32,7 +37,10 @@ expand = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 expand = true
+stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -47,6 +55,8 @@ margin_top = -33.7401
 margin_right = 1.25989
 margin_bottom = 1.25995
 rect_min_size = Vector2( 65, 35 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
 align = 2
 valign = 2
@@ -55,7 +65,7 @@ __meta__ = {
 }
 
 [node name="ItemName" type="Label" parent="."]
-margin_left = 74.0
+margin_left = 326.0
 margin_right = 649.0
 margin_bottom = 70.0
 size_flags_horizontal = 3

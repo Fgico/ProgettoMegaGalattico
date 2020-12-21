@@ -13,15 +13,15 @@
 [ext_resource path="res://Interfacce Utente/Inventario/FontShop.tres" type="DynamicFont" id=11]
 [ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/paper background_pressed.png" type="Texture" id=12]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 30
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 24
 font_data = ExtResource( 4 )
 
@@ -30,43 +30,44 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 7 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="DoubleEdgesBackground" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 30.0
-margin_top = 30.0
-margin_right = -30.0
-margin_bottom = -30.0
+anchor_left = 0.0292969
+anchor_top = 0.05
+anchor_right = 0.970703
+anchor_bottom = 0.95
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="PaperBackground" type="TextureRect" parent="DoubleEdgesBackground"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 17.0
-margin_top = 14.0
-margin_right = -18.0
-margin_bottom = -15.0
+anchor_left = 0.0176349
+anchor_top = 0.0259259
+anchor_right = 0.981328
+anchor_bottom = 0.972222
+margin_top = 9.53674e-07
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Control" type="Control" parent="DoubleEdgesBackground/PaperBackground"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 0.5
-margin_right = 0.5
-margin_bottom = 8.0
+anchor_left = 0.500538
+anchor_right = 0.500538
+anchor_bottom = 0.0156556
+margin_left = -3.05176e-05
+margin_right = -3.05176e-05
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="coins" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/Control"]
@@ -162,20 +163,23 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Header" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer"]
 margin_right = 929.0
 margin_bottom = 50.0
+size_flags_horizontal = 3
 
 [node name="ManuTitle" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header"]
 margin_top = 5.0
 margin_right = 875.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
 [node name="ExitButton" type="TextureButton" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header"]
@@ -193,6 +197,7 @@ __meta__ = {
 margin_top = 54.0
 margin_right = 929.0
 margin_bottom = 487.0
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="LeftMargin" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
@@ -206,9 +211,14 @@ margin_left = 24.0
 margin_right = 601.0
 margin_bottom = 433.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/itemScroll"]
+margin_right = 577.0
+margin_bottom = 433.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource( 6 )
 
 [node name="ItemInspector" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
@@ -216,16 +226,17 @@ margin_left = 605.0
 margin_right = 905.0
 margin_bottom = 433.0
 rect_min_size = Vector2( 300, 0 )
+size_flags_vertical = 3
 
 [node name="ItemInspector1" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
 margin_right = 300.0
-margin_bottom = 244.0
+margin_bottom = 246.0
 size_flags_vertical = 3
 
 [node name="ItemName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
 margin_right = 300.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Stats:"
 valign = 1
@@ -233,32 +244,32 @@ valign = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
 margin_top = 41.0
 margin_right = 300.0
-margin_bottom = 226.0
+margin_bottom = 228.0
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_right = 226.0
-margin_bottom = 185.0
+margin_bottom = 187.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Stats" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer/ScrollContainer" instance=ExtResource( 9 )]
-margin_bottom = 185.0
+margin_bottom = 187.0
 
 [node name="ItemIcon" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_left = 230.0
 margin_right = 300.0
-margin_bottom = 185.0
+margin_bottom = 187.0
 rect_min_size = Vector2( 70, 70 )
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
-margin_top = 230.0
+margin_top = 232.0
 margin_right = 300.0
-margin_bottom = 244.0
+margin_bottom = 246.0
 rect_min_size = Vector2( 0, 14 )
 
 [node name="UpgradeLabel" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
-margin_top = 248.0
+margin_top = 250.0
 margin_right = 300.0
 margin_bottom = 285.0
 custom_fonts/font = ExtResource( 11 )
@@ -291,7 +302,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 3.8147e-06
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Upgrade Store"
 align = 1
@@ -327,7 +338,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 3.8147e-06
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Buy Item"
 align = 1

@@ -79,9 +79,13 @@ func deleteDic(requester):
 func prepareDataToSend():
 	var file = {
 		"curwpn" : {"integerValue" : userData.equipped.curWeapon},
-		"curarmor" : {"integerValue" : userData.equipped.curArmor},
+		"curhead" : {"integerValue" : userData.equipped.head},
+		"curchest" : {"integerValue" : userData.equipped.chest},
+		"curpants" : {"integerValue" : userData.equipped.pants},
+		"curshoes" : {"integerValue" : userData.equipped.shoes},
 		"numCoin": {"integerValue" : userData.numCoin},
 		"numItem" : {"integerValue" : userData.numItem},
+		"cityStatus" : {"integerValue" : userData.cityStatus.smith},
 		"weapons" : {"arrayValue": {"values" : []}},
 		"armors"  : {"arrayValue": {"values" : []}}
 	}
@@ -94,9 +98,13 @@ func prepareDataToSend():
 func storeReceivedData(body):
 	var file = body.fields
 	userData.equipped.curWeapon = int(file.curwpn.integerValue)
-	userData.equipped.curArmor = int(file.curarmor.integerValue)
+	userData.equipped.head = int(file.head.integerValue)
+	userData.equipped.chest = int(file.chest.integerValue)
+	userData.equipped.pants = int(file.pants.integerValue)
+	userData.equipped.shoes = int(file.shoes.integerValue)
 	userData.numCoin = int(file.numCoin.integerValue)
 	userData.numItem = int(file.numItem.integerValue)
+	userData.cityStatus.smith = int(file.cityStatus.integerValue)
 	userData.inventory.weapons = []
 	for arma in file.weapons.arrayValue.values:
 		userData.inventory.weapons.append(int(file.weapons.arrayValue.values[arma].integerValue))

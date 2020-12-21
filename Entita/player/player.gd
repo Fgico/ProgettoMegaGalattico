@@ -33,6 +33,7 @@ func _ready():
 	sceneUtili.player = self
 	coins = userData.numCoin
 	items = userData.numItem
+	loadEquipment()
 	convertStringa()
 
 var stickidx = -1
@@ -65,9 +66,8 @@ func input_pc():
 		inputDir.y += 1
 	elif(Input.is_action_pressed("giu")):
 		inputDir.y += -1
-	if(not lockMovement):
-		var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, inputDir.angle_to(Vector2.UP))
-		setTargetDir(Vector3(movDir.x,0,movDir.z))
+	var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, inputDir.angle_to(Vector2.UP))
+	setTargetDir(Vector3(movDir.x,0,movDir.z))
 	
 	if Input.is_action_just_pressed("attacco"):
 		attaccaChecked(attaccoBase,false)
@@ -147,6 +147,9 @@ func muori():
 func restoreStatus():
 	stato = Idle
 	hp = stats.maxhp
+	healthBar.value = 100
+	mp = stats.maxmp
+	mpBar.value = 100
 
 func _on_scatto_timeout():
 	scattoTimer.stop()
@@ -178,6 +181,17 @@ func collectItem():
 	items = items + 1
 	userData.numItem = items
 	convertStringa()
+
+func loadEquipment():
+	equipWeapon(userData.equipped.curWeapon)
+	if userData.equipped.head != 0 :
+		equipArmor(userData.equipped.head)
+	if userData.equipped.chest != 0 :
+		equipArmor(userData.equipped.chest)
+	if userData.equipped.pants != 0 :
+		equipArmor(userData.equipped.pants)
+	if userData.equipped.shoes != 0 :
+		equipArmor(userData.equipped.shoes)
 
 func equipWeapon(id : int):
 	if(id != 0):

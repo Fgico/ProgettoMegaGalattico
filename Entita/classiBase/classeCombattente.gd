@@ -83,7 +83,6 @@ func attacca(attacco,target):
 func hit(danno,nelement,malusRate):
 	hp = max(hp - danno, 0)
 	if(hp <= 0 and stato != Dead):
-		print("morendo",self,self.hp)
 		muori()
 
 func muori():

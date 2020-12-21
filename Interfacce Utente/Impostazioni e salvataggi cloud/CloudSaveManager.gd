@@ -7,14 +7,14 @@ onready var register = get_node("TextureRect/register")
 func _ready():
 	pass 
 
-func _on_load_pressed():
+func _on_save_pressed():
 	login.show()
 	login.saveOrLoad = 0
 	menu.hide()
 	pass 
 
 
-func _on_save_pressed():
+func _on_load_pressed():
 	login.show()
 	login.saveOrLoad = 1
 	menu.hide()
@@ -44,3 +44,27 @@ func _on_quitButtonRegister_pressed():
 	register.res.text = ""
 	menu.show()
 	pass 
+
+
+func _on_resetButton_pressed():
+	userData.equipped = {
+	"curWeapon" : 1,
+	"head" : 0,
+	"chest" : 0,
+	"pants" : 0,
+	"shoes" : 0
+	}
+	
+	userData.numCoin = 0
+	userData.numItem = 0
+	
+	userData.cityStatus = {
+	"smith" : 1,
+	"wizard" : 1
+}
+	
+	userData.inventory = {
+	"weapons" : [],
+	"armors" : []
+}
+	pass # Replace with function body.

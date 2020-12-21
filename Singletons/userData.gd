@@ -2,8 +2,8 @@ extends Node
 
 var savePath = "user://DangerousSkies.save"
 
-#func _ready():
-#	loadFromFile()
+func _ready():
+	loadFromFile()
 
 var userInfo = {
 	"name" : "gino",
@@ -11,12 +11,11 @@ var userInfo = {
 }
 
 var equipped = {
-	"curWeapon" : 0,
-	"curArmor" : 0,
-	"spAtk1" : 0,
-	"spAtk2" : 0,
-	"spAtk3" : 0,
-	"spAtk4" : 0,
+	"curWeapon" : 1,
+	"head" : 0,
+	"chest" : 0,
+	"pants" : 0,
+	"shoes" : 0
 }
 
 var numCoin = 100
@@ -28,9 +27,8 @@ var cityStatus = {
 }
 
 var inventory = {
-	"weapons" : [1,2,3],
-	"armors" : [1,2,3],
-	"consumable" : []
+	"weapons" : [],
+	"armors" : []
 }
 
 var settings = {
@@ -50,6 +48,7 @@ func saveToFile():
 	saveFile.store_line(to_json(numItem))
 	saveFile.store_line(to_json(cityStatus))
 	saveFile.store_line(to_json(inventory))
+	saveFile.store_line(to_json(settings))
 	saveFile.close()
 
 func loadFromFile():
@@ -62,17 +61,18 @@ func loadFromFile():
 	userInfo.password = data.password
 	data = parse_json(loadFile.get_line())
 	equipped.curWeapon = data.curWeapon
-	equipped.curArmor = data.curArmor
-	equipped.spAtk1 = data.spAtk1
-	equipped.spAtk2 = data.spAtk2
-	equipped.spAtk3 = data.spAtk3
-	equipped.spAtk4 = data.spAtk4
+	equipped.head = data.head
+	equipped.chest = data.chest
+	equipped.pants = data.pants
+	equipped.shoes = data.shoes
 	data = parse_json(loadFile.get_line())
 	numCoin = data
 	data = parse_json(loadFile.get_line())
 	numItem = data
 	data = parse_json(loadFile.get_line())
 	cityStatus = data
+	data = parse_json(loadFile.get_line())
+	settings = data
 	data = parse_json(loadFile.get_line())
 	if(data != null):
 		inventory = data

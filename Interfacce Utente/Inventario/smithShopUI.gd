@@ -71,11 +71,21 @@ func fillShop():
 
 func _on_buy_pressed():
 	if( elem_curr.tipo != null and elem_curr.costo <= userData.numCoin):
+		var shouldBuy = true
 		if(elem_curr.tipo == 1):
-			userData.inventory.weapons.append(elem_curr.posizione)
+			for arma in userData.inventory.weapons:
+				if arma == elem_curr.posizione:
+					shouldBuy = false
+			if(shouldBuy):
+				userData.inventory.weapons.append(elem_curr.posizione)
+				sceneUtili.player.addCoins( -elem_curr.costo )
 		if(elem_curr.tipo == 2):
-			userData.inventory.armors.append(elem_curr.posizione)
-		sceneUtili.player.addCoins( -elem_curr.costo )
+			for armor in userData.inventory.armors:
+				if armor == elem_curr.posizione:
+					shouldBuy = false
+			if shouldBuy:
+				userData.inventory.armors.append(elem_curr.posizione)
+				sceneUtili.player.addCoins( -elem_curr.costo )
 		updateCounters()
 
 

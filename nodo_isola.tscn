@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Isola/ISOLA_VOLANTE/Isola_volante.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodo_isola.gd" type="Script" id=2]
 [ext_resource path="res://Entita/player/player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Interfacce Utente/Impostazioni e salvataggi cloud/Settings.tscn" type="PackedScene" id=4]
 
 [node name="nodo_isola" type="Spatial"]
 script = ExtResource( 2 )
@@ -15,5 +14,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2932, 73.2032, -53.486 )
 
 [node name="startPos" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3827, 65.0451, -60.3451 )
-
-[node name="Control" parent="." instance=ExtResource( 4 )]

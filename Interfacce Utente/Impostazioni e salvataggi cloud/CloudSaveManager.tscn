@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Interfacce Utente/Inventario/Font/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/paper background_pressed.png" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Interfacce Utente/Impostazioni e salvataggi cloud/CloudSaveManager.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
 size = 24
 font_data = ExtResource( 1 )
 
@@ -48,7 +52,7 @@ margin_top = 22.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Cloud save"
+text = "Save Manager"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -82,52 +86,17 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Menu"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_top = -27.0
+margin_right = 180.0
+margin_bottom = 334.0
 custom_constants/separation = 18
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="load" type="TextureRect" parent="TextureRect/Menu/VBoxContainer"]
+[node name="save" type="TextureRect" parent="TextureRect/Menu/VBoxContainer"]
 margin_right = 180.0
 margin_bottom = 70.0
-rect_min_size = Vector2( 180, 70 )
-size_flags_vertical = 4
-texture = ExtResource( 4 )
-expand = true
-
-[node name="buy" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/load"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 2 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="TextureRect/Menu/VBoxContainer/load/buy"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = 3.8147e-06
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-text = "Save"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="save" type="TextureRect" parent="TextureRect/Menu/VBoxContainer"]
-margin_top = 88.0
-margin_right = 180.0
-margin_bottom = 158.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
 texture = ExtResource( 4 )
@@ -148,6 +117,42 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TextureRect/Menu/VBoxContainer/save/buy"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.8147e-06
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "Save"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="load" type="TextureRect" parent="TextureRect/Menu/VBoxContainer"]
+margin_top = 88.0
+margin_right = 180.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 180, 70 )
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+
+[node name="buy" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/load"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/Menu/VBoxContainer/load/buy"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 3.8147e-06
@@ -190,6 +195,42 @@ margin_bottom = 3.8147e-06
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Register"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resetSave" type="TextureRect" parent="TextureRect/Menu/VBoxContainer"]
+margin_top = 264.0
+margin_right = 180.0
+margin_bottom = 334.0
+rect_min_size = Vector2( 180, 70 )
+size_flags_vertical = 4
+texture = ExtResource( 4 )
+expand = true
+
+[node name="resetButton" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/resetSave"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TextureRect/Menu/VBoxContainer/resetSave/resetButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 3.8147e-06
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "Delete Save"
 align = 1
 valign = 1
 __meta__ = {
@@ -498,9 +539,9 @@ margin_bottom = 95.8
 texture_normal = ExtResource( 10 )
 expand = true
 [connection signal="pressed" from="TextureRect/Menu/quitButtonMenu" to="." method="_on_quitButtonMenu_pressed"]
-[connection signal="pressed" from="TextureRect/Menu/VBoxContainer/load/buy" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="TextureRect/Menu/VBoxContainer/save/buy" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="TextureRect/Menu/VBoxContainer/register/buy" to="." method="_on_register_pressed"]
+[connection signal="pressed" from="TextureRect/Menu/VBoxContainer/resetSave/resetButton" to="." method="_on_resetButton_pressed"]
 [connection signal="pressed" from="TextureRect/login/VBoxContainer/login/buy" to="TextureRect/login" method="_on_Button_pressed"]
 [connection signal="request_completed" from="TextureRect/login/HTTPRequest" to="TextureRect/login" method="_on_HTTPRequest_request_completed"]
 [connection signal="pressed" from="TextureRect/login/quitButton" to="." method="_on_quitButtonLogin_pressed"]
