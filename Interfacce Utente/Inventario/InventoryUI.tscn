@@ -14,17 +14,16 @@
 [ext_resource path="res://Interfacce Utente/Inventario/FontShop.tres" type="DynamicFont" id=12]
 [ext_resource path="res://Interfacce Utente/Inventario/playerStats.tscn" type="PackedScene" id=13]
 
-
 [sub_resource type="DynamicFont" id=1]
-size = 32
+size = 36
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 24
+size = 32
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 30
+size = 36
 font_data = ExtResource( 4 )
 
 [node name="Inventory" type="Control"]
@@ -69,21 +68,21 @@ __meta__ = {
 }
 
 [node name="Header" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer"]
-margin_right = 929.0
+margin_right = 1185.0
 margin_bottom = 50.0
 
 [node name="ManuTitle" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header"]
-margin_top = 5.0
-margin_right = 875.0
-margin_bottom = 44.0
+margin_top = 3.0
+margin_right = 1131.0
+margin_bottom = 47.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-text = " Inventory"
+text = "  Inventory"
 
 [node name="ExitButton" type="TextureButton" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header"]
-margin_left = 879.0
-margin_right = 929.0
+margin_left = 1135.0
+margin_right = 1185.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
 texture_normal = ExtResource( 3 )
@@ -91,26 +90,26 @@ expand = true
 
 [node name="MainElements" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer"]
 margin_top = 54.0
-margin_right = 929.0
-margin_bottom = 487.0
+margin_right = 1185.0
+margin_bottom = 607.0
 size_flags_vertical = 3
 
 [node name="LeftMargin" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_top = 209.0
-margin_right = 20.0
-margin_bottom = 223.0
-rect_min_size = Vector2( 20, 0 )
+margin_top = 269.0
+margin_right = 40.0
+margin_bottom = 283.0
+rect_min_size = Vector2( 40, 0 )
 
 [node name="Tabs" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_left = 24.0
-margin_right = 226.0
-margin_bottom = 433.0
+margin_left = 44.0
+margin_right = 284.0
+margin_bottom = 553.0
 rect_min_size = Vector2( 180, 0 )
 
 [node name="Weapons" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs"]
-margin_right = 202.0
-margin_bottom = 70.0
-rect_min_size = Vector2( 180, 70 )
+margin_right = 240.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 240, 90 )
 texture = ExtResource( 5 )
 expand = true
 
@@ -141,10 +140,10 @@ __meta__ = {
 }
 
 [node name="Armor" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs"]
-margin_top = 74.0
-margin_right = 202.0
-margin_bottom = 144.0
-rect_min_size = Vector2( 180, 70 )
+margin_top = 94.0
+margin_right = 240.0
+margin_bottom = 184.0
+rect_min_size = Vector2( 240, 90 )
 texture = ExtResource( 5 )
 expand = true
 
@@ -177,27 +176,27 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs"]
-margin_top = 148.0
-margin_right = 202.0
-margin_bottom = 185.0
+margin_top = 188.0
+margin_right = 240.0
+margin_bottom = 227.0
 custom_fonts/font = ExtResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Player Stats:"
 
 [node name="playerStats" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs" instance=ExtResource( 13 )]
-margin_top = 189.0
-margin_right = 202.0
-margin_bottom = 433.0
+margin_top = 231.0
+margin_right = 240.0
+margin_bottom = 553.0
 
 [node name="Weapons" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_left = 230.0
-margin_right = 601.0
-margin_bottom = 433.0
+margin_left = 288.0
+margin_right = 857.0
+margin_bottom = 553.0
 size_flags_horizontal = 3
 
 [node name="Weapons" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Weapons"]
-margin_right = 371.0
-margin_bottom = 433.0
+margin_right = 569.0
+margin_bottom = 553.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 6 )
@@ -230,55 +229,55 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ItemInspector" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_left = 605.0
-margin_right = 905.0
-margin_bottom = 433.0
+margin_left = 861.0
+margin_right = 1161.0
+margin_bottom = 553.0
 rect_min_size = Vector2( 300, 0 )
 
 [node name="ItemInspector1" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
 margin_right = 300.0
-margin_bottom = 329.0
+margin_bottom = 449.0
 size_flags_vertical = 3
 
 [node name="ItemName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
 margin_right = 300.0
-margin_bottom = 37.0
+margin_bottom = 44.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Item Stats:"
 valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
-margin_top = 41.0
+margin_top = 48.0
 margin_right = 300.0
-margin_bottom = 311.0
+margin_bottom = 431.0
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_right = 226.0
-margin_bottom = 270.0
+margin_bottom = 383.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Stats" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer/ScrollContainer" instance=ExtResource( 9 )]
-margin_bottom = 270.0
+margin_bottom = 383.0
 
 [node name="ItemIcon" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_left = 230.0
 margin_right = 300.0
-margin_bottom = 270.0
+margin_bottom = 383.0
 rect_min_size = Vector2( 70, 70 )
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
-margin_top = 315.0
+margin_top = 435.0
 margin_right = 300.0
-margin_bottom = 329.0
+margin_bottom = 449.0
 rect_min_size = Vector2( 0, 14 )
 
 [node name="Buttons" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
-margin_top = 333.0
+margin_top = 453.0
 margin_right = 300.0
-margin_bottom = 433.0
+margin_bottom = 553.0
 
 [node name="TrashBin" type="TextureButton" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/Buttons"]
 margin_right = 100.0
@@ -325,16 +324,16 @@ __meta__ = {
 }
 
 [node name="RightMargin" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_left = 909.0
-margin_top = 209.0
-margin_right = 929.0
-margin_bottom = 223.0
+margin_left = 1165.0
+margin_top = 269.0
+margin_right = 1185.0
+margin_bottom = 283.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="ButtonMargin" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer"]
-margin_top = 491.0
-margin_right = 929.0
-margin_bottom = 511.0
+margin_top = 611.0
+margin_right = 1185.0
+margin_bottom = 631.0
 rect_min_size = Vector2( 0, 20 )
 [connection signal="pressed" from="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs/Weapons/Weapons" to="." method="_on_Weapons_pressed"]

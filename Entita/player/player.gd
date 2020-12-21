@@ -184,8 +184,8 @@ func collectItem():
 func equipWeapon(id : int):
 	if(id != 0):
 		var wpn = ItemDB.weapons[id]
-		self.stats.atk = wpn.dmg/10
-		self.atkSpd = 1/ (wpn.atkspd/5)
+		self.stats.atk = wpn.atk
+		self.atkSpd = wpn.atkspd
 
 func equipArmor(id : int):
 	if(id != 0):

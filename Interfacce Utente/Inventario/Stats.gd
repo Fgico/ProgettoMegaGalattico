@@ -15,7 +15,7 @@ func updateValue(kind, id):
 		atk.show()
 		atkspd.show()
 		var item = ItemDB.weapons[id]
-		atkval.text = str(5)
+		atkval.text = str(item.atk)
 		atkspdval.text = str(item.atkspd)
 		
 	if(kind == 2):

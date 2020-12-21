@@ -4,7 +4,7 @@
 [ext_resource path="res://Interfacce Utente/Inventario/playerStats.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 24
+size = 32
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -23,12 +23,11 @@ __meta__ = {
 
 [node name="Attack" type="HBoxContainer" parent="."]
 margin_right = 226.0
-margin_bottom = 63.0
+margin_bottom = 39.0
 
 [node name="StatsName" type="Label" parent="Attack"]
-margin_top = 16.0
 margin_right = 111.0
-margin_bottom = 46.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
@@ -36,34 +35,34 @@ text = "Atk"
 
 [node name="StatsValue" type="Label" parent="Attack"]
 margin_left = 115.0
+margin_top = 4.0
 margin_right = 226.0
-margin_bottom = 63.0
+margin_bottom = 34.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-text = "
-"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Defense" type="HBoxContainer" parent="."]
-margin_top = 67.0
+margin_top = 43.0
 margin_right = 226.0
-margin_bottom = 97.0
+margin_bottom = 82.0
 
 [node name="StatsName" type="Label" parent="Defense"]
 margin_right = 111.0
-margin_bottom = 30.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-text = "Def"
+text = "Def    "
 
 [node name="StatsValue" type="Label" parent="Defense"]
 margin_left = 115.0
+margin_top = 4.0
 margin_right = 226.0
-margin_bottom = 30.0
+margin_bottom = 34.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
@@ -72,22 +71,23 @@ __meta__ = {
 }
 
 [node name="AtkSpeed" type="HBoxContainer" parent="."]
-margin_top = 101.0
+margin_top = 86.0
 margin_right = 226.0
-margin_bottom = 131.0
+margin_bottom = 125.0
 
 [node name="StatsName" type="Label" parent="AtkSpeed"]
-margin_right = 111.0
-margin_bottom = 30.0
+margin_right = 134.0
+margin_bottom = 39.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
-text = "AtkSpd"
+text = "AtkSpd "
 
 [node name="StatsValue" type="Label" parent="AtkSpeed"]
-margin_left = 115.0
+margin_left = 138.0
+margin_top = 4.0
 margin_right = 226.0
-margin_bottom = 30.0
+margin_bottom = 34.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
