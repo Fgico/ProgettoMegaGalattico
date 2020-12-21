@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://DUNGEON/pick-up coin.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sounds/pick-up coin.wav" type="AudioStream" id=1]
 [ext_resource path="res://DUNGEON/Item/obj/material-coin.material" type="Material" id=2]
 [ext_resource path="res://coin.gd" type="Script" id=3]
 [ext_resource path="res://DUNGEON/Item/obj/coinBat.material" type="Material" id=4]
@@ -62,7 +62,7 @@ material/0 = ExtResource( 4 )
 shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.22
+wait_time = 0.3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

@@ -54,6 +54,7 @@ shape = SubResource( 2 )
 anims/deathFlash = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 
 [node name="ParticlesSpawner" parent="." instance=ExtResource( 3 )]
 [connection signal="body_entered" from="rotable/Area" to="." method="_on_Area_body_entered"]

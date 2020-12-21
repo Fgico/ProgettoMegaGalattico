@@ -6,7 +6,9 @@
 [node name="Bag" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.41418
 margin_top = -2.3243
+margin_right = 1.41418
 margin_bottom = -2.32428
 script = ExtResource( 1 )
 __meta__ = {
@@ -14,10 +16,10 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureButton" parent="."]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 100.0
-margin_bottom = 100.0
+margin_left = 1118.84
+margin_top = 199.605
+margin_right = 1218.84
+margin_bottom = 299.605
 texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false

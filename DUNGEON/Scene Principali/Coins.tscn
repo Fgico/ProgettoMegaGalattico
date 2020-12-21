@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://DUNGEON/Script/coin.gd" type="Script" id=1]
-[ext_resource path="res://DUNGEON/pick-up coin.wav" type="AudioStream" id=3]
+[ext_resource path="res://DUNGEON/PNG/effetti_per_particelle/spotlight_8.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/pick-up coin.wav" type="AudioStream" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.815686, 0.596078, 0.0117647, 1 )
@@ -52,11 +53,52 @@ tracks/1/keys = {
 "values": [ Vector3( 1, 1, 1 ), Vector3( 0.5, 0.5, 0.5 ), Vector3( 0.3, 0.3, 0.3 ) ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "animazioneCascata"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("coinMesh:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 1.04349, 0.561508, -0.490602 ), Vector3( 1.26212, -0.276297, -1.1659 ), Vector3( 1.70474, -0.213908, -1.47933 ), Vector3( 1.74972, -0.641723, -1.77133 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 1.74955, -0.623306, -1.77307 ) ]
+}
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+flags_unshaded = true
+params_blend_mode = 1
+params_cull_mode = 2
+albedo_color = Color( 1, 0.933333, 0.501961, 1 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=7]
+material = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.50134, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
 [node name="coin" type="Area"]
 script = ExtResource( 1 )
 
 [node name="coinMesh" type="MeshInstance" parent="."]
-use_in_baked_light = true
 mesh = SubResource( 2 )
 material/0 = null
 
@@ -72,6 +114,29 @@ anims/animazioneCoins = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-bus = "fx"
+
+[node name="AnimationCascata" type="AnimationPlayer" parent="."]
+anims/animazioneCascata = SubResource( 5 )
+
+[node name="Particles" type="CPUParticles" parent="."]
+amount = 20
+mesh = SubResource( 7 )
+direction = Vector3( 1, 1, 1 )
+spread = 54.74
+gravity = Vector3( 0, 1, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.87
+angular_velocity = -534.42
+angular_velocity_random = 0.35
+linear_accel = 2.0
+linear_accel_random = 0.18
+radial_accel = 1.0
+radial_accel_random = 0.18
+tangential_accel = 2.0
+damping_random = 0.93
+angle = 326.6
+scale_amount = 0.6
+scale_amount_curve = SubResource( 8 )
+color = Color( 0.894118, 0.894118, 0.894118, 1 )
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

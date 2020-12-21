@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Entita/player/SkyguyMesh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entita/player/player.gd" type="Script" id=2]
 [ext_resource path="res://Entita/player/UI/CombatUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entita/player/UI/UIcoins_item.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/Game_Over_1.wav" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.43515
@@ -56,4 +57,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="target2" type="Spatial" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 [connection signal="timeout" from="Timer/scatto" to="." method="_on_scatto_timeout"]
