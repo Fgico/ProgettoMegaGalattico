@@ -1,10 +1,119 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Entita/player/SkyguyMesh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entita/player/player.gd" type="Script" id=2]
 [ext_resource path="res://Entita/player/UI/CombatUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Entita/player/UI/UIcoins_item.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sounds/Game_Over_1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Isola/TransizioneDallaIsola/transizione_portale.tres" type="Material" id=6]
+[ext_resource path="res://DUNGEON/PNG/scritte_you_died/pff_noob.png" type="Texture" id=7]
+[ext_resource path="res://DUNGEON/PNG/scritte_you_died/lol_you_died.png" type="Texture" id=8]
+[ext_resource path="res://DUNGEON/PNG/scritte_you_died/you_died_xd.png" type="Texture" id=9]
+[ext_resource path="res://DUNGEON/PNG/scritte_you_died/youdied.png" type="Texture" id=10]
+
+[sub_resource type="Animation" id=2]
+resource_name = "animazione_morte"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 4.5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0, 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.160784, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:material:shader_param/smooth_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 4.5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.619, 0.073, 0.974 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "you_died_anim"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.705882, 0, 0, 0 ), Color( 0.576471, 0.121569, 0.121569, 1 ), Color( 0.576471, 0.121569, 0.121569, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "lol_you_died"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.705882, 0, 0, 0 ), Color( 0.576471, 0.121569, 0.121569, 1 ), Color( 0.705882, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "you_died_xd"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.705882, 0, 0, 0 ), Color( 0.576471, 0.121569, 0.121569, 1 ), Color( 0.576471, 0.121569, 0.121569, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "pff_noob"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.705882, 0, 0, 0 ), Color( 0.576471, 0.121569, 0.121569, 1 ), Color( 0.576471, 0.121569, 0.121569, 0 ) ]
+}
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.43515
@@ -14,6 +123,105 @@ height = 1.30255
 "player",
 ]]
 script = ExtResource( 2 )
+
+[node name="transizionemorte" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="transizionemorte"]
+material = ExtResource( 6 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -18.3848
+margin_top = -14.1421
+margin_right = 21.6152
+margin_bottom = 25.8578
+mouse_filter = 2
+color = Color( 0.160784, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="morte" type="AnimationPlayer" parent="transizionemorte/ColorRect"]
+anims/animazione_morte = SubResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="transizionemorte"]
+modulate = Color( 0.705882, 0, 0, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -298.0
+margin_top = -93.0
+margin_right = 298.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( -3.60889, 1.47668 )
+mouse_filter = 2
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="youdied" type="AnimationPlayer" parent="transizionemorte/TextureRect"]
+anims/you_died_anim = SubResource( 3 )
+
+[node name="TextureRect2" type="TextureRect" parent="transizionemorte"]
+modulate = Color( 0.705882, 0, 0, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -253.0
+margin_top = -60.0
+margin_right = 253.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( -3.60889, 1.47668 )
+mouse_filter = 2
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lolyoudied" type="AnimationPlayer" parent="transizionemorte/TextureRect2"]
+anims/lol_you_died = SubResource( 4 )
+
+[node name="TextureRect3" type="TextureRect" parent="transizionemorte"]
+modulate = Color( 0.705882, 0, 0, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -253.0
+margin_top = -60.0
+margin_right = 253.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( -3.60889, 1.47668 )
+mouse_filter = 2
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="youdiedxd" type="AnimationPlayer" parent="transizionemorte/TextureRect3"]
+anims/you_died_xd = SubResource( 5 )
+
+[node name="TextureRect4" type="TextureRect" parent="transizionemorte"]
+modulate = Color( 0.705882, 0, 0, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -60.0
+margin_right = 200.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( -3.60889, 1.47668 )
+mouse_filter = 2
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pffnoob" type="AnimationPlayer" parent="transizionemorte/TextureRect4"]
+anims/pff_noob = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.00695729, 0.10265 )
@@ -38,7 +246,9 @@ __meta__ = {
 [node name="UIcoins_item" parent="target/Camera/UI" instance=ExtResource( 4 )]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -1027.0
+margin_left = -1274.0
+margin_right = 385.0
+margin_bottom = 722.0
 
 [node name="CombatUI" parent="target/Camera/UI" instance=ExtResource( 3 )]
 
@@ -60,4 +270,9 @@ one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+[connection signal="animation_started" from="transizionemorte/ColorRect/morte" to="." method="_on_morte_animation_started"]
+[connection signal="animation_finished" from="transizionemorte/TextureRect/youdied" to="." method="_on_youdied_animation_finished"]
+[connection signal="animation_finished" from="transizionemorte/TextureRect2/lolyoudied" to="." method="_on_lolyoudied_animation_finished"]
+[connection signal="animation_finished" from="transizionemorte/TextureRect3/youdiedxd" to="." method="_on_youdiedxd_animation_finished"]
+[connection signal="animation_finished" from="transizionemorte/TextureRect4/pffnoob" to="." method="_on_pffnoob_animation_finished"]
 [connection signal="timeout" from="Timer/scatto" to="." method="_on_scatto_timeout"]

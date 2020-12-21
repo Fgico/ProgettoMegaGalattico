@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Entita/player/Label.gd" type="Script" id=1]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/skillButtons.png" type="Texture" id=2]
@@ -44,10 +44,6 @@ size = 20
 font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 20
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 10 )
 
@@ -160,20 +156,6 @@ margin_top = -0.0400085
 margin_bottom = 11.04
 custom_fonts/font = SubResource( 6 )
 text = "Settings"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="back2town" type="Button" parent="PauseMenu"]
-anchor_top = 0.746
-anchor_right = 1.038
-anchor_bottom = 1.0
-margin_left = -6.447
-margin_top = -0.039978
-margin_right = -11.5555
-margin_bottom = 6.00002
-custom_fonts/font = SubResource( 7 )
-text = "Go back to town"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -347,7 +329,6 @@ __meta__ = {
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="PauseMenu/back2town" to="." method="_on_back2town_pressed"]
 [connection signal="gui_input" from="gameButtons/attacco" to="." method="_on_attacco_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto" to="." method="_on_scatto_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto/ProgressBar" to="." method="_on_ProgressBar_gui_input"]

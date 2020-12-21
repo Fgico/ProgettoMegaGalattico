@@ -20,6 +20,7 @@ func _on_ContinueButton_pressed():
 
 func _on_FadeIn_fade_finished():
 	get_tree().change_scene("res://nodo_isola.tscn")
+	#get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
 
 func _on_CloudButton_pressed():
 	var cloud_scene = cloud.instance()

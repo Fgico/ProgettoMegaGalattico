@@ -99,12 +99,6 @@ func _on_Settings_pressed():
 	pass # Replace with function body.
 
 
-func _on_back2town_pressed():
-	get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
-	if (player.stato == player.Dead):
-		sceneUtili.player.restoreStatus()
-	pass # Replace with function body.
-
 
 func _on_pause_pressed():
 	pause.hide()

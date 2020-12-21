@@ -8,6 +8,7 @@ var coins = 0
 var items = 0
 
 
+
 var attaccoBase = preload("../Attacchi/fisico/SwordSlash.tscn")
 var fuoco = preload("../Attacchi/Speciali/fuoco/lanciafiamme.tscn")
 var ghiaccio = preload("res://Entita/Attacchi/Speciali/ghiaccio/VentoGhiacciato.tscn")
@@ -24,6 +25,17 @@ onready var healthBar = $target/Camera/UI/CombatUI/healthBar
 onready var mpBar = $target/Camera/UI/CombatUI/mpBar
 onready var dodgeBar = $target/Camera/UI/CombatUI/gameButtons/scatto/ProgressBar
 onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "PASSAGGIO"
+
+#animazione quando il giocatore muore
+onready var anim_morte = get_node("transizionemorte/ColorRect/morte")
+onready var youdied = get_node("transizionemorte/TextureRect/youdied")
+onready var lolyoudied = get_node("transizionemorte/TextureRect2/lolyoudied")
+onready var youdiedxd = get_node("transizionemorte/TextureRect3/youdiedxd")
+onready var pffnoob= get_node("transizionemorte/TextureRect4/pffnoob")
+onready var nascondiscena=get_node("transizionemorte/ColorRect")
+
+
+#var random = RandomNumberGenerator.new()
 
 onready var screenSize = OS.get_window_size()
 
@@ -88,7 +100,7 @@ func _physics_process(delta):
 	else:
 		scattando -= delta *10
 	scalare = scattando
-	#input_pc()
+	input_pc()
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
@@ -137,12 +149,16 @@ func hit(danno, elemento,malusRate):
 	healthBar.value = (float(hp)/stats.maxhp) * 100
 
 
-
+#morte del giocatore piu transizione e teletraposrto allo spawn
 func muori():
 	if(stato != Dead):
 		anim.play("sword and shield death-loop")
 		anim.get_animation("sword and shield death-loop").loop = false
+		anim_morte.play("animazione_morte")
 	stato = Dead
+	
+	
+	
 
 func restoreStatus():
 	stato = Idle
@@ -210,3 +226,63 @@ func updateDef():
 	for armr in armorStats:
 		def += armr
 	stats.def = def
+
+
+
+
+
+
+func _on_morte_animation_started(animazione_morte):
+	var n = randi() % 4
+	if n<=1:
+		youdied.play("you_died_anim")
+	if (n>1 && n<=2):
+		lolyoudied.play("lol_you_died")
+	if (n>2 && n<=3):
+		youdiedxd.play("you_died_xd")
+	if (n>3 && n<=4):
+		pffnoob.play("pff_noob")
+
+	
+	pass # Replace with function body.
+
+
+
+func _on_youdied_animation_finished(you_died_anim):
+	if (stato == Dead):
+		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+		sceneUtili.player.restoreStatus()
+		
+
+
+	pass # Replace with function body.
+
+
+
+func _on_lolyoudied_animation_finished(lol_you_died):
+	if (stato == Dead):
+		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+		sceneUtili.player.restoreStatus()
+		
+	pass # Replace with function body.
+
+
+
+func _on_youdiedxd_animation_finished(you_died_xd):
+	if (stato == Dead):
+		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+		sceneUtili.player.restoreStatus()
+		
+
+	pass # Replace with function body.
+
+func _on_pffnoob_animation_finished(pff_noob):
+	if (stato == Dead):
+		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+		sceneUtili.player.restoreStatus()
+		
+
+	pass # Replace with function body.
+
+
+

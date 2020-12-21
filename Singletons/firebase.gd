@@ -1,7 +1,7 @@
 extends Node
 
-const apiKey = "AIzaSyC5Z1vkyotHz-owXoc4gy4GuiI5_MmhCCI"
-const projId = "mc-dangerous-skies-2020"
+const apiKey = "ciao mondo"
+const projId = "hello world"
 
 const registerUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=%s" % apiKey
 const loginUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=%s" % apiKey
