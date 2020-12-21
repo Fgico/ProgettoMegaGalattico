@@ -39,26 +39,26 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 10 )
+
 [sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=8]
-size = 20
-font_data = ExtResource( 10 )
-
-[sub_resource type="DynamicFont" id=9]
-size = 20
-font_data = ExtResource( 10 )
-
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.407843, 0.376471, 0.301961, 1 )
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
 corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 0 )
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
@@ -77,13 +77,12 @@ __meta__ = {
 
 [node name="healthBar" type="ProgressBar" parent="."]
 anchor_left = 0.041
-anchor_top = 0.031
-anchor_right = 0.22
-anchor_bottom = 0.097
-margin_left = 103.0
-margin_top = 9.89951
-margin_right = 363.64
-margin_bottom = 10.8995
+anchor_right = 0.31
+anchor_bottom = 0.06
+margin_left = 100.057
+margin_top = 26.0
+margin_right = 200.057
+margin_bottom = 21.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 value = 100.0
@@ -95,13 +94,12 @@ __meta__ = {
 
 [node name="mpBar" type="ProgressBar" parent="."]
 anchor_left = 0.041
-anchor_top = 0.097
-anchor_right = 0.149
-anchor_bottom = 0.154
-margin_left = 103.0
-margin_top = 14.1422
-margin_right = 279.669
-margin_bottom = 14.2426
+anchor_right = 0.31
+anchor_bottom = 0.06
+margin_left = 130.0
+margin_top = 42.0
+margin_right = 100.0
+margin_bottom = 31.0
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 value = 100.0
@@ -118,12 +116,13 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 8 )
 
 [node name="pause" type="TextureButton" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -101.287
-margin_top = 12.409
-margin_right = -1.28656
-margin_bottom = 112.409
+anchor_left = 0.041
+anchor_right = 0.31
+anchor_bottom = 0.06
+margin_left = 870.0
+margin_top = 26.0
+margin_right = -80.0
+margin_bottom = 21.0
 rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 6 )
 __meta__ = {
@@ -148,7 +147,7 @@ margin_left = -6.67413
 margin_top = -1.33484
 margin_right = -6.72815
 margin_bottom = -1.29485
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "Resume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -161,7 +160,7 @@ anchor_bottom = 0.604
 margin_left = -6.0
 margin_top = -0.0400085
 margin_bottom = 11.04
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 6 )
 text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -175,7 +174,7 @@ margin_left = -6.447
 margin_top = -0.039978
 margin_right = -11.5555
 margin_bottom = 6.00002
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 7 )
 text = "Go back to town"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -249,8 +248,8 @@ margin_bottom = -49.4218
 rect_rotation = 270.0
 rect_pivot_offset = Vector2( 100, 90 )
 size_flags_vertical = 1
-custom_styles/fg = SubResource( 5 )
-custom_styles/bg = SubResource( 6 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
 value = 100.0
 rounded = true
 percent_visible = false
