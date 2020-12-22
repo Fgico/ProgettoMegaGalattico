@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Interfacce Utente/Inventario/Immagini/grid.jpg" type="Texture" id=1]
+
+[node name="Equipped" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 249.0
+margin_bottom = 326.0
+custom_constants/separation = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 240.0
+margin_bottom = 326.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="headbg" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_right = 240.0
+margin_bottom = 326.0
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+
+[node name="headico" type="TextureRect" parent="HBoxContainer/VBoxContainer/headbg"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chestbg" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_top = 326.0
+margin_right = 240.0
+margin_bottom = 326.0
+
+[node name="chestico" type="TextureRect" parent="HBoxContainer/VBoxContainer/chestbg"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pantsbg" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_top = 326.0
+margin_right = 240.0
+margin_bottom = 326.0
+
+[node name="pantsico" type="TextureRect" parent="HBoxContainer/VBoxContainer/pantsbg"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shoesbg" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_top = 326.0
+margin_right = 240.0
+margin_bottom = 326.0
+
+[node name="shoesico" type="TextureRect" parent="HBoxContainer/VBoxContainer/shoesbg"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="armaBackground" type="TextureRect" parent="HBoxContainer"]
+margin_left = 249.0
+margin_right = 249.0
+margin_bottom = 326.0
+
+[node name="armaIcon" type="TextureRect" parent="HBoxContainer/armaBackground"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,7 +1,6 @@
 extends Control
 
 onready var weapons = get_node("DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Weapons")
-onready var armor = get_node("DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Armor")
 onready var stats = get_node("DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer/ScrollContainer/Stats")
 onready var pStats = get_node("DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs/playerStats")
 
@@ -29,19 +28,6 @@ func selezionaOggetto(container):
 
 func _on_Weapons_pressed():
 	weapons.show()
-	armor.hide()
-	if(elem_curr.container != null):
-		elem_curr.container.backGround.texture = elem_curr.container.black
-		elem_curr = {
-	 "tipo" : null,
-	"id" : 0,
-	"container" : null,
-	"inventoryPos" : null
-}
-
-func _on_Armor_pressed():
-	weapons.hide()
-	armor.show()
 	if(elem_curr.container != null):
 		elem_curr.container.backGround.texture = elem_curr.container.black
 		elem_curr = {

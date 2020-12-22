@@ -16,6 +16,8 @@ var mpCost : int = 0
 var timeout : float = 1
 var target = "enemy"
 
+var audio 
+
 func iniziaStats(ndanno,nelement,costo,ntimeout):
 	danno = ndanno
 	element = nelement

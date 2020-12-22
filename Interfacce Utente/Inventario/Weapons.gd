@@ -12,6 +12,11 @@ func fillWeapons():
 		self.add_child(newCont)
 		newCont.putItem(1, item, pos)
 		pos += 1
+	for item in userData.inventory.armors:
+		var newCont = container.instance()
+		self.add_child(newCont)
+		newCont.putItem(2, item, pos)
+		pos += 1
 
 func selezionaOggetto(container):
 	var parent = get_parent().get_parent().get_parent().get_parent().get_parent().get_parent().selezionaOggetto(container)

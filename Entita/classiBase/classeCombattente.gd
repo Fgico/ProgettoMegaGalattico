@@ -69,6 +69,8 @@ func attacca(attacco,target):
 	#codice eventualmente utile per fare proiettili, per ora no
 
 			mp -= attacked.mpCost
+			if attacked.audio != null:
+				attacked.audio.play()
 			attacked.perAtk(stats.atk)
 			attacked.setSpd(atkSpd)
 			attacked.target = target

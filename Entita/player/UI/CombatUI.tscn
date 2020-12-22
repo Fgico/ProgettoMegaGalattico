@@ -4,7 +4,7 @@
 [ext_resource path="res://Interfacce Utente/bottoniCombat/skillButtons.png" type="Texture" id=2]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/dodgeButton.png" type="Texture" id=3]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/attackButton.png" type="Texture" id=4]
-[ext_resource path="res://Entita/player/Controlli assets/genericButton.png" type="Texture" id=5]
+[ext_resource path="res://Entita/player/UI/radialBase.png" type="Texture" id=5]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/pauseButton.png" type="Texture" id=6]
 [ext_resource path="res://Entita/player/UI/CombatUI.gd" type="Script" id=7]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/emptyButton.png" type="Texture" id=8]
@@ -265,12 +265,14 @@ __meta__ = {
 visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = -130.202
-margin_top = 21.8005
-margin_right = 129.298
-margin_bottom = 235.3
-rect_scale = Vector2( 0.7, 0.8 )
+margin_left = -115.202
+margin_top = -11.4096
+margin_right = 108.571
+margin_bottom = 202.091
+rect_scale = Vector2( 0.94, 1.06 )
+mouse_filter = 1
 texture_normal = ExtResource( 5 )
+expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -280,12 +282,15 @@ __meta__ = {
 visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = 21.5986
-margin_top = -71.9956
-margin_right = 250.099
-margin_bottom = 141.504
-rect_scale = Vector2( 0.8, 0.5 )
+margin_left = 252.888
+margin_top = -111.487
+margin_right = 481.388
+margin_bottom = 102.013
+rect_rotation = 90.0
+rect_scale = Vector2( 0.94, 1.06 )
+mouse_filter = 1
 texture_normal = ExtResource( 5 )
+expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -295,12 +300,15 @@ __meta__ = {
 visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = 205.187
-margin_top = 21.5985
-margin_right = 433.687
-margin_bottom = 235.099
-rect_scale = Vector2( 0.5, 0.8 )
+margin_left = 365.191
+margin_top = 258.266
+margin_right = 593.691
+margin_bottom = 471.766
+rect_rotation = 180.0
+rect_scale = Vector2( 0.94, 1.06 )
+mouse_filter = 1
 texture_normal = ExtResource( 5 )
+expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -310,12 +318,15 @@ __meta__ = {
 visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = 28.7983
-margin_top = 194.388
-margin_right = 257.298
-margin_bottom = 407.888
-rect_scale = Vector2( 0.8, 0.5 )
+margin_left = -5.62109
+margin_top = 366.331
+margin_right = 222.879
+margin_bottom = 579.831
+rect_rotation = 270.0
+rect_scale = Vector2( 0.94, 1.06 )
+mouse_filter = 1
 texture_normal = ExtResource( 5 )
+expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false

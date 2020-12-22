@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Entita/Attacchi/suoni/sword sound.wav" type="AudioStream" id=1]
 [ext_resource path="res://Entita/Attacchi/fisico/SwordSlash.gd" type="Script" id=2]
 [ext_resource path="res://Entita/Attacchi/fisico/slasheffect.png" type="Texture" id=3]
 
@@ -20,4 +21,8 @@ transform = Transform( 0.0472943, 0, 0.197261, 0, 1, 0, -0.273235, 0, 0.150009, 
 visible = false
 axis = 1
 texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+bus = "fx"
 [connection signal="body_entered" from="." to="." method="_on_Area_body_entered"]

@@ -113,7 +113,7 @@ func attaccaChecked(attacco,isSpecial):
 				anim.play("sword and shield slash-loop")
 				anim.advance(0.5)
 				if(tempo != 0):
-					anim.playback_speed = tempo / atkSpd
+					anim.playback_speed = (anim.current_animation_length-0.5) / tempo 
 				combo+=1
 	if(combo >0 and stato!= Dead):
 		if(attackTimeout >0 and attackTimeout <0.2):
@@ -122,7 +122,7 @@ func attaccaChecked(attacco,isSpecial):
 					anim.play("sword and shield slash 3-loop")
 					var tempo = .attacca(attacco,target)
 					if(tempo != 0):
-						anim.playback_speed = tempo / atkSpd
+						anim.playback_speed = (anim.current_animation_length-0.5) / tempo 
 					anim.advance(0.5)
 					combo += 1
 				2:
@@ -132,7 +132,7 @@ func attaccaChecked(attacco,isSpecial):
 					setForce(attackDir, 500, 0.5)
 					var tempo = .attacca(attacco,target)
 					if(tempo != 0):
-						anim.playback_speed = tempo / atkSpd
+						anim.playback_speed = anim.current_animation_length / tempo 
 					combo = 0
 
 #scattando e uno scalare della velocita che diminuisce di 1 al secondo
@@ -164,6 +164,8 @@ func restoreStatus():
 	healthBar.value = 100
 	mp = stats.maxmp
 	mpBar.value = 100
+	combo = 0
+	attackTimeout = 0
 
 func _on_scatto_timeout():
 	scattoTimer.stop()

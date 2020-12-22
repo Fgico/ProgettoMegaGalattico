@@ -8,6 +8,7 @@ var showupTime = 0.3
 
 func _ready():
 	iniziaStats(12,0,0,0.8)
+	audio = get_node("AudioStreamPlayer")
 	pass 
 
 func _process(delta):

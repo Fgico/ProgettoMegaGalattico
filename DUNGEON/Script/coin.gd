@@ -1,6 +1,7 @@
 extends Area
 
 func _ready():
+	$Particles.emitting = userData.settings.details
 	pass
 
 
