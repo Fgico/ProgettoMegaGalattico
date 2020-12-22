@@ -1,26 +1,32 @@
-extends Control
+extends HBoxContainer
 
-var child
+var itemKind = null
+var itemId = 0
+var inventoryPos = null
 
-#memorizza la posizione nell'inventario a cui si riferisce il container
-var slotNumber  
-#costanti per numeroSlot che specificano se è lo slot dell'arma o armatura equipaggiata
-const Weapon = -1
-const BodyArmor = -2
+onready var backGround = get_node("ItemBackground")
 
-onready var pos = $slot
-var hasArea = false
+var white = preload("res://Interfacce Utente/Inventario/whiteTexture.tres")
+var black = preload("res://Interfacce Utente/Inventario/blackTexture.tres")
 
-func getPos():
-	return pos.global_position
-	
-func _on_Area2D_area_entered(area):
-	area.get_parent().parent = self
-	hasArea =true
-	pass # Replace with function body.
+func putItem(kind: int, id : int, pos : int):
+	#inizializzo objData con i dati dell'oggetto da inserire
+	#se kind = 1 cerco fra le armi, se 2 fra le armature
+	var objData
+	var objId
+	if(kind == 1):
+		objData = ItemDB.weapons[id]
+		objId = pos
+	if(kind == 2):
+		objData = ItemDB.armors[id]
+		objId = pos
+	self.get_node("ItemName").text = objData.name
+	self.get_node("ItemBackground/ItemButton").texture_normal = load(objData.icon)
+	self.itemKind = kind
+	self.itemId = id
+	self.inventoryPos = pos
 
-
-
-func _on_Area2D_area_exited(area):
-	hasArea = false
-	pass # Replace with function body.
+func _on_ItemContainer_gui_input(event):
+	if(event is InputEventScreenTouch and event.is_pressed()):
+		get_parent().selezionaOggetto(self)
+		backGround.texture = white

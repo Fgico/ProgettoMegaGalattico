@@ -1,13 +1,15 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Entita/player/Label.gd" type="Script" id=1]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/skillButtons.png" type="Texture" id=2]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/dodgeButton.png" type="Texture" id=3]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/attackButton.png" type="Texture" id=4]
-[ext_resource path="res://Entita/player/Controlli assets/genericButton.png" type="Texture" id=5]
+[ext_resource path="res://Entita/player/UI/radialBase.png" type="Texture" id=5]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/pauseButton.png" type="Texture" id=6]
 [ext_resource path="res://Entita/player/UI/CombatUI.gd" type="Script" id=7]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/emptyButton.png" type="Texture" id=8]
+[ext_resource path="res://Interfacce Utente/bag.png" type="Texture" id=9]
+[ext_resource path="res://DUNGEON/Font/Pixel Digivolve.otf" type="DynamicFontData" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.196078, 0.498039, 0.196078, 1 )
@@ -37,14 +39,18 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.407843, 0.376471, 0.301961, 1 )
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
 corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0, 0, 0, 0 )
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
@@ -52,6 +58,7 @@ corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 
 [node name="CombatUI" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1.0
@@ -62,11 +69,12 @@ __meta__ = {
 
 [node name="healthBar" type="ProgressBar" parent="."]
 anchor_left = 0.041
-anchor_top = 0.031
-anchor_right = 0.046
-anchor_bottom = 0.072
-margin_right = 300.0
-margin_bottom = 1.0
+anchor_right = 0.31
+anchor_bottom = 0.06
+margin_left = 100.057
+margin_top = 26.0
+margin_right = 200.057
+margin_bottom = 21.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 value = 100.0
@@ -77,12 +85,13 @@ __meta__ = {
 }
 
 [node name="mpBar" type="ProgressBar" parent="."]
-anchor_left = 0.059
-anchor_top = 0.056
-anchor_right = 0.059
-anchor_bottom = 0.078
-margin_right = 200.0
-margin_bottom = 7.74
+anchor_left = 0.041
+anchor_right = 0.31
+anchor_bottom = 0.06
+margin_left = 120.0
+margin_top = 52.0
+margin_right = 100.0
+margin_bottom = 47.0
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
 value = 100.0
@@ -101,10 +110,10 @@ texture = ExtResource( 8 )
 [node name="pause" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -87.0
-margin_top = 14.0
+margin_left = -100.0
+margin_top = 20.0
 margin_bottom = 100.0
-rect_scale = Vector2( 0.7, 0.7 )
+rect_scale = Vector2( 0.8, 0.8 )
 texture_normal = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -124,8 +133,10 @@ __meta__ = {
 [node name="Resume" type="Button" parent="PauseMenu"]
 anchor_right = 1.019
 anchor_bottom = 0.279
-margin_right = -0.0540161
-margin_bottom = 0.0399933
+margin_left = -6.67413
+margin_top = -1.33484
+margin_right = -6.72815
+margin_bottom = -1.29485
 text = "Resume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -135,10 +146,9 @@ __meta__ = {
 anchor_top = 0.371
 anchor_right = 1.0
 anchor_bottom = 0.604
-margin_left = -9.0
+margin_left = -6.0
 margin_top = -0.0400085
-margin_right = 8.0
-margin_bottom = 0.0399933
+margin_bottom = 11.04
 text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -148,9 +158,11 @@ __meta__ = {
 anchor_top = 0.746
 anchor_right = 1.038
 anchor_bottom = 1.0
-margin_left = -4.0
-margin_top = -0.0400085
-margin_right = -0.108032
+margin_left = -6.447
+margin_top = -0.039978
+margin_right = -11.5555
+margin_bottom = 6.00002
+custom_fonts/font = SubResource( 5 )
 text = "Go back to town"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -180,9 +192,9 @@ __meta__ = {
 }
 
 [node name="attacco" type="TextureButton" parent="gameButtons"]
-anchor_left = 0.545975
-anchor_top = 0.0681072
-anchor_right = 0.86981
+anchor_left = 0.56164
+anchor_top = 0.0681074
+anchor_right = 0.885475
 anchor_bottom = 0.452722
 margin_left = -1.52588e-05
 margin_right = 125.0
@@ -196,14 +208,14 @@ __meta__ = {
 }
 
 [node name="scatto" type="TextureButton" parent="gameButtons"]
-anchor_left = 0.379196
-anchor_top = 0.557
-anchor_right = 0.684
-anchor_bottom = 0.87535
+anchor_left = 0.368753
+anchor_top = 0.523814
+anchor_right = 0.673557
+anchor_bottom = 0.842164
 margin_top = 0.0295563
 margin_right = 171.864
 margin_bottom = 192.085
-rect_scale = Vector2( 0.35, 0.35 )
+rect_scale = Vector2( 0.45, 0.45 )
 texture_normal = ExtResource( 3 )
 expand = true
 stretch_mode = 5
@@ -217,16 +229,15 @@ anchor_left = 0.132
 anchor_top = 0.162
 anchor_right = 0.847
 anchor_bottom = 1.0
-margin_left = -9.91722
-margin_top = -0.914333
-margin_right = -10.0522
-margin_bottom = -49.4218
+margin_left = -6.0
+margin_top = 19.0
+margin_right = 10.0
+margin_bottom = -34.0
 rect_rotation = 270.0
 rect_pivot_offset = Vector2( 100, 90 )
 size_flags_vertical = 1
-custom_styles/fg = SubResource( 5 )
-custom_styles/bg = SubResource( 6 )
-max_value = 100.0
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
 value = 100.0
 rounded = true
 percent_visible = false
@@ -235,14 +246,14 @@ __meta__ = {
 }
 
 [node name="special" type="TextureButton" parent="gameButtons"]
-anchor_left = 0.173575
-anchor_top = 0.0892307
-anchor_right = 0.402755
-anchor_bottom = 0.361763
+anchor_left = 0.0482538
+anchor_top = 0.177727
+anchor_right = 0.277434
+anchor_bottom = 0.450259
 margin_top = 1.90735e-06
 margin_right = 164.289
 margin_bottom = 164.493
-rect_scale = Vector2( 0.35, 0.35 )
+rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 2 )
 expand = true
 stretch_mode = 5
@@ -254,12 +265,14 @@ __meta__ = {
 visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = -130.202
-margin_top = 21.8005
-margin_right = 129.298
-margin_bottom = 235.3
-rect_scale = Vector2( 0.7, 0.8 )
+margin_left = -115.202
+margin_top = -11.4096
+margin_right = 108.571
+margin_bottom = 202.091
+rect_scale = Vector2( 0.94, 1.06 )
+mouse_filter = 1
 texture_normal = ExtResource( 5 )
+expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -269,12 +282,15 @@ __meta__ = {
 visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = 21.5986
-margin_top = -71.9956
-margin_right = 250.099
-margin_bottom = 141.504
-rect_scale = Vector2( 0.8, 0.5 )
+margin_left = 252.888
+margin_top = -111.487
+margin_right = 481.388
+margin_bottom = 102.013
+rect_rotation = 90.0
+rect_scale = Vector2( 0.94, 1.06 )
+mouse_filter = 1
 texture_normal = ExtResource( 5 )
+expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -284,12 +300,15 @@ __meta__ = {
 visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = 205.187
-margin_top = 21.5985
-margin_right = 433.687
-margin_bottom = 235.099
-rect_scale = Vector2( 0.5, 0.8 )
+margin_left = 365.191
+margin_top = 258.266
+margin_right = 593.691
+margin_bottom = 471.766
+rect_rotation = 180.0
+rect_scale = Vector2( 0.94, 1.06 )
+mouse_filter = 1
 texture_normal = ExtResource( 5 )
+expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
@@ -299,19 +318,39 @@ __meta__ = {
 visible = false
 anchor_right = 0.086
 anchor_bottom = 0.146
-margin_left = 28.7983
-margin_top = 194.388
-margin_right = 257.298
-margin_bottom = 407.888
-rect_scale = Vector2( 0.8, 0.5 )
+margin_left = -5.62109
+margin_top = 366.331
+margin_right = 222.879
+margin_bottom = 579.831
+rect_rotation = 270.0
+rect_scale = Vector2( 0.94, 1.06 )
+mouse_filter = 1
 texture_normal = ExtResource( 5 )
+expand = true
 stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="button_down" from="pause" to="." method="_on_pause_button_down"]
+
+[node name="bag" type="TextureButton" parent="."]
+anchor_right = 0.012
+margin_left = 4.37997
+margin_top = 14.7484
+margin_right = 141.328
+margin_bottom = 134.15
+rect_scale = Vector2( 0.8, 0.8 )
+texture_normal = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="PauseMenu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="PauseMenu/back2town" to="." method="_on_back2town_pressed"]
 [connection signal="gui_input" from="gameButtons/attacco" to="." method="_on_attacco_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto" to="." method="_on_scatto_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto/ProgressBar" to="." method="_on_ProgressBar_gui_input"]
 [connection signal="gui_input" from="gameButtons/special" to="." method="_on_special_gui_input"]
+[connection signal="pressed" from="bag" to="." method="_on_bag_pressed"]

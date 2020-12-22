@@ -11,9 +11,12 @@ const Acqua = 4
 var danno : int = 0
 var element : int = 0
 
+var malusRate = 0
 var mpCost : int = 0
 var timeout : float = 1
 var target = "enemy"
+
+var audio 
 
 func iniziaStats(ndanno,nelement,costo,ntimeout):
 	danno = ndanno
@@ -37,6 +40,6 @@ func perAtk(_atk):
 #cosa fare quando attacco colpisce qualcosa
 func hit(body):
 	if(body.is_in_group(target)):
-		body.hit(danno,element)
+		body.hit(danno,element,malusRate)
 	pass 
 	

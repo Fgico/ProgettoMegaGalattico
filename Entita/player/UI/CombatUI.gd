@@ -1,5 +1,8 @@
 extends Control
 
+var inventoryScreen = preload("res://Interfacce Utente/Inventario/InventoryUI.tscn")
+var menu_sett = preload("res://Interfacce Utente/Impostazioni e salvataggi cloud/Settings.tscn")
+
 onready var player = get_parent().get_parent().get_parent().get_parent()
 onready var pauseMenu = get_node("PauseMenu")
 onready var pause = get_node("pause")
@@ -17,11 +20,11 @@ func _on_Resume_pressed():
 	pause.show()
 	pass # Replace with function body.
 
-func _on_pause_button_down():
-	pause.hide()
-	pauseMenu.show()
-	get_tree().paused = true
-	pass # Replace with function body.
+#func _on_pause_button_down():
+#	pause.hide()
+#	pauseMenu.show()
+#	get_tree().paused = true
+#	pass # Replace with function body.
 
 var touchIdx = -1
 
@@ -80,3 +83,26 @@ func _on_scatto_gui_input(event):
 func _on_ProgressBar_gui_input(event):
 	if event is InputEventScreenTouch and event.is_pressed():
 		player.scatta()
+
+
+func _on_bag_pressed():
+	var inv = inventoryScreen.instance()
+	player.add_child(inv)
+	player.UI.hide()
+	player.lockMovement = true
+
+
+func _on_Settings_pressed():
+	var settings = menu_sett.instance()
+	self.add_child(settings)
+	player.UI.show()
+	pass # Replace with function body.
+
+
+
+func _on_pause_pressed():
+	pause.hide()
+	pauseMenu.show()
+	get_tree().paused = true
+	pass # Replace with function body.
+	

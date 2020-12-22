@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Entita/classiBase/classeCombattente.gd"
 }, {
-"base": "TouchScreenButton",
-"class": "EquipableButton",
-"language": "GDScript",
-"path": "res://Interfacce Utente/Inventario/bottoni armi/classeEquipaggiabileUI.gd"
-}, {
 "base": "KinematicBody",
 "class": "Moveable",
 "language": "GDScript",
@@ -37,24 +32,30 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Attacco": "",
 "Combattente": "",
-"EquipableButton": "",
 "Moveable": "",
 "Nemico": ""
 }
 
 [application]
 
-config/name="Rogue"
-run/main_scene="res://DUNGEON/Scene Principali/dungeon1.tscn"
+config/name="Dangerous Skies!!!"
+run/main_scene="res://Interfacce Utente/ScenaIniziale/TitleScreen.tscn"
+boot_splash/image="res://Interfacce Utente/ScenaIniziale/Immagini/background copy.png"
 
 [autoload]
 
 userData="*res://Singletons/userData.gd"
-ItemDb="*res://Singletons/itemDB.gd"
+ItemDB="*res://Singletons/itemDB.gd"
+sceneUtili="*res://Singletons/SceneUtili.gd"
+Firebase="*res://Singletons/firebase.gd"
 
 [display]
 
+window/size/width=1280
+window/size/height=720
 window/vsync/use_vsync=false
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
@@ -107,14 +108,17 @@ scatta={
 
 pointing/emulate_touch_from_mouse=true
 
+[physics]
+
+3d/active_soft_world=false
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
+threads/thread_model=2
 vram_compression/import_etc=true
-quality/shadow_atlas/quadrant_0_subdiv=0
-quality/shadow_atlas/quadrant_1_subdiv=0
-quality/shadow_atlas/quadrant_2_subdiv=0
-quality/shadow_atlas/quadrant_3_subdiv=0
+quality/shadow_atlas/quadrant_3_subdiv=3
+quality/shadows/filter_mode=0
 quality/reflections/irradiance_max_size=32
 environment/default_clear_color=Color( 0.498039, 0.596078, 0.580392, 1 )
 quality/reflections/atlas_size=0

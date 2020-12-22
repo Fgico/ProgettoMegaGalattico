@@ -10,6 +10,9 @@ var stats = {
 	"spd" : 600
 }
 
+#in ordine: elmetto, petto, pantaloni, scarpe
+var armorStats = [1, 1, 1, 1]
+
 #si nasce in stato Idle, eredito definizione altri stati da Moveable
 const Attacking = 2
 const Dodging = 3	#per ora non usato
@@ -33,6 +36,8 @@ var knownSpecials = [] #lista dei quattro attacchi imparati
 const Normal = 0
 const Burnt = 1
 const Freezed = 2
+const Shocked = 3
+
 var debuff = Normal
 var debuffTime = 0
 
@@ -64,19 +69,22 @@ func attacca(attacco,target):
 	#codice eventualmente utile per fare proiettili, per ora no
 
 			mp -= attacked.mpCost
+			if attacked.audio != null:
+				attacked.audio.play()
 			attacked.perAtk(stats.atk)
 			attacked.setSpd(atkSpd)
 			attacked.target = target
 			attackTimeout = attacked.timeout	#ci dice quando attacco è concluso
 			stato = Attacking					#aggiorno stato
+			return attackTimeout
 		else:
 			attacked.queue_free()				#fix temp: non avevo mp per evocarlo quindi me ne libero
-
+			return 0
 
 #cosa accade se colpito
-func hit(danno,nelement):
+func hit(danno,nelement,malusRate):
 	hp = max(hp - danno, 0)
-	if(hp <= 0):
+	if(hp <= 0 and stato != Dead):
 		muori()
 
 func muori():
@@ -93,13 +101,22 @@ func physics_process(delta):
 	match debuff:
 		#se bruciato levo vita
 		Burnt:
-			hp -= delta
+			hp = max(hp - delta * 3, 0)
+			if(hp <= 0 and stato != Dead):
+				muori()
 			debuffTime = max(0, debuffTime-delta)
 			if(debuffTime == 0):
 				debuff = Normal
 		#se raffredato mi rallento
 		Freezed:
-			spd = stats.spd * 0.8
+			spd = stats.spd * 0.5
+			debuffTime = max(0, debuffTime-delta)
+			if(debuffTime == 0):
+				debuff = Normal
+				spd = stats.spd
+			
+		Shocked:
+			spd = stats.spd *0.0
 			debuffTime = max(0, debuffTime-delta)
 			if(debuffTime == 0):
 				debuff = Normal
@@ -110,13 +127,17 @@ func physics_process(delta):
 	#se sto attacando finisco l'attacco
 	if stato == Attacking:
 		if(attackTimeout<=0):
-			attackTimeout = 0
-			combo = 0
-			if targetDir != Vector3.ZERO:
-				stato = Moving
-			else:
-				stato = Idle
+			attaccoFinito()
 		else:
 			attackTimeout -= delta
 	#eseguo la routine di movimento da moveable
 	.physics_process(delta)
+
+func attaccoFinito():
+	attackTimeout = 0
+	combo = 0
+	if targetDir != Vector3.ZERO:
+		stato = Moving
+	else:
+		stato = Idle
+	

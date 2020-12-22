@@ -2,16 +2,10 @@ extends Node
 
 var savePath = "user://DangerousSkies.save"
 
-#func _ready():
-#	loadFromFile()
-
-#struttura di appoggio inizializzata per memorizzare
-#l'id dell'oggetto e il loro livello,inutile salvarla
-var equipabble = {
-	"id" : 0,
-	"lvl" : 1,
-}
-
+func _ready():
+	loadFromFile()
+	AudioServer.set_bus_mute(1, settings.musicMuted)
+	AudioServer.set_bus_mute(2, settings.sfxMuted)
 
 var userInfo = {
 	"name" : "gino",
@@ -19,24 +13,35 @@ var userInfo = {
 }
 
 var equipped = {
-	"curWeapon" : null,
-	"curArmor" : null,
-	"spAtk1" : null,
-	"spAtk2" : null,
-	"spAtk3" : null,
-	"spAtk4" : null,
+	"curWeapon" : 1,
+	"head" : 0,
+	"chest" : 0,
+	"pants" : 0,
+	"shoes" : 0
 }
 
-var numCoin = 0
-var numItem = 0
+var numCoin = 200
+var numItem = 100
 
 var cityStatus = {
 	"smith" : 1,
 	"wizard" : 1
 }
 
-var inventory = []
+var inventory = {
+	"weapons" : [],
+	"armors" : []
+}
 
+var settings = {
+	"musicMuted" : false,
+	"sfxMuted" : false,
+	"shadows" : true,
+	"shadowQuality" : 2,
+	"details" : true,
+	"fxVolume" : 5,
+	"musicVolume" : 5
+}
 
 func saveToFile():
 	var saveFile = File.new()
@@ -46,24 +51,24 @@ func saveToFile():
 	saveFile.store_line(to_json(numCoin))
 	saveFile.store_line(to_json(numItem))
 	saveFile.store_line(to_json(cityStatus))
+	saveFile.store_line(to_json(settings))
 	saveFile.store_line(to_json(inventory))
 	saveFile.close()
 
 func loadFromFile():
 	var loadFile = File.new()
 	if not loadFile.file_exists(savePath):
-		return
+		return false
 	loadFile.open(savePath, File.READ)
 	var data = parse_json(loadFile.get_line())
 	userInfo.name = data.name
 	userInfo.password = data.password
 	data = parse_json(loadFile.get_line())
 	equipped.curWeapon = data.curWeapon
-	equipped.curArmor = data.curArmor
-	equipped.spAtk1 = data.spAtk1
-	equipped.spAtk2 = data.spAtk2
-	equipped.spAtk3 = data.spAtk3
-	equipped.spAtk4 = data.spAtk4
+	equipped.head = data.head
+	equipped.chest = data.chest
+	equipped.pants = data.pants
+	equipped.shoes = data.shoes
 	data = parse_json(loadFile.get_line())
 	numCoin = data
 	data = parse_json(loadFile.get_line())
@@ -71,6 +76,9 @@ func loadFromFile():
 	data = parse_json(loadFile.get_line())
 	cityStatus = data
 	data = parse_json(loadFile.get_line())
+	settings = data
+	data = parse_json(loadFile.get_line())
 	if(data != null):
 		inventory = data
 	loadFile.close()
+	return true

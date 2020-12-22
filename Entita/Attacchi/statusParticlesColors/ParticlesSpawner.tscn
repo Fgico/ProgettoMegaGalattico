@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entita/Attacchi/statusParticlesColors/elettro.tres" type="Gradient" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+vertex_color_use_as_albedo = true
+params_cull_mode = 1
+
+[sub_resource type="QuadMesh" id=2]
+size = Vector2( 0.3, 0.3 )
+
+[node name="ParticlesSpawner" type="Position3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0300751, 2.96239, 0 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.418293, -0.926882 )
+material_override = SubResource( 1 )
+cast_shadow = 0
+emitting = false
+amount = 4
+lifetime = 0.4
+mesh = SubResource( 2 )
+direction = Vector3( 0, 1, 0 )
+spread = 60.41
+flatness = 0.24
+initial_velocity = 5.0
+color_ramp = ExtResource( 1 )
