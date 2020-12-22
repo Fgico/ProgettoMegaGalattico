@@ -26,6 +26,8 @@ onready var upCostLabel = get_node("DoubleEdgesBackground/PaperBackground/VBoxCo
 onready var coinCounter = get_node("DoubleEdgesBackground/PaperBackground/Control/coins/Label")
 onready var itemCounter = get_node("DoubleEdgesBackground/PaperBackground/Control/chiavi/Label")
 
+onready var npcAnswer = get_node("DoubleEdgesBackground/PaperBackground/Label")
+
 var emptyContainer = preload("res://Interfacce Utente/Inventario/shopContainer.tscn")
 
 func selezionaOggetto(oggetto, posOggetto, container):
@@ -76,6 +78,8 @@ func _on_buy_pressed():
 			for arma in userData.inventory.weapons:
 				if arma == elem_curr.posizione:
 					shouldBuy = false
+			if userData.equipped.curweapon == elem_curr.posizione:
+				shouldBuy = false
 			if(shouldBuy):
 				userData.inventory.weapons.append(elem_curr.posizione)
 				sceneUtili.player.addCoins( -elem_curr.costo )
@@ -83,9 +87,20 @@ func _on_buy_pressed():
 			for armor in userData.inventory.armors:
 				if armor == elem_curr.posizione:
 					shouldBuy = false
+			if userData.head == elem_curr.posizione:
+				shouldBuy = false
+			if userData.chest == elem_curr.posizione:
+				shouldBuy = false
+			if userData.pants == elem_curr.posizione:
+				shouldBuy = false
+			if userData.shoes == elem_curr.posizione:
+				shouldBuy = false
 			if shouldBuy:
 				userData.inventory.armors.append(elem_curr.posizione)
 				sceneUtili.player.addCoins( -elem_curr.costo )
+				npcAnswer.text = "Good choice"
+			else:
+				npcAnswer = "You already have it"
 		updateCounters()
 
 

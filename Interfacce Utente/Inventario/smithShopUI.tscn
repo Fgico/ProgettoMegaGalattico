@@ -170,21 +170,21 @@ __meta__ = {
 }
 
 [node name="Header" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer"]
-margin_right = 929.0
+margin_right = 1161.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 
 [node name="ManuTitle" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header"]
 margin_top = 5.0
-margin_right = 875.0
+margin_right = 1107.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 
 [node name="ExitButton" type="TextureButton" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header"]
-margin_left = 879.0
-margin_right = 929.0
+margin_left = 1111.0
+margin_right = 1161.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 50, 50 )
 texture_normal = ExtResource( 3 )
@@ -195,42 +195,42 @@ __meta__ = {
 
 [node name="MainElements" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer"]
 margin_top = 54.0
-margin_right = 929.0
-margin_bottom = 487.0
+margin_right = 1161.0
+margin_bottom = 589.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="LeftMargin" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_top = 209.0
+margin_top = 260.0
 margin_right = 20.0
-margin_bottom = 223.0
+margin_bottom = 274.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="itemScroll" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
 margin_left = 24.0
-margin_right = 601.0
-margin_bottom = 433.0
+margin_right = 833.0
+margin_bottom = 535.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/itemScroll"]
-margin_right = 577.0
-margin_bottom = 433.0
+margin_right = 809.0
+margin_bottom = 535.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource( 6 )
 
 [node name="ItemInspector" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_left = 605.0
-margin_right = 905.0
-margin_bottom = 433.0
+margin_left = 837.0
+margin_right = 1137.0
+margin_bottom = 535.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_vertical = 3
 
 [node name="ItemInspector1" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
 margin_right = 300.0
-margin_bottom = 246.0
+margin_bottom = 344.0
 size_flags_vertical = 3
 
 [node name="ItemName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
@@ -244,41 +244,41 @@ valign = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
 margin_top = 41.0
 margin_right = 300.0
-margin_bottom = 228.0
+margin_bottom = 326.0
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_right = 226.0
-margin_bottom = 187.0
+margin_bottom = 285.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Stats" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer/ScrollContainer" instance=ExtResource( 9 )]
-margin_bottom = 187.0
+margin_bottom = 285.0
 
 [node name="ItemIcon" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_left = 230.0
 margin_right = 300.0
-margin_bottom = 187.0
+margin_bottom = 285.0
 rect_min_size = Vector2( 70, 70 )
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
-margin_top = 232.0
+margin_top = 330.0
 margin_right = 300.0
-margin_bottom = 246.0
+margin_bottom = 344.0
 rect_min_size = Vector2( 0, 14 )
 
 [node name="UpgradeLabel" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
-margin_top = 250.0
+margin_top = 348.0
 margin_right = 300.0
-margin_bottom = 285.0
+margin_bottom = 387.0
 custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 
 [node name="Upgrade Store" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
-margin_top = 289.0
+margin_top = 391.0
 margin_right = 300.0
-margin_bottom = 359.0
+margin_bottom = 461.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
 texture = ExtResource( 5 )
@@ -312,9 +312,9 @@ __meta__ = {
 }
 
 [node name="buy" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
-margin_top = 363.0
+margin_top = 465.0
 margin_right = 300.0
-margin_bottom = 433.0
+margin_bottom = 535.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
 texture = ExtResource( 5 )
@@ -348,17 +348,29 @@ __meta__ = {
 }
 
 [node name="RightMargin" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
-margin_left = 909.0
-margin_top = 209.0
-margin_right = 929.0
-margin_bottom = 223.0
+margin_left = 1141.0
+margin_top = 260.0
+margin_right = 1161.0
+margin_bottom = 274.0
 rect_min_size = Vector2( 20, 0 )
 
 [node name="ButtonMargin" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer"]
-margin_top = 491.0
-margin_right = 929.0
-margin_bottom = 511.0
+margin_top = 593.0
+margin_right = 1161.0
+margin_bottom = 613.0
 rect_min_size = Vector2( 0, 20 )
+
+[node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground"]
+margin_left = 73.0205
+margin_top = 542.891
+margin_right = 151.02
+margin_bottom = 581.891
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Tell me what ya need"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="DoubleEdgesBackground/PaperBackground/VBoxContainer/Header/ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/Upgrade Store/upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/buy/buy" to="." method="_on_buy_pressed"]
