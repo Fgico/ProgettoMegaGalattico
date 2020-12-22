@@ -38,7 +38,9 @@ var settings = {
 	"sfxMuted" : false,
 	"shadows" : true,
 	"shadowQuality" : 2,
-	"details" : true
+	"details" : true,
+	"fxVolume" : 5,
+	"musicVolume" : 5
 }
 
 func saveToFile():

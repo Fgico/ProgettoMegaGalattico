@@ -1,29 +1,29 @@
 [gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Interfacce Utente/Inventario/Font/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/paper background_pressed.png" type="Texture" id=2]
-[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/background.png" type="Texture" id=3]
-[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/wood background.png" type="Texture" id=4]
-[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/paper background.png" type="Texture" id=5]
+[ext_resource path="res://Interfacce Utente/Inventario/Immagini/paper background_pressed.png" type="Texture" id=2]
+[ext_resource path="res://Interfacce Utente/Inventario/Immagini/background.png" type="Texture" id=3]
+[ext_resource path="res://Interfacce Utente/Inventario/Immagini/paper background.png" type="Texture" id=4]
+[ext_resource path="res://Interfacce Utente/Inventario/Immagini/wood background.png" type="Texture" id=5]
 [ext_resource path="res://Interfacce Utente/Inventario/smallFont.tres" type="DynamicFont" id=6]
 [ext_resource path="res://Interfacce Utente/Inventario/FontShop.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Interfacce Utente/Impostazioni e salvataggi cloud/registrazione.gd" type="Script" id=8]
 [ext_resource path="res://Interfacce Utente/Impostazioni e salvataggi cloud/login.gd" type="Script" id=9]
-[ext_resource path="res://Interfacce Utente/Inventario/rpg_gui_v1/exit.png" type="Texture" id=10]
+[ext_resource path="res://Interfacce Utente/Inventario/Immagini/exit.png" type="Texture" id=10]
 [ext_resource path="res://Interfacce Utente/Impostazioni e salvataggi cloud/CloudSaveManager.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 24
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxLine" id=2]
+[sub_resource type="StyleBoxLine" id=3]
 color = Color( 0, 0, 0, 0 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 size = 24
 font_data = ExtResource( 1 )
 
@@ -99,7 +99,7 @@ margin_right = 180.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 
 [node name="buy" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/save"]
@@ -109,7 +109,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -135,7 +135,7 @@ margin_right = 180.0
 margin_bottom = 158.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 
 [node name="buy" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/load"]
@@ -145,7 +145,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -171,7 +171,7 @@ margin_right = 180.0
 margin_bottom = 246.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 
 [node name="buy" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/register"]
@@ -181,7 +181,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -207,7 +207,7 @@ margin_right = 180.0
 margin_bottom = 334.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 
 [node name="resetButton" type="TextureButton" parent="TextureRect/Menu/VBoxContainer/resetSave"]
@@ -217,7 +217,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -228,7 +228,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 3.8147e-06
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Delete Save"
 align = 1
@@ -309,7 +309,7 @@ secret = true
 margin_top = 56.0
 margin_right = 302.0
 margin_bottom = 106.0
-custom_styles/separator = SubResource( 2 )
+custom_styles/separator = SubResource( 3 )
 custom_constants/separation = 50
 
 [node name="login" type="TextureRect" parent="TextureRect/login/VBoxContainer"]
@@ -318,7 +318,7 @@ margin_right = 302.0
 margin_bottom = 180.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 
 [node name="buy" type="TextureButton" parent="TextureRect/login/VBoxContainer/login"]
@@ -328,7 +328,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -479,7 +479,7 @@ margin_right = 150.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -492,7 +492,7 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -503,7 +503,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 3.8147e-06
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Register"
 align = 1

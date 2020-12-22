@@ -9,6 +9,11 @@
 [ext_resource path="res://Interfacce Utente/Inventario/Immagini/wood background.png" type="Texture" id=7]
 [ext_resource path="res://Interfacce Utente/Inventario/Immagini/exit.png" type="Texture" id=8]
 
+
+
+
+
+
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="DynamicFont" id=2]
@@ -139,13 +144,13 @@ margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Music:"
+text = "Mute Music:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="musicMute" type="CheckButton" parent="NinePatchRect/Audio"]
-margin_left = 202.0
+margin_left = 303.0
 margin_top = 34.0
 margin_right = 76.0
 margin_bottom = 40.0
@@ -172,13 +177,13 @@ margin_right = 40.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Sound Effects:"
+text = "Mute Sound Effects:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="sfxMute" type="CheckButton" parent="NinePatchRect/Audio"]
-margin_left = 315.0
+margin_left = 435.0
 margin_top = 142.0
 margin_right = 76.0
 margin_bottom = 40.0

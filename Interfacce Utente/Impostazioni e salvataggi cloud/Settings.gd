@@ -16,7 +16,7 @@ func _ready():
 	musicCheck.pressed = userData.settings.musicMuted
 	sfxCheck.pressed = userData.settings.sfxMuted
 	shadowCheck.pressed = userData.settings.shadows
-	detailCheck.presed = userData.settings.details
+	detailCheck.pressed = userData.settings.details
 	pass 
 
 
