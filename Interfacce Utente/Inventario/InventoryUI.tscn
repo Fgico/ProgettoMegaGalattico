@@ -105,6 +105,7 @@ margin_left = 44.0
 margin_right = 258.0
 margin_bottom = 553.0
 rect_min_size = Vector2( 180, 0 )
+custom_constants/separation = 10
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs"]
 margin_right = 214.0
@@ -114,15 +115,14 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Player Stats:"
 
 [node name="Stats" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs" instance=ExtResource( 13 )]
-anchor_right = 0.0
-margin_top = 43.0
+margin_top = 49.0
 margin_right = 214.0
+margin_bottom = 174.0
 
 [node name="Equipped" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs" instance=ExtResource( 10 )]
-anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 188.0
-margin_right = 214.0
+margin_top = 184.0
+margin_bottom = 184.0
 
 [node name="Weapons" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements"]
 margin_left = 262.0

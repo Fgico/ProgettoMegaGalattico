@@ -39,9 +39,13 @@ func _on_Weapons_pressed():
 
 func _on_Equip_pressed():
 	if elem_curr.tipo == 1:
+		if(userData.equipped.curWeapon != 0):
+			elem_curr.container.tipo = userData.equipped.curWeapon
+		else:
+			elem_curr.container.queue_free()
 		sceneUtili.player.equipWeapon(elem_curr.id)
 	if elem_curr.tipo == 2:
-		sceneUtili.player.equipArmor(elem_curr.id)
+		var type = sceneUtili.player.equipArmor(elem_curr.id)
 	pStats.updatePlayerStats()
 
 

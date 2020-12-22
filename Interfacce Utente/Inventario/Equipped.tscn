@@ -8,18 +8,21 @@
 [ext_resource path="res://Interfacce Utente/Inventario/Equipped.gd" type="Script" id=6]
 
 [node name="Equipped" type="Control"]
-anchor_right = 0.156
-anchor_bottom = 0.483
-margin_right = 0.319992
-margin_bottom = 0.23999
+anchor_bottom = 0.5
+margin_bottom = -360.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="headbg" type="TextureRect" parent="."]
-margin_right = 75.0
-margin_bottom = 75.0
+anchor_bottom = 0.064
+margin_left = 1.7818
+margin_top = 6.93015
+margin_right = 76.7818
+margin_bottom = 81.9301
 size_flags_vertical = 3
 texture = ExtResource( 1 )
 expand = true
@@ -36,9 +39,10 @@ __meta__ = {
 }
 
 [node name="chestbg" type="TextureRect" parent="."]
-margin_top = 82.7601
-margin_right = 75.0
-margin_bottom = 157.76
+margin_left = 1.7818
+margin_top = 89.6902
+margin_right = 76.7818
+margin_bottom = 164.69
 texture = ExtResource( 2 )
 expand = true
 __meta__ = {
@@ -54,9 +58,10 @@ __meta__ = {
 }
 
 [node name="pantsbg" type="TextureRect" parent="."]
-margin_top = 173.077
-margin_right = 75.0
-margin_bottom = 248.077
+margin_left = 1.7818
+margin_top = 180.007
+margin_right = 76.7818
+margin_bottom = 255.007
 texture = ExtResource( 3 )
 expand = true
 
@@ -69,9 +74,10 @@ __meta__ = {
 }
 
 [node name="shoesbg" type="TextureRect" parent="."]
-margin_top = 262.511
-margin_right = 75.0
-margin_bottom = 337.511
+margin_left = 1.7818
+margin_top = 269.442
+margin_right = 76.7818
+margin_bottom = 344.442
 texture = ExtResource( 4 )
 expand = true
 
@@ -84,10 +90,10 @@ __meta__ = {
 }
 
 [node name="armaBackground" type="TextureRect" parent="."]
-margin_left = 105.991
-margin_top = 124.14
-margin_right = 180.991
-margin_bottom = 199.14
+margin_left = 107.773
+margin_top = 131.07
+margin_right = 182.773
+margin_bottom = 206.07
 texture = ExtResource( 5 )
 expand = true
 __meta__ = {
