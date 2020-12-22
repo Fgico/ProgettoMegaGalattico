@@ -27,6 +27,15 @@ onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "P
 
 onready var screenSize = OS.get_window_size()
 
+#animazione quando il giocatore muore
+onready var anim_morte = get_node("transizionemorte/ColorRect/morte")
+onready var youdied = get_node("transizionemorte/TextureRect/youdied")
+onready var lolyoudied = get_node("transizionemorte/TextureRect2/lolyoudied")
+onready var youdiedxd = get_node("transizionemorte/TextureRect3/youdiedxd")
+onready var pffnoob= get_node("transizionemorte/TextureRect4/pffnoob")
+onready var nascondiscena=get_node("transizionemorte/ColorRect")
+
+
 func _ready():
 	knownSpecials = [fuoco,ghiaccio, tuono, bolla]
 	scattoTimer.stop()
@@ -156,6 +165,7 @@ func muori():
 	if(stato != Dead):
 		anim.play("sword and shield death-loop")
 		anim.get_animation("sword and shield death-loop").loop = false
+		anim_morte.play("animazione_morte")
 	stato = Dead
 
 func restoreStatus():
@@ -226,3 +236,59 @@ func updateDef():
 	for armr in armorStats:
 		def += armr
 	stats.def = def
+
+
+
+func _on_morte_animation_started(animazione_morte):
+	var n = randi() % 4
+	if n<=1:
+		youdied.play("you_died_anim")
+	if (n>1 && n<=2):
+		lolyoudied.play("lol_you_died")
+	if (n>2 && n<=3):
+		youdiedxd.play("you_died_xd")
+	if (n>3 && n<=4):
+		pffnoob.play("pff_noob")
+
+	
+	pass # Replace with function body.
+
+
+
+func _on_youdied_animation_finished(you_died_anim):
+	if (stato == Dead):
+		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+		sceneUtili.player.restoreStatus()
+		
+
+
+	pass # Replace with function body.
+
+
+
+func _on_lolyoudied_animation_finished(lol_you_died):
+	if (stato == Dead):
+		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+		sceneUtili.player.restoreStatus()
+		
+	pass # Replace with function body.
+
+
+
+func _on_youdiedxd_animation_finished(you_died_xd):
+	if (stato == Dead):
+		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+		sceneUtili.player.restoreStatus()
+		
+
+	pass # Replace with function body.
+
+func _on_pffnoob_animation_finished(pff_noob):
+	if (stato == Dead):
+		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
+		sceneUtili.player.restoreStatus()
+		
+
+	pass # Replace with function body.
+
+

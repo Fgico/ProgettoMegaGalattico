@@ -11,7 +11,7 @@
 [ext_resource path="res://DUNGEON/PNG/scritte_you_died/you_died_xd.png" type="Texture" id=9]
 [ext_resource path="res://DUNGEON/PNG/scritte_you_died/youdied.png" type="Texture" id=10]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "animazione_morte"
 length = 5.5
 tracks/0/type = "value"
@@ -51,7 +51,7 @@ tracks/2/keys = {
 "values": [ 0.619, 0.073, 0.974 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "you_died_anim"
 length = 4.0
 tracks/0/type = "value"
@@ -67,7 +67,7 @@ tracks/0/keys = {
 "values": [ Color( 0.705882, 0, 0, 0 ), Color( 0.576471, 0.121569, 0.121569, 1 ), Color( 0.576471, 0.121569, 0.121569, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "lol_you_died"
 length = 4.0
 tracks/0/type = "value"
@@ -83,7 +83,7 @@ tracks/0/keys = {
 "values": [ Color( 0.705882, 0, 0, 0 ), Color( 0.576471, 0.121569, 0.121569, 1 ), Color( 0.705882, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "you_died_xd"
 length = 4.0
 tracks/0/type = "value"
@@ -99,7 +99,7 @@ tracks/0/keys = {
 "values": [ Color( 0.705882, 0, 0, 0 ), Color( 0.576471, 0.121569, 0.121569, 1 ), Color( 0.576471, 0.121569, 0.121569, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "pff_noob"
 length = 4.0
 tracks/0/type = "value"
@@ -115,7 +115,7 @@ tracks/0/keys = {
 "values": [ Color( 0.705882, 0, 0, 0 ), Color( 0.576471, 0.121569, 0.121569, 1 ), Color( 0.576471, 0.121569, 0.121569, 0 ) ]
 }
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape" id=6]
 radius = 0.43515
 height = 1.30255
 
@@ -141,7 +141,7 @@ __meta__ = {
 }
 
 [node name="morte" type="AnimationPlayer" parent="transizionemorte/ColorRect"]
-anims/animazione_morte = SubResource( 2 )
+anims/animazione_morte = SubResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="transizionemorte"]
 modulate = Color( 0.705882, 0, 0, 0 )
@@ -161,7 +161,7 @@ __meta__ = {
 }
 
 [node name="youdied" type="AnimationPlayer" parent="transizionemorte/TextureRect"]
-anims/you_died_anim = SubResource( 3 )
+anims/you_died_anim = SubResource( 2 )
 
 [node name="TextureRect2" type="TextureRect" parent="transizionemorte"]
 modulate = Color( 0.705882, 0, 0, 0 )
@@ -181,7 +181,7 @@ __meta__ = {
 }
 
 [node name="lolyoudied" type="AnimationPlayer" parent="transizionemorte/TextureRect2"]
-anims/lol_you_died = SubResource( 4 )
+anims/lol_you_died = SubResource( 3 )
 
 [node name="TextureRect3" type="TextureRect" parent="transizionemorte"]
 modulate = Color( 0.705882, 0, 0, 0 )
@@ -201,7 +201,7 @@ __meta__ = {
 }
 
 [node name="youdiedxd" type="AnimationPlayer" parent="transizionemorte/TextureRect3"]
-anims/you_died_xd = SubResource( 5 )
+anims/you_died_xd = SubResource( 4 )
 
 [node name="TextureRect4" type="TextureRect" parent="transizionemorte"]
 modulate = Color( 0.705882, 0, 0, 0 )
@@ -221,11 +221,11 @@ __meta__ = {
 }
 
 [node name="pffnoob" type="AnimationPlayer" parent="transizionemorte/TextureRect4"]
-anims/pff_noob = SubResource( 6 )
+anims/pff_noob = SubResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.00695729, 0.10265 )
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="target" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.89013, -5.56085 )
