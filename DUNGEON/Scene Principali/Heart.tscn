@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://DUNGEON/Item/gem/Material.material" type="Material" id=1]
-[ext_resource path="res://DUNGEON/Scene Principali/Heart.gd" type="Script" id=2]
+[ext_resource path="res://DUNGEON/Script/Heart.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/pickup_heart.wav" type="AudioStream" id=3]
+
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {

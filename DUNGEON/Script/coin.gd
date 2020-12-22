@@ -4,8 +4,7 @@ func _ready():
 	$Particles.emitting = userData.settings.details
 	pass
 
-
-func _physics_process(delta):
+func _physics_process(_delta):
 	$coinMesh.rotate_y(deg2rad(4))
 
 #il giocatore entra in collisione con le monete e le raccoglie

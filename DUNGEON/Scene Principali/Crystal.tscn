@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://DUNGEON/Scene Assets/Material.material" type="Material" id=1]
-[ext_resource path="res://DUNGEON/Scene Principali/Cristallo.gd" type="Script" id=2]
+[ext_resource path="res://DUNGEON/Script/Cristallo.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/Pickitem.ogg" type="AudioStream" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
@@ -24,6 +24,7 @@ extents = Vector3( 0.248828, 0.209719, 0.255721 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "animationItems"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("cristalloMesh:translation")
 tracks/0/interp = 1
@@ -31,10 +32,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 7, 0, 0 ), Vector3( 7, 0.250142, 0 ) ]
+"values": [ Vector3( 7, 0, 0 ), Vector3( 7, 0.439155, 0 ), Vector3( 7, 0.941209, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("cristalloMesh:scale")
@@ -43,17 +44,17 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 1, 1, 1 ), Vector3( 0.6, 0.6, 0.6 ) ]
+"values": [ Vector3( 1.2, 1.2, 1.2 ), Vector3( 0.6, 0.6, 0.6 ), Vector3( 0.1, 0.1, 0.1 ) ]
 }
 
 [node name="Cristallo" type="Area"]
 script = ExtResource( 2 )
 
 [node name="cristalloMesh" type="MeshInstance" parent="."]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0, 7, 0.250142, 0 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 7, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 __meta__ = {
