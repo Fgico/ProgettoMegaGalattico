@@ -218,7 +218,7 @@ transform = Transform( -1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 862.396
 transform = Transform( -1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 410.181, 50128.5, -341.714 )
 
 [node name="Cube158" parent="." index="3"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63395, -0.0500398, 13.8241 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.63676, -0.0667982, 13.825 )
 
 [node name="StaticBody" type="StaticBody" parent="Cube158" index="0"]
 
@@ -242,7 +242,7 @@ transform = Transform( -0.025, 0, 0, 0, 0.700376, 0, 0, 0, 0.025, 9.81913, 0.941
 transform = Transform( -0.025, 0, 0, 0, 0.700376, 0, 0, 0, 0.025, 9.81913, 0.941093, 5.13314 )
 
 [node name="Cylinder009" parent="." index="9"]
-transform = Transform( -0.025, 0, 0, 0, 0.700376, 0, 0, 0, 0.025, 9.81913, 0.941093, 5.01255 )
+transform = Transform( -0.025, 0, 0, 0, 0.700376, 0, 0, 0, 0.025, 9.81884, 0.941093, 5.00942 )
 
 [node name="Cube003_Cube004" parent="." index="10"]
 transform = Transform( 1, 0, 0, 0, -1.35174e-07, -1, 0, 1.13393, -1.19209e-07, 6.8045, 0, 6.0898 )

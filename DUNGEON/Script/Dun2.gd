@@ -23,5 +23,6 @@ func _on_AnimationPlayer_animation2_finished(animazioneSbarre2):
 
 
 func _on_AnimationFading2_animation_finished(fadetoblack2):
+	sceneUtili.player.restoreStatus()
 	get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
 	pass # Replace with function body.

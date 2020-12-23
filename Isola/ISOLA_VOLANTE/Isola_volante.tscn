@@ -263,7 +263,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="GDScript" id=38]
+[sub_resource type="GDScript" id=36]
 script/source = "extends Spatial
 
 
@@ -279,13 +279,13 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="Curve3D" id=39]
+[sub_resource type="Curve3D" id=37]
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 9.22143, -0.00284576, -3.57827, 0, 0, 0, 0, 0, 0, 10.3745, -0.0550003, -69.0692, 0, 0, 0, 0, 0, 0, 29.3481, -0.0645828, -81.1012, 0, 0, 0, 0, 0, 0, 33.9758, -0.0763779, -95.9099, 0, 0, 0, 0, 0, 0, 96.9126, -0.069931, -87.8113, 0, 0, 0, 0, 0, 0, 105.937, -0.0783997, -98.455, 0, 0, 0, 0, 0, 0, 67.9894, -0.0793152, -99.612, 0, 0, 0, 0, 0, 0, 46.2392, -0.0806122, -101.232, 0, 0, 0, 0, 0, 0, 34.9014, -0.0817261, -102.62, 0, 0, 0, 0, 0, 0, 27.0343, -0.091301, -114.652, 0, 0, 0, 0, 0, 0, 16.8534, -0.0955353, -119.974, 0, 0, 0, 0, 0, 0, -6.05377, -0.096077, -120.668, 0, 0, 0, 0, 0, 0, -15.772, -0.0892563, -112.107, 0, 0, 0, 0, 0, 0, -16.4662, -0.0719299, -90.3567, 0, 0, 0, 0, 0, 0, -2.35169, -0.0573807, -72.0773, 0, 0, 0, 0, 0, 0, 4.12708, -0.05056, -63.516, 0, 0, 0, 0, 0, 0, 9.22143, -0.00284576, -3.57827 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="GDScript" id=40]
+[sub_resource type="GDScript" id=38]
 script/source = "extends Spatial
 
 
@@ -302,25 +302,25 @@ func _process(delta):
 	pass
 "
 
-[sub_resource type="Curve3D" id=41]
+[sub_resource type="Curve3D" id=39]
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -38.9242, -0.00871277, -10.4068, 0, 0, 0, 0, 0, 0, 33.3505, -0.00848389, -11.1219, 0, 0, 0, 0, 0, 0, 34.0853, -0.050354, -63.7295, 0, 0, 0, 0, 0, 0, 19.832, -0.0589905, -74.4026, 0, 0, 0, 0, 0, 0, 17.3669, -0.0655212, -82.5957, 0, 0, 0, 0, 0, 0, -36.4322, -0.0676117, -84.4892, 0, 0, 0, 0, 0, 0, -38.9242, -0.00871277, -10.4068 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="Curve3D" id=42]
+[sub_resource type="Curve3D" id=40]
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 107.22, 2.23524, -119.228, 0, 0, 0, 0, 0, 0, 104.787, 2.22189, -34.5876, 0, 0, 0, 0, 0, 0, 102.524, 2.23062, -35.5735, 0, 0, 0, 0, 0, 0, 101.242, 1.92144, -112.544, 0, 0, 0, 0, 0, 0, 103.445, 2.16086, -120.967, 0, 0, 0, 0, 0, 0, 104.852, 2.2507, -120.817 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="Curve3D" id=43]
+[sub_resource type="Curve3D" id=41]
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -25.1423, -0.0714722, -78.2515, 0, 0, 0, 0, 0, 0, -0.683749, -0.069252, -80.0885, 0, 0, 0, 0, 0, 0, 2.9577, -0.0703278, -78.041, 0, 0, 0, 0, 0, 0, 1.68958, -0.0589905, -73.6292, 0, 0, 0, 0, 0, 0, -27.6799, -0.0582428, -75.0588, 0, 0, 0, 0, 0, 0, -25.1423, -0.0714722, -78.2515 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0 )
 }
 
-[sub_resource type="Curve3D" id=44]
+[sub_resource type="Curve3D" id=42]
 _data = {
 "points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 5.70016, -0.00461578, 2.00056, 0, 0, 0, 0, 0, 0, 5.26868, -0.00524139, 27.0562, 0, 0, 0, 0, 0, 0, 5.60387, -0.00595856, 38.76, 0, 0, 0, 0, 0, 0, -1.57222, -0.000190735, 37.0265, 0, 0, 0, 0, 0, 0, -12.0086, 0.00811005, 36.9698, 0, 0, 0, 0, 0, 0, -12.7038, 0.00882721, 32.6239, 0, 0, 0, 0, 0, 0, -0.682594, -0.000747681, 32.7581, 0, 0, 0, 0, 0, 0, 0.279686, -0.00112152, 22.366, 0, 0, 0, 0, 0, 0, 1.24261, -0.00131226, 7.32167, 0, 0, 0, 0, 0, 0, 5.70016, -0.00461578, 2.00056 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
@@ -7980,27 +7980,27 @@ transform = Transform( 1.96701e-07, 0, -1.5, 0, 1.7, 0, 1.5, 0, 1.96701e-07, 106
 
 [node name="exp_npc" parent="NPC" index="1" instance=ExtResource( 63 )]
 transform = Transform( -6.55671e-08, 0, 1.5, 0, 1.7, 0, -1.5, 0, -6.55671e-08, -58.0051, 77.99, -24.7222 )
-script = SubResource( 38 )
+script = SubResource( 36 )
 
 [node name="manichini" type="Node" parent="NPC" index="2"]
 
 [node name="Path" type="Path" parent="NPC/manichini" index="0"]
 transform = Transform( 0.4, 0, 0, 0, 1, 0, 0, 0, 0.4, 8.465, 64.251, -37.683 )
-curve = SubResource( 39 )
+curve = SubResource( 37 )
 script = ExtResource( 65 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path" index="0"]
-transform = Transform( -0.999845, 1.40197e-05, 0.0176058, 1.17507e-09, 1, -0.000796243, -0.0176058, -0.00079612, -0.999845, 9.4405, -0.0127547, -16.021 )
+transform = Transform( -0.999845, 1.40197e-05, 0.0176058, 1.17507e-09, 1, -0.000796244, -0.0176058, -0.00079612, -0.999845, 9.4405, -0.0127547, -16.021 )
 offset = 12.42
 rotation_mode = 4
 
 [node name="vecchietto" parent="NPC/manichini/Path/PathFollow" index="0" instance=ExtResource( 66 )]
 transform = Transform( 3, 0, 0, 0, 1.6, 0, 0, 0, 4, 0, 0, 0 )
-script = SubResource( 40 )
+script = SubResource( 38 )
 
 [node name="Path2" type="Path" parent="NPC/manichini" index="1"]
 transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -7.565, 64.306, -35.719 )
-curve = SubResource( 41 )
+curve = SubResource( 39 )
 script = ExtResource( 67 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path2" index="0"]
@@ -8011,7 +8011,7 @@ transform = Transform( 2, 0, 0, 0, 1.6, 0, 0, 0, 2.4, 0, 0, 0 )
 
 [node name="Path4" type="Path" parent="NPC/manichini" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.033, 62.115, 0 )
-curve = SubResource( 42 )
+curve = SubResource( 40 )
 script = ExtResource( 69 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path4" index="0"]
@@ -8022,7 +8022,7 @@ transform = Transform( 1.65, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 2.14777, 0 )
 
 [node name="Path5" type="Path" parent="NPC/manichini" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10829, 62.115, 130.883 )
-curve = SubResource( 42 )
+curve = SubResource( 40 )
 script = ExtResource( 69 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path5" index="0"]
@@ -8034,7 +8034,7 @@ transform = Transform( 1.65, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 2.14777, 0 )
 
 [node name="Path3" type="Path" parent="NPC/manichini" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 64.312, 0 )
-curve = SubResource( 43 )
+curve = SubResource( 41 )
 script = ExtResource( 68 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path3" index="0"]
@@ -8044,7 +8044,7 @@ rotation_mode = 4
 
 [node name="Path7" type="Path" parent="NPC/manichini" index="5"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.893, 64.338, 0 )
-curve = SubResource( 43 )
+curve = SubResource( 41 )
 script = ExtResource( 68 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path7" index="0"]
@@ -8055,7 +8055,7 @@ transform = Transform( 1.65, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, -0.0350571, 0 )
 
 [node name="Path8" type="Path" parent="NPC/manichini" index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.893, 64.293, 38.443 )
-curve = SubResource( 43 )
+curve = SubResource( 41 )
 script = ExtResource( 68 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path8" index="0"]
@@ -8065,7 +8065,7 @@ rotation_mode = 4
 
 [node name="Path9" type="Path" parent="NPC/manichini" index="7"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.451, 64.318, -56.366 )
-curve = SubResource( 43 )
+curve = SubResource( 41 )
 script = ExtResource( 68 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path9" index="0"]
@@ -8075,7 +8075,7 @@ rotation_mode = 4
 
 [node name="Path10" type="Path" parent="NPC/manichini" index="8"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 95.145, 64.196, -44.489 )
-curve = SubResource( 44 )
+curve = SubResource( 42 )
 script = ExtResource( 55 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path10" index="0"]
