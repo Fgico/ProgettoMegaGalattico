@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://vecchietto.gd" type="Script" id=1]
+[ext_resource path="res://Isola/NPC/vecchietto.glb" type="PackedScene" id=2]
+
+[node name="vecchietto" instance=ExtResource( 2 )]
+transform = Transform( 1.5, 0, 0, 0, 1.6, 0, 0, 0, 1.5, 0, 0, 0 )
+script = ExtResource( 1 )
