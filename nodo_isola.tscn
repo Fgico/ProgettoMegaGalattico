@@ -14,3 +14,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2932, 73.2032, -53.486 )
 
 [node name="startPos" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3827, 65.0451, -60.3451 )
+
+[node name="musicaCitta" type="AudioStreamPlayer" parent="."]
+
+[node name="musicaCaves" type="AudioStreamPlayer" parent="."]
