@@ -7990,7 +7990,7 @@ curve = SubResource( 37 )
 script = ExtResource( 65 )
 
 [node name="PathFollow" type="PathFollow" parent="NPC/manichini/Path" index="0"]
-transform = Transform( -0.999845, 1.40197e-05, 0.0176058, 1.17507e-09, 1, -0.000796244, -0.0176058, -0.00079612, -0.999845, 9.4405, -0.0127547, -16.021 )
+transform = Transform( -0.999845, 1.40197e-05, 0.0176058, 1.17507e-09, 1, -0.000796243, -0.0176058, -0.00079612, -0.999845, 9.4405, -0.0127547, -16.021 )
 offset = 12.42
 rotation_mode = 4
 
