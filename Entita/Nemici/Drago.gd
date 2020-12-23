@@ -28,7 +28,7 @@ func muori():
 	coin.global_transform.origin = spawnAtk.global_transform.origin
 	coins_scene = coin
 	var anim = coins_scene.get_node("AnimationCascata2")
-	anim.play("animazioneCascata2")
+	anim.play("animazioneCascata")
 	$Flash.play("deathFlash")
 	$Timer.start()
 

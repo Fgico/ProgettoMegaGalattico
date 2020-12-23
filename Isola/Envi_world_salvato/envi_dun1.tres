@@ -7,6 +7,6 @@ sky_curve = 0.0931744
 sky_energy = 6.0
 
 [resource]
-background_mode = 2
+background_mode = 3
 background_sky = SubResource( 1 )
-background_color = Color( 0.121569, 0.164706, 0.270588, 1 )
+background_color = Color( 0.0666667, 0, 0, 1 )
