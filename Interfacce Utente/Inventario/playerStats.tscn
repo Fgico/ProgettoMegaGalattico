@@ -11,22 +11,23 @@ font_data = ExtResource( 1 )
 size = 24
 font_data = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="playerStats" type="VBoxContainer"]
+margin_right = 283.0
+margin_bottom = 196.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 138.0
+[node name="Atk" type="HBoxContainer" parent="."]
+margin_right = 283.0
 margin_bottom = 39.0
 
-[node name="StatsName" type="Label" parent="HBoxContainer"]
-margin_right = 67.0
+[node name="StatsName" type="Label" parent="Atk"]
+margin_right = 58.0
 margin_bottom = 39.0
-size_flags_horizontal = 3
+size_flags_horizontal = 2
+size_flags_vertical = 0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Atk"
@@ -34,64 +35,70 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StatsValue" type="Label" parent="HBoxContainer"]
-margin_left = 71.0
+[node name="StatsValue" type="Label" parent="Atk"]
+margin_left = 143.0
 margin_top = 4.0
-margin_right = 138.0
+margin_right = 283.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="Def" type="HBoxContainer" parent="."]
 margin_top = 43.0
-margin_right = 138.0
+margin_right = 283.0
 margin_bottom = 82.0
 
-[node name="StatsName2" type="Label" parent="HBoxContainer2"]
-margin_right = 99.0
+[node name="StatsName2" type="Label" parent="Def"]
+margin_right = 139.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "Def    "
 
-[node name="StatsValue2" type="Label" parent="HBoxContainer2"]
-margin_left = 103.0
+[node name="StatsValue2" type="Label" parent="Def"]
+margin_left = 143.0
 margin_top = 4.0
-margin_right = 138.0
+margin_right = 283.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+[node name="Atkspd" type="HBoxContainer" parent="."]
 margin_top = 86.0
-margin_right = 138.0
+margin_right = 283.0
 margin_bottom = 125.0
 
-[node name="StatsName3" type="Label" parent="HBoxContainer3"]
-margin_right = 134.0
+[node name="StatsName3" type="Label" parent="Atkspd"]
+margin_right = 139.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
 text = "AtkSpd "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="StatsValue3" type="Label" parent="HBoxContainer3"]
-margin_left = 138.0
+[node name="StatsValue3" type="Label" parent="Atkspd"]
+margin_left = 143.0
 margin_top = 4.0
-margin_right = 138.0
+margin_right = 283.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.156863, 0.156863, 0.156863, 1 )
+text = "1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
