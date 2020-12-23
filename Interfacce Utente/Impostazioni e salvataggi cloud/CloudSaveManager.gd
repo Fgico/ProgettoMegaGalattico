@@ -29,6 +29,7 @@ func _on_register_pressed():
 
 func _on_quitButtonMenu_pressed():
 	self.queue_free()
+	userData.saveToFile()
 	pass 
 
 

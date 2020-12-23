@@ -12,6 +12,8 @@ onready var spatk2 = get_node("gameButtons/special/spatk2")
 onready var spatk3 = get_node("gameButtons/special/spatk3")
 onready var spatk4 = get_node("gameButtons/special/spatk4")
 
+onready var save = preload("res://Interfacce Utente/Impostazioni e salvataggi cloud/CloudSaveManager.tscn")
+
 var spatkPos = null
 
 func _on_Resume_pressed():
@@ -106,3 +108,11 @@ func _on_pause_pressed():
 	get_tree().paused = true
 	pass # Replace with function body.
 	
+
+
+func _on_Save_gui_input(event):
+	if event is InputEventScreenTouch:
+		var savein = save.instance()
+		self.add_child(savein)
+		player.UI.show()
+	pass # Replace with function body.

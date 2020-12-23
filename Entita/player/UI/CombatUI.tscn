@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Entita/player/Label.gd" type="Script" id=1]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/skillButtons.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Entita/player/UI/CombatUI.gd" type="Script" id=7]
 [ext_resource path="res://Interfacce Utente/bottoniCombat/emptyButton.png" type="Texture" id=8]
 [ext_resource path="res://Interfacce Utente/bag.png" type="Texture" id=9]
+[ext_resource path="res://Interfacce Utente/Inventario/FontShop.tres" type="DynamicFont" id=10]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.196078, 0.498039, 0.196078, 1 )
@@ -132,6 +133,7 @@ margin_left = -6.67413
 margin_top = -1.33484
 margin_right = -6.72815
 margin_bottom = -1.29485
+custom_fonts/font = ExtResource( 10 )
 text = "Resume"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -144,7 +146,19 @@ anchor_bottom = 0.604
 margin_left = -6.0
 margin_top = -0.0400085
 margin_bottom = 11.04
+custom_fonts/font = ExtResource( 10 )
 text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="PauseMenu"]
+margin_left = -6.0
+margin_top = 224.0
+margin_right = 337.0
+margin_bottom = 297.0
+custom_fonts/font = ExtResource( 10 )
+text = "Save"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -329,6 +343,7 @@ __meta__ = {
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="gui_input" from="PauseMenu/Button" to="." method="_on_Save_gui_input"]
 [connection signal="gui_input" from="gameButtons/attacco" to="." method="_on_attacco_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto" to="." method="_on_scatto_gui_input"]
 [connection signal="gui_input" from="gameButtons/scatto/ProgressBar" to="." method="_on_ProgressBar_gui_input"]
