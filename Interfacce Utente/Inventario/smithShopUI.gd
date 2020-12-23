@@ -100,7 +100,7 @@ func _on_buy_pressed():
 				sceneUtili.player.addCoins( -elem_curr.costo )
 				npcAnswer.text = "Good choice"
 			else:
-				npcAnswer = "You already have it"
+				npcAnswer.text = "You already have it"
 		updateCounters()
 
 

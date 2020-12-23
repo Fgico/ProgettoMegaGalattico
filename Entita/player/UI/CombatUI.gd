@@ -22,11 +22,11 @@ func _on_Resume_pressed():
 	pause.show()
 	pass # Replace with function body.
 
-#func _on_pause_button_down():
-#	pause.hide()
-#	pauseMenu.show()
-#	get_tree().paused = true
-#	pass # Replace with function body.
+func _on_pause_button_down():
+	pause.hide()
+	pauseMenu.show()
+	get_tree().paused = true
+
 
 var touchIdx = -1
 
@@ -112,7 +112,6 @@ func _on_pause_pressed():
 
 func _on_Save_gui_input(event):
 	if event is InputEventScreenTouch:
-		var savein = save.instance()
-		self.add_child(savein)
-		player.UI.show()
+		get_tree().paused = false
+		get_tree().change_scene("res://Interfacce Utente/ScenaIniziale/TitleScreen.tscn")
 	pass # Replace with function body.

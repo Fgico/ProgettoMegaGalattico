@@ -19,6 +19,6 @@ func _on_Button_pressed():
 func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 	var responseBody = JSON.parse(body.get_string_from_ascii())
 	if response_code != 200:
-		res.text = responseBody.result.error
+		res.text = responseBody.result.error.message.capitalize()
 	else:
 		res.text = "Success!"

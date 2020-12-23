@@ -15,7 +15,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.09095, 0 )
 transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0 )
 
 [node name="rHandBone" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
-transform = Transform( 0.23074, -0.738231, 0.633856, 0.816046, -0.207967, -0.539275, 0.529931, 0.641689, 0.554444, -38.5004, 138.485, -33.9843 )
+transform = Transform( -0.9126, -0.407157, 0.0372151, 0.279779, -0.688274, -0.669329, 0.298136, -0.600418, 0.742033, -18.9592, 135.012, -52.5759 )
 bone_name = "right_hand"
 
 [node name="weaponSlot" type="Spatial" parent="Armature/Skeleton/rHandBone" index="0"]
@@ -25,7 +25,7 @@ transform = Transform( -6.49405, 2.18674, 18.7895, 18.6889, 3.81309, 6.0155, -2.
 transform = Transform( 130, 3.00686e-20, -9.91822e-06, 0, 130, 3.94114e-13, 9.91822e-06, -3.94114e-13, 130, -0.0296521, 0.187943, -0.0277779 )
 
 [node name="WaistBone" type="BoneAttachment" parent="Armature/Skeleton" index="2"]
-transform = Transform( 0.65063, -0.0548728, -0.75741, 0.0154442, 0.998135, -0.059046, 0.759238, 0.0267195, 0.650264, 0.762104, 167.835, 3.5625 )
+transform = Transform( 0.538286, -0.177531, -0.823851, -0.118241, 0.951982, -0.282398, 0.834426, 0.249424, 0.491447, -0.684332, 167.587, 4.78336 )
 bone_name = "spine_2"
 
 [node name="ArmorSlot" type="Spatial" parent="Armature/Skeleton/WaistBone" index="0"]
