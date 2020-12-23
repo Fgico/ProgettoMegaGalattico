@@ -40,8 +40,8 @@ _global_script_class_icons={
 
 config/name="Dangerous Skies!!!"
 run/main_scene="res://Interfacce Utente/ScenaIniziale/TitleScreen.tscn"
-boot_splash/image="res://Interfacce Utente/ScenaIniziale/Immagini/background copy.png"
-config/icon="res://Interfacce Utente/icona.png"
+boot_splash/image="res://sfondo.PNG"
+config/icon="res://icona.png"
 
 [autoload]
 
