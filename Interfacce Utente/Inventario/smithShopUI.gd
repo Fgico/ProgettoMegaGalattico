@@ -78,7 +78,7 @@ func _on_buy_pressed():
 			for arma in userData.inventory.weapons:
 				if arma == elem_curr.posizione:
 					shouldBuy = false
-			if userData.equipped.curweapon == elem_curr.posizione:
+			if userData.equipped.curWeapon == elem_curr.posizione:
 				shouldBuy = false
 			if(shouldBuy):
 				userData.inventory.weapons.append(elem_curr.posizione)
@@ -87,13 +87,13 @@ func _on_buy_pressed():
 			for armor in userData.inventory.armors:
 				if armor == elem_curr.posizione:
 					shouldBuy = false
-			if userData.head == elem_curr.posizione:
+			if userData.equipped.head == elem_curr.posizione:
 				shouldBuy = false
-			if userData.chest == elem_curr.posizione:
+			if userData.equipped.chest == elem_curr.posizione:
 				shouldBuy = false
-			if userData.pants == elem_curr.posizione:
+			if userData.equipped.pants == elem_curr.posizione:
 				shouldBuy = false
-			if userData.shoes == elem_curr.posizione:
+			if userData.equipped.shoes == elem_curr.posizione:
 				shouldBuy = false
 			if shouldBuy:
 				userData.inventory.armors.append(elem_curr.posizione)

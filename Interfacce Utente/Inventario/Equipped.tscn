@@ -31,9 +31,6 @@ __meta__ = {
 margin_right = 75.0
 margin_bottom = 75.0
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="chestbg" type="TextureRect" parent="."]
 margin_top = 82.7601
@@ -49,9 +46,6 @@ __meta__ = {
 margin_right = 75.0
 margin_bottom = 75.0
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="pantsbg" type="TextureRect" parent="."]
 margin_top = 173.077
@@ -64,9 +58,6 @@ expand = true
 margin_right = 75.0
 margin_bottom = 75.0
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="shoesbg" type="TextureRect" parent="."]
 margin_top = 262.511
@@ -79,9 +70,6 @@ expand = true
 margin_right = 75.0
 margin_bottom = 75.0
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="armaBackground" type="TextureRect" parent="."]
 margin_left = 105.991
