@@ -86,8 +86,8 @@ func prepareDataToSend():
 		"numCoin": {"integerValue" : userData.numCoin},
 		"numItem" : {"integerValue" : userData.numItem},
 		"cityStatus" : {"integerValue" : userData.cityStatus.smith},
-		"weapons" : {"arrayValue": {"values" : []}},
-		"armors"  : {"arrayValue": {"values" : []}}
+		"weapons" : {"arrayValue": {"values" : [{"integerValue" : 0}]}},
+		"armors"  : {"arrayValue": {"values" : [{"integerValue" : 0}]}}
 	}
 	for arma in userData.inventory.weapons:
 		file.weapons.arrayValue.values.append({"integerValue": arma})
@@ -98,16 +98,18 @@ func prepareDataToSend():
 func storeReceivedData(body):
 	var file = body.fields
 	userData.equipped.curWeapon = int(file.curwpn.integerValue)
-	userData.equipped.head = int(file.head.integerValue)
-	userData.equipped.chest = int(file.chest.integerValue)
-	userData.equipped.pants = int(file.pants.integerValue)
-	userData.equipped.shoes = int(file.shoes.integerValue)
+	userData.equipped.head = int(file.curhead.integerValue)
+	userData.equipped.chest = int(file.curchest.integerValue)
+	userData.equipped.pants = int(file.curpants.integerValue)
+	userData.equipped.shoes = int(file.curshoes.integerValue)
 	userData.numCoin = int(file.numCoin.integerValue)
 	userData.numItem = int(file.numItem.integerValue)
 	userData.cityStatus.smith = int(file.cityStatus.integerValue)
 	userData.inventory.weapons = []
 	for arma in file.weapons.arrayValue.values:
-		userData.inventory.weapons.append(int(file.weapons.arrayValue.values[arma].integerValue))
+		if (int(arma.integerValue) != 0):
+			userData.inventory.weapons.append(int(file.weapons.arrayValue.values[arma].integerValue))
 	userData.inventory.armors = []
 	for armor in file.armors.arrayValue.values:
-		userData.inventory.armors.append(int(file.armors.arrayValue.values[armor].integerValue))
+		if(int(armor.integerValue) != 0):
+			userData.inventory.armors.append(int(file.armors.arrayValue.values[armor].integerValue))

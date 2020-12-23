@@ -8,6 +8,7 @@ onready var res = get_node("result")
 
 # con 0 salva con 1 carica
 var saveOrLoad = 0
+var timeToGet = 0
 
 func _on_Button_pressed():
 	if(mailField.text.empty() or passField.text.empty()):
@@ -22,3 +23,9 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 		res.text = responseBody.result.error.message.capitalize()
 	else:
 		res.text = "Success!"
+		if( saveOrLoad == 1 and timeToGet == 1):
+			var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
+			Firebase.storeReceivedData(result_body)
+			timeToGet = 0
+		else:
+			timeToGet = 1
