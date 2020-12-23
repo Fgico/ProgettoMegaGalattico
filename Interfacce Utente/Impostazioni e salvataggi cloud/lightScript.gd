@@ -11,7 +11,3 @@ func _ready():
 	self.shadow_enabled = userData.settings.shadows
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

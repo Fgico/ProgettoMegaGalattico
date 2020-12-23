@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://DUNGEON/PNG/effetti_per_particelle/spotlight_8.png" type="Texture" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_transparent = true
+flags_unshaded = true
+params_blend_mode = 1
+params_cull_mode = 2
+albedo_color = Color( 1, 0.933333, 0.501961, 1 )
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.50134, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[node name="Particles" type="CPUParticles"]
+amount = 20
+mesh = SubResource( 2 )
+direction = Vector3( 1, 1, 1 )
+spread = 54.74
+gravity = Vector3( 0, 1, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.87
+angular_velocity = -534.42
+angular_velocity_random = 0.35
+linear_accel = 2.0
+linear_accel_random = 0.18
+radial_accel = 1.0
+radial_accel_random = 0.18
+tangential_accel = 2.0
+damping_random = 0.93
+angle = 326.6
+scale_amount = 0.6
+scale_amount_curve = SubResource( 3 )
+color = Color( 0.894118, 0.894118, 0.894118, 1 )

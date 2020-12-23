@@ -19,7 +19,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3827, 65.0451, -60.3451 )
 
 [node name="musicaCitta" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = -12.0
 autoplay = true
+bus = "music"
 
 [node name="musicaDun" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -12.0
+bus = "music"
