@@ -270,6 +270,7 @@ one_shot = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+bus = "music"
 [connection signal="animation_started" from="transizionemorte/ColorRect/morte" to="." method="_on_morte_animation_started"]
 [connection signal="animation_finished" from="transizionemorte/TextureRect/youdied" to="." method="_on_youdied_animation_finished"]
 [connection signal="animation_finished" from="transizionemorte/TextureRect2/lolyoudied" to="." method="_on_lolyoudied_animation_finished"]
