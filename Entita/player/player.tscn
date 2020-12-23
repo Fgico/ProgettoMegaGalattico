@@ -247,9 +247,10 @@ __meta__ = {
 [node name="UIcoins_item" parent="target/Camera/UI" instance=ExtResource( 4 )]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -1274.0
+margin_left = -971.0
 margin_right = 385.0
-margin_bottom = 722.0
+margin_bottom = 721.043
+rect_scale = Vector2( 0.7, 0.7 )
 
 [node name="CombatUI" parent="target/Camera/UI" instance=ExtResource( 3 )]
 

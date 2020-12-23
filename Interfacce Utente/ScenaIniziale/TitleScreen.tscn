@@ -18,9 +18,14 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -194.0
-margin_right = 1498.0
-margin_bottom = 719.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -839.5
+margin_top = -367.0
+margin_right = 839.5
+margin_bottom = 367.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 1 )
@@ -30,10 +35,14 @@ __meta__ = {
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 119.0
-margin_top = 50.0
-margin_right = 1180.0
-margin_bottom = 666.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -530.5
+margin_top = -308.0
+margin_right = 530.5
+margin_bottom = 308.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
