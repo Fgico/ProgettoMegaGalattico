@@ -25,7 +25,6 @@ func selezionaOggetto(container):
 	elem_curr.id = container.itemId
 	elem_curr.container = container
 	elem_curr.inventoryPos = container.inventoryPos
-	print(elem_curr)
 	stats.updateValue(elem_curr.tipo, elem_curr.id)
 
 func _on_Weapons_pressed():
@@ -43,6 +42,7 @@ func _on_Equip_pressed():
 	if elem_curr.tipo == 1:
 		sceneUtili.player.equipWeapon(elem_curr.id)
 		userData.equipped.curWeapon = elem_curr.id
+	
 	if elem_curr.tipo == 2:
 		if elem_curr.id != 0:
 			var slot = ItemDB.armors[elem_curr.id].slot
@@ -62,9 +62,8 @@ func _on_Equip_pressed():
 
 
 func _on_TrashBin_pressed():
-	pass # Replace with function body.
-
-
+	pass
+	
 func _on_ExitButton_pressed():
 	self.queue_free() 
 	get_parent().UI.show()

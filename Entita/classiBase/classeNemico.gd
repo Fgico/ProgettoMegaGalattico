@@ -20,6 +20,9 @@ const coloriParticles = {
 	"elettro" : preload("res://Entita/Attacchi/statusParticlesColors/elettro.tres")
 }
 
+func _ready():
+	get_parent().contaNemici += 1
+
 func _physics_process(delta):
 		stunned -= delta
 		if(stunned <= 0):
@@ -66,3 +69,4 @@ func muori():
 	morto = true
 	stunned = 0
 	stato = Dead
+	get_parent().contaNemici -= 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Entita/player/SkyguyMesh.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entita/player/player.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://DUNGEON/PNG/scritte_you_died/lol_you_died.png" type="Texture" id=8]
 [ext_resource path="res://DUNGEON/PNG/scritte_you_died/you_died_xd.png" type="Texture" id=9]
 [ext_resource path="res://DUNGEON/PNG/scritte_you_died/youdied.png" type="Texture" id=10]
+[ext_resource path="res://Sounds/footstep05.ogg" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "animazione_morte"
@@ -271,6 +272,12 @@ one_shot = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 bus = "music"
+
+[node name="footsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -7.0
+stream_paused = true
+bus = "fx"
 [connection signal="animation_started" from="transizionemorte/ColorRect/morte" to="." method="_on_morte_animation_started"]
 [connection signal="animation_finished" from="transizionemorte/TextureRect/youdied" to="." method="_on_youdied_animation_finished"]
 [connection signal="animation_finished" from="transizionemorte/TextureRect2/lolyoudied" to="." method="_on_lolyoudied_animation_finished"]

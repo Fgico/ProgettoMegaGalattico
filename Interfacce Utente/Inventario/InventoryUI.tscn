@@ -114,10 +114,8 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Equipped"
 
 [node name="Equipped" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs" instance=ExtResource( 10 )]
-anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 43.0
-margin_right = 180.0
 margin_bottom = 43.0
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/Tabs"]
@@ -163,7 +161,7 @@ rect_min_size = Vector2( 300, 0 )
 
 [node name="ItemInspector1" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
 margin_right = 300.0
-margin_bottom = 222.0
+margin_bottom = 237.0
 size_flags_vertical = 3
 
 [node name="ItemName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
@@ -177,34 +175,34 @@ valign = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
 margin_top = 48.0
 margin_right = 300.0
-margin_bottom = 204.0
+margin_bottom = 219.0
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_right = 226.0
-margin_bottom = 156.0
+margin_bottom = 171.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Stats" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer/ScrollContainer" instance=ExtResource( 9 )]
-margin_bottom = 156.0
+margin_bottom = 171.0
 
 [node name="ItemIcon" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1/HBoxContainer"]
 margin_left = 230.0
 margin_right = 300.0
-margin_bottom = 156.0
+margin_bottom = 171.0
 rect_min_size = Vector2( 70, 70 )
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/ItemInspector1"]
-margin_top = 208.0
+margin_top = 223.0
 margin_right = 300.0
-margin_bottom = 222.0
+margin_bottom = 237.0
 rect_min_size = Vector2( 0, 14 )
 
 [node name="PlayerInspector2" type="VBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
-margin_top = 226.0
+margin_top = 241.0
 margin_right = 300.0
-margin_bottom = 449.0
+margin_bottom = 479.0
 size_flags_vertical = 3
 
 [node name="ItemName" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/PlayerInspector2"]
@@ -218,39 +216,40 @@ valign = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/PlayerInspector2"]
 margin_top = 48.0
 margin_right = 300.0
-margin_bottom = 205.0
+margin_bottom = 220.0
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/PlayerInspector2/HBoxContainer"]
 margin_right = 226.0
-margin_bottom = 157.0
+margin_bottom = 172.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Stats2" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/PlayerInspector2/HBoxContainer/ScrollContainer" instance=ExtResource( 13 )]
 margin_right = 226.0
-margin_bottom = 157.0
+margin_bottom = 172.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ItemIcon" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/PlayerInspector2/HBoxContainer"]
 margin_left = 230.0
 margin_right = 300.0
-margin_bottom = 157.0
+margin_bottom = 172.0
 rect_min_size = Vector2( 70, 70 )
 
 [node name="Label" type="Label" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/PlayerInspector2"]
-margin_top = 209.0
+margin_top = 224.0
 margin_right = 300.0
-margin_bottom = 223.0
+margin_bottom = 238.0
 rect_min_size = Vector2( 0, 14 )
 
 [node name="Buttons" type="HBoxContainer" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector"]
-margin_top = 453.0
+margin_top = 483.0
 margin_right = 300.0
 margin_bottom = 553.0
 
 [node name="TrashBin" type="TextureButton" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/Buttons"]
+visible = false
 margin_right = 100.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
@@ -258,10 +257,8 @@ texture_normal = ExtResource( 8 )
 expand = true
 
 [node name="Equip" type="TextureRect" parent="DoubleEdgesBackground/PaperBackground/VBoxContainer/MainElements/ItemInspector/Buttons"]
-margin_left = 104.0
-margin_top = 15.0
-margin_right = 284.0
-margin_bottom = 85.0
+margin_right = 180.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
 texture = ExtResource( 5 )

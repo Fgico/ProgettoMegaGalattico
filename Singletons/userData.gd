@@ -29,7 +29,7 @@ var cityStatus = {
 }
 
 var inventory = {
-	"weapons" : [],
+	"weapons" : [1],
 	"armors" : []
 }
 

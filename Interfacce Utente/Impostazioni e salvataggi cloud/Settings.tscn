@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Interfacce Utente/Inventario/Immagini/background.png" type="Texture" id=1]
 [ext_resource path="res://Interfacce Utente/Inventario/FontShop.tres" type="DynamicFont" id=2]
@@ -8,11 +8,7 @@
 [ext_resource path="res://Interfacce Utente/Inventario/Immagini/paper background.png" type="Texture" id=6]
 [ext_resource path="res://Interfacce Utente/Inventario/Immagini/wood background.png" type="Texture" id=7]
 [ext_resource path="res://Interfacce Utente/Inventario/Immagini/exit.png" type="Texture" id=8]
-
-
-
-
-
+[ext_resource path="res://Sounds/pick-up coin.wav" type="AudioStream" id=9]
 
 [sub_resource type="Theme" id=1]
 
@@ -296,6 +292,10 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "fx"
 [connection signal="toggled" from="NinePatchRect/Video/shadowCheck" to="." method="_on_shadowCheck_toggled"]
 [connection signal="toggled" from="NinePatchRect/Video/detailsCheck" to="." method="_on_detailsCheck_toggled"]
 [connection signal="toggled" from="NinePatchRect/Audio/musicMute" to="." method="_on_musicMute_toggled"]

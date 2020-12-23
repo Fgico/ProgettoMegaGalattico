@@ -7,4 +7,4 @@ onready var atkspdval = get_node("Atkspd/StatsValue3")
 func updatePlayerStats():
 	atkval.text = str(sceneUtili.player.stats.atk)
 	defval.text = str(sceneUtili.player.stats.def)
-	atkspdval.text = str(sceneUtili.player.atkSpd)
+	atkspdval.text = str(stepify(sceneUtili.player.atkSpd,0.01))

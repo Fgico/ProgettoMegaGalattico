@@ -25,6 +25,8 @@ onready var mpBar = $target/Camera/UI/CombatUI/mpBar
 onready var dodgeBar = $target/Camera/UI/CombatUI/gameButtons/scatto/ProgressBar
 onready var UI = get_node("target/Camera/UI") #nasconde l'UI durante la scena "PASSAGGIO"
 
+onready var footsteps = get_node("footsteps")
+
 onready var screenSize = OS.get_window_size()
 
 #animazione quando il giocatore muore
@@ -108,8 +110,14 @@ func _physics_process(delta):
 	.physics_process(delta)
 	if stato == Moving:
 		anim.play("sword and shield run-loop")
+		footsteps.stream_paused = false
+		if footsteps.playing == false :
+			footsteps.play()
 	elif stato == Idle:
 		anim.play("sword and shield idle 4-loop")
+		footsteps.stream_paused = true
+	else:
+		footsteps.stream_paused = true
 
 #piccolo wrap per gli attacchi con animazioni e controllo che non si stia già attaccando
 func attaccaChecked(attacco,isSpecial):
@@ -222,7 +230,7 @@ func loadEquipment():
 func equipWeapon(id : int):
 	if(id != 0):
 		var wpn = ItemDB.weapons[id]
-		self.stats.atk = wpn.atk/10
+		self.stats.atk = wpn.atk
 		self.atkSpd = 1 / (wpn.atkspd/5.0)
 
 func equipArmor(id : int):

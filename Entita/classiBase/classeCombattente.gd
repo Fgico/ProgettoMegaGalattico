@@ -83,7 +83,8 @@ func attacca(attacco,target):
 
 #cosa accade se colpito
 func hit(danno,nelement,malusRate):
-	hp = max(hp - danno, 0)
+	var dmg = clamp(5, danno, danno/stats.def)
+	hp = max(hp - dmg, 0)
 	if(hp <= 0 and stato != Dead):
 		muori()
 

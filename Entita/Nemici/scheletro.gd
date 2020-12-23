@@ -6,7 +6,6 @@ func _ready():
 	self.iniziaStats(0.8,1,60,1,300)
 	anim = get_node("rotable/mesh/AnimationPlayer")
 	get_parent().contaNemici += 1
-	print("nasce scheletro: ", get_parent().contaNemici)
 
 
 
@@ -19,7 +18,6 @@ func _physics_process(delta):
 
 func muori():
 	.muori()
-	print("morto",self,self.hp)
 	get_parent().contaNemici -= 1
 	anim.play("SkeletonArmature|Skeleton_Death")
 	

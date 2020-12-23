@@ -31,6 +31,7 @@ expand = true
 [node name="ItemButton" type="TextureButton" parent="ItemBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 1
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false

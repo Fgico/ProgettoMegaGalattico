@@ -16,7 +16,7 @@ func updateValue(kind, id):
 		atkspd.show()
 		var item = ItemDB.weapons[id]
 		atkval.text = str(item.atk)
-		atkspdval.text = str(item.atkspd)
+		atkspdval.text = str(stepify(item.atkspd,0.01))
 		
 	if(kind == 2):
 		def.show()

@@ -12,11 +12,15 @@ onready var musicSlider = get_node("NinePatchRect/Audio/HSlider")
 onready var shadowCheck = get_node("NinePatchRect/Video/shadowCheck")
 onready var detailCheck = get_node("NinePatchRect/Video/detailsCheck")
 
+var loaded = false
+
 func _ready():
 	musicCheck.pressed = userData.settings.musicMuted
 	sfxCheck.pressed = userData.settings.sfxMuted
 	shadowCheck.pressed = userData.settings.shadows
 	detailCheck.pressed = userData.settings.details
+	fxSlider.value = userData.settings.fxVolume
+	musicSlider.value = userData.settings.musicVolume
 	pass 
 
 
@@ -72,7 +76,10 @@ func _on_sfxSlider_value_changed(value):
 			AudioServer.set_bus_volume_db(2,-9)
 		5.0:
 			AudioServer.set_bus_volume_db(2,0)
-	userData.settings.sfxVolume = value
+	userData.settings.fxVolume = value
+	if loaded :
+		$AudioStreamPlayer.play()
+	loaded = true
 
 func _on_musicSlider_value_changed(value):
 	match value:
