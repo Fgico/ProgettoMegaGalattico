@@ -6,9 +6,10 @@
 [ext_resource path="res://dungeon1/tileNormal.png" type="Texture" id=5]
 [ext_resource path="res://DUNGEON/Scene Principali/Item.tscn" type="PackedScene" id=6]
 [ext_resource path="res://DUNGEON/Scene Principali/Coins.tscn" type="PackedScene" id=7]
-[ext_resource path="res://DUNGEON/Scene Principali/dungeon1.gd" type="Script" id=8]
+[ext_resource path="res://DUNGEON/Script/dungeon1.gd" type="Script" id=8]
 [ext_resource path="res://DUNGEON/Modular Dungeon/OBJ/Arch_bars.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://Entita/Nemici/bat.tscn" type="PackedScene" id=33]
+
 
 [sub_resource type="PlaneMesh" id=3]
 
