@@ -117,6 +117,7 @@ __meta__ = {
 
 [node name="PauseMenu" type="Control" parent="."]
 pause_mode = 2
+visible = false
 anchor_left = 0.36999
 anchor_top = 0.3
 anchor_right = 0.63001

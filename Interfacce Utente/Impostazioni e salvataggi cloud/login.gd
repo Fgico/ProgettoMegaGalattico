@@ -27,5 +27,5 @@ func _on_HTTPRequest_request_completed(result, response_code, headers, body):
 			var result_body := JSON.parse(body.get_string_from_ascii()).result as Dictionary
 			Firebase.storeReceivedData(result_body)
 			timeToGet = 0
-		else:
+		if(saveOrLoad == 1 and timeToGet == 0):
 			timeToGet = 1
