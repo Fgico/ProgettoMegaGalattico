@@ -1,7 +1,7 @@
 extends Node
 
-const apiKey = ""
-const projId = ""
+const apiKey = "qua"
+const projId = "qui"
 
 const registerUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=%s" % apiKey
 const loginUrl = "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=%s" % apiKey
