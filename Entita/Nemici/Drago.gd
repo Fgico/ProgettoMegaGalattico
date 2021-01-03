@@ -4,7 +4,7 @@ var fuoco = load("res://Entita/Attacchi/Speciali/fuoco/lanciafiamme.tscn")
 
 
 func _ready():
-	self.iniziaStats(1.5,100,20,100,350)
+	self.iniziaStats(1.5,1,150,100,350)
 	attacco = load("res://Entita/Attacchi/fisico/SwordSlash.tscn")
 	anim = get_node("rotable/mesh/AnimationPlayer")
 

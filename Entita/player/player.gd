@@ -46,6 +46,7 @@ func _ready():
 	items = userData.numItem
 	loadEquipment()
 	convertStringa()
+	nascondiscena.hide()
 
 var stickidx = -1
 #prende input per il movimento dal tocco
@@ -174,6 +175,7 @@ func muori():
 		anim.play("sword and shield death-loop")
 		anim.get_animation("sword and shield death-loop").loop = false
 		anim_morte.play("animazione_morte")
+		nascondiscena.show()
 	stato = Dead
 
 func restoreStatus():
@@ -240,10 +242,10 @@ func equipArmor(id : int):
 		updateDef()
 
 func updateDef():
-	var def = 0
+	var def :float  = 0
 	for armr in armorStats:
 		def += armr
-	stats.def = def
+	stats.def = max(def,1)
 
 
 
@@ -265,8 +267,7 @@ func _on_morte_animation_started(animazione_morte):
 
 func _on_youdied_animation_finished(you_died_anim):
 	if (stato == Dead):
-		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
-		sceneUtili.player.restoreStatus()
+		get_tree().change_scene("res://nodo_isola.tscn")
 		
 
 
@@ -276,8 +277,7 @@ func _on_youdied_animation_finished(you_died_anim):
 
 func _on_lolyoudied_animation_finished(lol_you_died):
 	if (stato == Dead):
-		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
-		sceneUtili.player.restoreStatus()
+		get_tree().change_scene("res://nodo_isola.tscn")
 		
 	pass # Replace with function body.
 
@@ -285,18 +285,14 @@ func _on_lolyoudied_animation_finished(lol_you_died):
 
 func _on_youdiedxd_animation_finished(you_died_xd):
 	if (stato == Dead):
-		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
-		sceneUtili.player.restoreStatus()
+		get_tree().change_scene("res://nodo_isola.tscn")
 		
 
 	pass # Replace with function body.
 
 func _on_pffnoob_animation_finished(pff_noob):
 	if (stato == Dead):
-		get_tree().root.get_node("nodo_isola").cambioPiano("res://Isola/ISOLA_VOLANTE/Isola_volante.tscn")
-		sceneUtili.player.restoreStatus()
-		
-
+		get_tree().change_scene("res://nodo_isola.tscn")
 	pass # Replace with function body.
 
 

@@ -11,7 +11,7 @@ var stats = {
 }
 
 #in ordine: elmetto, petto, pantaloni, scarpe
-var armorStats = [1, 1, 1, 1]
+var armorStats = [0, 0, 0, 0]
 
 #si nasce in stato Idle, eredito definizione altri stati da Moveable
 const Attacking = 2
@@ -83,7 +83,7 @@ func attacca(attacco,target):
 
 #cosa accade se colpito
 func hit(danno,nelement,malusRate):
-	var dmg = clamp(5, danno, danno/stats.def)
+	var dmg = float(danno)/float(stats.def)
 	hp = max(hp - dmg, 0)
 	if(hp <= 0 and stato != Dead):
 		muori()

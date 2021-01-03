@@ -76,10 +76,10 @@ anchor_left = 0.95
 anchor_top = 0.035
 anchor_right = 0.95
 anchor_bottom = 0.035
-margin_left = 175.1
-margin_top = -96.5675
-margin_right = 215.1
-margin_bottom = -56.5675
+margin_left = 233.62
+margin_top = -128.659
+margin_right = 273.62
+margin_bottom = -88.6592
 texture_normal = ExtResource( 10 )
 expand = true
 __meta__ = {
@@ -246,7 +246,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -320.0
 margin_top = -240.0
-margin_right = 320.0
+margin_right = 320.349
 margin_bottom = 240.0
 script = ExtResource( 9 )
 __meta__ = {
@@ -254,14 +254,17 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/login"]
-anchor_left = 0.31875
-anchor_top = 0.36875
-anchor_right = 0.665625
-anchor_bottom = 0.74375
-margin_left = -40.0
-margin_right = 40.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -273.764
+margin_top = -161.734
+margin_right = 28.3571
+margin_bottom = 18.2656
+rect_scale = Vector2( 1.8, 1.8 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/login/VBoxContainer"]
@@ -371,8 +374,10 @@ anchor_left = 0.95
 anchor_top = 0.035
 anchor_right = 0.95
 anchor_bottom = 0.035
-margin_left = -40.0
-margin_bottom = 40.0
+margin_left = 27.959
+margin_top = -35.8672
+margin_right = 67.959
+margin_bottom = 4.13281
 texture_normal = ExtResource( 10 )
 expand = true
 
@@ -392,10 +397,11 @@ anchor_left = 0.5
 anchor_top = 0.165
 anchor_right = 0.503
 anchor_bottom = 0.5
-margin_left = -175.0
-margin_top = -7.62939e-06
-margin_right = 178.928
-margin_bottom = 45.0
+margin_left = -320.357
+margin_top = -83.0609
+margin_right = 33.5714
+margin_bottom = -38.0609
+rect_scale = Vector2( 1.8, 1.8 )
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -474,10 +480,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = 4.0
-margin_right = 150.0
-margin_bottom = 35.0
+margin_left = -159.439
+margin_top = 111.602
+margin_right = 140.561
+margin_bottom = 181.602
 rect_min_size = Vector2( 180, 70 )
 size_flags_vertical = 4
 texture = ExtResource( 5 )
@@ -533,10 +539,10 @@ anchor_left = 0.95
 anchor_top = 0.035
 anchor_right = 0.95
 anchor_bottom = 0.035
-margin_left = -212.8
-margin_top = 55.8
-margin_right = -172.8
-margin_bottom = 95.8
+margin_left = -258.106
+margin_top = 80.3407
+margin_right = -218.106
+margin_bottom = 120.341
 texture_normal = ExtResource( 10 )
 expand = true
 [connection signal="pressed" from="TextureRect/Menu/quitButtonMenu" to="." method="_on_quitButtonMenu_pressed"]

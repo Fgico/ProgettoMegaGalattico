@@ -31,13 +31,6 @@ func _on_pause_button_down():
 var touchIdx = -1
 
 func _on_special_gui_input(event):
-	if(event is InputEventScreenTouch and event.is_pressed() ):
-		spatk1.show()
-		spatk2.show()
-		spatk3.show()
-		spatk4.show()
-		spatkPos = event.position
-		touchIdx = event.index
 	if(event is InputEventScreenDrag and spatkPos!= null):
 		var drag =  spatkPos - event.position
 		if(drag.length() / OS.get_screen_dpi() > 0.5):
@@ -50,6 +43,14 @@ func _on_special_gui_input(event):
 				spawnaSpatk(2)
 			elif(drag.y < 0.5 and (drag.x < 0.5  and drag.x >-0.5)):
 				spawnaSpatk(3)
+	elif(event is InputEventScreenTouch and event.is_pressed() and spatkPos == null ):
+		spatk1.show()
+		spatk2.show()
+		spatk3.show()
+		spatk4.show()
+		spatkPos = event.position
+		touchIdx = event.index
+
 				
 func _input(event):
 	if(event is InputEventScreenTouch and not event.is_pressed() and event.index == touchIdx ):
