@@ -7,6 +7,8 @@ onready var player = get_parent().get_parent().get_parent().get_parent()
 onready var pauseMenu = get_node("PauseMenu")
 onready var pause = get_node("pause")
 
+onready var stick = $ColorRect/movStick
+
 onready var spatk1 = get_node("gameButtons/special/spatk1")
 onready var spatk2 = get_node("gameButtons/special/spatk2")
 onready var spatk3 = get_node("gameButtons/special/spatk3")
@@ -29,6 +31,17 @@ func _on_pause_button_down():
 
 
 var touchIdx = -1
+var stickIdx = -1
+
+func _on_ColorRect_gui_input(event):
+	if event is InputEventScreenTouch and event.is_pressed():
+		stick.position = event.position
+		stick.show()
+		stickIdx = event.index
+	if(event is InputEventScreenDrag and event.index == stickIdx and not player.lockMovement):
+		player.inputDir = stick.position - event.position
+		var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, player.inputDir.angle_to(Vector2.UP))
+		player.setTargetDir(Vector3(movDir.x,0,movDir.z))
 
 func _on_special_gui_input(event):
 	if(event is InputEventScreenDrag and spatkPos!= null):
@@ -53,10 +66,15 @@ func _on_special_gui_input(event):
 
 				
 func _input(event):
-	if(event is InputEventScreenTouch and not event.is_pressed() and event.index == touchIdx ):
-		tastoSpecialLevatutto()
-		touchIdx = -1
-	
+	if(event is InputEventScreenTouch and not event.is_pressed()):
+		if(event.index == touchIdx ):
+			tastoSpecialLevatutto()
+			touchIdx = -1
+		if(event.index == stickIdx):
+			stick.hide()
+			player.inputDir  = Vector2(0,0)
+			stickIdx = -1
+			player.setTargetDir(Vector3(player.inputDir.x,0,player.inputDir.y))
 
 func tastoSpecialLevatutto():
 	spatk1.hide()
@@ -116,3 +134,6 @@ func _on_Save_gui_input(event):
 		get_tree().paused = false
 		get_tree().change_scene("res://Interfacce Utente/ScenaIniziale/TitleScreen.tscn")
 	pass # Replace with function body.
+
+
+

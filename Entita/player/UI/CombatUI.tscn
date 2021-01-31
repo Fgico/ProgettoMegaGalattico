@@ -97,12 +97,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="movStick" type="Sprite" parent="."]
-visible = false
-position = Vector2( 128.434, 410.276 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 8 )
-
 [node name="pause" type="TextureButton" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -341,6 +335,22 @@ stretch_mode = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -16.0
+margin_top = 167.0
+margin_right = 694.0
+margin_bottom = 735.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="movStick" type="Sprite" parent="ColorRect"]
+visible = false
+position = Vector2( 144.434, 243.276 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="PauseMenu/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="PauseMenu/Settings" to="." method="_on_Settings_pressed"]
@@ -350,3 +360,4 @@ __meta__ = {
 [connection signal="gui_input" from="gameButtons/scatto/ProgressBar" to="." method="_on_ProgressBar_gui_input"]
 [connection signal="gui_input" from="gameButtons/special" to="." method="_on_special_gui_input"]
 [connection signal="pressed" from="bag" to="." method="_on_bag_pressed"]
+[connection signal="gui_input" from="ColorRect" to="." method="_on_ColorRect_gui_input"]

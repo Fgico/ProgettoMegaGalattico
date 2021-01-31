@@ -18,7 +18,7 @@ var target = "enemy"
 
 onready var anim = $rotable/mesh/AnimationPlayer
 onready var cam = $target/Camera
-onready var stick = $target/Camera/UI/CombatUI/movStick
+#onready var stick = $target/Camera/UI/CombatUI/movStick
 onready var scattoTimer = $Timer/scatto
 onready var healthBar = $target/Camera/UI/CombatUI/healthBar
 onready var mpBar = $target/Camera/UI/CombatUI/mpBar
@@ -50,22 +50,20 @@ func _ready():
 
 var stickidx = -1
 #prende input per il movimento dal tocco
-func _input(event):
-	if event is InputEventScreenTouch and event.is_pressed() and event.position.x < screenSize.x/2:
-		stick.position = event.position
-		stick.show()
-		stickidx = event.index
-	if(event is InputEventScreenTouch and not event.is_pressed() and event.index == stickidx):
-		stick.hide()
-		inputDir  = Vector2(0,0)
-		stickidx = -1
-		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
-	if(event is InputEventScreenDrag and event.index == stickidx and not lockMovement):
-		inputDir = stick.position - event.position
-		var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, inputDir.angle_to(Vector2.UP))
-		setTargetDir(Vector3(movDir.x,0,movDir.z))
-		#setTargetDir(Vector3(inputDir.x,0,inputDir.y))
-	
+#func _input(event):
+#	if event is InputEventScreenTouch and event.is_pressed() and event.position.x < screenSize.x/2:
+#		stick.position = event.position
+#		stick.show()
+#		stickidx = event.index
+#	if(event is InputEventScreenTouch and not event.is_pressed() and event.index == stickidx):
+#		stick.hide()
+#		inputDir  = Vector2(0,0)
+#		stickidx = -1
+#		setTargetDir(Vector3(inputDir.x,0,inputDir.y))
+#	if(event is InputEventScreenDrag and event.index == stickidx and not lockMovement):
+#		inputDir = stick.position - event.position
+#		var movDir = get_viewport().get_camera().global_transform.basis.z.rotated(Vector3.UP, inputDir.angle_to(Vector2.UP))
+#		setTargetDir(Vector3(movDir.x,0,movDir.z))
 		
 #input ma dal pc
 func input_pc():
@@ -242,7 +240,7 @@ func equipArmor(id : int):
 		updateDef()
 
 func updateDef():
-	var def :float  = 0
+	var def :float  = 1
 	for armr in armorStats:
 		def += armr
 	stats.def = max(def,1)
